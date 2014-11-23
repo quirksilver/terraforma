@@ -7,7 +7,17 @@ public class BuildMenu : MonoBehaviour
 
     public void BuildDome()
     {
+        BuildBuilding(typeof(Dome));
+    }
+
+    public void BuildRocket()
+    {
+        BuildBuilding(typeof(Rocket));
+    }
+
+    public void BuildBuilding(System.Type type)
+    {
         GameObject newObj = GameObject.Instantiate(buidingPlacementObject) as GameObject;
-        newObj.GetComponent<BuildingPlacement>().Setup(typeof(Dome));
+        newObj.GetComponent<BuildingPlacement>().Setup(type);
     }
 }
