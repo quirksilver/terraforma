@@ -454,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5531cf0c9ce0edd4cbc32af31141e574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileSize: .639999986
+  TileSize: 1
   width: 20
   height: 20
   tempTile: {fileID: 100000, guid: b7fcf87e7bdfa074f9433c1d2dd56f3c, type: 2}

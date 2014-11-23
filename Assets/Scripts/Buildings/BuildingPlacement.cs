@@ -18,15 +18,17 @@ public class BuildingPlacement : MonoBehaviour
         newBuilding = Instantiate(Resources.Load(buildingPrefabPath)) as GameObject;
         Building building = newBuilding.GetComponent(type) as Building;
         building.enabled = false;
+
     }
 
 	// Update is called once per frame
 	void Update ()
     {
+
         Vector3 newPos = Vector3.zero;
         newPos.x = Map.instance.GetMouseOver().x * Map.instance.TileSize;
-        newPos.z = Map.instance.GetMouseOver().y * Map.instance.TileSize;
-        newPos.y = 0.0f;
+		newPos.z = Map.instance.GetMouseOver().y * Map.instance.TileSize;
+		newPos.y = 0.0f;
 
         transform.localPosition = newBuilding.transform.localPosition = newPos;
 

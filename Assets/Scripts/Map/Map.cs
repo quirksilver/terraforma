@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Map : MonoSingleton<Map> 
 {
-    public float TileSize = 0.64f;
+    public float TileSize = 1.0f;
     Tile[,] tiles;
     public int width;
     public int height;
