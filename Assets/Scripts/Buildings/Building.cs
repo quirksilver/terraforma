@@ -5,6 +5,8 @@ public class Building : MonoBehaviour {
 
     public Vector2 size;
 
+    public Building[] prerequisites;
+
 	// Use this for initialization
 	void Start () {
 	
