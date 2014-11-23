@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Tile : MonoBehaviour
 {
+    public Vector2 coords;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,4 +14,9 @@ public class Tile : MonoBehaviour
 	void Update () {
 	
 	}
+
+    void OnMouseOver()
+    {
+        Map.instance.MouseOver(coords);
+    }
 }

@@ -14,6 +14,11 @@ public class BillboardSprite : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (camera == null)
+        {
+            camera = Camera.main.gameObject;
+        }
+
 		Vector3 lookDirection = camera.transform.forward;
 
 		transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);

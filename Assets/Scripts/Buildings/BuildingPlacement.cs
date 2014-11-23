@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BuildingPlacement : MonoBehaviour 
 {
-    Map map;
     public string buildingPrefabPath;
     private GameObject newBuilding;
 
@@ -22,8 +21,11 @@ public class BuildingPlacement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        Vector3 newPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        newPos.z = 0;
+        Vector3 newPos = Vector3.zero;
+        newPos.x = Map.instance.GetMouseOver().x * Map.instance.TileSize;
+        newPos.z = Map.instance.GetMouseOver().y * Map.instance.TileSize;
+        newPos.y = 0.0f;
+
         transform.localPosition = newBuilding.transform.localPosition = newPos;
 
         //Create building
