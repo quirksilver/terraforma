@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BuildMenu : MonoBehaviour 
 {
     public GameObject buidingPlacementObject;
+
+    public GameObject buttonTemp;
+    public RectTransform gridRoot;
+
+    public Building[] buildings;
+
+    private List<BuildingButton> buildingButtons;
 
     public void BuildDome()
     {
@@ -19,5 +27,38 @@ public class BuildMenu : MonoBehaviour
     {
         GameObject newObj = GameObject.Instantiate(buidingPlacementObject) as GameObject;
         newObj.GetComponent<BuildingPlacement>().Setup(type);
+    }
+
+    public void Refresh()
+    {
+        foreach (BuildingButton button in buildingButtons)
+        {
+            button.Refresh();
+        }
+    }
+
+    void Start()
+    {
+        //Building load
+        buildingButtons = new List<BuildingButton>();
+        for (int i = 0; i < 40; i++)
+        {
+            GameObject newButton = GameObject.Instantiate(buttonTemp) as GameObject;
+            newButton.transform.parent = buttonTemp.transform.parent;
+            RectTransform rect = newButton.transform as RectTransform;
+            rect.anchoredPosition = new Vector2(
+                (i%2==0) ? 0 : rect.sizeDelta.x, 
+                (i/2) * -rect.sizeDelta.y);
+
+            Debug.Log(buildings[0].size.ToString());
+
+            newButton.GetComponent<BuildingButton>().Setup(buildings[i%2],this);
+            buildingButtons.Add(newButton.GetComponent<BuildingButton>());
+        }
+
+        gridRoot.sizeDelta = new Vector2(0, 19 * 77);
+        buttonTemp.SetActive(false);
+
+        Refresh();
     }
 }

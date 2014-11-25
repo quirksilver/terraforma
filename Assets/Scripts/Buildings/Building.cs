@@ -8,6 +8,8 @@ public class Building : MonoBehaviour {
 
 	protected GameObject footprint;
 
+    public Building[] prerequisites;
+
 	// Use this for initialization
 	void Start () {
 	

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Map : MonoSingleton<Map> 
 {
@@ -10,10 +11,16 @@ public class Map : MonoSingleton<Map>
 
     public GameObject tempTile=null;
 
-    public static Vector2 mouseOverTile { private set; get; }
+    public Vector2 mouseOverTile { private set; get; }
+
+    private List<Building> buildings;
+    private BuildMenu buildMenu;
 
 	// Use this for initialization
 	void Start () {
+        buildings = new List<Building>();
+        buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
+
         tiles = new Tile[width,height];
         for (int x = 0; x < width; x++)
         {
@@ -29,6 +36,19 @@ public class Map : MonoSingleton<Map>
             }
         }
 	}
+
+    public int GetBuildingsCount(System.Type type)
+    {
+        int count = 0;
+        foreach (Building b in buildings)
+        {
+            if (b.GetType() == type)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 
     public bool ValidateBuilding(Building building, Vector2 pos)
     {
@@ -73,6 +93,9 @@ public class Map : MonoSingleton<Map>
                     tiles[(int)pos.x + x, (int)pos.y + y].AssignBuilding(building);
                 }
             }
+
+            buildings.Add(building);
+            buildMenu.Refresh();
         }
 
         return valid;
