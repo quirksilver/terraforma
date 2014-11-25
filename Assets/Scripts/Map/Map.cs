@@ -21,7 +21,7 @@ public class Map : MonoSingleton<Map>
         buildings = new List<Building>();
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
 
-        tiles = new Tile[width,height];
+        /*tiles = new Tile[width,height];
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
@@ -34,7 +34,7 @@ public class Map : MonoSingleton<Map>
                 newTile.GetComponent<Tile>().coords = new Vector2(x, y);
                 tiles[x,y] = newTile.GetComponent<Tile>();
             }
-        }
+        }*/
 	}
 
     public int GetBuildingsCount(System.Type type)

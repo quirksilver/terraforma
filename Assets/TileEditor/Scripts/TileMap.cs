@@ -55,6 +55,8 @@ public class TileMap : MonoBehaviour
 		PathTile r, l, f, b;
 		for (int i = 0; i < instances.Count; i++)
 		{
+			if (instances[i] == null) return;
+
 			var tile = instances[i].GetComponent<PathTile>();
 			if (tile != null)
 			{

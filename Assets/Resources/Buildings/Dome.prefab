@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Dome
   m_TagString: Untagged
@@ -42,6 +43,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 11, y: 5}
+  footprintPrefab: {fileID: 0}
   prerequisites: []
 --- !u!114 &11400002
 MonoBehaviour:
@@ -54,7 +56,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7049f35b9802b421188071415d2e873f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c906eb19bcd341c5bff452b4c5b7556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footprint: {fileID: 100000, guid: 9b81405f02d3f486b95b03eb810443c3, type: 2}
+  sprite: {fileID: 21300000, guid: fe274575533934466b1e72d213dc9942, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

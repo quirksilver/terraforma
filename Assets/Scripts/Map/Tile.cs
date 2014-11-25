@@ -9,6 +9,8 @@ public class Tile : MonoBehaviour
 	// Use this for initialization
 	void Start () {
         building = null;
+
+		coords = new Vector2(transform.position.x, transform.position.z);
 	}
 	
 	// Update is called once per frame
