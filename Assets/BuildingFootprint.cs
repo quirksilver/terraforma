@@ -9,23 +9,27 @@ public class BuildingFootprint : MonoBehaviour {
 	private Vector3[] gridArray;
 	private Vector3[] transformedGrid;
 
-	public GameObject footprint;
 	public Sprite sprite;
 
 	private float pivotPoint;
 
+	public List<Vector3> tilePositions { get; set; }
+	
 	// Use this for initialization
 	void Start () {
 
-		//footprint = this.gameObject;
-
-		//CalculatePivot(false);
+		if (tilePositions==null)
+			CalculatePivot(false);
 
 	}
 
 	public void CalculatePivot(bool setPivot=true){
 
 		int i;
+
+		transform.parent.position = Vector3.zero;
+
+		tilePositions = new List<Vector3>();
 		
 		Debug.Log("Running calculate pivot");
 		
@@ -34,9 +38,11 @@ public class BuildingFootprint : MonoBehaviour {
 		
 		grid = new List<Vector3>();
 		
-		foreach (Transform child in footprint.transform)
+		foreach (Transform child in transform)
 		{
 			Debug.Log(child);
+
+			tilePositions.Add(child.position);
 
 			MeshFilter mf = child.GetComponentsInChildren<MeshFilter>(true)[0];
 
@@ -91,6 +97,18 @@ public class BuildingFootprint : MonoBehaviour {
 		textureImporter.SetTextureSettings(texSettings);
 		
 		AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
+	}
+
+	public void hide()
+	{
+		enabled = false;
+
+		Renderer[] r = GetComponentsInChildren<Renderer>();
+
+		for (int i = 0; i < r.Length; i++)
+		{
+			r[i].enabled = false;
+		}
 	}
 
 	// Update is called once per frame

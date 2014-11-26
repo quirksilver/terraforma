@@ -10,7 +10,7 @@ public class BuildingFootprintEditor : Editor
 		DrawDefaultInspector();
 		
 		BuildingFootprint footprintScript = (BuildingFootprint)target;
-		if(GUILayout.Button("Calculate Sprite Pivot"))
+		if(GUILayout.Button("Set Sprite Pivot"))
 		{
 			footprintScript.CalculatePivot();
 		}

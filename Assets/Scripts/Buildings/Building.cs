@@ -4,15 +4,22 @@ using System.Collections;
 public class Building : MonoBehaviour {
 
     public Vector2 size;
-	public GameObject footprintPrefab;
 
-	protected GameObject footprint;
+	public BuildingFootprint footprint;
 
     public Building[] prerequisites;
 
-	// Use this for initialization
-	void Start () {
+
+	protected virtual void Awake () {
 	
+		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
+		
+		Debug.Log(footprint);
+	
+	}
+
+	// Use this for initialization
+	void Start() {
 	}
 	
 	// Update is called once per frame
@@ -21,17 +28,8 @@ public class Building : MonoBehaviour {
 	
 	}
 
-	protected void AttachFootprint() {
-
-		if (!footprintPrefab)
-		{
-			Debug.LogError("No footprint prefab found for Building " + this.name);
-		}
-
-		footprint = (GameObject)Instantiate(footprintPrefab, transform.position + new Vector3(Map.instance.TileSize/2, 0, Map.instance.TileSize/2), Quaternion.identity);
-		
-		footprint.transform.parent = this.transform;
-
-
+	protected void HideFootprint()
+	{
+		footprint.hide();
 	}
 }

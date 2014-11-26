@@ -404,7 +404,7 @@ public class TileMapEditor : Editor
 			var instance = (Transform)PrefabUtility.InstantiatePrefab(tileMap.prefabs[index]);
 			instance.parent = tileMap.transform;
 			instance.localPosition = tileMap.GetPosition(index);
-			instance.localRotation = Quaternion.Euler(tileMap.prefabs[index].transform.rotation.x, tileMap.directions[index] * 90, 0);
+			instance.localRotation = Quaternion.Euler(0, tileMap.directions[index] * 90, 0);
 			tileMap.instances[index] = instance;
 			wireframeHidden = false;
 			return true;

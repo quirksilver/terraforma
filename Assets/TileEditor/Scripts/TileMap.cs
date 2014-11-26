@@ -21,10 +21,28 @@ public class TileMap : MonoBehaviour
 	public List<Transform> prefabs = new List<Transform>(100000);
 	public List<int> directions = new List<int>(100000);
 	public List<Transform> instances = new List<Transform>(100000);
+	public List<Tile> tiles;
 
 	void Start()
 	{
+
 		UpdateConnections();
+
+		setTiles();
+	}
+
+	public void setTiles()
+	{
+		tiles = new List<Tile>(100000);
+
+		Debug.Log(instances.Count);
+
+		for (int i = 0; i < instances.Count; i++)
+		{
+			Debug.Log(instances[i]);
+			Debug.Log(i);
+			tiles.Add(instances[i].GetComponent<Tile>());
+		}
 	}
 
 	public int GetHash(int x, int z)
@@ -115,11 +133,28 @@ public class TileMap : MonoBehaviour
 		else
 			return null;
 	}
+
 	public PathTile GetPathTile(Vector3 position)
 	{
 		var x = Mathf.RoundToInt(position.x / tileSize);
 		var z = Mathf.RoundToInt(position.z / tileSize);
 		return GetPathTile(x, z);
+	}
+
+	Tile GetTile(int x, int z)
+	{
+		var index = GetIndex(x, z);
+		if (index >= 0)
+			return tiles[index];
+		else
+			return null;
+	}
+
+	public Tile GetTile(Vector3 position)
+	 {
+		var x = Mathf.RoundToInt(position.x / tileSize);
+		var z = Mathf.RoundToInt(position.z / tileSize);
+		return GetTile(x, z);
 	}
 	
 	public bool FindPath(PathTile start, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable)

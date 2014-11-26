@@ -26,15 +26,15 @@ public class BuildingPlacement : MonoBehaviour
     {
 
         Vector3 newPos = Vector3.zero;
-        newPos.x = Map.instance.GetMouseOver().x * Map.instance.TileSize;
-		newPos.z = Map.instance.GetMouseOver().y * Map.instance.TileSize;
+		newPos.x = Map.instance.GetMouseOver().x;
+		newPos.z = Map.instance.GetMouseOver().z;
 		newPos.y = 0.0f;
 
         transform.localPosition = newBuilding.transform.localPosition = newPos;
 
         if (lastPos != newPos)
         {
-            newBuilding.GetComponent<SpriteRenderer>().color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? Color.white : Color.red;
+            newBuilding.GetComponentInChildren<SpriteRenderer>().color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? Color.white : Color.red;
         }
 
         // When clicked enable stop movement and enable scripts
