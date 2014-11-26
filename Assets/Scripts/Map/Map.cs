@@ -105,4 +105,9 @@ public class Map : MonoSingleton<Map>
     {
         return mouseOverTile;
     }
+
+    public Tile GetTileOver()
+    {
+		return tileMap.GetTile(mouseOverTile);
+    }
 }
