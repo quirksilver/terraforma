@@ -4,37 +4,22 @@ using System.Collections.Generic;
 
 public class Map : MonoSingleton<Map> 
 {
-    public float TileSize = 0.64f;
-    Tile[,] tiles;
+    public float TileSize = 1.0f;
     public int width;
     public int height;
 
-    public GameObject tempTile=null;
-
-    public Vector2 mouseOverTile { private set; get; }
+    public Vector3 mouseOverTile { private set; get; }
 
     private List<Building> buildings;
     private BuildMenu buildMenu;
 
+	private TileMap tileMap;
+
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         buildings = new List<Building>();
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
-
-        tiles = new Tile[width,height];
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                GameObject newTile = GameObject.Instantiate(tempTile) as GameObject;
-                newTile.transform.parent = transform;
-                newTile.transform.localEulerAngles = Vector3.zero;
-                newTile.transform.localPosition = new Vector3(x * TileSize, y * TileSize);
-                newTile.gameObject.name = x.ToString() + "," + y.ToString();
-                newTile.GetComponent<Tile>().coords = new Vector2(x, y);
-                tiles[x,y] = newTile.GetComponent<Tile>();
-            }
-        }
+		tileMap = GetComponent<TileMap>();
 	}
 
     public int GetBuildingsCount(System.Type type)
@@ -50,35 +35,34 @@ public class Map : MonoSingleton<Map>
         return count;
     }
 
-    public bool ValidateBuilding(Building building, Vector2 pos)
+    public bool ValidateBuilding(Building building, Vector3 pos)
     {
         bool valid = true;
 
-        for (int x = 0; x < building.size.x; x++)
-        {
-            for (int y = 0; y < building.size.y; y++)
-            {
-                int tx = (int)pos.x + x;
-                int ty = (int)pos.y + y;
+		Debug.Log(building.footprint);
 
-                if (tx < 0 ||
-                    tx >= width ||
-                    ty < 0 ||
-                    ty >= height)
-                {
-                    valid = false;
-                }
-                else if (tiles[tx, ty].building != null)
-                {
-                    valid = false;
-                }
-            }
-        }
+		List<Vector3> footprintTiles = building.footprint.tilePositions;
+
+		Debug.Log(footprintTiles);
+
+		for (int i = 0; i < footprintTiles.Count; i++)
+		{
+			Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
+
+			if (checkTile == null)
+			{
+				valid = false;
+			}
+			else if (checkTile.building != null)
+			{
+				valid = false;
+			}
+		}
 
         return valid;
     }
 
-    public bool PlaceBuiding(Building building, Vector2 pos)
+    public bool PlaceBuiding(Building building, Vector3 pos)
     {
         bool valid = true;
 
@@ -86,13 +70,19 @@ public class Map : MonoSingleton<Map>
 
         if (valid)
         {
-            for (int x = 0; x < building.size.x; x++)
-            {
-                for (int y = 0; y < building.size.y; y++)
-                {
-                    tiles[(int)pos.x + x, (int)pos.y + y].AssignBuilding(building);
-                }
-            }
+
+			List<Vector3> footprintTiles = building.footprint.tilePositions;
+			
+			Debug.Log(footprintTiles);
+			
+			for (int i = 0; i < footprintTiles.Count; i++)
+			{
+				Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
+				
+				checkTile.AssignBuilding(building);
+			}
+
+			building.footprint.hide();
 
             buildings.Add(building);
             buildMenu.Refresh();
@@ -106,18 +96,18 @@ public class Map : MonoSingleton<Map>
     {
 	}
 
-    public void MouseOver(Vector2 pos)
+    public void MouseOver(Vector3 pos)
     {
         mouseOverTile = pos;
     }
 
-    public Vector2 GetMouseOver()
+    public Vector3 GetMouseOver()
     {
         return mouseOverTile;
     }
 
     public Tile GetTileOver()
     {
-        return tiles[(int)mouseOverTile.x, (int)mouseOverTile.y];
+		return tileMap.GetTile(mouseOverTile);
     }
 }

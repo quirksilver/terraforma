@@ -3,12 +3,14 @@ using System.Collections;
 
 public class Tile : MonoBehaviour
 {
-    public Vector2 coords;
+    public Vector3 coords;
     public Building building { private set; get; }
 
 	// Use this for initialization
 	void Start () {
         building = null;
+
+		coords = transform.position;
 	}
 	
 	// Update is called once per frame

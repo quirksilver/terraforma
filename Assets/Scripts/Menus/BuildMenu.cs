@@ -50,7 +50,7 @@ public class BuildMenu : MonoBehaviour
                 (i%2==0) ? 0 : rect.sizeDelta.x, 
                 (i/2) * -rect.sizeDelta.y);
 
-            Debug.Log(buildings[0].size.ToString());
+//            Debug.Log(buildings[0].size.ToString());
 
             newButton.GetComponent<BuildingButton>().Setup(buildings[i%2],this);
             buildingButtons.Add(newButton.GetComponent<BuildingButton>());
