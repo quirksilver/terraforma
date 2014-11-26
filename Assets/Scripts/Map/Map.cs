@@ -115,4 +115,9 @@ public class Map : MonoSingleton<Map>
     {
         return mouseOverTile;
     }
+
+    public Tile GetTileOver()
+    {
+        return tiles[(int)mouseOverTile.x, (int)mouseOverTile.y];
+    }
 }
