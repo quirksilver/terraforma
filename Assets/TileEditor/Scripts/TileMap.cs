@@ -39,8 +39,6 @@ public class TileMap : MonoBehaviour
 
 		for (int i = 0; i < instances.Count; i++)
 		{
-			Debug.Log(instances[i]);
-			Debug.Log(i);
 			tiles.Add(instances[i].GetComponent<Tile>());
 		}
 	}

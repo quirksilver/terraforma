@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,6 +15,9 @@ public class Map : MonoSingleton<Map>
     private BuildMenu buildMenu;
 
 	private TileMap tileMap;
+
+    private float tickTimer = 0;
+    public float tickPeriod = 0;
 
 	// Use this for initialization
 	void Awake () {
@@ -38,9 +42,6 @@ public class Map : MonoSingleton<Map>
     public bool ValidateBuilding(Building building, Vector3 pos)
     {
         bool valid = true;
-
-		Debug.Log(building.footprint);
-
 		List<Vector3> footprintTiles = building.footprint.tilePositions;
 
 		Debug.Log(footprintTiles);
@@ -94,6 +95,16 @@ public class Map : MonoSingleton<Map>
     // Update is called once per frame
     void Update()
     {
+        tickTimer += Time.deltaTime;
+        if (tickTimer > tickPeriod)
+        {
+            tickTimer -= tickPeriod;
+            foreach (Building build in buildings)
+            {
+                build.Tick();
+            }
+            buildMenu.Tick();
+        }
 	}
 
     public void MouseOver(Vector3 pos)

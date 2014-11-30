@@ -12,6 +12,7 @@ public class BuildMenu : MonoBehaviour
     public Building[] buildings;
 
     private List<BuildingButton> buildingButtons;
+    public UnityEngine.UI.ScrollRect scrollRect;
 
     public void BuildDome()
     {
@@ -37,11 +38,19 @@ public class BuildMenu : MonoBehaviour
         }
     }
 
+    public void Tick()
+    {
+        foreach (BuildingButton button in buildingButtons)
+        {
+            button.cost.Tick();
+        }
+    }
+
     void Start()
     {
         //Building load
         buildingButtons = new List<BuildingButton>();
-        for (int i = 0; i < 40; i++)
+        for (int i = 0; i < 20; i++)
         {
             GameObject newButton = GameObject.Instantiate(buttonTemp) as GameObject;
             newButton.transform.parent = buttonTemp.transform.parent;
@@ -56,8 +65,12 @@ public class BuildMenu : MonoBehaviour
             buildingButtons.Add(newButton.GetComponent<BuildingButton>());
         }
 
+
+        Canvas.ForceUpdateCanvases();
+
         gridRoot.sizeDelta = new Vector2(0, 19 * 77);
         buttonTemp.SetActive(false);
+        scrollRect.verticalNormalizedPosition = 1.0f;
 
         Refresh();
     }

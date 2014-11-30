@@ -13,11 +13,30 @@ public class BuildingControl : MonoBehaviour
     float alpha = 0;
     float targetAlpha = 0;
 
+    bool over = false;
+
+    public Toggle activeToggle;
+
 	// Use this for initialization
 	void Start () {
 	
 	}
-	
+
+    public void BuildingToggle()
+    {
+        building.buildingActive = activeToggle.isOn;
+    }
+
+    public void OnOver()
+    {
+        over = true;
+    }
+
+    public void OnExit()
+    {
+        over = false;
+    }
+
 	// Update is called once per frame
 	void Update () {
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
@@ -35,12 +54,16 @@ public class BuildingControl : MonoBehaviour
                 if (Map.instance.GetTileOver().building != null)
                 {
                     building = Map.instance.GetTileOver().building;
-                    nameLabel.text = building.name;
+                    nameLabel.text = building.GetComponent<Building>().DisplayName;
                     targetAlpha = 1.0f;
+                    activeToggle.isOn = building.buildingActive;
                 }
                 else
                 {
-                    targetAlpha = 0;
+                    if (!over)
+                    {
+                        targetAlpha = 0.0f;
+                    }
                 }
             }
         }

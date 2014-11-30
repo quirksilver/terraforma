@@ -20,4 +20,9 @@ public class Dome : Building {
 
 	
 	}
+
+    public override void Tick()
+    {
+        base.Tick();
+    }
 }
