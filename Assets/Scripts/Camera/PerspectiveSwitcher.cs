@@ -38,9 +38,9 @@ public class PerspectiveSwitcher : MonoBehaviour
 		{
 			orthoOn = !orthoOn;
 			if (orthoOn)
-				blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
+				blender.BlendToMatrix(ortho, 1f, false, transform.position, orthoPos, transform.rotation, orthoRot);
 			else
-				blender.BlendToMatrix(perspective, 1f, true, orthoPos, perspectivePos, orthoRot, perspectiveRot);
+				blender.BlendToMatrix(perspective, 1f, true, transform.position, perspectivePos, transform.rotation, perspectiveRot);
 		}
 	}
 }

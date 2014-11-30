@@ -23,6 +23,8 @@ public class DragMouseOrbit : MonoBehaviour
 	
 	float velocityX = 0.0f;
 	float velocityY = 0.0f;
+
+	Vector3 lastMousePos = Vector3.zero;
 	
 	// Use this for initialization
 	void Start()
@@ -44,9 +46,31 @@ public class DragMouseOrbit : MonoBehaviour
 		{
 			if (Input.GetMouseButton(0))
 			{
-				velocityX += xSpeed * Input.GetAxis("Mouse X") * 0.02f;//distance * 0.02f;
-				velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.02f;
+				velocityX = Input.mousePosition.x - lastMousePos.x;//Input.GetAxis("Mouse X"); //* 0.02f;//distance * 0.02f;
+				velocityY = Input.GetAxis("Mouse Y"); //* 0.02f;
+
+				Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+				
+				RaycastHit hit;
+				
+				Physics.Raycast(ray, out hit);
+				
+				Vector3 currentPos = hit.point;
+				
+				Physics.Raycast(camera.ScreenPointToRay(lastMousePos), out hit);
+				
+				Vector3 lastPos = hit.point;
+				
+				float dist = Vector3.Distance(currentPos, lastPos);
+				
+				Debug.Log(dist);
 			}
+
+
+
+			//float xAngle = 2* (Mathf.Asin((dist/2)/(85/2)));
+
+			//Debug.Log(xAngle);
 			
 			rotationYAxis += velocityX;
 			rotationXAxis -= velocityY;
@@ -57,21 +81,23 @@ public class DragMouseOrbit : MonoBehaviour
 			Quaternion toRotation = Quaternion.Euler(rotationXAxis, rotationYAxis, 0);
 			Quaternion rotation = toRotation;
 			
-			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
-			
-			RaycastHit hit;
-			if (Physics.Linecast(target.position, transform.position, out hit))
-			{
-				distance -= hit.distance;
-			}
+			//distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
+
+
+
+
+			//Debug.Log(hit.collider);
+
 			Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
 			Vector3 position = rotation * negDistance + target.position;
 			
 			transform.rotation = rotation;
 			transform.position = position;
 			
-			velocityX = Mathf.Lerp(velocityX, 0, Time.deltaTime * smoothTime);
-			velocityY = Mathf.Lerp(velocityY, 0, Time.deltaTime * smoothTime);
+			//velocityX = Mathf.Lerp(velocityX, 0, Time.deltaTime * smoothTime);
+			//velocityY = Mathf.Lerp(velocityY, 0, Time.deltaTime * smoothTime);
+
+			lastMousePos = Input.mousePosition;
 		}
 		
 	}

@@ -15,15 +15,22 @@ public class Map : MonoSingleton<Map>
     private BuildMenu buildMenu;
 
 	private TileMap tileMap;
-
     private float tickTimer = 0;
     public float tickPeriod = 0;
+
+	private Level level;
+
 
 	// Use this for initialization
 	void Awake () {
         buildings = new List<Building>();
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
-		tileMap = GetComponent<TileMap>();
+		//tileMap = GetComponent<TileMap>();
+	}
+
+	public void LoadLevel(Level levelToLoad)
+	{
+		level = levelToLoad;
 	}
 
     public int GetBuildingsCount(System.Type type)
