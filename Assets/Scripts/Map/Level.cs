@@ -8,6 +8,9 @@ public class Level : MonoBehaviour {
 	public List<Building> buildings { get; set; }
 	public int id;
 
+	public Vector3 cameraPos;
+	public Vector3 cameraRot;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -24,9 +27,6 @@ public class Level : MonoBehaviour {
 	void OnMouseDown()
 	{
 		Map.instance.LoadLevel(this);
-		//disable collider, enable everything else
-
-		collider.enabled = false;
 	}
 
 	public void Unload()

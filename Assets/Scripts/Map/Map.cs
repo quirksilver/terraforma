@@ -20,6 +20,8 @@ public class Map : MonoSingleton<Map>
 
 	private Level level;
 
+	public Level[] levels;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -31,6 +33,25 @@ public class Map : MonoSingleton<Map>
 	public void LoadLevel(Level levelToLoad)
 	{
 		level = levelToLoad;
+
+		tileMap = level.GetComponent<TileMap>();
+		buildings = level.buildings;
+
+		SetLevelCollidersEnabled(false);
+
+	}
+
+	public void GoToWorldMap()
+	{
+		SetLevelCollidersEnabled(true);
+	}
+
+	public void SetLevelCollidersEnabled(bool value)
+	{
+		for (int i = 0; i < levels.Length; i++)
+		{
+			levels[i].collider.enabled = value;
+		}
 	}
 
     public int GetBuildingsCount(System.Type type)
@@ -110,7 +131,7 @@ public class Map : MonoSingleton<Map>
             {
                 build.Tick();
             }
-            buildMenu.Tick();
+            if (buildMenu) buildMenu.Tick();
         }
 	}
 
