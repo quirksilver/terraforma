@@ -97,8 +97,6 @@ public class Map : MonoSingleton<Map>
         bool valid = true;
 		List<Vector3> footprintTiles = building.footprint.tilePositions;
 
-		Debug.Log(footprintTiles);
-
 		for (int i = 0; i < footprintTiles.Count; i++)
 		{
 			Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);

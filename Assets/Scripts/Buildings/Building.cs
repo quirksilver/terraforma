@@ -33,6 +33,8 @@ public class Building : MonoBehaviour {
 
     public bool buildingActive=true;
 
+    private BuildingHUD hud;
+
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
@@ -53,6 +55,11 @@ public class Building : MonoBehaviour {
 	{
 		footprint.hide();
 	}
+
+    public void SetHUD(BuildingHUD h)
+    {
+        hud = h;
+    }
 
     public bool CanBuild()
     {
@@ -83,6 +90,12 @@ public class Building : MonoBehaviour {
             ResourceManager.instance.RemoveResource(runningCostAir, ResourceManager.ResourceType.Air);
             ResourceManager.instance.RemoveResource(runningCostFood, ResourceManager.ResourceType.Food);
             ResourceManager.instance.RemoveResource(runningCostMetal, ResourceManager.ResourceType.Metal);
+
+            hud.AddRes(produceWater, ResourceManager.ResourceType.Water);
+            hud.AddRes(produceHeat, ResourceManager.ResourceType.Heat);
+            hud.AddRes(produceAir, ResourceManager.ResourceType.Air);
+            hud.AddRes(produceFood, ResourceManager.ResourceType.Food);
+            hud.AddRes(produceMetal, ResourceManager.ResourceType.Metal);
         }
     }
 }

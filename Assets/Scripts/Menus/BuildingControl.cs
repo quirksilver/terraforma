@@ -47,10 +47,11 @@ public class BuildingControl : MonoBehaviour
             touchStart = Map.instance.GetTileOver();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        /*if (Input.GetMouseButtonUp(0))
         {
             if (Map.instance.GetTileOver() == touchStart)
             {
+                Debug.Log(Map.instance.GetTileOver().building);
                 if (Map.instance.GetTileOver().building != null)
                 {
                     building = Map.instance.GetTileOver().building;
@@ -66,6 +67,6 @@ public class BuildingControl : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
 	}
 }

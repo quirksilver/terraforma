@@ -4,6 +4,7 @@ using System.Collections;
 public class BuildingPlacement : MonoBehaviour 
 {
     public string buildingPrefabPath;
+    public GameObject BuildingHUD;
     private GameObject newBuilding;
     Vector3 lastPos;
 
@@ -47,6 +48,7 @@ public class BuildingPlacement : MonoBehaviour
             {
                 Destroy(gameObject);
                 Building building = newBuilding.GetComponent<Building>();
+                BuildingHUDControl.instance.NewHud(building);
                 building.enabled = true;
             }
         }

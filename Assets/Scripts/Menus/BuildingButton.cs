@@ -20,8 +20,6 @@ public class BuildingButton : MonoBehaviour
         cost.AddResource(b.buildCostHeat, ResourceManager.ResourceType.Heat);
         cost.AddResource(b.buildCostMetal, ResourceManager.ResourceType.Metal);
         cost.AddResource(b.buildCostWater, ResourceManager.ResourceType.Water);
-
-        cost.Tick();
     }
 
     public void Refresh()
