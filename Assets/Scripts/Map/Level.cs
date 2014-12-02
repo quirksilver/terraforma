@@ -8,14 +8,16 @@ public class Level : MonoBehaviour {
 	public List<Building> buildings { get; set; }
 	public int id;
 
-	public Vector3 cameraPos;
-	public Vector3 cameraRot;
+	private PerspectiveSwitcher switcher;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 	
 		buildings = new List<Building>();
 		tileMap = GetComponent<TileMap>() as TileMap;
+
+		switcher = Camera.main.GetComponent<PerspectiveSwitcher>();
+		
 
 	}
 	
@@ -26,11 +28,17 @@ public class Level : MonoBehaviour {
 
 	void OnMouseDown()
 	{
+		Debug.Log("MOUSE DOWN ON LEVEL " + id );
+
 		Map.instance.LoadLevel(this);
+
+		switcher.switchToOrtho(this.transform.FindChild("FocusPoint"));
+
 	}
 
 	public void Unload()
 	{
 		//disable everything
+
 	}
 }

@@ -19,6 +19,9 @@ public class BuildingPlacement : MonoBehaviour
         Building building = newBuilding.GetComponent(type) as Building;
         building.enabled = false;
 
+		Map.instance.AddObjectToLevel(newBuilding);
+		Map.instance.AddObjectToLevel(gameObject);
+
     }
 
 	// Update is called once per frame
@@ -47,5 +50,7 @@ public class BuildingPlacement : MonoBehaviour
                 building.enabled = true;
             }
         }
+
+		lastPos = newPos;
 	}
 }

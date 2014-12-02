@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour
 	void Start () {
         building = null;
 
-		coords = transform.position;
+		coords = transform.localPosition;
 	}
 	
 	// Update is called once per frame

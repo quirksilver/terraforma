@@ -14,33 +14,59 @@ public class PerspectiveSwitcher : MonoBehaviour
 	private MatrixBlender blender;
 	private bool        orthoOn;
 
-	public Vector3 orthoPos, perspectivePos;
-	public Vector3 orthoRotEuler, perspectiveRotEuler;
-
+	private Vector3 orthoPos, perspectivePos;
 	private Quaternion orthoRot, perspectiveRot;
+
+	public Transform target;
+
 	
 	void Start()
 	{
+		//perspectivePos = target.position + new Vector3(0.0f, 0.0f, -90.0f);
+
 		aspect = (float) Screen.width / (float) Screen.height;
 		ortho = Matrix4x4.Ortho(-orthographicSize * aspect, orthographicSize * aspect, -orthographicSize, orthographicSize, near, far);
 		perspective = Matrix4x4.Perspective(fov, aspect, near, far);
-		camera.projectionMatrix = ortho;
-		orthoOn = true;
+		camera.projectionMatrix = perspective;
+		orthoOn = false;
 		blender = (MatrixBlender) GetComponent(typeof(MatrixBlender));
 
-		orthoRot = Quaternion.Euler(orthoRotEuler);
-		perspectiveRot = Quaternion.Euler(perspectiveRotEuler);
+		//transform.position = perspectivePos;
+		//transform.rotation = perspectiveRot;
 	}
 	
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+
+	}
+
+	public void switchToOrtho(Transform focusPoint)
+	{
+		if (orthoOn) return;
+
+		GetComponent<DragMouseOrbit>().enabled = false;
+
+		orthoRot = focusPoint.parent.rotation * Quaternion.Euler(30, 45, 0);
+		orthoPos = orthoRot * (new Vector3(0.0f, 0.0f, -110)) + focusPoint.position;
+
+		orthoOn = true;
+		if (orthoOn)
 		{
-			orthoOn = !orthoOn;
-			if (orthoOn)
-				blender.BlendToMatrix(ortho, 1f, false, transform.position, orthoPos, transform.rotation, orthoRot);
-			else
-				blender.BlendToMatrix(perspective, 1f, true, transform.position, perspectivePos, transform.rotation, perspectiveRot);
+			perspectivePos = transform.position;
+			perspectiveRot = transform.rotation;
+			
+			blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
 		}
+
+	}
+
+	public void switchToPerspective()
+	{
+		if (!orthoOn) return;
+
+		orthoOn = false;
+		blender.BlendToMatrix(perspective, 1f, true, transform.position, perspectivePos, transform.rotation, perspectiveRot);
+
+		GetComponent<DragMouseOrbit>().enabled = true;
 	}
 }

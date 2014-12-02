@@ -500,7 +500,7 @@ public class TileMapEditor : Editor
 	void RecordUndo()
 	{
 		updateConnections = true;
-#if UNITY_4_3
+#if UNITY_4_6
 		Undo.RecordObject(target, "TileMap Changed");
 #else
 		Undo.RegisterUndo(target, "TileMap Changed");
@@ -510,8 +510,8 @@ public class TileMapEditor : Editor
 	void RecordDeepUndo()
 	{
 		updateConnections = true;
-#if UNITY_4_3
-		Undo.RegisterFullObjectHierarchyUndo(target);
+#if UNITY_4_6
+		Undo.RegisterFullObjectHierarchyUndo(target, "TileMap Changed");
 #else
 		Undo.RegisterSceneUndo("TileMap Changed");
 #endif

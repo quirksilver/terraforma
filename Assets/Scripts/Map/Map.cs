@@ -13,6 +13,7 @@ public class Map : MonoSingleton<Map>
 
     private List<Building> buildings;
     private BuildMenu buildMenu;
+	private BuildingControl buildingControl;
 
 	private TileMap tileMap;
     private float tickTimer = 0;
@@ -20,21 +21,33 @@ public class Map : MonoSingleton<Map>
 
 	private Level level;
 
-	public Level[] levels;
-
+	public GameObject[] levels;
 
 	// Use this for initialization
 	void Awake () {
         buildings = new List<Building>();
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
+
+		buildingControl = FindObjectOfType(typeof(BuildingControl)) as BuildingControl;
 		//tileMap = GetComponent<TileMap>();
+	}
+
+	void Start() {
+
+
+		GoToWorldMap();
 	}
 
 	public void LoadLevel(Level levelToLoad)
 	{
+		Debug.Log ("LoadLevel " + levelToLoad); 
+
+		buildMenu.enabled = true;
+		buildingControl.enabled = true;
+
 		level = levelToLoad;
 
-		tileMap = level.GetComponent<TileMap>();
+		tileMap = level.GetComponentInChildren<TileMap>();
 		buildings = level.buildings;
 
 		SetLevelCollidersEnabled(false);
@@ -43,6 +56,11 @@ public class Map : MonoSingleton<Map>
 
 	public void GoToWorldMap()
 	{
+		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();
+
+		buildMenu.enabled = false;
+		buildingControl.enabled = false;
+
 		SetLevelCollidersEnabled(true);
 	}
 
@@ -52,6 +70,13 @@ public class Map : MonoSingleton<Map>
 		{
 			levels[i].collider.enabled = value;
 		}
+	}
+
+	public void AddObjectToLevel(GameObject obj)
+	{
+		obj.transform.parent = level.transform;
+
+		obj.transform.rotation = level.transform.rotation;
 	}
 
     public int GetBuildingsCount(System.Type type)
@@ -131,8 +156,13 @@ public class Map : MonoSingleton<Map>
             {
                 build.Tick();
             }
-            if (buildMenu) buildMenu.Tick();
+            if (buildMenu && buildMenu.enabled) buildMenu.Tick();
         }
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			GoToWorldMap();
+		}
 	}
 
     public void MouseOver(Vector3 pos)

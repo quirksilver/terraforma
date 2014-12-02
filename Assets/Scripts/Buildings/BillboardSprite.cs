@@ -4,26 +4,27 @@ using System.Collections;
 public class BillboardSprite : MonoBehaviour {
 
 
-	private GameObject camera;
+	private GameObject billboardCam;
 
 	// Use this for initialization
 	void Start () {
 
-		if (camera == null)
+		if (billboardCam == null)
 		{
-			camera = Camera.main.gameObject;
+			billboardCam = Camera.main.gameObject;
 		}
 		
-		Vector3 lookDirection = camera.transform.forward;
-		
-		transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+
+
+		Debug.Log("camera up " + billboardCam.transform.up);
+
+		Vector3 lookDirection = billboardCam.transform.forward;
+		transform.rotation = Quaternion.LookRotation(lookDirection, billboardCam.transform.up);
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-        
-	
+		
 	}
 }

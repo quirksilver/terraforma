@@ -8,6 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
+  - 114: {fileID: 11400228}
+  - 65: {fileID: 6500228}
   m_Layer: 0
   m_Name: TestLevel
   m_TagString: Untagged
@@ -2064,7 +2066,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400230}
   - 114: {fileID: 11400230}
-  - 114: {fileID: 11400228}
   m_Layer: 0
   m_Name: TileMap
   m_TagString: Untagged
@@ -4136,6 +4137,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400460}
+  m_Layer: 0
+  m_Name: FocusPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -4147,6 +4163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400230}
+  - {fileID: 400460}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400002
@@ -7125,6 +7142,18 @@ Transform:
   - {fileID: 400454}
   m_Father: {fileID: 400230}
   m_RootOrder: 110
+--- !u!4 &400460
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.5, y: 0, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
+  m_RootOrder: 1
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -13053,6 +13082,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: .200000003, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6500228
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.3100004, y: 4, z: 13.4799995}
+  m_Center: {x: 4.5, y: 0, z: 5}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14426,15 +14467,15 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100230}
+  m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5531cf0c9ce0edd4cbc32af31141e574, type: 3}
+  m_Script: {fileID: 11500000, guid: eb03ff9d2fdf44e61be51c3133365299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TileSize: 1
-  width: 0
-  height: 0
+  id: 0
+  cameraPos: {x: 0, y: 0, z: 0}
+  cameraRot: {x: 0, y: 0, z: 0}
 --- !u!114 &11400230
 MonoBehaviour:
   m_ObjectHideFlags: 1
