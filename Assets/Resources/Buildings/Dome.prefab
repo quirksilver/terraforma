@@ -1022,10 +1022,11 @@ MonoBehaviour:
   runningCostFood: 0
   runningCostMetal: 0
   produceWater: 0
-  produceHeat: 0
+  produceHeat: 5
   produceAir: 0
   produceFood: 5
   produceMetal: 0
+  buildingActive: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

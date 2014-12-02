@@ -52,6 +52,11 @@ public class BuildingHUD : MonoBehaviour {
 
     public void AddRes(int ammount, ResourceManager.ResourceType type)
     {
+        if (ammount == 0)
+        {
+            return;
+        }
+
         GameObject newIcon = GameObject.Instantiate(resTemp) as GameObject;
         newIcon.transform.parent = transform;
         newIcon.transform.localScale = Vector3.one;
