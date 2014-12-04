@@ -21,7 +21,9 @@ public class TileMap : MonoBehaviour
 	public List<Transform> prefabs = new List<Transform>(100000);
 	public List<int> directions = new List<int>(100000);
 	public List<Transform> instances = new List<Transform>(100000);
+
 	public List<Tile> tiles;
+	public List<ResourceTile> resourceTiles;
 
 	void Start()
 	{
@@ -37,10 +39,26 @@ public class TileMap : MonoBehaviour
 
 		Debug.Log(instances.Count);
 
+		Tile tempTile;
+
 		for (int i = 0; i < instances.Count; i++)
 		{
-			tiles.Add(instances[i].GetComponent<Tile>());
+			tempTile = instances[i].GetComponent<Tile>();
+
+				tiles.Add(tempTile);
+
+			if (tempTile is ResourceTile)
+			{
+				Debug.Log("FOUND RESOURCE TILE " + tempTile);
+				resourceTiles.Add(tempTile as ResourceTile);
+			}
 		}
+	}
+
+	public void RemoveResourceTile(ResourceTile removeTile)
+	{
+		resourceTiles.RemoveAll(item => item == removeTile);
+		Destroy(removeTile);
 	}
 
 	public int GetHash(int x, int z)

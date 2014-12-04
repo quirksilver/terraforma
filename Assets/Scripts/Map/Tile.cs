@@ -7,14 +7,14 @@ public class Tile : MonoBehaviour
     public Building building { private set; get; }
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
         building = null;
 
 		coords = transform.localPosition;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
 	
 	}
 
@@ -23,7 +23,7 @@ public class Tile : MonoBehaviour
         building = b;
     }
 
-    void OnMouseOver()
+    public virtual void OnMouseOver()
     {
         Map.instance.MouseOver(coords);
     }

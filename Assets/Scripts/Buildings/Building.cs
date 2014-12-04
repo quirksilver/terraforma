@@ -35,6 +35,10 @@ public class Building : MonoBehaviour {
 
     private BuildingHUD hud;
 
+	public GameObject harvesterPrefab;
+
+	private List<ResourceHarvester> harvesters = new List<ResourceHarvester>();
+
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
@@ -60,6 +64,15 @@ public class Building : MonoBehaviour {
     {
         hud = h;
     }
+
+	public void CreateNewHarvester()
+	{
+		GameObject harvesterInstance = (GameObject)Instantiate(harvesterPrefab);
+		ResourceHarvester newHarvester = harvesterInstance.GetComponent<ResourceHarvester>();
+		harvesters.Add(newHarvester);
+		newHarvester.Setup(this);
+
+	}
 
     public bool CanBuild()
     {
@@ -98,4 +111,30 @@ public class Building : MonoBehaviour {
             hud.AddRes(produceMetal, ResourceManager.ResourceType.Metal);
         }
     }
+
+	public void AddResourceFromHarvester(ResourceManager.ResourceType type, int amount)
+	{
+		ResourceManager.instance.AddResource(amount, type);
+		hud.AddRes(amount, type);
+	}
+
+	public Tile GetNearestTile(Vector3 pos)
+	{
+		float dist;
+		float shortestDist = float.NaN;
+		Vector3 closestPos = Vector3.zero;
+
+		for (int i = 0; i < this.footprint.tilePositions.Count; i++)
+		{
+			dist = Vector3.Distance(footprint.tilePositions[i]+transform.position, pos);
+
+			if (dist < shortestDist || float.IsNaN(shortestDist))
+			{
+				shortestDist = dist;
+				closestPos = footprint.tilePositions[i]+transform.position;
+			}
+		}
+
+		return Map.instance.tileMap.GetTile(closestPos);
+	}
 }

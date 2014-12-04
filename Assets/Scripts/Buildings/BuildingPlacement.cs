@@ -50,6 +50,8 @@ public class BuildingPlacement : MonoBehaviour
                 Building building = newBuilding.GetComponent<Building>();
                 BuildingHUDControl.instance.NewHud(building);
                 building.enabled = true;
+
+				building.CreateNewHarvester();
             }
         }
 

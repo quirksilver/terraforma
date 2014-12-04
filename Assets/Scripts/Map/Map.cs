@@ -15,7 +15,7 @@ public class Map : MonoSingleton<Map>
     private BuildMenu buildMenu;
 	private BuildingControl buildingControl;
 
-	private TileMap tileMap;
+	public TileMap tileMap { private set; get; }
     private float tickTimer = 0;
     public float tickPeriod = 0;
 
