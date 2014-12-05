@@ -11,7 +11,6 @@ public class Map : MonoSingleton<Map>
 
     public Vector3 mouseOverTile { private set; get; }
 
-    private List<Building> buildings;
     private BuildMenu buildMenu;
 	private BuildingControl buildingControl;
 
@@ -21,11 +20,16 @@ public class Map : MonoSingleton<Map>
 
 	private Level level;
 
+    private int levelIndex = 0;
+
 	public GameObject[] levels;
+
+    public bool Pause = false;
+
+    public TimeSpan timeInLevel;
 
 	// Use this for initialization
 	void Awake () {
-        buildings = new List<Building>();
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
 
 		buildingControl = FindObjectOfType(typeof(BuildingControl)) as BuildingControl;
@@ -47,15 +51,22 @@ public class Map : MonoSingleton<Map>
 		level = levelToLoad;
 
 		tileMap = level.GetComponentInChildren<TileMap>();
-		buildings = level.buildings;
 
 		SetLevelCollidersEnabled(false);
 
+        timeInLevel = new TimeSpan(0);
 	}
 
     public Level GetLevel()
     {
         return level;
+    }
+
+    public void CompleteLevel()
+    {
+        level = null;
+        levelIndex++;
+        GoToWorldMap();
     }
 
 	public void GoToWorldMap()
@@ -72,7 +83,7 @@ public class Map : MonoSingleton<Map>
 	{
 		for (int i = 0; i < levels.Length; i++)
 		{
-			levels[i].collider.enabled = value;
+			levels[i].collider.enabled = value ? (levelIndex==i) : false;
 		}
 	}
 
@@ -86,7 +97,7 @@ public class Map : MonoSingleton<Map>
     public int GetBuildingsCount(System.Type type)
     {
         int count = 0;
-        foreach (Building b in buildings)
+        foreach (Building b in level.buildings)
         {
             if (b.GetType() == type)
             {
@@ -144,12 +155,12 @@ public class Map : MonoSingleton<Map>
 			
 			building.GetBorderTilePositions();
 
-            buildings.Add(building);
+            level.buildings.Add(building);
             buildMenu.Refresh();
 
-			for (i = 0; i < buildings.Count; i++)
+            for (i = 0; i < level.buildings.Count; i++)
 			{
-				buildings[i].UpdateBorderTilePositions();
+                level.buildings[i].UpdateBorderTilePositions();
 			}
         }
 
@@ -159,15 +170,21 @@ public class Map : MonoSingleton<Map>
     // Update is called once per frame
     void Update()
     {
-        tickTimer += Time.deltaTime;
-        if (tickTimer > tickPeriod)
+        if (level != null && Pause == false)
         {
-            tickTimer -= tickPeriod;
-            foreach (Building build in buildings)
+            timeInLevel += TimeSpan.FromSeconds(Time.deltaTime);
+            tickTimer += Time.deltaTime;
+            if (tickTimer > tickPeriod)
             {
-                build.Tick();
+                tickTimer -= tickPeriod;
+                foreach (Building build in level.buildings)
+                {
+                    build.Tick();
+                }
+                if (buildMenu && buildMenu.enabled) buildMenu.Tick();
+
+                level.storyEventManager.Check();
             }
-            if (buildMenu && buildMenu.enabled) buildMenu.Tick();
         }
 
 		if (Input.GetKeyDown(KeyCode.Space))

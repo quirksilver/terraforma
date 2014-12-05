@@ -22,4 +22,37 @@ public class StoryEvent
     public eTrigger trigger = eTrigger.Time;
     public int[] resourceRequirements = new int[(int)ResourceType.Count];
     public System.TimeSpan time = System.TimeSpan.Zero;
+
+    private bool fired = false;
+
+    public void Check()
+    {
+        if (fired)
+        {
+            return;
+        }
+
+        bool passed = true;
+
+        if (trigger == eTrigger.Resources)
+        {
+            for (int i = 0; i < (int)ResourceType.Count; i++)
+            {
+                if (Map.instance.GetLevel().GetResource((ResourceType)i) < resourceRequirements[i])
+                {
+                    passed = false;
+                }
+            }
+        }
+        else if (trigger == eTrigger.Time)
+        {
+            passed = Map.instance.timeInLevel > time;
+        }
+
+        if (passed)
+        {
+            fired = true;
+            MessageWindow.instance.StartMessages(message, EventResponce == eEventResponse.WinLevel);
+        }
+    }
 }

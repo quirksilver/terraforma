@@ -11,6 +11,8 @@ public class Level : MonoBehaviour {
 	private PerspectiveSwitcher switcher;
     private int[] resourceAmmount;
 
+    public StoryEventManager storyEventManager { get; private set; }
+
 	// Use this for initialization
 	void Awake () {
 	
@@ -22,11 +24,12 @@ public class Level : MonoBehaviour {
         resourceAmmount = new int[(int)ResourceType.Count];
 
         resourceAmmount[(int)ResourceType.Metal] = 200;
+
+        storyEventManager = GetComponent<StoryEventManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	void OnMouseDown()

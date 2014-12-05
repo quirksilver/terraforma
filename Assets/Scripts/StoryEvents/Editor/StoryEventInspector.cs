@@ -54,7 +54,7 @@ public class LevelScriptEditor : Editor
             //Set responce
             eve.EventResponce = (eEventResponse)EditorGUILayout.EnumPopup("Responce", eve.EventResponce);
 
-            if (eve.EventResponce == eEventResponse.Message)
+            //if (eve.EventResponce == eEventResponse.Message)
             {
                 for (int i2 = 0; i2 < eve.message.Count; i2++)
                 {

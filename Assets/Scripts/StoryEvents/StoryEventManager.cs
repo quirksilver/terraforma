@@ -15,4 +15,16 @@ public class StoryEventManager : MonoBehaviour
 	void Update () {
 	
 	}
+
+    static void SendEvent(string eve)
+    {
+    }
+
+    public void Check()
+    {
+        foreach (StoryEvent eve in events)
+        {
+            eve.Check();
+        }
+    }
 }
