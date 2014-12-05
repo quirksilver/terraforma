@@ -15,6 +15,6 @@ public class TitleScreen : MonoBehaviour {
 
     public void StartGame()
     {
-        Application.LoadLevel("Map");
+        SceneSwitcher.ChangeScene(1);
     }
 }

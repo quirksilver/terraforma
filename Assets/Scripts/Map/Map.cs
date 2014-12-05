@@ -68,7 +68,14 @@ public class Map : MonoSingleton<Map>
     {
         level = null;
         levelIndex++;
-        GoToWorldMap();
+        if (levelIndex >= levels.Length)
+        {
+            SceneSwitcher.ChangeScene(2);
+        }
+        else
+        {
+            GoToWorldMap();
+        }
     }
 
 	public void GoToWorldMap()
