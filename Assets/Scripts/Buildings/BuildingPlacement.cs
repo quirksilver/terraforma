@@ -51,7 +51,8 @@ public class BuildingPlacement : MonoBehaviour
                 BuildingHUDControl.instance.NewHud(building);
                 building.enabled = true;
 
-				building.CreateNewHarvester();
+				//Testing
+				//building.CreateNewHarvester();
             }
         }
 

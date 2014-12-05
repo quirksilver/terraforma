@@ -21,6 +21,12 @@ public class Tile : MonoBehaviour
     public void AssignBuilding(Building b)
     {
         building = b;
+
+	
+		PathTile pTile = GetComponent<PathTile>();
+		DestroyImmediate(pTile);
+
+		Map.instance.tileMap.UpdateConnections();
     }
 
     public virtual void OnMouseOver()

@@ -113,7 +113,7 @@ public class ResourceHarvester : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogError("No closest tile of type " + typeToFind + " found.");
+			Debug.LogError("No tile of type " + typeToFind + " found.");
 			return null;
 		}
 	}

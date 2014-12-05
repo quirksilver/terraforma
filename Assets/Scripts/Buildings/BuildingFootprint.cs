@@ -16,7 +16,7 @@ public class BuildingFootprint : MonoBehaviour {
 	public List<Vector3> tilePositions { get; set; }
 	
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 		if (tilePositions==null)
 			CalculatePivot(false);

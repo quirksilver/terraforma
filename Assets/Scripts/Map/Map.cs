@@ -29,7 +29,6 @@ public class Map : MonoSingleton<Map>
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
 
 		buildingControl = FindObjectOfType(typeof(BuildingControl)) as BuildingControl;
-		//tileMap = GetComponent<TileMap>();
 	}
 
 	void Start() {
@@ -126,8 +125,10 @@ public class Map : MonoSingleton<Map>
 			List<Vector3> footprintTiles = building.footprint.tilePositions;
 			
 			Debug.Log(footprintTiles);
-			
-			for (int i = 0; i < footprintTiles.Count; i++)
+
+			int i;
+
+			for (i = 0; i < footprintTiles.Count; i++)
 			{
 				Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
 				
@@ -135,9 +136,16 @@ public class Map : MonoSingleton<Map>
 			}
 
 			building.footprint.hide();
+			
+			building.GetBorderTilePositions();
 
             buildings.Add(building);
             buildMenu.Refresh();
+
+			for (i = 0; i < buildings.Count; i++)
+			{
+				buildings[i].UpdateBorderTilePositions();
+			}
         }
 
         return valid;

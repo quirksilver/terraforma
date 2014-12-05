@@ -37,22 +37,39 @@ public class Building : MonoBehaviour {
 
 	public GameObject harvesterPrefab;
 
-	private List<ResourceHarvester> harvesters = new List<ResourceHarvester>();
+	protected List<ResourceHarvester> harvesters = new List<ResourceHarvester>();
+
+	protected List<Vector3> borderTiles;
 
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
-		
-		Debug.Log(footprint);
+		//Debug.Log(footprint);
 	
 	}
 
 	// Use this for initialization
-	void Start() {
+	public virtual void Start() {
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
+
+		Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
+		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
+		Vector3 RTCorner = new Vector3(0.5f, 0, 0.5f);
+		Vector3 RBCorner = new Vector3(0.5f, 0, -0.5f);
+		
+		
+		for (int i = 0; i < borderTiles.Count; i++)
+		{
+			//Debug.Log("DRAW SOME LINES");
+			Debug.DrawLine(transform.position + borderTiles[i] + LBCorner, transform.position + borderTiles[i] + LTCorner, Color.green);
+			Debug.DrawLine(transform.position + borderTiles[i] + LTCorner, transform.position + borderTiles[i] + RTCorner, Color.green);
+			Debug.DrawLine(transform.position + borderTiles[i] + RTCorner, transform.position + borderTiles[i] + RBCorner, Color.green);
+			Debug.DrawLine(transform.position + borderTiles[i] + RBCorner, transform.position + borderTiles[i] + LBCorner, Color.green);
+		}
 	}
 
 	protected void HideFootprint()
@@ -136,5 +153,67 @@ public class Building : MonoBehaviour {
 		}
 
 		return Map.instance.tileMap.GetTile(closestPos);
+	}
+
+	public void UpdateBorderTilePositions()
+	{
+		Debug.Log(borderTiles);
+
+		for (int i  = borderTiles.Count - 1; i >= 0; i--)
+		{
+			Debug.Log("path tile " + Map.instance.tileMap.GetPathTile(transform.position + borderTiles[i]));
+			if (Map.instance.tileMap.GetPathTile(transform.position + borderTiles[i]) == null)
+			{
+				borderTiles.RemoveAt(i);
+			}
+		}
+	}
+
+	public void GetBorderTilePositions()
+	{
+		Vector3 currentPos = Vector3.zero;
+
+		borderTiles = new List<Vector3>();
+
+		Vector3[] directions = new Vector3[4];
+		directions[0] = Vector3.left;
+		directions[1] = Vector3.forward;
+		directions[2] = Vector3.right;
+		directions[3] = Vector3.back;
+
+		Vector3 checkPos;
+
+		for (int i = 0; i < footprint.tilePositions.Count; i++)
+		{
+			for (int j = 0; j < directions.Length; j++)
+			{
+				checkPos = footprint.tilePositions[i]  + directions[j];
+
+				if (footprint.tilePositions.IndexOf(checkPos) == -1 && borderTiles.IndexOf(checkPos) == -1)
+				{
+					borderTiles.Add(checkPos);
+				}
+			}
+		}
+
+		UpdateBorderTilePositions();
+
+		//DEBUG
+		/*
+		Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
+		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
+		Vector3 RTCorner = new Vector3(0.5f, 0, 0.5f);
+		Vector3 RBCorner = new Vector3(0.5f, 0, -0.5f);
+		
+		
+		for (int i = 0; i < borderTiles.Count; i++)
+		{
+			Debug.Log("DRAW SOME LINES");
+			Debug.DrawLine(borderTiles[i] + LBCorner, borderTiles[i] + LTCorner, Color.green, 50.0f, true);
+			Debug.DrawLine(borderTiles[i] + LTCorner, borderTiles[i] + RTCorner, Color.green, 50.0f, true);
+			Debug.DrawLine(borderTiles[i] + RTCorner, borderTiles[i] + RBCorner, Color.green, 50.0f, true);
+			Debug.DrawLine(borderTiles[i] + RBCorner, borderTiles[i] + LBCorner, Color.green, 50.0f, true);
+		}*/
+
 	}
 }
