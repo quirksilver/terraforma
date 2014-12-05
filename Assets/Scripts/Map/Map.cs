@@ -53,6 +53,11 @@ public class Map : MonoSingleton<Map>
 
 	}
 
+    public Level GetLevel()
+    {
+        return level;
+    }
+
 	public void GoToWorldMap()
 	{
 		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();

@@ -15,11 +15,11 @@ public class BuildingButton : MonoBehaviour
         label.text = b.name;
         menu = m;
 
-        cost.AddResource(b.buildCostAir, ResourceManager.ResourceType.Air);
-        cost.AddResource(b.buildCostFood, ResourceManager.ResourceType.Food);
-        cost.AddResource(b.buildCostHeat, ResourceManager.ResourceType.Heat);
-        cost.AddResource(b.buildCostMetal, ResourceManager.ResourceType.Metal);
-        cost.AddResource(b.buildCostWater, ResourceManager.ResourceType.Water);
+        cost.AddResource(b.buildCostAir, ResourceType.Air);
+        cost.AddResource(b.buildCostFood, ResourceType.Food);
+        cost.AddResource(b.buildCostHeat, ResourceType.Heat);
+        cost.AddResource(b.buildCostMetal, ResourceType.Metal);
+        cost.AddResource(b.buildCostWater, ResourceType.Water);
     }
 
     public void Refresh()
@@ -39,11 +39,11 @@ public class BuildingButton : MonoBehaviour
     {
         if (building.CanBuild())
         {
-            ResourceManager.instance.RemoveResource(building.buildCostAir, ResourceManager.ResourceType.Air);
-            ResourceManager.instance.RemoveResource(building.buildCostFood, ResourceManager.ResourceType.Food);
-            ResourceManager.instance.RemoveResource(building.buildCostHeat, ResourceManager.ResourceType.Heat);
-            ResourceManager.instance.RemoveResource(building.buildCostMetal, ResourceManager.ResourceType.Metal);
-            ResourceManager.instance.RemoveResource(building.buildCostWater, ResourceManager.ResourceType.Water);
+            Map.instance.GetLevel().RemoveResource(building.buildCostAir, ResourceType.Air);
+            Map.instance.GetLevel().RemoveResource(building.buildCostFood, ResourceType.Food);
+            Map.instance.GetLevel().RemoveResource(building.buildCostHeat, ResourceType.Heat);
+            Map.instance.GetLevel().RemoveResource(building.buildCostMetal, ResourceType.Metal);
+            Map.instance.GetLevel().RemoveResource(building.buildCostWater, ResourceType.Water);
 
             menu.BuildBuilding(building.GetType());
         }

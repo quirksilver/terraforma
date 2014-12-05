@@ -7,7 +7,7 @@ public class ResourceHarvester : MonoBehaviour
 {
 	public Building resourceBase;
 	public int harvestBonus = 0;
-	public ResourceManager.ResourceType resourceType;
+	public ResourceType resourceType;
 
 	private Tile targetTile;
 
@@ -84,7 +84,7 @@ public class ResourceHarvester : MonoBehaviour
 		SetState(HarvesterState.Moving);
 	}
 
-	public ResourceTile GetClosestResourceTileOfType(ResourceManager.ResourceType typeToFind, Vector3 pos)
+	public ResourceTile GetClosestResourceTileOfType(ResourceType typeToFind, Vector3 pos)
 	{
 		ResourceTile closestTile = null;
 		

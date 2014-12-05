@@ -9,6 +9,7 @@ public class Level : MonoBehaviour {
 	public int id;
 
 	private PerspectiveSwitcher switcher;
+    private int[] resourceAmmount;
 
 	// Use this for initialization
 	void Awake () {
@@ -17,8 +18,10 @@ public class Level : MonoBehaviour {
 		tileMap = GetComponent<TileMap>() as TileMap;
 
 		switcher = Camera.main.GetComponent<PerspectiveSwitcher>();
-		
 
+        resourceAmmount = new int[(int)ResourceType.Count];
+
+        resourceAmmount[(int)ResourceType.Metal] = 200;
 	}
 	
 	// Update is called once per frame
@@ -41,4 +44,22 @@ public class Level : MonoBehaviour {
 		//disable everything
 
 	}
+
+    //Resource functions
+
+    public void AddResource(int ammount, ResourceType type)
+    {
+        resourceAmmount[(int)type] += ammount;
+    }
+
+    public int GetResource(ResourceType type)
+    {
+        return resourceAmmount[(int)type];
+    }
+
+    public void RemoveResource(int ammount, ResourceType type)
+    {
+        resourceAmmount[(int)type] -= ammount;
+    }
+	
 }

@@ -10,7 +10,7 @@ public class ResourceInfo : MonoBehaviour
     public GameObject tempCell;
     public Image icon;
 
-    private Dictionary<ResourceManager.ResourceType, Text> labelDict = new Dictionary<ResourceManager.ResourceType, Text>();
+    private Dictionary<ResourceType, Text> labelDict = new Dictionary<ResourceType, Text>();
 
     void Start()
     {
@@ -19,14 +19,14 @@ public class ResourceInfo : MonoBehaviour
 
     public void Tick()
     {
-        foreach(KeyValuePair<ResourceManager.ResourceType,Text> pair in labelDict)
+        foreach(KeyValuePair<ResourceType,Text> pair in labelDict)
         {
             int value = int.Parse(pair.Value.text);
-            pair.Value.color = (value > ResourceManager.instance.GetResource(pair.Key)) ? Color.red : Color.white;
+            pair.Value.color = (value > Map.instance.GetLevel().GetResource(pair.Key)) ? Color.red : Color.white;
         }
     }
 
-    public void AddResource(int ammount, ResourceManager.ResourceType type)
+    public void AddResource(int ammount, ResourceType type)
     {
         if (ammount == 0)
         {

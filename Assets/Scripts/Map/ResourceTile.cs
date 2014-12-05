@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ResourceTile : Tile
 {
-	public ResourceManager.ResourceType resourceType = ResourceManager.ResourceType.Metal;
+	public ResourceType resourceType = ResourceType.Metal;
 	public int resourceYieldPerTurn = 5;
 	public int totalResourceYield = -1;
 

@@ -98,11 +98,11 @@ public class Building : MonoBehaviour {
 
     public bool CanBuild()
     {
-        if (ResourceManager.instance.GetResource(ResourceManager.ResourceType.Water) < buildCostWater ||
-            ResourceManager.instance.GetResource(ResourceManager.ResourceType.Metal) < buildCostMetal ||
-            ResourceManager.instance.GetResource(ResourceManager.ResourceType.Heat) < buildCostHeat||
-            ResourceManager.instance.GetResource(ResourceManager.ResourceType.Food) < buildCostFood ||
-            ResourceManager.instance.GetResource(ResourceManager.ResourceType.Air) < buildCostAir)
+        if (Map.instance.GetLevel().GetResource(ResourceType.Water) < buildCostWater ||
+            Map.instance.GetLevel().GetResource(ResourceType.Metal) < buildCostMetal ||
+            Map.instance.GetLevel().GetResource(ResourceType.Heat) < buildCostHeat||
+            Map.instance.GetLevel().GetResource(ResourceType.Food) < buildCostFood ||
+            Map.instance.GetLevel().GetResource(ResourceType.Air) < buildCostAir)
         {
             return false;
         }
@@ -114,29 +114,29 @@ public class Building : MonoBehaviour {
     {
         if (buildingActive)
         {
-            ResourceManager.instance.AddResource(produceWater, ResourceManager.ResourceType.Water);
-            ResourceManager.instance.AddResource(produceHeat, ResourceManager.ResourceType.Heat);
-            ResourceManager.instance.AddResource(produceAir, ResourceManager.ResourceType.Air);
-            ResourceManager.instance.AddResource(produceFood, ResourceManager.ResourceType.Food);
-            ResourceManager.instance.AddResource(produceMetal, ResourceManager.ResourceType.Metal);
+            Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
+            Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);
+            Map.instance.GetLevel().AddResource(produceAir, ResourceType.Air);
+            Map.instance.GetLevel().AddResource(produceFood, ResourceType.Food);
+            Map.instance.GetLevel().AddResource(produceMetal, ResourceType.Metal);
 
-            ResourceManager.instance.RemoveResource(runningCostWater, ResourceManager.ResourceType.Water);
-            ResourceManager.instance.RemoveResource(runningCostHeat, ResourceManager.ResourceType.Heat);
-            ResourceManager.instance.RemoveResource(runningCostAir, ResourceManager.ResourceType.Air);
-            ResourceManager.instance.RemoveResource(runningCostFood, ResourceManager.ResourceType.Food);
-            ResourceManager.instance.RemoveResource(runningCostMetal, ResourceManager.ResourceType.Metal);
+            Map.instance.GetLevel().RemoveResource(runningCostWater, ResourceType.Water);
+            Map.instance.GetLevel().RemoveResource(runningCostHeat, ResourceType.Heat);
+            Map.instance.GetLevel().RemoveResource(runningCostAir, ResourceType.Air);
+            Map.instance.GetLevel().RemoveResource(runningCostFood, ResourceType.Food);
+            Map.instance.GetLevel().RemoveResource(runningCostMetal, ResourceType.Metal);
 
-            hud.AddRes(produceWater, ResourceManager.ResourceType.Water);
-            hud.AddRes(produceHeat, ResourceManager.ResourceType.Heat);
-            hud.AddRes(produceAir, ResourceManager.ResourceType.Air);
-            hud.AddRes(produceFood, ResourceManager.ResourceType.Food);
-            hud.AddRes(produceMetal, ResourceManager.ResourceType.Metal);
+            hud.AddRes(produceWater, ResourceType.Water);
+            hud.AddRes(produceHeat, ResourceType.Heat);
+            hud.AddRes(produceAir, ResourceType.Air);
+            hud.AddRes(produceFood, ResourceType.Food);
+            hud.AddRes(produceMetal, ResourceType.Metal);
         }
     }
 
-	public void AddResourceFromHarvester(ResourceManager.ResourceType type, int amount)
+	public void AddResourceFromHarvester(ResourceType type, int amount)
 	{
-		ResourceManager.instance.AddResource(amount, type);
+        Map.instance.GetLevel().AddResource(amount, type);
 		hud.AddRes(amount, type);
 	}
 

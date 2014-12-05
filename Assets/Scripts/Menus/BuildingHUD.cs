@@ -50,7 +50,7 @@ public class BuildingHUD : MonoBehaviour {
         }
 	}
 
-    public void AddRes(int ammount, ResourceManager.ResourceType type)
+    public void AddRes(int ammount, ResourceType type)
     {
         if (ammount == 0)
         {
