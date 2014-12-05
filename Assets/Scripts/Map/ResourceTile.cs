@@ -17,7 +17,12 @@ public class ResourceTile : Tile
 	public override void Update ()
 	{
 		if (totalResourceYield == 0)
+		{
+
 			Map.instance.tileMap.RemoveResourceTile(this);
+
+			GetComponentInChildren<Renderer>().material.color = Color.black;
+		}
 
 	}
 

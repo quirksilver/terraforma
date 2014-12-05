@@ -80,7 +80,7 @@ public class ResourceHarvester : MonoBehaviour
 
 	public void GetTargetBuildingTile()
 	{
-		targetTile = resourceBase.GetNearestTile(transform.position);
+		targetTile = resourceBase.GetNearestAdjacentTile(transform.position);
 		SetState(HarvesterState.Moving);
 	}
 

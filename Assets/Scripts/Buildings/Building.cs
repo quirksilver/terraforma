@@ -84,11 +84,16 @@ public class Building : MonoBehaviour {
 
 	public void CreateNewHarvester()
 	{
-		GameObject harvesterInstance = (GameObject)Instantiate(harvesterPrefab);
-		ResourceHarvester newHarvester = harvesterInstance.GetComponent<ResourceHarvester>();
-		harvesters.Add(newHarvester);
-		newHarvester.Setup(this);
+		if (harvesterPrefab != null)
+		{
 
+			GameObject harvesterInstance = (GameObject)Instantiate(harvesterPrefab);
+			ResourceHarvester newHarvester = harvesterInstance.GetComponent<ResourceHarvester>();
+			newHarvester.transform.parent = transform.parent;
+			newHarvester.transform.localPosition = transform.localPosition + GetRandomAdjacentTilePosition();
+			harvesters.Add(newHarvester);
+			newHarvester.Setup(this);
+		}
 	}
 
     public bool CanBuild()
@@ -135,23 +140,28 @@ public class Building : MonoBehaviour {
 		hud.AddRes(amount, type);
 	}
 
-	public Tile GetNearestTile(Vector3 pos)
+	public Vector3 GetRandomAdjacentTilePosition()
+	{
+		return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))]; 
+	}
+
+	public Tile GetNearestAdjacentTile(Vector3 pos)
 	{
 		float dist;
 		float shortestDist = float.NaN;
 		Vector3 closestPos = Vector3.zero;
-
-		for (int i = 0; i < this.footprint.tilePositions.Count; i++)
+		
+		for (int i = 0; i < borderTiles.Count; i++)
 		{
-			dist = Vector3.Distance(footprint.tilePositions[i]+transform.position, pos);
-
+				dist = Vector3.Distance(borderTiles[i]+transform.position, pos);
+			
 			if (dist < shortestDist || float.IsNaN(shortestDist))
 			{
 				shortestDist = dist;
-				closestPos = footprint.tilePositions[i]+transform.position;
+					closestPos = borderTiles[i]+transform.position;
 			}
 		}
-
+		
 		return Map.instance.tileMap.GetTile(closestPos);
 	}
 
