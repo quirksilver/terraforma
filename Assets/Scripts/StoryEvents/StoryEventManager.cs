@@ -16,8 +16,23 @@ public class StoryEventManager : MonoBehaviour
 	
 	}
 
-    static void SendEvent(string eve)
+    public static void SendEvent(string eve)
     {
+        Map.instance.GetLevel().storyEventManager.ReciveEvent(eve);
+    }
+
+    private void ReciveEvent(string eventString)
+    {
+        foreach (StoryEvent eve in events)
+        {
+            if (eve.trigger == eTrigger.Event)
+            {
+                if (eve.eventString == eventString)
+                {
+                    eve.ActivateEvent();
+                }
+            }
+        }
     }
 
     public void Check()

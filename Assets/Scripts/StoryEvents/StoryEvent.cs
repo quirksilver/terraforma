@@ -6,6 +6,7 @@ public enum eTrigger
 {
     Time,
     Resources,
+    Event,
 }
 
 public enum eEventResponse
@@ -21,7 +22,8 @@ public class StoryEvent
     public List<StoryMessage> message = new List<StoryMessage>();
     public eTrigger trigger = eTrigger.Time;
     public int[] resourceRequirements = new int[(int)ResourceType.Count];
-    public System.TimeSpan time = System.TimeSpan.Zero;
+    public float time;
+    public string eventString;
 
     private bool fired = false;
 
@@ -46,13 +48,18 @@ public class StoryEvent
         }
         else if (trigger == eTrigger.Time)
         {
-            passed = Map.instance.timeInLevel > time;
+            passed = Map.instance.timeInLevel >= time;
         }
 
         if (passed)
         {
-            fired = true;
-            MessageWindow.instance.StartMessages(message, EventResponce == eEventResponse.WinLevel);
+            ActivateEvent();
         }
+    }
+
+    public void ActivateEvent()
+    {
+        fired = true;
+        MessageWindow.instance.StartMessages(message, EventResponce == eEventResponse.WinLevel);
     }
 }

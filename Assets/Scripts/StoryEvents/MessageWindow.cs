@@ -25,6 +25,11 @@ public class MessageWindow : MonoSingleton<MessageWindow>
     {
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
         GetComponent<CanvasGroup>().alpha = alpha;
+
+        if (button.enabled == false && alpha == 1)
+        {
+            button.enabled = true;
+        }
     }
 
     public void StartMessages(List<StoryMessage> m,bool c)
@@ -35,7 +40,6 @@ public class MessageWindow : MonoSingleton<MessageWindow>
         messages = m;
         ShowMessage();
         targetAlpha = 1.0f;
-        button.enabled = true;
     }
 
     public void NextMessage()

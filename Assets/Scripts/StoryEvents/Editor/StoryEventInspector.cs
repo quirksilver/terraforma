@@ -36,17 +36,21 @@ public class LevelScriptEditor : Editor
             EditorGUILayout.Separator();
             if (eve.trigger == eTrigger.Time)
             {
-                double seconds = eve.time.TotalSeconds;
-                seconds = (double)EditorGUILayout.IntField("Time (Seconds)", (int)seconds);
-                eve.time = System.TimeSpan.FromSeconds(seconds);
+                float seconds = eve.time;
+                seconds = (float)EditorGUILayout.IntField("Time (Seconds)", (int)seconds);
+                eve.time = seconds;
             }
-            else
+            else if(eve.trigger == eTrigger.Resources)
             {
                 for (int i2 = 0; i2 < (int)ResourceType.Count; i2++)
                 {
                     ResourceType type = (ResourceType) i2;
                     eve.resourceRequirements[i2] = EditorGUILayout.IntField(type.ToString(), eve.resourceRequirements[i2]);
                 }
+            }
+            else if (eve.trigger == eTrigger.Event)
+            {
+                eve.eventString = EditorGUILayout.TextField("Event string", eve.eventString);
             }
 
             EditorGUILayout.Separator();

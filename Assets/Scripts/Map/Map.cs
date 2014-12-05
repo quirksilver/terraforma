@@ -26,7 +26,7 @@ public class Map : MonoSingleton<Map>
 
     public bool Pause = false;
 
-    public TimeSpan timeInLevel;
+    public float timeInLevel;
 
 	// Use this for initialization
 	void Awake () {
@@ -54,7 +54,9 @@ public class Map : MonoSingleton<Map>
 
 		SetLevelCollidersEnabled(false);
 
-        timeInLevel = new TimeSpan(0);
+        timeInLevel = 0;
+
+        level.storyEventManager.Check();
 	}
 
     public Level GetLevel()
@@ -164,6 +166,8 @@ public class Map : MonoSingleton<Map>
 			}
         }
 
+        StoryEventManager.SendEvent("BUILT" + level.name.ToUpper());
+
         return valid;
     }
 
@@ -172,7 +176,7 @@ public class Map : MonoSingleton<Map>
     {
         if (level != null && Pause == false)
         {
-            timeInLevel += TimeSpan.FromSeconds(Time.deltaTime);
+            timeInLevel += Time.deltaTime;
             tickTimer += Time.deltaTime;
             if (tickTimer > tickPeriod)
             {
