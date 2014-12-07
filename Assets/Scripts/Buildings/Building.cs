@@ -39,13 +39,20 @@ public class Building : MonoBehaviour {
 
 	protected List<ResourceHarvester> harvesters = new List<ResourceHarvester>();
 
-	protected List<Vector3> borderTiles;
+	protected List<Tile> borderTiles;
+
+	protected TileMap tileMap;
 
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
 		//Debug.Log(footprint);
 	
+	}
+
+	public virtual void Setup(TileMap t)
+	{
+		tileMap = t;
 	}
 
 	// Use this for initialization
@@ -65,10 +72,10 @@ public class Building : MonoBehaviour {
 		for (int i = 0; i < borderTiles.Count; i++)
 		{
 			//Debug.Log("DRAW SOME LINES");
-			Debug.DrawLine(transform.position + borderTiles[i] + LBCorner, transform.position + borderTiles[i] + LTCorner, Color.green);
-			Debug.DrawLine(transform.position + borderTiles[i] + LTCorner, transform.position + borderTiles[i] + RTCorner, Color.green);
-			Debug.DrawLine(transform.position + borderTiles[i] + RTCorner, transform.position + borderTiles[i] + RBCorner, Color.green);
-			Debug.DrawLine(transform.position + borderTiles[i] + RBCorner, transform.position + borderTiles[i] + LBCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.green);
 		}
 	}
 
@@ -90,7 +97,7 @@ public class Building : MonoBehaviour {
 			GameObject harvesterInstance = (GameObject)Instantiate(harvesterPrefab);
 			ResourceHarvester newHarvester = harvesterInstance.GetComponent<ResourceHarvester>();
 			newHarvester.transform.parent = transform.parent;
-			newHarvester.transform.localPosition = transform.localPosition + GetRandomAdjacentTilePosition();
+			newHarvester.transform.position = GetRandomAdjacentTilePosition();
 			harvesters.Add(newHarvester);
 			newHarvester.Setup(this);
 		}
@@ -142,7 +149,82 @@ public class Building : MonoBehaviour {
 
 	public Vector3 GetRandomAdjacentTilePosition()
 	{
-		return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))]; 
+		return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))].transform.position; 
+	}
+
+	public Tile GetLeastTargetedAdjacentTile(Vector3 pos)
+	{
+		int lowestTarget = -1;
+		Tile checkTile;
+
+		List<Tile> leastTargetedTiles = new List<Tile>();
+
+		borderTiles.Sort(TileTargetComparison);
+
+		for (int i = 0; i < borderTiles.Count; i++)
+		{
+			checkTile = borderTiles[i];
+
+			if (i == 0)
+				lowestTarget = checkTile.harvestersTargeting;
+
+			if (checkTile.harvestersTargeting > lowestTarget)
+				break;
+
+			leastTargetedTiles.Add(checkTile);
+
+		}
+
+		Debug.Log(leastTargetedTiles);
+
+		if (leastTargetedTiles.Count > 0)
+		{
+			return GetNearestAdjacentTile(pos, leastTargetedTiles);
+		}
+		else
+		{
+			return leastTargetedTiles[0];
+		}
+			
+	}
+
+	public int TileTargetComparison(Tile tileA, Tile tileB)
+	{
+
+		if (tileA.harvestersTargeting == tileB.harvestersTargeting)
+		{
+			return 0;
+		}
+		else if (tileA.harvestersTargeting < tileB.harvestersTargeting)
+		{
+			return -1;
+		}
+		else //must be greater
+		{
+			return 1;
+		}
+	}
+
+	public Tile GetNearestAdjacentTile(Vector3 pos, List<Tile> tileList)
+	{
+		float dist;
+		float shortestDist = float.NaN;
+		Tile closestTile = null;
+		
+		for (int i = 0; i < tileList.Count; i++)
+		{
+			Debug.Log(tileList[i]);
+
+			dist = Vector3.Distance(tileList[i].transform.position, pos);
+			
+			if (dist < shortestDist || float.IsNaN(shortestDist))
+			{
+				shortestDist = dist;
+				closestTile = tileList[i];
+			}
+		}
+		
+		return closestTile;
 	}
 
 	public Tile GetNearestAdjacentTile(Vector3 pos)
@@ -153,16 +235,16 @@ public class Building : MonoBehaviour {
 		
 		for (int i = 0; i < borderTiles.Count; i++)
 		{
-				dist = Vector3.Distance(borderTiles[i]+transform.position, pos);
+				dist = Vector3.Distance(borderTiles[i].transform.position, pos);
 			
 			if (dist < shortestDist || float.IsNaN(shortestDist))
 			{
 				shortestDist = dist;
-					closestPos = borderTiles[i]+transform.position;
+					closestPos = borderTiles[i].transform.position;
 			}
 		}
 		
-		return Map.instance.tileMap.GetTile(closestPos);
+		return tileMap.GetTile(closestPos);
 	}
 
 	public void UpdateBorderTilePositions()
@@ -171,8 +253,8 @@ public class Building : MonoBehaviour {
 
 		for (int i  = borderTiles.Count - 1; i >= 0; i--)
 		{
-			Debug.Log("path tile " + Map.instance.tileMap.GetPathTile(transform.position + borderTiles[i]));
-			if (Map.instance.tileMap.GetPathTile(transform.position + borderTiles[i]) == null)
+			Debug.Log("path tile " + tileMap.GetPathTile(borderTiles[i].transform.position));
+			if (tileMap.GetPathTile(borderTiles[i].transform.position) == null)
 			{
 				borderTiles.RemoveAt(i);
 			}
@@ -183,13 +265,19 @@ public class Building : MonoBehaviour {
 	{
 		Vector3 currentPos = Vector3.zero;
 
-		borderTiles = new List<Vector3>();
+		borderTiles = new List<Tile>();
 
-		Vector3[] directions = new Vector3[4];
+		List<Vector3> borderTilePositions = new List<Vector3>();
+
+		Vector3[] directions = new Vector3[8];
 		directions[0] = Vector3.left;
 		directions[1] = Vector3.forward;
 		directions[2] = Vector3.right;
 		directions[3] = Vector3.back;
+		directions[4] = Vector3.left + Vector3.forward;
+		directions[5] = Vector3.left + Vector3.back;
+		directions[6] = Vector3.right + Vector3.forward;
+		directions[7] = Vector3.right + Vector3.back;
 
 		Vector3 checkPos;
 
@@ -199,9 +287,16 @@ public class Building : MonoBehaviour {
 			{
 				checkPos = footprint.tilePositions[i]  + directions[j];
 
-				if (footprint.tilePositions.IndexOf(checkPos) == -1 && borderTiles.IndexOf(checkPos) == -1)
+				if (footprint.tilePositions.IndexOf(checkPos) == -1 && borderTilePositions.IndexOf(checkPos) == -1)
 				{
-					borderTiles.Add(checkPos);
+					Tile tileToAdd = tileMap.GetTile(transform.position + checkPos);
+
+					if (tileToAdd != null)
+					{
+						borderTilePositions.Add(checkPos);
+						borderTiles.Add(tileToAdd);
+					}
+
 				}
 			}
 		}

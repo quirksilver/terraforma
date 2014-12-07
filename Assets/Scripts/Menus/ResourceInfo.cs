@@ -10,6 +10,8 @@ public class ResourceInfo : MonoBehaviour
     public GameObject tempCell;
     public Image icon;
 
+	private List<GameObject> cells = new List<GameObject>();
+
     private Dictionary<ResourceType, Text> labelDict = new Dictionary<ResourceType, Text>();
 
     void Start()
@@ -26,6 +28,22 @@ public class ResourceInfo : MonoBehaviour
         }
     }
 
+	public void ClearResources()
+	{
+		for (int i = 0; i < cells.Count; i++)
+		{
+			Destroy(cells[i]);
+		}
+
+		labelDict.Clear();
+
+		Canvas.ForceUpdateCanvases();
+		
+		LayoutRebuilder.MarkLayoutForRebuild(transform as RectTransform);
+		
+		Canvas.ForceUpdateCanvases();
+	}
+
     public void AddResource(int ammount, ResourceType type)
     {
         if (ammount == 0)
@@ -39,6 +57,9 @@ public class ResourceInfo : MonoBehaviour
         newCell.transform.localScale = Vector3.one;
         newCell.transform.GetChild(0).GetComponent<Image>().sprite = resImages[(int)type];
         newCell.GetComponentInChildren<Text>().text = ammount.ToString();
+
+		cells.Add (newCell);
+
         labelDict.Add(type,newCell.GetComponentInChildren<Text>());
 
         Canvas.ForceUpdateCanvases();

@@ -5,6 +5,7 @@ public class Tile : MonoBehaviour
 {
     public Vector3 coords;
     public Building building { private set; get; }
+	public int harvestersTargeting = 0;
 
 	// Use this for initialization
 	public virtual void Start () {

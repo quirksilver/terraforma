@@ -11,7 +11,8 @@ public class ResourceHarvester : MonoBehaviour
 
 	private Tile targetTile;
 
-	private HarvesterState state;
+	private HarvesterState currentState;
+	private HarvesterState lastState;
 
 	List<PathTile> path = new List<PathTile>();
 	LineRenderer lineRenderer;
@@ -26,9 +27,18 @@ public class ResourceHarvester : MonoBehaviour
 
 	private TileMap tileMap;
 
+	private int pathIndex;
+
+	public int buildCostWater;
+	public int buildCostHeat;
+	public int buildCostAir;
+	public int buildCostFood;
+	public int buildCostMetal;
+
 	public enum HarvesterState
 	{
 		Idle,
+		Paused,
 		SearchForResource,
 		SearchForBuilding,
 		Moving,
@@ -42,6 +52,7 @@ public class ResourceHarvester : MonoBehaviour
 		tileMap = Map.instance.tileMap;
 
 		stateMethods = new Dictionary<HarvesterState, StateAction>();
+		stateMethods.Add (HarvesterState.Paused, Pause);
 		stateMethods.Add (HarvesterState.SearchForResource, GetTargetResourceTile);
 		stateMethods.Add (HarvesterState.SearchForBuilding, GetTargetBuildingTile);
 		stateMethods.Add(HarvesterState.Moving, GoToTargetTile);
@@ -57,7 +68,25 @@ public class ResourceHarvester : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if ((Map.instance.Pause || Map.instance.tileMap != tileMap) && currentState != HarvesterState.Paused)
+		{
+			SetState(HarvesterState.Paused);
+		}
+		else if (!(Map.instance.Pause) && Map.instance.tileMap == tileMap && currentState == HarvesterState.Paused)
+		{
+			Unpause();
+		}
+			
+	}
 
+	public void Pause()
+	{
+		StopAllCoroutines();
+	}
+
+	public void Unpause()
+	{
+		SetState(lastState);
 	}
 
 	public void Setup(Building building)
@@ -68,6 +97,11 @@ public class ResourceHarvester : MonoBehaviour
 	public void SetState(HarvesterState newState)
 	{
 		Debug.Log("SET STATE " + newState);
+
+		lastState = currentState;
+		currentState = newState;
+
+
 		stateMethods[newState]();
 
 	}
@@ -75,12 +109,14 @@ public class ResourceHarvester : MonoBehaviour
 	public void GetTargetResourceTile()
 	{
 		targetTile = GetClosestResourceTileOfType(resourceType, this.transform.position);
+		targetTile.harvestersTargeting ++;
 		SetState(HarvesterState.Moving);
 	}
 
 	public void GetTargetBuildingTile()
 	{
-		targetTile = resourceBase.GetNearestAdjacentTile(transform.position);
+		targetTile = resourceBase.GetLeastTargetedAdjacentTile(transform.position);
+		targetTile.harvestersTargeting ++;
 		SetState(HarvesterState.Moving);
 	}
 
@@ -121,11 +157,15 @@ public class ResourceHarvester : MonoBehaviour
 
 	public void GoToTargetTile()
 	{
-		if (tileMap.FindPath(transform.position, targetTile.coords, path))
+		if (path.Count > 0)
 		{
-			lineRenderer.SetVertexCount(path.Count);
+			StartCoroutine(WalkPath());
+		}
+		else if (tileMap.FindPath(transform.position, targetTile.coords, path))
+		{
+			/*lineRenderer.SetVertexCount(path.Count);
 			for (int i = 0; i < path.Count; i++)
-				lineRenderer.SetPosition(i, path[i].transform.position);
+				lineRenderer.SetPosition(i, path[i].transform.position);*/
 			
 			StopAllCoroutines();
 			StartCoroutine(WalkPath());
@@ -136,12 +176,15 @@ public class ResourceHarvester : MonoBehaviour
 	{
 		currentResourceAmount = (targetTile as ResourceTile).HarvestResources(harvestBonus);
 
+		targetTile.harvestersTargeting --;
+
 		SetState(HarvesterState.SearchForBuilding);
 	}
 
 	public void ArrivedAtTargetTile()
 	{
 		Debug.Log("ARRIVED AT TARGET");
+
 		if (targetTile is ResourceTile)
 		{
 			SetState(HarvesterState.Harvesting);
@@ -159,6 +202,8 @@ public class ResourceHarvester : MonoBehaviour
 		
 		currentResourceAmount = 0;
 
+		targetTile.harvestersTargeting --;
+
 		SetState(HarvesterState.SearchForResource);
 
 	}
@@ -166,12 +211,14 @@ public class ResourceHarvester : MonoBehaviour
 
 	IEnumerator WalkPath()
 	{
-		var index = 0;
-		while (index < path.Count)
+		while (pathIndex < path.Count)
 		{
-			yield return StartCoroutine(WalkTo(path[index].transform.position));
-			index++;
+			yield return StartCoroutine(WalkTo(path[pathIndex].transform.position));
+			pathIndex++;
 		}
+
+		path.Clear();
+		pathIndex = 0;
 
 		ArrivedAtTargetTile();
 	}
@@ -184,6 +231,21 @@ public class ResourceHarvester : MonoBehaviour
 			yield return 0;
 		}
 		transform.position = position;
+	}
+
+	
+	public bool CanBuild()
+	{
+		if (Map.instance.GetLevel().GetResource(ResourceType.Water) < buildCostWater ||
+		    Map.instance.GetLevel().GetResource(ResourceType.Metal) < buildCostMetal ||
+		    Map.instance.GetLevel().GetResource(ResourceType.Heat) < buildCostHeat||
+		    Map.instance.GetLevel().GetResource(ResourceType.Food) < buildCostFood ||
+		    Map.instance.GetLevel().GetResource(ResourceType.Air) < buildCostAir)
+		{
+			return false;
+		}
+		
+		return true;
 	}
 }
 

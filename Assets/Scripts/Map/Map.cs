@@ -60,6 +60,9 @@ public class Map : MonoSingleton<Map>
         timeInLevel = 0;
 
         level.storyEventManager.Check();
+
+		//testing pause functionality
+		Pause = false;
 	}
 
     public Level GetLevel()
@@ -83,6 +86,9 @@ public class Map : MonoSingleton<Map>
 
 	public void GoToWorldMap()
 	{
+		//testing pause functionality
+		Pause = true;
+
 		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();
 
 		//buildMenu.enabled = false;

@@ -19,6 +19,7 @@ public class BuildingPlacement : MonoBehaviour
         newBuilding = Instantiate(Resources.Load(buildingPrefabPath)) as GameObject;
         Building building = newBuilding.GetComponent(type) as Building;
         building.enabled = false;
+		building.Setup(Map.instance.tileMap);
 
 		Map.instance.AddObjectToLevel(newBuilding);
 		Map.instance.AddObjectToLevel(gameObject);

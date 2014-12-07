@@ -17,7 +17,7 @@ public class BuildingControl : MonoBehaviour
 
     public Toggle activeToggle;
 
-	public Button buildHarvesterButton;
+	public BuildHarvesterButton buildHarvesterButton;
 
 	// Use this for initialization
 	void Start () {
@@ -71,6 +71,9 @@ public class BuildingControl : MonoBehaviour
                     targetAlpha = 1.0f;
                     activeToggle.isOn = building.buildingActive;
 					buildHarvesterButton.gameObject.SetActive(building.harvesterPrefab != null);
+
+					if (buildHarvesterButton.gameObject.activeSelf)
+						buildHarvesterButton.Setup(building.harvesterPrefab.GetComponent<ResourceHarvester>(), this);
                 }
                 else
                 {
