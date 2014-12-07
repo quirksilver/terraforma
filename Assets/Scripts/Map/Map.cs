@@ -28,6 +28,8 @@ public class Map : MonoSingleton<Map>
 
     public float timeInLevel;
 
+    public SpriteRenderer nextLevelArrow;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
@@ -43,6 +45,7 @@ public class Map : MonoSingleton<Map>
 
 	public void LoadLevel(Level levelToLoad)
 	{
+        nextLevelArrow.color = Color.clear;
 		Debug.Log ("LoadLevel " + levelToLoad); 
 
 		//buildMenu.enabled = true;
@@ -106,11 +109,14 @@ public class Map : MonoSingleton<Map>
     public int GetBuildingsCount(System.Type type)
     {
         int count = 0;
-        foreach (Building b in level.buildings)
+        if (level != null)
         {
-            if (b.GetType() == type)
+            foreach (Building b in level.buildings)
             {
-                count++;
+                if (b.GetType() == type)
+                {
+                    count++;
+                }
             }
         }
         return count;
@@ -183,6 +189,7 @@ public class Map : MonoSingleton<Map>
     {
         if (level != null && Pause == false)
         {
+            nextLevelArrow.color = Color.clear;
             timeInLevel += Time.deltaTime;
             tickTimer += Time.deltaTime;
             if (tickTimer > tickPeriod)
@@ -196,6 +203,17 @@ public class Map : MonoSingleton<Map>
 
                 level.storyEventManager.Check();
             }
+        }
+
+        //Update next level arrow
+        if (level == null)
+        {
+            Vector3 lookDirection = Camera.main.transform.forward;
+            nextLevelArrow.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+            nextLevelArrow.transform.position = levels[levelIndex].collider.bounds.center + (levels[levelIndex].transform.rotation * new Vector3(0, 2, 0));
+            Color color = Color.red;
+            color.a = Mathf.Sin(Time.time*2.0f)+1.0f;
+            nextLevelArrow.color = color;
         }
 
 		if (Input.GetKeyDown(KeyCode.Space))
