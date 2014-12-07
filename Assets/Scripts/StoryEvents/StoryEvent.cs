@@ -50,6 +50,10 @@ public class StoryEvent
         {
             passed = Map.instance.timeInLevel >= time;
         }
+        else
+        {
+            passed = false;
+        }
 
         if (passed)
         {

@@ -18914,6 +18914,7 @@ MonoBehaviour:
   width: 0
   height: 0
   tickPeriod: 4
+  levelIndex: 0
   levels:
   - {fileID: 1601543618}
   - {fileID: 1097538845}
@@ -27256,12 +27257,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797366932}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5, y: 0, z: 5}
+  m_LocalRotation: {x: .307885468, y: 0, z: 0, w: .951423466}
+  m_LocalPosition: {x: 4.5, y: -8.19253731, z: 30.108511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1601543619}
-  m_RootOrder: 1
+  m_Father: {fileID: 1097538846}
+  m_RootOrder: 2
 --- !u!1001 &798359765
 Prefab:
   m_ObjectHideFlags: 0
@@ -30132,21 +30133,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events:
-  - EventResponce: 1
+  - EventResponce: 0
     message:
     - character: Intro
-      message: Build a rocket to win
+      message: You win
     trigger: 2
     resourceRequirements: 0000000000000000000000000000000000000000
     time: 0
     eventString: BUILTROCKET
-  - EventResponce: 0
+  - EventResponce: 1
     message:
-    - character: Test1
-      message: You win!
+    - character: Intro
+      message: Build rocket to win
     trigger: 0
     resourceRequirements: 0000000000000000000000000000000000000000
-    time: 10
+    time: 0
     eventString: 
 --- !u!65 &874843887
 BoxCollider:
@@ -37820,6 +37821,7 @@ Transform:
   m_Children:
   - {fileID: 645167476}
   - {fileID: 918905376}
+  - {fileID: 797366933}
   m_Father: {fileID: 0}
   m_RootOrder: 8
 --- !u!65 &1097538847
@@ -53862,7 +53864,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 691710084}
-  - {fileID: 797366933}
   m_Father: {fileID: 0}
   m_RootOrder: 7
 --- !u!114 &1601543620

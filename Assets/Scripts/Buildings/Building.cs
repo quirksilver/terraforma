@@ -31,6 +31,10 @@ public class Building : MonoBehaviour {
     public int produceFood;
     public int produceMetal;
 
+    public float buildingTime;
+    private float buildingTimer;
+    private bool built = false;
+
     public bool buildingActive=true;
 
     private BuildingHUD hud;
@@ -62,6 +66,24 @@ public class Building : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
+
+        if (!built)
+        {
+            buildingTimer += Time.deltaTime;
+
+            float i = buildingTimer/buildingTime;
+
+            Color color = Color.white;
+            color.a = i + (0.2f * Mathf.Sin(Time.time*Mathf.PI*2));
+            GetComponentInChildren<SpriteRenderer>().color = color;
+
+            if (buildingTimer > buildingTime)
+            {
+                GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                built=true;
+                StoryEventManager.SendEvent("BUILT" + DisplayName.ToUpper());
+            }
+        }
 
 		Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
 		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
@@ -119,7 +141,7 @@ public class Building : MonoBehaviour {
 
     public virtual void Tick()
     {
-        if (buildingActive)
+        if (buildingActive && built)
         {
             Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
             Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);

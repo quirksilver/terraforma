@@ -1026,6 +1026,7 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 5
   produceMetal: 0
+  buildingTime: 3
   buildingActive: 1
   harvesterPrefab: {fileID: 100000, guid: f9c258ddcbacf4c618aea2df3391c87c, type: 2}
 --- !u!114 &11400002

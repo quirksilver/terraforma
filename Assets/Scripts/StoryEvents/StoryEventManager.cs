@@ -23,12 +23,16 @@ public class StoryEventManager : MonoBehaviour
 
     private void ReciveEvent(string eventString)
     {
+        Debug.Log("//////////////////////////////////////////////////////////");
+        Debug.Log(eventString);
         foreach (StoryEvent eve in events)
         {
             if (eve.trigger == eTrigger.Event)
             {
                 if (eve.eventString == eventString)
                 {
+                    Debug.Log(eventString);
+                    Debug.Log(eve.eventString);
                     eve.ActivateEvent();
                 }
             }

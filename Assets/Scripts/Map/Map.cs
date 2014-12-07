@@ -20,7 +20,7 @@ public class Map : MonoSingleton<Map>
 
 	private Level level;
 
-    private int levelIndex = 0;
+    public int levelIndex = 0;
 
 	public GameObject[] levels;
 
@@ -184,8 +184,6 @@ public class Map : MonoSingleton<Map>
                 level.buildings[i].UpdateBorderTilePositions();
 			}
         }
-
-        StoryEventManager.SendEvent("BUILT" + level.name.ToUpper());
 
         return valid;
     }
