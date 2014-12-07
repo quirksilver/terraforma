@@ -37,6 +37,11 @@ public class BuildingButton : MonoBehaviour
 
     public void Build()
     {
+        if (Map.instance.Pause)
+        {
+            return;
+        }
+
         if (building.CanBuild())
         {
             Map.instance.GetLevel().RemoveResource(building.buildCostAir, ResourceType.Air);

@@ -45,8 +45,8 @@ public class Map : MonoSingleton<Map>
 	{
 		Debug.Log ("LoadLevel " + levelToLoad); 
 
-		buildMenu.enabled = true;
-		buildingControl.enabled = true;
+		//buildMenu.enabled = true;
+		//buildingControl.enabled = true;
 
 		level = levelToLoad;
 
@@ -82,8 +82,8 @@ public class Map : MonoSingleton<Map>
 	{
 		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();
 
-		buildMenu.enabled = false;
-		buildingControl.enabled = false;
+		//buildMenu.enabled = false;
+		//buildingControl.enabled = false;
 
 		SetLevelCollidersEnabled(true);
 	}

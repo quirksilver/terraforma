@@ -14,6 +14,9 @@ public class BuildMenu : MonoBehaviour
     private List<BuildingButton> buildingButtons;
     public UnityEngine.UI.ScrollRect scrollRect;
 
+    float alpha = 0;
+    float targetAlpha = 0;
+
     public void BuildDome()
     {
         BuildBuilding(typeof(Dome));
@@ -73,5 +76,12 @@ public class BuildMenu : MonoBehaviour
         scrollRect.verticalNormalizedPosition = 1.0f;
 
         Refresh();
+    }
+
+    void Update()
+    {
+        targetAlpha = Map.instance.GetLevel() == null ? 0.0f : 1.0f;
+        alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
+        GetComponent<CanvasGroup>().alpha = alpha;
     }
 }

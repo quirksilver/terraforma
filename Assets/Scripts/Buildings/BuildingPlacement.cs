@@ -28,6 +28,14 @@ public class BuildingPlacement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        // Cancel if paused
+        if (Map.instance.Pause)
+        {
+            Destroy(gameObject);
+            Destroy(newBuilding);
+            return;
+        }
+
 
         Vector3 newPos = Vector3.zero;
 		newPos.x = Map.instance.GetMouseOver().x;

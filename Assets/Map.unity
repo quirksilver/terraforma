@@ -6015,7 +6015,7 @@ CanvasGroup:
     type: 2}
   m_PrefabInternal: {fileID: 847949778}
   m_GameObject: {fileID: 213870832}
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -28539,6 +28539,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400002, guid: e19192b00c8081c4c9faab1c6194ac16, type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22500000, guid: e19192b00c8081c4c9faab1c6194ac16, type: 2}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
