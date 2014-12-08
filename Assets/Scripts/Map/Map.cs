@@ -60,9 +60,6 @@ public class Map : MonoSingleton<Map>
         timeInLevel = 0;
 
         level.storyEventManager.Check();
-
-		//testing pause functionality
-		Pause = false;
 	}
 
     public Level GetLevel()
