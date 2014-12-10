@@ -169,9 +169,9 @@ public class Map : MonoSingleton<Map>
 				checkTile.AssignBuilding(building);
 			}
 
-			building.footprint.hide();
-			
 			building.GetBorderTilePositions();
+
+			building.footprint.hide();
 
             level.buildings.Add(building);
             buildMenu.Refresh();

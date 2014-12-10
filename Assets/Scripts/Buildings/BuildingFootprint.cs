@@ -107,7 +107,7 @@ public class BuildingFootprint : MonoBehaviour {
 
 		//TextAsset asset = xmlString;
 
-		File.WriteAllText("Assets/Resources/Buildings/" + transform.parent.gameObject.name + ".xml", xmlString);
+		File.WriteAllText("Assets/Resources/Buildings/" + transform.parent.gameObject.name + "/" + transform.parent.gameObject.name + ".xml", xmlString);
 		AssetDatabase.Refresh();
 
 		//Load

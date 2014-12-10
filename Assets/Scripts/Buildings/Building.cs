@@ -276,8 +276,8 @@ public class Building : MonoBehaviour {
 
 		for (int i  = borderTiles.Count - 1; i >= 0; i--)
 		{
-			Debug.Log("path tile " + tileMap.GetPathTile(borderTiles[i].transform.position));
-			if (tileMap.GetPathTile(borderTiles[i].transform.position) == null)
+			Debug.Log("path tile " + tileMap.GetPathTile(borderTiles[i].transform.localPosition));
+			if (tileMap.GetPathTile(borderTiles[i].transform.localPosition) == null)
 			{
 				borderTiles.RemoveAt(i);
 			}
@@ -312,7 +312,9 @@ public class Building : MonoBehaviour {
 
 				if (footprint.tilePositions.IndexOf(checkPos) == -1 && borderTilePositions.IndexOf(checkPos) == -1)
 				{
-					Tile tileToAdd = tileMap.GetTile(transform.position + checkPos);
+					Tile tileToAdd = tileMap.GetTile(transform.localPosition + checkPos);
+
+					Debug.Log ("BORDER TILE " + tileToAdd);
 
 					if (tileToAdd != null)
 					{
@@ -421,5 +423,7 @@ public class Building : MonoBehaviour {
 		}
 
 		PrefabUtility.ReplacePrefab(clone, PrefabUtility.GetPrefabParent(clone), ReplacePrefabOptions.ConnectToPrefab);	
+
+		DestroyImmediate(clone);
 	}
 }
