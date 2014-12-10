@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Building : MonoBehaviour {
 
@@ -342,5 +343,83 @@ public class Building : MonoBehaviour {
 			Debug.DrawLine(borderTiles[i] + RBCorner, borderTiles[i] + LBCorner, Color.green, 50.0f, true);
 		}*/
 
+	}
+
+	public void CreateSplitSprite()
+	{
+		GameObject clone = PrefabUtility.InstantiatePrefab(this.gameObject) as GameObject;
+
+		string path = "Buildings/" + gameObject.name; //"Assets/tests/" + gameObject.name; //+ "/" + gameObject.name + "SpriteSheet.png"; //AssetDatabase.GetAssetPath(sprite.texture);
+		//"Assets/Resources/Buildings/Dome/DomeSpriteSheet.png"
+
+		//if (clone.
+
+		GameObject spriteHolder = clone.transform.FindChild("SpriteHolder").gameObject;
+
+		if (spriteHolder == null) 
+		{
+			spriteHolder = new GameObject("SpriteHolder");
+		}
+		else
+		{
+
+			var children = new List<GameObject>();
+			foreach (Transform child in spriteHolder.transform) children.Add(child.gameObject);
+
+			children.ForEach(child => DestroyImmediate(child));
+		}
+
+		spriteHolder.transform.position = Vector3.zero;
+
+
+		Debug.Log(spriteHolder);
+		Debug.Log(clone);
+
+		spriteHolder.transform.parent = clone.transform;
+		spriteHolder.transform.localPosition = Vector3.zero;
+
+
+		Sprite tempSprite;
+		GameObject tempObj;
+		SpriteRenderer tempRenderer;
+
+		//Texture2D texture = Resources.LoadAssetAtPath<Texture>(path) as Texture2D;
+
+		//Debug.Log(Resources.LoadAssetAtPath<Texture>("Assets/tests/Dome/DomeSpriteSheet.png"));
+
+		/*Debug.Log ("texture at path " + path);
+		Debug.Log(texture);
+		Debug.Log(texture.height);*/
+
+		BuildingFootprint cloneFootprint = clone.GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
+
+		Debug.Log (cloneFootprint);
+		cloneFootprint.CalculatePivot(false);
+
+		Sprite[] sprites = Resources.LoadAll<Sprite>(path);
+
+		Debug.Log(sprites.Length);
+
+
+		for (int i = 0; i < cloneFootprint.tilePositions.Count; i++)
+		{
+//			tempSprite = Sprite.Create(texture, new Rect(i*135, 0, 134, texture.height), new Vector2(0.5f, 0.0f), 95);
+
+			tempObj = new GameObject("sprite" + i);
+
+			tempRenderer = tempObj.AddComponent<SpriteRenderer>() as SpriteRenderer;
+
+			tempRenderer.sprite = sprites[i];
+				//tempSprite;//;
+
+			tempObj.AddComponent<BillboardSprite>();
+
+			tempObj.transform.parent = spriteHolder.transform;
+
+			tempObj.transform.localPosition = cloneFootprint.tilePositions[i] + new Vector3(-0.5f, 0.0f, -0.5f);
+			                         
+		}
+
+		PrefabUtility.ReplacePrefab(clone, PrefabUtility.GetPrefabParent(clone), ReplacePrefabOptions.ConnectToPrefab);	
 	}
 }

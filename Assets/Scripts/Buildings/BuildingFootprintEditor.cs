@@ -12,7 +12,7 @@ public class BuildingFootprintEditor : Editor
 		BuildingFootprint footprintScript = (BuildingFootprint)target;
 		if(GUILayout.Button("Set Sprite Pivot"))
 		{
-			footprintScript.CalculatePivot();
+			footprintScript.CalculatePivot(true, true);
 		}
 	}
 }

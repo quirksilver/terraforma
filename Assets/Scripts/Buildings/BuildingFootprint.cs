@@ -2,6 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using System.IO; 
+using System.Text;
+using System.Xml;
+
 
 public class BuildingFootprint : MonoBehaviour {
 
@@ -23,7 +27,7 @@ public class BuildingFootprint : MonoBehaviour {
 
 	}
 
-	public void CalculatePivot(bool setPivot=true){
+	public void CalculatePivot(bool setPivot=true, bool saveXML = false){
 
 		int i;
 
@@ -81,6 +85,59 @@ public class BuildingFootprint : MonoBehaviour {
 		Debug.Log(pivotPoint);
 
 		if (setPivot) SetPivot();
+
+		if (saveXML) SaveXml();
+	}
+
+	 
+
+	public void SaveXml()
+	{
+		Debug.Log(tilePositions.Count);
+		string xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<footprint>\n";
+		for (int i = 0; i < tilePositions.Count; i++)
+		{
+			xmlString += "\t<tile x='" + tilePositions[i].x + "' y='" + tilePositions[i].y + "' z='"+ tilePositions[i].z + "'/>\n";
+		}
+
+		xmlString += "</footprint>";
+
+		Debug.Log(xmlString);
+		Debug.Log(transform.parent.gameObject.name);
+
+		//TextAsset asset = xmlString;
+
+		File.WriteAllText("Assets/Resources/Buildings/" + transform.parent.gameObject.name + ".xml", xmlString);
+		AssetDatabase.Refresh();
+
+		//Load
+		//TextAsset textXML = (TextAsset)Resources.Load("myxml.xml", typeof(TextAsset));
+
+		/*AssetDatabase.CreateAsset(new TextAsset(), Application.dataPath + "/tests/test.xml");
+		TextAsset textXML = (TextAsset)Resources.Load(Application.dataPath + "/tests/test.xml", typeof(TextAsset));
+
+
+		XmlDocument xml = new XmlDocument();
+		xml.LoadXml(textXML.text);
+
+		//Simple Save
+		xml.Save(AssetDatabase.GetAssetPath(textXML));*/
+
+		/*
+	     StreamWriter writer; 
+	     FileInfo t = new FileInfo(Application.dataPath + "/tests/testXML.xml"); 
+	     if(!t.Exists) 
+	     { 
+			writer = t.CreateText(); 
+		} 
+		else 
+		{ 
+			t.Delete(); 
+			writer = t.CreateText(); 
+		} 
+		writer.Write(xmlString); 
+		writer.Close(); 
+		Debug.Log("File written."); */
 	}
 
 	void SetPivot() {
