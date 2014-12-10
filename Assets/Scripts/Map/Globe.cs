@@ -8,10 +8,8 @@ public class Globe : MonoBehaviour
         RaycastHit hit;
         Vector3 dir = transform.position - pos;
         dir = dir.normalized;
-        Debug.DrawRay(pos, dir, Color.red, 120.0f);
         int layerMask = 1 << 8;
-        Physics.Raycast(pos, dir, out hit, 1000,layerMask);
-        Debug.DrawRay(pos, hit.normal*10, Color.green, 120.0f);
+        Physics.Raycast(pos - (dir*500), dir, out hit, Mathf.Infinity,layerMask);
         return hit;
     }
 }

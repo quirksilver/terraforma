@@ -13,6 +13,8 @@ public class Level : MonoBehaviour {
 
     public StoryEventManager storyEventManager { get; private set; }
 
+    public Vector3 centerPos { private set; get; }
+
 	// Use this for initialization
 	void Awake () {
 	
@@ -26,6 +28,8 @@ public class Level : MonoBehaviour {
         resourceAmmount[(int)ResourceType.Metal] = 200;
 
         storyEventManager = GetComponent<StoryEventManager>();
+
+        centerPos = collider.bounds.center;
 	}
 	
 	// Update is called once per frame

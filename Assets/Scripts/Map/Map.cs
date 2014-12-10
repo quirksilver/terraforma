@@ -30,6 +30,9 @@ public class Map : MonoSingleton<Map>
 
     public SpriteRenderer nextLevelArrow;
 
+    public MapLinks mapLinks;
+    public Globe globe;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
@@ -77,6 +80,17 @@ public class Map : MonoSingleton<Map>
         }
         else
         {
+            Vector3 diff = 
+                levels[levelIndex - 1].GetComponent<Level>().centerPos - 
+                levels[levelIndex].GetComponent<Level>().centerPos;
+
+            Vector3 pos1 = levels[levelIndex - 1].GetComponent<Level>().centerPos - (diff.normalized * 7.0f);
+            Vector3 pos2 = levels[levelIndex].GetComponent<Level>().centerPos + (diff.normalized * 7.0f);
+
+            mapLinks.drawLine(
+                pos1,
+                pos2);
+
             GoToWorldMap();
         }
     }
