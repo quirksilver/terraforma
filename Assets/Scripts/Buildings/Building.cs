@@ -121,6 +121,7 @@ public class Building : MonoBehaviour {
 			ResourceHarvester newHarvester = harvesterInstance.GetComponent<ResourceHarvester>();
 			newHarvester.transform.parent = transform.parent;
 			newHarvester.transform.position = GetRandomAdjacentTilePosition();
+			newHarvester.transform.localRotation = Quaternion.identity;
 			harvesters.Add(newHarvester);
 			newHarvester.Setup(this);
 		}
@@ -236,7 +237,7 @@ public class Building : MonoBehaviour {
 		
 		for (int i = 0; i < tileList.Count; i++)
 		{
-			Debug.Log(tileList[i]);
+//			Debug.Log(tileList[i]);
 
 			dist = Vector3.Distance(tileList[i].transform.position, pos);
 			

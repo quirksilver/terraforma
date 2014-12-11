@@ -172,8 +172,34 @@ public class TileMap : MonoBehaviour
 		var z = Mathf.RoundToInt(position.z / tileSize);
 		return GetTile(x, z);
 	}
+
+	public bool FindPathVia(PathTile start, PathTile via, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable)
+	{
+
+		List<PathTile> firstPath = new List<PathTile>();
+
+
+		List<PathTile> secondPath = new List<PathTile>();
+
+
+		if (FindPath(start, via, firstPath, isWalkable, end) && FindPath(via, end, secondPath, isWalkable))
+		{
+
+			//firstPath.AddRange(secondPath);
+
+			path.Clear();
+			path.AddRange(firstPath);
+			path.AddRange(secondPath);
+
+			Debug.Log("found path via");
+
+			return true;
+		}
+
+		return false;
+	}
 	
-	public bool FindPath(PathTile start, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable)
+	public bool FindPath(PathTile start, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable, PathTile avoid=null)
 	{
 		if (!isWalkable(end))
 			return false;
@@ -202,7 +228,7 @@ public class TileMap : MonoBehaviour
 			{
 				foreach (var connection in tile.connections)
 				{
-					if (!closed.Contains(connection) && isWalkable(connection))
+					if (!closed.Contains(connection) && isWalkable(connection) && connection!=avoid)
 					{
 						closed.Add(connection);
 						source.Add(connection, tile);
@@ -226,5 +252,18 @@ public class TileMap : MonoBehaviour
 	public bool FindPath(Vector3 start, Vector3 end, List<PathTile> path)
 	{
 		return FindPath(start, end, path, tile => true);
+	}
+
+	public bool FindPathVia(Vector3 start, Vector3 via, Vector3 end, List<PathTile> path)
+	{
+		return FindPathVia(start, via, end, path, tile => true);
+	}
+
+	public bool FindPathVia(Vector3 start, Vector3 via, Vector3 end, List<PathTile> path, Predicate<PathTile> isWalkable)
+	{
+		var startTile = GetPathTile(start);
+		var endTile = GetPathTile(end);
+		var viaTile = GetPathTile(via);
+		return startTile != null && endTile != null && viaTile != null && FindPathVia(startTile, viaTile, endTile, path, isWalkable);
 	}
 }

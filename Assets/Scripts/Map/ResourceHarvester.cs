@@ -10,6 +10,7 @@ public class ResourceHarvester : MonoBehaviour
 	public ResourceType resourceType;
 
 	private Tile targetTile;
+	private Tile viaTile;
 
 	private HarvesterState currentState;
 	private HarvesterState lastState;
@@ -68,11 +69,11 @@ public class ResourceHarvester : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if ((Map.instance.Pause || Map.instance.tileMap != tileMap) && currentState != HarvesterState.Paused)
+		if (Map.instance.Pause && currentState != HarvesterState.Paused) //|| Map.instance.tileMap != tileMap) 
 		{
 			SetState(HarvesterState.Paused);
 		}
-		else if (!(Map.instance.Pause) && Map.instance.tileMap == tileMap && currentState == HarvesterState.Paused)
+		else if (!(Map.instance.Pause) && currentState == HarvesterState.Paused) // && Map.instance.tileMap == tileMap
 		{
 			Unpause();
 		}
@@ -108,8 +109,10 @@ public class ResourceHarvester : MonoBehaviour
 
 	public void GetTargetResourceTile()
 	{
-		targetTile = GetClosestResourceTileOfType(resourceType, this.transform.position);
+		targetTile = GetClosestResourceTileOfType(resourceType, transform.position);
+		viaTile = targetTile.GetLeastTargetedAdjacentTile(transform.position);
 		targetTile.harvestersTargeting ++;
+		viaTile.harvestersTargeting ++;
 		SetState(HarvesterState.Moving);
 	}
 
@@ -131,7 +134,7 @@ public class ResourceHarvester : MonoBehaviour
 		{
 			if (tileMap.resourceTiles[i].resourceType == typeToFind)
 			{
-				dist = Vector3.Distance(tileMap.resourceTiles[i].coords, pos);
+				dist = Vector3.Distance(tileMap.resourceTiles[i].transform.position, pos);
 				
 				if (dist < shortestDist || float.IsNaN(shortestDist))
 				{
@@ -161,15 +164,34 @@ public class ResourceHarvester : MonoBehaviour
 		{
 			StartCoroutine(WalkPath());
 		}
-		else if (tileMap.FindPath(transform.position, targetTile.coords, path))
+		else if (targetTile is ResourceTile)
 		{
-			/*lineRenderer.SetVertexCount(path.Count);
+
+			if (tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
+			    {
+				lineRenderer.SetVertexCount(path.Count);
 			for (int i = 0; i < path.Count; i++)
-				lineRenderer.SetPosition(i, path[i].transform.position);*/
-			
-			StopAllCoroutines();
-			StartCoroutine(WalkPath());
+				lineRenderer.SetPosition(i, path[i].transform.position);
+				
+				StopAllCoroutines();
+				StartCoroutine(WalkPath());
+			}
 		}
+		else
+		{
+			if (tileMap.FindPath(transform.localPosition, targetTile.coords, path))
+			{
+				lineRenderer.SetVertexCount(path.Count);
+			for (int i = 0; i < path.Count; i++)
+				lineRenderer.SetPosition(i, path[i].transform.position);
+				
+				StopAllCoroutines();
+				StartCoroutine(WalkPath());
+			}
+		}
+
+
+			
 	}
 	
 	public void Harvest()
@@ -203,6 +225,7 @@ public class ResourceHarvester : MonoBehaviour
 		currentResourceAmount = 0;
 
 		targetTile.harvestersTargeting --;
+		viaTile.harvestersTargeting --;
 
 		SetState(HarvesterState.SearchForResource);
 

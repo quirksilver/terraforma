@@ -98,7 +98,7 @@ public class Map : MonoSingleton<Map>
 	public void GoToWorldMap()
 	{
 		//testing pause functionality
-		Pause = true;
+		//Pause = true;
 
 		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();
 
