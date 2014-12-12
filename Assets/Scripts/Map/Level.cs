@@ -68,6 +68,10 @@ public class Level : MonoBehaviour {
     public void RemoveResource(int ammount, ResourceType type)
     {
         resourceAmmount[(int)type] -= ammount;
+        if (resourceAmmount[(int)type] < 0)
+        {
+            resourceAmmount[(int)type] = 0;
+        }
     }
 	
 }
