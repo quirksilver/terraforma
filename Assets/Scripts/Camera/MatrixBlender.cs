@@ -4,6 +4,8 @@ using System.Collections;
 [RequireComponent (typeof(Camera))]
 public class MatrixBlender : MonoBehaviour
 {
+    public bool IsRunning;
+
 	public static Matrix4x4 MatrixLerp(Matrix4x4 from, Matrix4x4 to, float time, float duration, bool easeIn)
 	{
 		Matrix4x4 ret = new Matrix4x4();
@@ -24,6 +26,7 @@ public class MatrixBlender : MonoBehaviour
 	
 	private IEnumerator LerpFromTo(Matrix4x4 src, Matrix4x4 dest, float duration, bool easeIn, Vector3 startPos, Vector3 endPos, Quaternion startRot, Quaternion endRot)
 	{
+        IsRunning = true;
 		float startTime = Time.time;
 		while (Time.time - startTime < duration)
 		{
@@ -36,6 +39,7 @@ public class MatrixBlender : MonoBehaviour
 		camera.projectionMatrix = dest;
 		camera.transform.position = endPos;
 		camera.transform.rotation = endRot;
+        IsRunning = false;
 	}
 
 	//cubic easing in - accelerating from zero velocity

@@ -18,7 +18,10 @@ public class PerspectiveSwitcher : MonoBehaviour
 	private Quaternion orthoRot, perspectiveRot;
 
 	public Transform target;
-
+    Vector3 lastMousePos;
+    Coroutine blendCoroutine = null;
+    public Vector3 cameraOffset;
+    private Vector3 cameraCenter;
 	
 	void Start()
 	{
@@ -37,13 +40,47 @@ public class PerspectiveSwitcher : MonoBehaviour
 	
 	void Update()
 	{
+        if (orthoOn)
+        {
+            if (!blender.IsRunning)
+            {
+                if (cameraCenter == Vector3.zero)
+                {
+                    cameraCenter = transform.localPosition;
+                }
 
+                //mouse drag
+                if (Input.GetMouseButton(0))
+                {
+                    if (lastMousePos != Vector3.zero)
+                    {
+                        Vector3 delta = lastMousePos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        cameraOffset += delta;
+                        //Vector3 newCameraPos = transform.localPosition + delta;
+                        // pos clamp
+                        Bounds mapBounds = Map.instance.tileMap.GetSize();
+
+                        Debug.Log(mapBounds);
+                        cameraOffset = Vector3.ClampMagnitude(cameraOffset, mapBounds.size.magnitude/2.0f);
+
+                        transform.localPosition = cameraCenter + cameraOffset;
+                    }
+                    lastMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                }
+                else
+                {
+                    lastMousePos = Vector3.zero;
+                }
+            }
+        }
 	}
 
 	public void switchToOrtho(Transform focusPoint)
 	{
 		if (orthoOn) return;
 
+        cameraCenter = Vector3.zero;
+        cameraOffset = Vector3.zero;
 		GetComponent<DragMouseOrbit>().enabled = false;
 
 		orthoRot = focusPoint.parent.rotation * Quaternion.Euler(30, 45, 0);
@@ -54,8 +91,8 @@ public class PerspectiveSwitcher : MonoBehaviour
 		{
 			perspectivePos = transform.position;
 			perspectiveRot = transform.rotation;
-			
-			blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
+
+            blendCoroutine = blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
 		}
 
 	}
