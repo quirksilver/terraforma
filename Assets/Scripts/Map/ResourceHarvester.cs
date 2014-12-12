@@ -62,8 +62,8 @@ public class ResourceHarvester : MonoBehaviour
 		stateMethods.Add (HarvesterState.Paused, Pause);
 		stateMethods.Add (HarvesterState.SearchForResource, GetTargetResourceTile);
 		stateMethods.Add (HarvesterState.SearchForBuilding, GetTargetBuildingTile);
-		stateMethods.Add(HarvesterState.Moving, GoToTargetTile);
-		stateMethods.Add(HarvesterState.Harvesting, Harvest);
+		stateMethods.Add (HarvesterState.Moving, GoToTargetTile);
+		stateMethods.Add (HarvesterState.Harvesting, Harvest);
 		stateMethods.Add (HarvesterState.Dumping, AddResourceToBuilding);
 
 		lineRenderer = GetComponent<LineRenderer>();
@@ -178,11 +178,11 @@ public class ResourceHarvester : MonoBehaviour
 		{
 
 			if (tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
-			    {
+		    {
 				lineRenderer.SetVertexCount(path.Count);
-			for (int i = 0; i < path.Count; i++)
+				for (int i = 0; i < path.Count; i++)
 				lineRenderer.SetPosition(i, path[i].transform.position);
-				
+					
 				StopAllCoroutines();
 				StartCoroutine(WalkPath());
 			}
@@ -257,8 +257,19 @@ public class ResourceHarvester : MonoBehaviour
 	{
 		while (pathIndex < path.Count)
 		{
-			yield return StartCoroutine(WalkTo(path[pathIndex].transform.position));
-			pathIndex++;
+			if (path[pathIndex] != null)
+			{
+				yield return StartCoroutine(WalkTo(path[pathIndex].transform.position));
+				pathIndex++;
+			}
+			else
+			{
+				yield return 0;
+				path.Clear();
+				pathIndex = 0;
+				SetState(HarvesterState.Moving);
+			}
+
 		}
 
 		path.Clear();

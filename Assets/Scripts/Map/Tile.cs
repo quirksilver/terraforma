@@ -8,6 +8,8 @@ public class Tile : MonoBehaviour
     public Building building { private set; get; }
 	public int harvestersTargeting = 0;
 
+	public Building[] buildingRestrictions;
+
 	// Use this for initialization
 	public virtual void Start () {
         building = null;
@@ -26,9 +28,8 @@ public class Tile : MonoBehaviour
 
 	
 		PathTile pTile = GetComponent<PathTile>();
-		DestroyImmediate(pTile);
-
-		Map.instance.tileMap.UpdateConnections();
+		Destroy(pTile);
+		tileMap.UpdateConnections();
     }
 
     public virtual void OnMouseOver()
@@ -118,5 +119,26 @@ public class Tile : MonoBehaviour
 		{
 			return 1;
 		}
+	}
+
+	public bool Buildable(Building b)
+	{
+		if (buildingRestrictions.Length == 0 )
+		{
+			//default, no restrictions on buildings
+			return true;
+		}
+		else
+		{
+			for (int i = 0; i < buildingRestrictions.Length; i ++)
+			{
+				if (b.GetType() == buildingRestrictions[i].GetType())
+				{
+					return true;
+				}
+			}
+		}
+
+		return false;
 	}
 }

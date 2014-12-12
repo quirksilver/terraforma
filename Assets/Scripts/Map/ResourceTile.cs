@@ -23,7 +23,6 @@ public class ResourceTile : Tile
 	{
 		if (totalResourceYield == 0)
 		{
-
 			Map.instance.tileMap.RemoveResourceTile(this);
 
 			GetComponentInChildren<Renderer>().material.color = Color.black;
@@ -56,6 +55,11 @@ public class ResourceTile : Tile
 
 		}
 
+	}
+
+	public override void OnMouseOver()
+	{
+		base.OnMouseOver();
 	}
 
 	/*public void GetSurroundingTiles()

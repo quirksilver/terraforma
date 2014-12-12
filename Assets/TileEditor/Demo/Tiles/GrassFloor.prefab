@@ -124,9 +124,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
+  harvestersTargeting: 0
+  buildingRestrictions:
+  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
   resourceType: 4
   resourceYieldPerTurn: 5
   totalResourceYield: -1
+  surroundingTiles: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

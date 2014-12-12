@@ -142,7 +142,10 @@ public class Map : MonoSingleton<Map>
     public bool ValidateBuilding(Building building, Vector3 pos)
     {
         bool valid = true;
+		bool canBuildOnResource = true;
+		int requiredResources = 0;
 		List<Vector3> footprintTiles = building.footprint.tilePositions;
+	
 
 		for (int i = 0; i < footprintTiles.Count; i++)
 		{
@@ -152,14 +155,31 @@ public class Map : MonoSingleton<Map>
 			{
 				valid = false;
 			}
-			else if (checkTile.building != null)
+			else if (checkTile.building != null || !checkTile.Buildable(building))
 			{
 				valid = false;
 			}
+
+			if (checkTile is ResourceTile)
+			{
+				if (building.numberResourceTilesRequired > 0)
+				{
+					if ((checkTile as ResourceTile).resourceType == building.requiredResourceTileType)
+						requiredResources ++;
+				}
+				else 
+				{
+					canBuildOnResource = false;
+				}
+
+			}
 		}
 
-        return valid;
-    }
+		if (requiredResources < building.numberResourceTilesRequired) 
+			canBuildOnResource = false;
+
+		return valid && canBuildOnResource;
+	}
 
     public bool PlaceBuiding(Building building, Vector3 pos)
     {

@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &7303675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &10354483
 Renderer:
   m_ObjectHideFlags: 0
@@ -486,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &15921764
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &15921767
 Renderer:
   m_ObjectHideFlags: 0
@@ -663,6 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &19616180
 Renderer:
   m_ObjectHideFlags: 0
@@ -751,6 +756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &20357012
 Renderer:
   m_ObjectHideFlags: 0
@@ -852,6 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &30692597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &34966108
 Renderer:
   m_ObjectHideFlags: 0
@@ -1001,6 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &36333285
 Renderer:
   m_ObjectHideFlags: 0
@@ -1338,6 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &57090754
 Renderer:
   m_ObjectHideFlags: 0
@@ -1426,6 +1436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &58033919
 Renderer:
   m_ObjectHideFlags: 0
@@ -1587,6 +1598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &67577087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &67577091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &71830637
 Renderer:
   m_ObjectHideFlags: 0
@@ -1882,6 +1896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &76619529
 Renderer:
   m_ObjectHideFlags: 0
@@ -1970,6 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &86436906
 Renderer:
   m_ObjectHideFlags: 0
@@ -2058,6 +2074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &90877505
 Renderer:
   m_ObjectHideFlags: 0
@@ -2175,6 +2192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &102201050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,6 +2407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &102589582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,6 +2453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &102589585
 Renderer:
   m_ObjectHideFlags: 0
@@ -2535,6 +2555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &102671600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,6 +2617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &102738541
 Renderer:
   m_ObjectHideFlags: 0
@@ -2684,6 +2706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &103702971
 Renderer:
   m_ObjectHideFlags: 0
@@ -2914,6 +2937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &109527951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2975,6 +2999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &113065522
 Renderer:
   m_ObjectHideFlags: 0
@@ -3063,6 +3088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &113066118
 Renderer:
   m_ObjectHideFlags: 0
@@ -3180,6 +3206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &117369085
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,6 +3252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &117369088
 Renderer:
   m_ObjectHideFlags: 0
@@ -3342,6 +3370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &118786027
 Prefab:
   m_ObjectHideFlags: 0
@@ -3431,6 +3460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &119161681
 Renderer:
   m_ObjectHideFlags: 0
@@ -3548,6 +3578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &124173386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,6 +3637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &124173390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3667,6 +3699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &126906974
 Renderer:
   m_ObjectHideFlags: 0
@@ -3828,6 +3861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &135192478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3886,6 +3920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &135192482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3976,6 +4011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &139036911
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,6 +4086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &141242161
 Prefab:
   m_ObjectHideFlags: 0
@@ -4139,6 +4176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &144176252
 Renderer:
   m_ObjectHideFlags: 0
@@ -4227,6 +4265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &146925040
 Renderer:
   m_ObjectHideFlags: 0
@@ -4491,6 +4530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &156416799
 Renderer:
   m_ObjectHideFlags: 0
@@ -4667,6 +4707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &160453037
 Renderer:
   m_ObjectHideFlags: 0
@@ -4755,6 +4796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &161692221
 Renderer:
   m_ObjectHideFlags: 0
@@ -5006,6 +5048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &169519343
 Renderer:
   m_ObjectHideFlags: 0
@@ -5167,6 +5210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &182047507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5212,6 +5256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &182047510
 Renderer:
   m_ObjectHideFlags: 0
@@ -5357,6 +5402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &187965376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5506,6 +5552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &191298193
 Renderer:
   m_ObjectHideFlags: 0
@@ -5594,6 +5641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &191857190
 Renderer:
   m_ObjectHideFlags: 0
@@ -5711,6 +5759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &194062318
 GameObject:
   m_ObjectHideFlags: 0
@@ -5769,6 +5818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &194062322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5874,6 +5924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &196096083
 Renderer:
   m_ObjectHideFlags: 0
@@ -5991,6 +6042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &201398672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6065,6 +6117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &205069369
 Prefab:
   m_ObjectHideFlags: 0
@@ -6183,6 +6236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &213731541
 Prefab:
   m_ObjectHideFlags: 0
@@ -6615,6 +6669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &226789889
 Renderer:
   m_ObjectHideFlags: 0
@@ -6716,6 +6771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &228250089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6777,6 +6833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &232866232
 Renderer:
   m_ObjectHideFlags: 0
@@ -7019,6 +7076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &235708233
 Renderer:
   m_ObjectHideFlags: 0
@@ -7136,6 +7194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &236297085
 GameObject:
   m_ObjectHideFlags: 0
@@ -7181,6 +7240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &236297088
 Renderer:
   m_ObjectHideFlags: 0
@@ -7269,6 +7329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &239651507
 Renderer:
   m_ObjectHideFlags: 0
@@ -7648,6 +7709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &263566716
 Renderer:
   m_ObjectHideFlags: 0
@@ -7765,6 +7827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &267860814
 Prefab:
   m_ObjectHideFlags: 0
@@ -7854,6 +7917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &270087920
 Renderer:
   m_ObjectHideFlags: 0
@@ -7986,6 +8050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &274792947
 Renderer:
   m_ObjectHideFlags: 0
@@ -8103,6 +8168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &275079833
 GameObject:
   m_ObjectHideFlags: 0
@@ -8148,6 +8214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &275079836
 Renderer:
   m_ObjectHideFlags: 0
@@ -8236,6 +8303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &276901521
 Renderer:
   m_ObjectHideFlags: 0
@@ -8324,6 +8392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &277787832
 Renderer:
   m_ObjectHideFlags: 0
@@ -8441,6 +8510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &280315554
 Prefab:
   m_ObjectHideFlags: 0
@@ -8559,6 +8629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &281672716
 Prefab:
   m_ObjectHideFlags: 0
@@ -8714,6 +8785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &282241479
 Renderer:
   m_ObjectHideFlags: 0
@@ -8802,6 +8874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &292942986
 Renderer:
   m_ObjectHideFlags: 0
@@ -8963,6 +9036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &302751708
 Prefab:
   m_ObjectHideFlags: 0
@@ -9065,6 +9139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &304343037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9126,6 +9201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &305419295
 Renderer:
   m_ObjectHideFlags: 0
@@ -9375,6 +9451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &314927631
 GameObject:
   m_ObjectHideFlags: 0
@@ -9449,6 +9526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &315411025
 GameObject:
   m_ObjectHideFlags: 0
@@ -9523,6 +9601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &318348588
 GameObject:
   m_ObjectHideFlags: 0
@@ -9597,6 +9676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &319562857
 Prefab:
   m_ObjectHideFlags: 0
@@ -9686,6 +9766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &321878923
 Renderer:
   m_ObjectHideFlags: 0
@@ -9803,6 +9884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &325330428
 GameObject:
   m_ObjectHideFlags: 0
@@ -9926,6 +10008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &330741964
 Renderer:
   m_ObjectHideFlags: 0
@@ -10071,6 +10154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &339395495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10132,6 +10216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &339568808
 Renderer:
   m_ObjectHideFlags: 0
@@ -10293,6 +10378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &343811676
 GameObject:
   m_ObjectHideFlags: 0
@@ -10338,6 +10424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &343811679
 Renderer:
   m_ObjectHideFlags: 0
@@ -10455,6 +10542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &345336432
 GameObject:
   m_ObjectHideFlags: 0
@@ -10500,6 +10588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &345336435
 Renderer:
   m_ObjectHideFlags: 0
@@ -10588,6 +10677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &345819623
 Renderer:
   m_ObjectHideFlags: 0
@@ -10705,6 +10795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &349286298
 Prefab:
   m_ObjectHideFlags: 0
@@ -10838,6 +10929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &349477258
 Renderer:
   m_ObjectHideFlags: 0
@@ -10955,6 +11047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &352345813
 GameObject:
   m_ObjectHideFlags: 0
@@ -11029,6 +11122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &352947111
 Prefab:
   m_ObjectHideFlags: 0
@@ -11118,6 +11212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &354683963
 Renderer:
   m_ObjectHideFlags: 0
@@ -11206,6 +11301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &355820702
 Renderer:
   m_ObjectHideFlags: 0
@@ -11294,6 +11390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &357465189
 Renderer:
   m_ObjectHideFlags: 0
@@ -11382,6 +11479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &358183528
 Renderer:
   m_ObjectHideFlags: 0
@@ -11527,6 +11625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &364491655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11588,6 +11687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &368249899
 Renderer:
   m_ObjectHideFlags: 0
@@ -11749,6 +11849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &369588765
 GameObject:
   m_ObjectHideFlags: 0
@@ -11823,6 +11924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &370672050
 GameObject:
   m_ObjectHideFlags: 0
@@ -11881,6 +11983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &370672054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12164,6 +12267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &375054027
 Renderer:
   m_ObjectHideFlags: 0
@@ -12265,6 +12369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &376309899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12326,6 +12431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &377464317
 Renderer:
   m_ObjectHideFlags: 0
@@ -12487,6 +12593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &381155531
 Prefab:
   m_ObjectHideFlags: 0
@@ -12605,6 +12712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &383976785
 GameObject:
   m_ObjectHideFlags: 0
@@ -12663,6 +12771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &383976789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12768,6 +12877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &386233379
 Renderer:
   m_ObjectHideFlags: 0
@@ -12885,6 +12995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &389856146
 GameObject:
   m_ObjectHideFlags: 0
@@ -12930,6 +13041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &389856149
 Renderer:
   m_ObjectHideFlags: 0
@@ -13018,6 +13130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &389934072
 Renderer:
   m_ObjectHideFlags: 0
@@ -13106,6 +13219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &390036400
 Renderer:
   m_ObjectHideFlags: 0
@@ -13194,6 +13308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &393672087
 Renderer:
   m_ObjectHideFlags: 0
@@ -13311,6 +13426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &396540213
 Prefab:
   m_ObjectHideFlags: 0
@@ -13413,6 +13529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &400905015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13462,6 +13579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &402658702
 Renderer:
   m_ObjectHideFlags: 0
@@ -13562,6 +13680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &404075953
 Renderer:
   m_ObjectHideFlags: 0
@@ -13694,6 +13813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &406639561
 Renderer:
   m_ObjectHideFlags: 0
@@ -13855,6 +13975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &410176135
 GameObject:
   m_ObjectHideFlags: 0
@@ -13900,6 +14021,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &410176138
 Renderer:
   m_ObjectHideFlags: 0
@@ -13988,6 +14110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &414302250
 Renderer:
   m_ObjectHideFlags: 0
@@ -14140,6 +14263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &425890833
 Renderer:
   m_ObjectHideFlags: 0
@@ -14228,6 +14352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &426036744
 Renderer:
   m_ObjectHideFlags: 0
@@ -14316,6 +14441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &426968453
 Renderer:
   m_ObjectHideFlags: 0
@@ -14417,6 +14543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &427522581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14522,6 +14649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &431031171
 Renderer:
   m_ObjectHideFlags: 0
@@ -14639,6 +14767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &433086133
 Prefab:
   m_ObjectHideFlags: 0
@@ -14757,6 +14886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &436298379
 Prefab:
   m_ObjectHideFlags: 0
@@ -14875,6 +15005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &441139809
 GameObject:
   m_ObjectHideFlags: 0
@@ -14920,6 +15051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &441139812
 Renderer:
   m_ObjectHideFlags: 0
@@ -15052,6 +15184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &442147797
 Renderer:
   m_ObjectHideFlags: 0
@@ -15140,6 +15273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &445024217
 Renderer:
   m_ObjectHideFlags: 0
@@ -15241,6 +15375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &445424790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15331,6 +15466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &452429815
 GameObject:
   m_ObjectHideFlags: 0
@@ -15389,6 +15525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &452429819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15523,6 +15660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &461888678
 GameObject:
   m_ObjectHideFlags: 0
@@ -15568,6 +15706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &461888681
 Renderer:
   m_ObjectHideFlags: 0
@@ -15700,6 +15839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &465363195
 Renderer:
   m_ObjectHideFlags: 0
@@ -15817,6 +15957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &468587857
 Prefab:
   m_ObjectHideFlags: 0
@@ -15906,6 +16047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &470498809
 Renderer:
   m_ObjectHideFlags: 0
@@ -15994,6 +16136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &470642468
 Renderer:
   m_ObjectHideFlags: 0
@@ -16126,6 +16269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &472526937
 Renderer:
   m_ObjectHideFlags: 0
@@ -16243,6 +16387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &474033033
 GameObject:
   m_ObjectHideFlags: 0
@@ -16288,6 +16433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &474033036
 Renderer:
   m_ObjectHideFlags: 0
@@ -16389,6 +16535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &476154432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16450,6 +16597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &476600365
 Renderer:
   m_ObjectHideFlags: 0
@@ -16538,6 +16686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &479693960
 Renderer:
   m_ObjectHideFlags: 0
@@ -16626,6 +16775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &483605518
 Renderer:
   m_ObjectHideFlags: 0
@@ -16867,6 +17017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &487899904
 Renderer:
   m_ObjectHideFlags: 0
@@ -16984,6 +17135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &490025758
 GameObject:
   m_ObjectHideFlags: 0
@@ -17029,6 +17181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &490025761
 Renderer:
   m_ObjectHideFlags: 0
@@ -17161,6 +17314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &492859188
 Renderer:
   m_ObjectHideFlags: 0
@@ -17278,6 +17432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &495873138
 Prefab:
   m_ObjectHideFlags: 0
@@ -17468,6 +17623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &504880260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17608,6 +17764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &507061985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17698,6 +17855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &512588527
 GameObject:
   m_ObjectHideFlags: 0
@@ -17743,6 +17901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &512588530
 Renderer:
   m_ObjectHideFlags: 0
@@ -17960,6 +18119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &518761493
 Renderer:
   m_ObjectHideFlags: 0
@@ -18048,6 +18208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &520052402
 Renderer:
   m_ObjectHideFlags: 0
@@ -18165,6 +18326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &525576391
 GameObject:
   m_ObjectHideFlags: 0
@@ -18239,6 +18401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &527219872
 GameObject:
   m_ObjectHideFlags: 0
@@ -18313,6 +18476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &531171264
 GameObject:
   m_ObjectHideFlags: 0
@@ -18387,6 +18551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &532420925
 GameObject:
   m_ObjectHideFlags: 0
@@ -18461,6 +18626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &534207856
 GameObject:
   m_ObjectHideFlags: 0
@@ -18506,6 +18672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &534207859
 Renderer:
   m_ObjectHideFlags: 0
@@ -18682,6 +18849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &536176737
 Renderer:
   m_ObjectHideFlags: 0
@@ -18770,6 +18938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &541126337
 Renderer:
   m_ObjectHideFlags: 0
@@ -18975,6 +19144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &552801715
 GameObject:
   m_ObjectHideFlags: 0
@@ -19033,6 +19203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &552801719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19163,6 +19334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &553556878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19253,6 +19425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &558028921
 Prefab:
   m_ObjectHideFlags: 0
@@ -19540,6 +19713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &575316653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19630,6 +19804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &578431622
 GameObject:
   m_ObjectHideFlags: 0
@@ -19688,6 +19863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &578431626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19749,6 +19925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &578464421
 Renderer:
   m_ObjectHideFlags: 0
@@ -19866,6 +20043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &581281540
 Prefab:
   m_ObjectHideFlags: 0
@@ -20012,6 +20190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &585087228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20102,6 +20281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &589691706
 GameObject:
   m_ObjectHideFlags: 0
@@ -20147,6 +20327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &589691709
 Renderer:
   m_ObjectHideFlags: 0
@@ -20248,6 +20429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &591655284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20309,6 +20491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &591929656
 Renderer:
   m_ObjectHideFlags: 0
@@ -20397,6 +20580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &591942276
 Renderer:
   m_ObjectHideFlags: 0
@@ -20514,6 +20698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &597595490
 GameObject:
   m_ObjectHideFlags: 0
@@ -20559,6 +20744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &597595493
 Renderer:
   m_ObjectHideFlags: 0
@@ -20647,6 +20833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &601112488
 Renderer:
   m_ObjectHideFlags: 0
@@ -20748,6 +20935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &606278891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20946,6 +21134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &615280202
 Prefab:
   m_ObjectHideFlags: 0
@@ -21372,6 +21561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &625239648
 Prefab:
   m_ObjectHideFlags: 0
@@ -21461,6 +21651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &627234687
 Renderer:
   m_ObjectHideFlags: 0
@@ -21637,6 +21828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &638651403
 Renderer:
   m_ObjectHideFlags: 0
@@ -21754,6 +21946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &640924009
 GameObject:
   m_ObjectHideFlags: 0
@@ -21812,6 +22005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &640924013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21902,6 +22096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &642732759
 GameObject:
   m_ObjectHideFlags: 0
@@ -21947,6 +22142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &642732762
 Renderer:
   m_ObjectHideFlags: 0
@@ -22415,6 +22611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &645516475
 Renderer:
   m_ObjectHideFlags: 0
@@ -22547,6 +22744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &649082071
 Renderer:
   m_ObjectHideFlags: 0
@@ -22664,6 +22862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &654170261
 GameObject:
   m_ObjectHideFlags: 0
@@ -22722,6 +22921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &654170265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22783,6 +22983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &654865751
 Renderer:
   m_ObjectHideFlags: 0
@@ -23057,6 +23258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &659634949
 GameObject:
   m_ObjectHideFlags: 0
@@ -23102,6 +23304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &659634952
 Renderer:
   m_ObjectHideFlags: 0
@@ -23289,6 +23492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &664653449
 Renderer:
   m_ObjectHideFlags: 0
@@ -23484,6 +23688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &669231495
 Renderer:
   m_ObjectHideFlags: 0
@@ -23601,6 +23806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &672418977
 GameObject:
   m_ObjectHideFlags: 0
@@ -23818,6 +24024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &675384483
 Renderer:
   m_ObjectHideFlags: 0
@@ -23950,6 +24157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &682614448
 Renderer:
   m_ObjectHideFlags: 0
@@ -24082,6 +24290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &686704195
 Renderer:
   m_ObjectHideFlags: 0
@@ -24243,6 +24452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &691710082
 GameObject:
   m_ObjectHideFlags: 0
@@ -24668,6 +24878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &691771828
 Renderer:
   m_ObjectHideFlags: 0
@@ -24785,6 +24996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &699547980
 GameObject:
   m_ObjectHideFlags: 0
@@ -24830,6 +25042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &699547983
 Renderer:
   m_ObjectHideFlags: 0
@@ -24918,6 +25131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &700179591
 Renderer:
   m_ObjectHideFlags: 0
@@ -25094,6 +25308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &707832250
 Renderer:
   m_ObjectHideFlags: 0
@@ -25308,6 +25523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &710339466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25398,6 +25614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &711573530
 GameObject:
   m_ObjectHideFlags: 0
@@ -25443,6 +25660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &711573533
 Renderer:
   m_ObjectHideFlags: 0
@@ -25560,6 +25778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &726448719
 GameObject:
   m_ObjectHideFlags: 0
@@ -25605,6 +25824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &726448722
 Renderer:
   m_ObjectHideFlags: 0
@@ -25866,6 +26086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &730621602
 Renderer:
   m_ObjectHideFlags: 0
@@ -25998,6 +26219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &732854266
 Renderer:
   m_ObjectHideFlags: 0
@@ -26130,6 +26352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &735995339
 Renderer:
   m_ObjectHideFlags: 0
@@ -26291,6 +26514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &747745023
 GameObject:
   m_ObjectHideFlags: 0
@@ -26365,6 +26589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &751893749
 GameObject:
   m_ObjectHideFlags: 0
@@ -26439,6 +26664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &752799445
 GameObject:
   m_ObjectHideFlags: 0
@@ -26484,6 +26710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &752799448
 Renderer:
   m_ObjectHideFlags: 0
@@ -26572,6 +26799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &753876472
 Renderer:
   m_ObjectHideFlags: 0
@@ -26689,6 +26917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &757789750
 GameObject:
   m_ObjectHideFlags: 0
@@ -26763,6 +26992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &760293256
 GameObject:
   m_ObjectHideFlags: 0
@@ -26808,6 +27038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &760293259
 Renderer:
   m_ObjectHideFlags: 0
@@ -27092,6 +27323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &770612588
 Renderer:
   m_ObjectHideFlags: 0
@@ -27402,6 +27634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &791225656
 Renderer:
   m_ObjectHideFlags: 0
@@ -27503,6 +27736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &792197726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27608,6 +27842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &794857940
 Renderer:
   m_ObjectHideFlags: 0
@@ -27696,6 +27931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &796420137
 Renderer:
   m_ObjectHideFlags: 0
@@ -27784,6 +28020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &796795115
 Renderer:
   m_ObjectHideFlags: 0
@@ -27956,6 +28193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &800936264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28178,6 +28416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &806403536
 GameObject:
   m_ObjectHideFlags: 0
@@ -28429,6 +28668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &809632862
 GameObject:
   m_ObjectHideFlags: 0
@@ -28503,6 +28743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &810159054
 GameObject:
   m_ObjectHideFlags: 0
@@ -28561,6 +28802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &810159058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28695,6 +28937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &819839080
 Prefab:
   m_ObjectHideFlags: 0
@@ -28797,6 +29040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &822757656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28902,6 +29146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &829950074
 Renderer:
   m_ObjectHideFlags: 0
@@ -28990,6 +29235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &835057066
 Renderer:
   m_ObjectHideFlags: 0
@@ -29078,6 +29324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &840678759
 Renderer:
   m_ObjectHideFlags: 0
@@ -29179,6 +29426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &842635054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29240,6 +29488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &844535366
 Renderer:
   m_ObjectHideFlags: 0
@@ -29401,6 +29650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &847949778
 Prefab:
   m_ObjectHideFlags: 0
@@ -29534,6 +29784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &849192212
 Renderer:
   m_ObjectHideFlags: 0
@@ -29651,6 +29902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &850030292
 Prefab:
   m_ObjectHideFlags: 0
@@ -29740,6 +29992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &850324788
 Renderer:
   m_ObjectHideFlags: 0
@@ -29960,6 +30213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &865726880
 Renderer:
   m_ObjectHideFlags: 0
@@ -30048,6 +30302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &866704425
 Renderer:
   m_ObjectHideFlags: 0
@@ -30165,6 +30420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &866896849
 GameObject:
   m_ObjectHideFlags: 0
@@ -30210,6 +30466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &866896852
 Renderer:
   m_ObjectHideFlags: 0
@@ -30415,6 +30672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &871364959
 GameObject:
   m_ObjectHideFlags: 0
@@ -30460,6 +30718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &871364962
 Renderer:
   m_ObjectHideFlags: 0
@@ -30914,6 +31173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &883915744
 Renderer:
   m_ObjectHideFlags: 0
@@ -31031,6 +31291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &888766514
 Prefab:
   m_ObjectHideFlags: 0
@@ -31177,6 +31438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &892034705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31355,6 +31617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &901022561
 Prefab:
   m_ObjectHideFlags: 0
@@ -31473,6 +31736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &903564083
 Prefab:
   m_ObjectHideFlags: 0
@@ -31575,6 +31839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &905010633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31665,6 +31930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &907073754
 Prefab:
   m_ObjectHideFlags: 0
@@ -31794,6 +32060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &907171145
 Renderer:
   m_ObjectHideFlags: 0
@@ -31911,6 +32178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &912379230
 GameObject:
   m_ObjectHideFlags: 0
@@ -31985,6 +32253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &912710114
 GameObject:
   m_ObjectHideFlags: 0
@@ -32059,6 +32328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &915701114
 GameObject:
   m_ObjectHideFlags: 0
@@ -32104,6 +32374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &915701117
 Renderer:
   m_ObjectHideFlags: 0
@@ -32205,6 +32476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &917210800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32266,6 +32538,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &917812800
 Renderer:
   m_ObjectHideFlags: 0
@@ -32383,6 +32656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &918905375
 GameObject:
   m_ObjectHideFlags: 0
@@ -32556,6 +32830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &920491036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32730,6 +33005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &925925253
 Renderer:
   m_ObjectHideFlags: 0
@@ -32891,6 +33167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &936074884
 Prefab:
   m_ObjectHideFlags: 0
@@ -33037,6 +33314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &948599270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33111,6 +33389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &951557902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33289,6 +33568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &954916575
 Prefab:
   m_ObjectHideFlags: 0
@@ -33407,6 +33687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &959620300
 Prefab:
   m_ObjectHideFlags: 0
@@ -33525,6 +33806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &965103229
 GameObject:
   m_ObjectHideFlags: 0
@@ -33599,6 +33881,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &966867340
 GameObject:
   m_ObjectHideFlags: 0
@@ -33644,6 +33927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &966867343
 Renderer:
   m_ObjectHideFlags: 0
@@ -33833,6 +34117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &968315131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33923,6 +34208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &969498587
 Prefab:
   m_ObjectHideFlags: 0
@@ -34149,6 +34435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &978965900
 GameObject:
   m_ObjectHideFlags: 0
@@ -34223,6 +34510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &979647247
 Prefab:
   m_ObjectHideFlags: 0
@@ -34411,6 +34699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &985148848
 Renderer:
   m_ObjectHideFlags: 0
@@ -34499,6 +34788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &986163493
 Renderer:
   m_ObjectHideFlags: 0
@@ -34600,6 +34890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &987489369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34661,6 +34952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &987988712
 Renderer:
   m_ObjectHideFlags: 0
@@ -34749,6 +35041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &990098442
 Renderer:
   m_ObjectHideFlags: 0
@@ -35071,6 +35364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &993262010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35249,6 +35543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1002476643
 Prefab:
   m_ObjectHideFlags: 0
@@ -35351,6 +35646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1006222498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35441,6 +35737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1011403229
 GameObject:
   m_ObjectHideFlags: 0
@@ -35515,6 +35812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1012093967
 Prefab:
   m_ObjectHideFlags: 0
@@ -35794,6 +36092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1020023734
 GameObject:
   m_ObjectHideFlags: 0
@@ -35839,6 +36138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1020023737
 Renderer:
   m_ObjectHideFlags: 0
@@ -36088,6 +36388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1026324491
 GameObject:
   m_ObjectHideFlags: 0
@@ -36133,6 +36434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1026324494
 Renderer:
   m_ObjectHideFlags: 0
@@ -36221,6 +36523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1030012202
 Renderer:
   m_ObjectHideFlags: 0
@@ -36309,6 +36612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1031570975
 Renderer:
   m_ObjectHideFlags: 0
@@ -36426,6 +36730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1034596612
 GameObject:
   m_ObjectHideFlags: 0
@@ -36471,6 +36776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1034596615
 Renderer:
   m_ObjectHideFlags: 0
@@ -36603,6 +36909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1042167738
 Renderer:
   m_ObjectHideFlags: 0
@@ -36691,6 +36998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1044097873
 Renderer:
   m_ObjectHideFlags: 0
@@ -36836,6 +37144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1048120802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36926,6 +37235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1051568597
 GameObject:
   m_ObjectHideFlags: 0
@@ -36971,6 +37281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1051568600
 Renderer:
   m_ObjectHideFlags: 0
@@ -37088,6 +37399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1055742993
 GameObject:
   m_ObjectHideFlags: 0
@@ -37162,6 +37474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1057582086
 Prefab:
   m_ObjectHideFlags: 0
@@ -37264,6 +37577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1058357985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37354,6 +37668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1060898252
 GameObject:
   m_ObjectHideFlags: 0
@@ -37428,6 +37743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1068177442
 Prefab:
   m_ObjectHideFlags: 0
@@ -37517,6 +37833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1069934487
 Renderer:
   m_ObjectHideFlags: 0
@@ -37605,6 +37922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1069961281
 Renderer:
   m_ObjectHideFlags: 0
@@ -37706,6 +38024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1070188768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37851,6 +38170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1074092573
 Renderer:
   m_ObjectHideFlags: 0
@@ -37939,6 +38259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1074318741
 Renderer:
   m_ObjectHideFlags: 0
@@ -38100,6 +38421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1080925317
 GameObject:
   m_ObjectHideFlags: 0
@@ -38174,6 +38496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1085217811
 GameObject:
   m_ObjectHideFlags: 0
@@ -38248,6 +38571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1089568657
 GameObject:
   m_ObjectHideFlags: 0
@@ -38322,6 +38646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1091198496
 GameObject:
   m_ObjectHideFlags: 0
@@ -38367,6 +38692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1091198499
 Renderer:
   m_ObjectHideFlags: 0
@@ -38553,6 +38879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1097538845
 GameObject:
   m_ObjectHideFlags: 0
@@ -38712,6 +39039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1101654644
 GameObject:
   m_ObjectHideFlags: 0
@@ -38757,6 +39085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1101654647
 Renderer:
   m_ObjectHideFlags: 0
@@ -38845,6 +39174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1102129224
 Renderer:
   m_ObjectHideFlags: 0
@@ -39006,6 +39336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1107362178
 GameObject:
   m_ObjectHideFlags: 0
@@ -39051,6 +39382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1107362181
 Renderer:
   m_ObjectHideFlags: 0
@@ -39183,6 +39515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1112414304
 Renderer:
   m_ObjectHideFlags: 0
@@ -39284,6 +39617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1112991261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39374,6 +39708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1118019439
 GameObject:
   m_ObjectHideFlags: 0
@@ -39617,6 +39952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1135087766
 Renderer:
   m_ObjectHideFlags: 0
@@ -39748,6 +40084,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions:
+  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
   resourceType: 4
   resourceYieldPerTurn: 5
   totalResourceYield: 15
@@ -39854,6 +40192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1136658218
 Renderer:
   m_ObjectHideFlags: 0
@@ -39942,6 +40281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1136806998
 Renderer:
   m_ObjectHideFlags: 0
@@ -40074,6 +40414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1141128538
 Renderer:
   m_ObjectHideFlags: 0
@@ -40191,6 +40532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1145158489
 GameObject:
   m_ObjectHideFlags: 0
@@ -40236,6 +40578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1145158492
 Renderer:
   m_ObjectHideFlags: 0
@@ -40367,6 +40710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions:
+  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
   resourceType: 4
   resourceYieldPerTurn: 5
   totalResourceYield: -1
@@ -40429,6 +40774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1148944563
 Renderer:
   m_ObjectHideFlags: 0
@@ -40546,6 +40892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1152672628
 GameObject:
   m_ObjectHideFlags: 0
@@ -40604,6 +40951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1152672632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40772,6 +41120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1165145278
 Renderer:
   m_ObjectHideFlags: 0
@@ -40889,6 +41238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1172956649
 GameObject:
   m_ObjectHideFlags: 0
@@ -40934,6 +41284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1172956652
 Renderer:
   m_ObjectHideFlags: 0
@@ -41066,6 +41417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1183958047
 Renderer:
   m_ObjectHideFlags: 0
@@ -41512,6 +41864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1193646128
 Renderer:
   m_ObjectHideFlags: 0
@@ -41761,6 +42114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1200803494
 Prefab:
   m_ObjectHideFlags: 0
@@ -41879,6 +42233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1207537764
 GameObject:
   m_ObjectHideFlags: 0
@@ -41953,6 +42308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1209576655
 GameObject:
   m_ObjectHideFlags: 0
@@ -42011,6 +42367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1209576659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42189,6 +42546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1220763559
 Prefab:
   m_ObjectHideFlags: 0
@@ -42307,6 +42665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1222726859
 Prefab:
   m_ObjectHideFlags: 0
@@ -42396,6 +42755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1222857142
 Renderer:
   m_ObjectHideFlags: 0
@@ -42601,6 +42961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1226984691
 Prefab:
   m_ObjectHideFlags: 0
@@ -42690,6 +43051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1229662039
 Renderer:
   m_ObjectHideFlags: 0
@@ -42791,6 +43153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1230242374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42969,6 +43332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1237451367
 Prefab:
   m_ObjectHideFlags: 0
@@ -43215,6 +43579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1248555406
 Renderer:
   m_ObjectHideFlags: 0
@@ -43411,6 +43776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1251742076
 Renderer:
   m_ObjectHideFlags: 0
@@ -43499,6 +43865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1256923882
 Renderer:
   m_ObjectHideFlags: 0
@@ -43776,6 +44143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1269549996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43910,6 +44278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1276227430
 Prefab:
   m_ObjectHideFlags: 0
@@ -44188,6 +44557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1284872802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44419,6 +44789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!4 &1289874758
 Transform:
   m_ObjectHideFlags: 0
@@ -44477,6 +44848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1290336583
 Renderer:
   m_ObjectHideFlags: 0
@@ -44609,6 +44981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!4 &1292546111
 Transform:
   m_ObjectHideFlags: 0
@@ -44683,6 +45056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1293385149
 Renderer:
   m_ObjectHideFlags: 0
@@ -44815,6 +45189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1299638276
 Renderer:
   m_ObjectHideFlags: 0
@@ -44947,6 +45322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1301585185
 Renderer:
   m_ObjectHideFlags: 0
@@ -45064,6 +45440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1306834141
 Prefab:
   m_ObjectHideFlags: 0
@@ -45562,6 +45939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1310336973
 Prefab:
   m_ObjectHideFlags: 0
@@ -45651,6 +46029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1310666922
 Renderer:
   m_ObjectHideFlags: 0
@@ -45836,6 +46215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1313085796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45926,6 +46306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1314719771
 Prefab:
   m_ObjectHideFlags: 0
@@ -46088,6 +46469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1320423740
 Prefab:
   m_ObjectHideFlags: 0
@@ -46177,6 +46559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1321652138
 Renderer:
   m_ObjectHideFlags: 0
@@ -46454,6 +46837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1335577608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46720,6 +47104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1348969272
 GameObject:
   m_ObjectHideFlags: 0
@@ -46765,6 +47150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1348969275
 Renderer:
   m_ObjectHideFlags: 0
@@ -46853,6 +47239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1350601355
 Renderer:
   m_ObjectHideFlags: 0
@@ -46970,6 +47357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1352967268
 Prefab:
   m_ObjectHideFlags: 0
@@ -47059,6 +47447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1354225738
 Renderer:
   m_ObjectHideFlags: 0
@@ -47176,6 +47565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1359870062
 GameObject:
   m_ObjectHideFlags: 0
@@ -47221,6 +47611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1359870065
 Renderer:
   m_ObjectHideFlags: 0
@@ -47322,6 +47713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1362863725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47456,6 +47848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1370363326
 GameObject:
   m_ObjectHideFlags: 0
@@ -47514,6 +47907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1370363330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47604,6 +47998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1372798856
 GameObject:
   m_ObjectHideFlags: 0
@@ -47649,6 +48044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1372798859
 Renderer:
   m_ObjectHideFlags: 0
@@ -47794,6 +48190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1383489193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47956,6 +48353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1390476726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48046,6 +48444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1391675005
 GameObject:
   m_ObjectHideFlags: 0
@@ -48091,6 +48490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1391675008
 Renderer:
   m_ObjectHideFlags: 0
@@ -48277,6 +48677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1401061362
 GameObject:
   m_ObjectHideFlags: 0
@@ -48335,6 +48736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1401061366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48396,6 +48798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1405219474
 Renderer:
   m_ObjectHideFlags: 0
@@ -48484,6 +48887,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1406176911
 Renderer:
   m_ObjectHideFlags: 0
@@ -48572,6 +48976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1406758263
 Renderer:
   m_ObjectHideFlags: 0
@@ -48660,6 +49065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1409620853
 Renderer:
   m_ObjectHideFlags: 0
@@ -48748,6 +49154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1413888039
 Renderer:
   m_ObjectHideFlags: 0
@@ -48865,6 +49272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1414768363
 GameObject:
   m_ObjectHideFlags: 0
@@ -48939,6 +49347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1416520923
 Prefab:
   m_ObjectHideFlags: 0
@@ -49028,6 +49437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1416989786
 Renderer:
   m_ObjectHideFlags: 0
@@ -49145,6 +49555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1417170899
 GameObject:
   m_ObjectHideFlags: 0
@@ -49190,6 +49601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1417170902
 Renderer:
   m_ObjectHideFlags: 0
@@ -49278,6 +49690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1418379244
 Renderer:
   m_ObjectHideFlags: 0
@@ -49366,6 +49779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1419353336
 Renderer:
   m_ObjectHideFlags: 0
@@ -49483,6 +49897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1429349530
 GameObject:
   m_ObjectHideFlags: 0
@@ -49528,6 +49943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1429349533
 Renderer:
   m_ObjectHideFlags: 0
@@ -49616,6 +50032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1430441534
 Renderer:
   m_ObjectHideFlags: 0
@@ -49792,6 +50209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1437082989
 Renderer:
   m_ObjectHideFlags: 0
@@ -49880,6 +50298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1438803804
 Renderer:
   m_ObjectHideFlags: 0
@@ -49968,6 +50387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1442057937
 Renderer:
   m_ObjectHideFlags: 0
@@ -50173,6 +50593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1447025132
 GameObject:
   m_ObjectHideFlags: 0
@@ -50218,6 +50639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1447025135
 Renderer:
   m_ObjectHideFlags: 0
@@ -50306,6 +50728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1451015539
 Renderer:
   m_ObjectHideFlags: 0
@@ -50551,6 +50974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1458355656
 GameObject:
   m_ObjectHideFlags: 0
@@ -50691,6 +51115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1460178313
 GameObject:
   m_ObjectHideFlags: 0
@@ -50736,6 +51161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1460178316
 Renderer:
   m_ObjectHideFlags: 0
@@ -50868,6 +51294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1460961912
 Renderer:
   m_ObjectHideFlags: 0
@@ -50956,6 +51383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1462086013
 Renderer:
   m_ObjectHideFlags: 0
@@ -51101,6 +51529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1465439190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51219,6 +51648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1478006083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51280,6 +51710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1481081601
 Renderer:
   m_ObjectHideFlags: 0
@@ -51397,6 +51828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1482217662
 Prefab:
   m_ObjectHideFlags: 0
@@ -51486,6 +51918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1484424093
 Renderer:
   m_ObjectHideFlags: 0
@@ -51574,6 +52007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1486776559
 Renderer:
   m_ObjectHideFlags: 0
@@ -51735,6 +52169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1490395729
 Prefab:
   m_ObjectHideFlags: 0
@@ -51824,6 +52259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1491381678
 Renderer:
   m_ObjectHideFlags: 0
@@ -52013,6 +52449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1499071697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52087,6 +52524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1499995914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52177,6 +52615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1505956857
 GameObject:
   m_ObjectHideFlags: 0
@@ -52222,6 +52661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1505956860
 Renderer:
   m_ObjectHideFlags: 0
@@ -52310,6 +52750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1506049194
 Renderer:
   m_ObjectHideFlags: 0
@@ -52467,6 +52908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1516989005
 Renderer:
   m_ObjectHideFlags: 0
@@ -52555,6 +52997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1524462371
 Renderer:
   m_ObjectHideFlags: 0
@@ -52672,6 +53115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1525984691
 GameObject:
   m_ObjectHideFlags: 0
@@ -52746,6 +53190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1526709674
 GameObject:
   m_ObjectHideFlags: 0
@@ -52864,6 +53309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1528007877
 Renderer:
   m_ObjectHideFlags: 0
@@ -52981,6 +53427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1531141209
 GameObject:
   m_ObjectHideFlags: 0
@@ -53026,6 +53473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1531141212
 Renderer:
   m_ObjectHideFlags: 0
@@ -53143,6 +53591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1538270915
 GameObject:
   m_ObjectHideFlags: 0
@@ -53217,6 +53666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1540453932
 GameObject:
   m_ObjectHideFlags: 0
@@ -53262,6 +53712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1540453935
 Renderer:
   m_ObjectHideFlags: 0
@@ -53379,6 +53830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1540795068
 Prefab:
   m_ObjectHideFlags: 0
@@ -53468,6 +53920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1541563602
 Renderer:
   m_ObjectHideFlags: 0
@@ -53686,6 +54139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1553543347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53747,6 +54201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1556185216
 Renderer:
   m_ObjectHideFlags: 0
@@ -53864,6 +54319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1558193127
 GameObject:
   m_ObjectHideFlags: 0
@@ -53909,6 +54365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1558193130
 Renderer:
   m_ObjectHideFlags: 0
@@ -54010,6 +54467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1559971988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54159,6 +54617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1566497031
 Renderer:
   m_ObjectHideFlags: 0
@@ -54276,6 +54735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1567380519
 Prefab:
   m_ObjectHideFlags: 0
@@ -54409,6 +54869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1572807245
 Renderer:
   m_ObjectHideFlags: 0
@@ -54497,6 +54958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1574340835
 Renderer:
   m_ObjectHideFlags: 0
@@ -54585,6 +55047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1576353307
 Renderer:
   m_ObjectHideFlags: 0
@@ -54686,6 +55149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1576546274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54776,6 +55240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1581243681
 Prefab:
   m_ObjectHideFlags: 0
@@ -55024,6 +55489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1602367321
 GameObject:
   m_ObjectHideFlags: 0
@@ -55069,6 +55535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1602367324
 Renderer:
   m_ObjectHideFlags: 0
@@ -55258,6 +55725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1605974135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55348,6 +55816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1608713373
 GameObject:
   m_ObjectHideFlags: 0
@@ -55393,6 +55862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1608713376
 Renderer:
   m_ObjectHideFlags: 0
@@ -55481,6 +55951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1615789519
 Renderer:
   m_ObjectHideFlags: 0
@@ -55598,6 +56069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1617643380
 Prefab:
   m_ObjectHideFlags: 0
@@ -55700,6 +56172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1619776628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55790,6 +56263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1625575690
 Prefab:
   m_ObjectHideFlags: 0
@@ -55879,6 +56353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1627458639
 Renderer:
   m_ObjectHideFlags: 0
@@ -55994,6 +56469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1630226934
 Renderer:
   m_ObjectHideFlags: 0
@@ -56111,6 +56587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1632676821
 GameObject:
   m_ObjectHideFlags: 0
@@ -56156,6 +56633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1632676824
 Renderer:
   m_ObjectHideFlags: 0
@@ -56257,6 +56735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1635081914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56347,6 +56826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1638452796
 GameObject:
   m_ObjectHideFlags: 0
@@ -56392,6 +56872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1638452799
 Renderer:
   m_ObjectHideFlags: 0
@@ -56493,6 +56974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1648040828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56583,6 +57065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1649429460
 GameObject:
   m_ObjectHideFlags: 0
@@ -56657,6 +57140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1651596832
 Prefab:
   m_ObjectHideFlags: 0
@@ -56746,6 +57230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1654122820
 Renderer:
   m_ObjectHideFlags: 0
@@ -56863,6 +57348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1658812640
 GameObject:
   m_ObjectHideFlags: 0
@@ -56908,6 +57394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1658812643
 Renderer:
   m_ObjectHideFlags: 0
@@ -57069,6 +57556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1662514656
 GameObject:
   m_ObjectHideFlags: 0
@@ -57143,6 +57631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1662556702
 Prefab:
   m_ObjectHideFlags: 0
@@ -57232,6 +57721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1667500846
 Renderer:
   m_ObjectHideFlags: 0
@@ -57452,6 +57942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1676213069
 Renderer:
   m_ObjectHideFlags: 0
@@ -57553,6 +58044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1679038644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57614,6 +58106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1681997108
 Renderer:
   m_ObjectHideFlags: 0
@@ -57731,6 +58224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1683966370
 GameObject:
   m_ObjectHideFlags: 0
@@ -57805,6 +58299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1688217335
 GameObject:
   m_ObjectHideFlags: 0
@@ -57863,6 +58358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1688217339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57968,6 +58464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1694419794
 Renderer:
   m_ObjectHideFlags: 0
@@ -58056,6 +58553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1698250962
 Renderer:
   m_ObjectHideFlags: 0
@@ -58296,6 +58794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1705015766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58370,6 +58869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1705446762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58431,6 +58931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1710638244
 Renderer:
   m_ObjectHideFlags: 0
@@ -58592,6 +59093,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1716189305
 Prefab:
   m_ObjectHideFlags: 0
@@ -58681,6 +59183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1716305671
 Renderer:
   m_ObjectHideFlags: 0
@@ -58769,6 +59272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1716955137
 Renderer:
   m_ObjectHideFlags: 0
@@ -58886,6 +59390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1723855054
 GameObject:
   m_ObjectHideFlags: 0
@@ -58931,6 +59436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1723855057
 Renderer:
   m_ObjectHideFlags: 0
@@ -59019,6 +59525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1724717849
 Renderer:
   m_ObjectHideFlags: 0
@@ -59120,6 +59627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1724919852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59210,6 +59718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1728602194
 GameObject:
   m_ObjectHideFlags: 0
@@ -59268,6 +59777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1728602198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59373,6 +59883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1729193140
 Renderer:
   m_ObjectHideFlags: 0
@@ -59534,6 +60045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1734661835
 GameObject:
   m_ObjectHideFlags: 0
@@ -59579,6 +60091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1734661838
 Renderer:
   m_ObjectHideFlags: 0
@@ -59666,6 +60179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions:
+  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
   resourceType: 4
   resourceYieldPerTurn: 5
   totalResourceYield: -1
@@ -59728,6 +60243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1735620656
 Renderer:
   m_ObjectHideFlags: 0
@@ -59896,6 +60412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1744093847
 Renderer:
   m_ObjectHideFlags: 0
@@ -60057,6 +60574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1745215178
 GameObject:
   m_ObjectHideFlags: 0
@@ -60102,6 +60620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1745215181
 Renderer:
   m_ObjectHideFlags: 0
@@ -60303,6 +60822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1752302971
 Renderer:
   m_ObjectHideFlags: 0
@@ -60420,6 +60940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1754116531
 GameObject:
   m_ObjectHideFlags: 0
@@ -60465,6 +60986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1754116534
 Renderer:
   m_ObjectHideFlags: 0
@@ -60616,6 +61138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1758608889
 Prefab:
   m_ObjectHideFlags: 0
@@ -60734,6 +61257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1761286643
 GameObject:
   m_ObjectHideFlags: 0
@@ -60779,6 +61303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1761286646
 Renderer:
   m_ObjectHideFlags: 0
@@ -60896,6 +61421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1763120759
 Prefab:
   m_ObjectHideFlags: 0
@@ -61014,6 +61540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1767898283
 GameObject:
   m_ObjectHideFlags: 0
@@ -61088,6 +61615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1773924708
 GameObject:
   m_ObjectHideFlags: 0
@@ -61133,6 +61661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1773924711
 Renderer:
   m_ObjectHideFlags: 0
@@ -61265,6 +61794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1775947131
 Renderer:
   m_ObjectHideFlags: 0
@@ -61366,6 +61896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1776276719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61456,6 +61987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1777901500
 GameObject:
   m_ObjectHideFlags: 0
@@ -61501,6 +62033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1777901503
 Renderer:
   m_ObjectHideFlags: 0
@@ -61589,6 +62122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1778890792
 Renderer:
   m_ObjectHideFlags: 0
@@ -61706,6 +62240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1793134202
 GameObject:
   m_ObjectHideFlags: 0
@@ -61751,6 +62286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1793134205
 Renderer:
   m_ObjectHideFlags: 0
@@ -61839,6 +62375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1793693548
 Renderer:
   m_ObjectHideFlags: 0
@@ -61927,6 +62464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1796201197
 Renderer:
   m_ObjectHideFlags: 0
@@ -62015,6 +62553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1797990349
 Renderer:
   m_ObjectHideFlags: 0
@@ -62172,6 +62711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1800853336
 Renderer:
   m_ObjectHideFlags: 0
@@ -62304,6 +62844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1803780863
 Renderer:
   m_ObjectHideFlags: 0
@@ -62392,6 +62933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1803843471
 Renderer:
   m_ObjectHideFlags: 0
@@ -62544,6 +63086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1809747378
 Renderer:
   m_ObjectHideFlags: 0
@@ -62645,6 +63188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1811092342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62750,6 +63294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1815244714
 Renderer:
   m_ObjectHideFlags: 0
@@ -62867,6 +63412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1818001145
 Prefab:
   m_ObjectHideFlags: 0
@@ -63000,6 +63546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1820241715
 Renderer:
   m_ObjectHideFlags: 0
@@ -63172,6 +63719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1824170557
 Renderer:
   m_ObjectHideFlags: 0
@@ -63260,6 +63808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1826357864
 Renderer:
   m_ObjectHideFlags: 0
@@ -63348,6 +63897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1830095129
 Renderer:
   m_ObjectHideFlags: 0
@@ -63449,6 +63999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1831076484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63510,6 +64061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1831104500
 Renderer:
   m_ObjectHideFlags: 0
@@ -63671,6 +64223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1835678041
 Prefab:
   m_ObjectHideFlags: 0
@@ -63858,6 +64411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1846315903
 GameObject:
   m_ObjectHideFlags: 0
@@ -63903,6 +64457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1846315906
 Renderer:
   m_ObjectHideFlags: 0
@@ -64004,6 +64559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1846475347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64109,6 +64665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1849986139
 Renderer:
   m_ObjectHideFlags: 0
@@ -64226,6 +64783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1855162708
 GameObject:
   m_ObjectHideFlags: 0
@@ -64271,6 +64829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1855162711
 Renderer:
   m_ObjectHideFlags: 0
@@ -64359,6 +64918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1856800927
 Renderer:
   m_ObjectHideFlags: 0
@@ -64447,6 +65007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1860597508
 Renderer:
   m_ObjectHideFlags: 0
@@ -64592,6 +65153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1865120501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64682,6 +65244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1868325066
 GameObject:
   m_ObjectHideFlags: 0
@@ -64740,6 +65303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1868325070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64830,6 +65394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1873670543
 GameObject:
   m_ObjectHideFlags: 0
@@ -64875,6 +65440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1873670546
 Renderer:
   m_ObjectHideFlags: 0
@@ -64976,6 +65542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1878357977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65037,6 +65604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1879769838
 Renderer:
   m_ObjectHideFlags: 0
@@ -65138,6 +65706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1881743749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65316,6 +65885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1886788189
 GameObject:
   m_ObjectHideFlags: 0
@@ -65469,6 +66039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1895730892
 Renderer:
   m_ObjectHideFlags: 0
@@ -65557,6 +66128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1896869449
 Renderer:
   m_ObjectHideFlags: 0
@@ -65645,6 +66217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1899732757
 Renderer:
   m_ObjectHideFlags: 0
@@ -65762,6 +66335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1900783204
 GameObject:
   m_ObjectHideFlags: 0
@@ -65807,6 +66381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1900783207
 Renderer:
   m_ObjectHideFlags: 0
@@ -65895,6 +66470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1903431016
 Renderer:
   m_ObjectHideFlags: 0
@@ -65983,6 +66559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1906258396
 Renderer:
   m_ObjectHideFlags: 0
@@ -66100,6 +66677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &1908258763
 Prefab:
   m_ObjectHideFlags: 0
@@ -66321,6 +66899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1918371293
 Renderer:
   m_ObjectHideFlags: 0
@@ -66510,6 +67089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1925802517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66695,6 +67275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1931881547
 GameObject:
   m_ObjectHideFlags: 0
@@ -66740,6 +67321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1931881550
 Renderer:
   m_ObjectHideFlags: 0
@@ -66841,6 +67423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1933683308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66902,6 +67485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1934553929
 Renderer:
   m_ObjectHideFlags: 0
@@ -67047,6 +67631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1938243106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67121,6 +67706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1938514383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67211,6 +67797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1941333334
 GameObject:
   m_ObjectHideFlags: 0
@@ -67256,6 +67843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1941333337
 Renderer:
   m_ObjectHideFlags: 0
@@ -67344,6 +67932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1941378963
 Renderer:
   m_ObjectHideFlags: 0
@@ -67505,6 +68094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1945960237
 GameObject:
   m_ObjectHideFlags: 0
@@ -67563,6 +68153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1945960241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67637,6 +68228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1947084031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67711,6 +68303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1950251472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67864,6 +68457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1953739737
 Renderer:
   m_ObjectHideFlags: 0
@@ -67981,6 +68575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1955728546
 GameObject:
   m_ObjectHideFlags: 0
@@ -68026,6 +68621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1955728549
 Renderer:
   m_ObjectHideFlags: 0
@@ -68114,6 +68710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1958451261
 Renderer:
   m_ObjectHideFlags: 0
@@ -68202,6 +68799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1961391724
 Renderer:
   m_ObjectHideFlags: 0
@@ -68290,6 +68888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1961626832
 Renderer:
   m_ObjectHideFlags: 0
@@ -68391,6 +68990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1964042077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68452,6 +69052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1964872941
 Renderer:
   m_ObjectHideFlags: 0
@@ -68540,6 +69141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1965599412
 Renderer:
   m_ObjectHideFlags: 0
@@ -68628,6 +69230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1965840961
 Renderer:
   m_ObjectHideFlags: 0
@@ -68745,6 +69348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1973683406
 GameObject:
   m_ObjectHideFlags: 0
@@ -68790,6 +69394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1973683409
 Renderer:
   m_ObjectHideFlags: 0
@@ -69016,6 +69621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1976874036
 Renderer:
   m_ObjectHideFlags: 0
@@ -69177,6 +69783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &1984662883
 GameObject:
   m_ObjectHideFlags: 0
@@ -69222,6 +69829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1984662886
 Renderer:
   m_ObjectHideFlags: 0
@@ -69376,6 +69984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1987195461
 Renderer:
   m_ObjectHideFlags: 0
@@ -69477,6 +70086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &1987892486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69582,6 +70192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &1991865835
 Renderer:
   m_ObjectHideFlags: 0
@@ -70019,6 +70630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2002370649
 Renderer:
   m_ObjectHideFlags: 0
@@ -70171,6 +70783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2010603948
 Renderer:
   m_ObjectHideFlags: 0
@@ -70272,6 +70885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2010604952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70362,6 +70976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2019271161
 Prefab:
   m_ObjectHideFlags: 0
@@ -70480,6 +71095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2021170951
 Prefab:
   m_ObjectHideFlags: 0
@@ -70582,6 +71198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2022366577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70656,6 +71273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2023910868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70717,6 +71335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2026399782
 Renderer:
   m_ObjectHideFlags: 0
@@ -70849,6 +71468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2031703726
 Renderer:
   m_ObjectHideFlags: 0
@@ -70950,6 +71570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2032025672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71040,6 +71661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2032846940
 GameObject:
   m_ObjectHideFlags: 0
@@ -71085,6 +71707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2032846943
 Renderer:
   m_ObjectHideFlags: 0
@@ -71173,6 +71796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2035740903
 Renderer:
   m_ObjectHideFlags: 0
@@ -71349,6 +71973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2038207379
 Renderer:
   m_ObjectHideFlags: 0
@@ -71466,6 +72091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2045085378
 GameObject:
   m_ObjectHideFlags: 0
@@ -71511,6 +72137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2045085381
 Renderer:
   m_ObjectHideFlags: 0
@@ -71612,6 +72239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2045983366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71702,6 +72330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2046992207
 GameObject:
   m_ObjectHideFlags: 0
@@ -71776,6 +72405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2050703536
 GameObject:
   m_ObjectHideFlags: 0
@@ -71821,6 +72451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2050703539
 Renderer:
   m_ObjectHideFlags: 0
@@ -72066,6 +72697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2058201594
 GameObject:
   m_ObjectHideFlags: 0
@@ -72111,6 +72743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2058201597
 Renderer:
   m_ObjectHideFlags: 0
@@ -72199,6 +72832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2065730531
 Renderer:
   m_ObjectHideFlags: 0
@@ -72287,6 +72921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2066946223
 Renderer:
   m_ObjectHideFlags: 0
@@ -72388,6 +73023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2069343475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72462,6 +73098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2073919975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72552,6 +73189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2076661528
 Prefab:
   m_ObjectHideFlags: 0
@@ -72641,6 +73279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2083084167
 Renderer:
   m_ObjectHideFlags: 0
@@ -72742,6 +73381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2093087927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72832,6 +73472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2096391316
 GameObject:
   m_ObjectHideFlags: 0
@@ -72877,6 +73518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2096391319
 Renderer:
   m_ObjectHideFlags: 0
@@ -72978,6 +73620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2098852832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73039,6 +73682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2100067783
 Renderer:
   m_ObjectHideFlags: 0
@@ -73127,6 +73771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2102315435
 Renderer:
   m_ObjectHideFlags: 0
@@ -73244,6 +73889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2106292582
 GameObject:
   m_ObjectHideFlags: 0
@@ -73289,6 +73935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2106292585
 Renderer:
   m_ObjectHideFlags: 0
@@ -73526,6 +74173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2108622444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73704,6 +74352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2112692597
 Prefab:
   m_ObjectHideFlags: 0
@@ -73939,6 +74588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2117512218
 GameObject:
   m_ObjectHideFlags: 0
@@ -74013,6 +74663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2120217630
 Prefab:
   m_ObjectHideFlags: 0
@@ -74288,6 +74939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2128269455
 Prefab:
   m_ObjectHideFlags: 0
@@ -74377,6 +75029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2129223673
 Renderer:
   m_ObjectHideFlags: 0
@@ -74494,6 +75147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1 &2134580303
 GameObject:
   m_ObjectHideFlags: 0
@@ -74539,6 +75193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2134580306
 Renderer:
   m_ObjectHideFlags: 0
@@ -74736,6 +75391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!1001 &2135318060
 Prefab:
   m_ObjectHideFlags: 0
@@ -74890,6 +75546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2137590148
 Renderer:
   m_ObjectHideFlags: 0
@@ -74978,6 +75635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2137660635
 Renderer:
   m_ObjectHideFlags: 0
@@ -75066,6 +75724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!23 &2139242668
 Renderer:
   m_ObjectHideFlags: 0
@@ -75167,6 +75826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
 --- !u!114 &2139546599
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,6 +32,9 @@ public class Building : MonoBehaviour {
     public int produceFood;
     public int produceMetal;
 
+	public ResourceType requiredResourceTileType = ResourceType.Count;
+	public int numberResourceTilesRequired = 0;
+
     public float buildingTime;
     private float buildingTimer;
     private bool built = false;
@@ -48,10 +51,18 @@ public class Building : MonoBehaviour {
 
 	protected TileMap tileMap;
 
+	protected GameObject spriteHolder;
+	protected GameObject fullSprite;
+
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
 		//Debug.Log(footprint);
+
+		Transform holderTransform = transform.Find("SpriteHolder");
+
+		if (holderTransform) spriteHolder = holderTransform.gameObject;
+		fullSprite = transform.Find("Sprite").gameObject;
 	
 	}
 
@@ -82,6 +93,11 @@ public class Building : MonoBehaviour {
             {
                 GetComponentInChildren<SpriteRenderer>().color = Color.white;
                 built=true;
+				if (spriteHolder)
+				{
+					spriteHolder.SetActive(true);
+					fullSprite.SetActive(false);
+				}
                 StoryEventManager.SendEvent("BUILT" + DisplayName.ToUpper());
             }
         }
@@ -95,10 +111,10 @@ public class Building : MonoBehaviour {
 		for (int i = 0; i < borderTiles.Count; i++)
 		{
 			//Debug.Log("DRAW SOME LINES");
-			Debug.DrawLine(borderTiles[i].transform.localPosition + LBCorner, borderTiles[i].transform.localPosition + LTCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.localPosition + LTCorner, borderTiles[i].transform.localPosition + RTCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.localPosition + RTCorner, borderTiles[i].transform.localPosition + RBCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.localPosition + RBCorner, borderTiles[i].transform.localPosition + LBCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.green);
 		}
 	}
 
