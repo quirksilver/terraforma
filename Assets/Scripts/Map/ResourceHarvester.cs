@@ -36,6 +36,12 @@ public class ResourceHarvester : MonoBehaviour
 	public int buildCostFood;
 	public int buildCostMetal;
 
+	protected Animator animator;
+
+	private const int ANIM_MOVE = 0;
+	private const int ANIM_HARVEST = 1;
+	private const int ANIM_DUMP = 2;
+
 	public enum HarvesterState
 	{
 		Idle,
@@ -61,6 +67,8 @@ public class ResourceHarvester : MonoBehaviour
 		stateMethods.Add (HarvesterState.Dumping, AddResourceToBuilding);
 
 		lineRenderer = GetComponent<LineRenderer>();
+
+		animator = GetComponentInChildren<Animator>();
 
 		SetState(HarvesterState.SearchForResource);
 
@@ -160,6 +168,8 @@ public class ResourceHarvester : MonoBehaviour
 
 	public void GoToTargetTile()
 	{
+		animator.SetInteger("Action", ANIM_MOVE);
+
 		if (path.Count > 0)
 		{
 			StartCoroutine(WalkPath());
@@ -200,7 +210,7 @@ public class ResourceHarvester : MonoBehaviour
 
 		targetTile.harvestersTargeting --;
 
-		SetState(HarvesterState.SearchForBuilding);
+		StartCoroutine(WaitForAnimation(ANIM_HARVEST, HarvesterState.SearchForBuilding));
 	}
 
 	public void ArrivedAtTargetTile()
@@ -227,8 +237,19 @@ public class ResourceHarvester : MonoBehaviour
 		targetTile.harvestersTargeting --;
 		viaTile.harvestersTargeting --;
 
-		SetState(HarvesterState.SearchForResource);
+		StartCoroutine(WaitForAnimation(ANIM_DUMP, HarvesterState.SearchForResource));
 
+		//SetState(HarvesterState.SearchForResource);
+
+	}
+
+	IEnumerator WaitForAnimation(int animState, HarvesterState nextState)
+	{
+		animator.SetInteger("Action", animState);
+
+		yield return new WaitForSeconds(2);
+
+		SetState(nextState);
 	}
 
 
@@ -251,6 +272,10 @@ public class ResourceHarvester : MonoBehaviour
 		while (Vector3.Distance(transform.position, position) > 0.01f)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, position, moveSpeed * Time.deltaTime);
+
+
+			transform.LookAt(position, transform.parent.up);
+
 			yield return 0;
 		}
 		transform.position = position;

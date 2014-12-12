@@ -95,10 +95,10 @@ public class Building : MonoBehaviour {
 		for (int i = 0; i < borderTiles.Count; i++)
 		{
 			//Debug.Log("DRAW SOME LINES");
-			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.localPosition + LBCorner, borderTiles[i].transform.localPosition + LTCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.localPosition + LTCorner, borderTiles[i].transform.localPosition + RTCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.localPosition + RTCorner, borderTiles[i].transform.localPosition + RBCorner, Color.green);
+			Debug.DrawLine(borderTiles[i].transform.localPosition + RBCorner, borderTiles[i].transform.localPosition + LBCorner, Color.green);
 		}
 	}
 
@@ -298,10 +298,10 @@ public class Building : MonoBehaviour {
 		directions[1] = Vector3.forward;
 		directions[2] = Vector3.right;
 		directions[3] = Vector3.back;
-		directions[4] = Vector3.left + Vector3.forward;
+		/*directions[4] = Vector3.left + Vector3.forward;
 		directions[5] = Vector3.left + Vector3.back;
 		directions[6] = Vector3.right + Vector3.forward;
-		directions[7] = Vector3.right + Vector3.back;
+		directions[7] = Vector3.right + Vector3.back;*/
 
 		Vector3 checkPos;
 
