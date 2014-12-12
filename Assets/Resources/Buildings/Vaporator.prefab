@@ -515,7 +515,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 0, y: 0}
   footprint: {fileID: 0}
-  prerequisites: []
+  prerequisites:
+  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
   DisplayName: 
   buildCostWater: 0
   buildCostHeat: 0

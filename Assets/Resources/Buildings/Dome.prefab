@@ -1307,7 +1307,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 11, y: 5}
   footprint: {fileID: 0}
-  prerequisites: []
+  prerequisites:
+  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
+  - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
   DisplayName: Dome
   buildCostWater: 0
   buildCostHeat: 0

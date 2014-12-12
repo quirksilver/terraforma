@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(MatrixBlender))]
 public class PerspectiveSwitcher : MonoBehaviour
@@ -22,6 +23,8 @@ public class PerspectiveSwitcher : MonoBehaviour
     Coroutine blendCoroutine = null;
     public Vector3 cameraOffset;
     private Vector3 cameraCenter;
+
+    private bool dragging = false;
 	
 	void Start()
 	{
@@ -40,7 +43,7 @@ public class PerspectiveSwitcher : MonoBehaviour
 	
 	void Update()
 	{
-        if (orthoOn)
+        if (orthoOn&&!Map.instance.Pause)
         {
             if (!blender.IsRunning)
             {
@@ -60,8 +63,7 @@ public class PerspectiveSwitcher : MonoBehaviour
                         // pos clamp
                         Bounds mapBounds = Map.instance.tileMap.GetSize();
 
-                        Debug.Log(mapBounds);
-                        cameraOffset = Vector3.ClampMagnitude(cameraOffset, mapBounds.size.magnitude/2.0f);
+                        cameraOffset = Vector3.ClampMagnitude(cameraOffset, mapBounds.size.magnitude / 2.0f);
 
                         transform.localPosition = cameraCenter + cameraOffset;
                     }
@@ -69,11 +71,17 @@ public class PerspectiveSwitcher : MonoBehaviour
                 }
                 else
                 {
+                    dragging = false;
                     lastMousePos = Vector3.zero;
                 }
             }
         }
 	}
+
+    public void StartDrag()
+    {
+        dragging = true;
+    }
 
 	public void switchToOrtho(Transform focusPoint)
 	{
