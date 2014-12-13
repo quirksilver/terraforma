@@ -20,8 +20,8 @@ int isoOffset = 0;
 
 PImage img;
 
-int isoWidth = 134;
-int isoHeight = 68;
+int isoWidth = 256;
+int isoHeight = 128;
 
 PImage temp;
 
