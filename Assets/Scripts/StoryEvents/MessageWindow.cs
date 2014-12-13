@@ -8,7 +8,7 @@ public class MessageWindow : MonoSingleton<MessageWindow>
     private List<StoryMessage> messages;
     private int index = 0;
     private bool complete = false;
-    private Button button;
+    private GraphicRaycaster graphicRaycaster;
 
     private float alpha=0;
     private float targetAlpha=0;
@@ -17,8 +17,8 @@ public class MessageWindow : MonoSingleton<MessageWindow>
 
     void Start()
     {
-        button = GetComponent<Button>();
-        button.enabled = false;
+        graphicRaycaster = transform.parent.GetComponent<GraphicRaycaster>();
+        graphicRaycaster.enabled = false;
     }
 
     void Update()
@@ -26,9 +26,9 @@ public class MessageWindow : MonoSingleton<MessageWindow>
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
         GetComponent<CanvasGroup>().alpha = alpha;
 
-        if (button.enabled == false && alpha == 1)
+        if (graphicRaycaster.enabled == false && alpha == 1)
         {
-            button.enabled = true;
+            graphicRaycaster.enabled = true;
         }
     }
 
@@ -46,7 +46,7 @@ public class MessageWindow : MonoSingleton<MessageWindow>
     {
         if (index + 1 >= messages.Count)
         {
-            button.enabled = false;
+            graphicRaycaster.enabled = false;
             targetAlpha = 0.0f;
             Map.instance.Pause = false;
             if (complete)

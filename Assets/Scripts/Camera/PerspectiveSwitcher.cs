@@ -53,7 +53,7 @@ public class PerspectiveSwitcher : MonoBehaviour
                 }
 
                 //mouse drag
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButton(0)&&dragging)
                 {
                     if (lastMousePos != Vector3.zero)
                     {
