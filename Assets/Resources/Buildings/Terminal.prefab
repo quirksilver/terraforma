@@ -1129,7 +1129,7 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   footprint: {fileID: 0}
   prerequisites: []
-  DisplayName: 
+  DisplayName: Terminal
   buildCostWater: 0
   buildCostHeat: 0
   buildCostAir: 0
@@ -1147,6 +1147,7 @@ MonoBehaviour:
   produceMetal: 0
   buildingTime: 0
   buildingActive: 1
+  resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
 --- !u!114 &11400036
 MonoBehaviour:

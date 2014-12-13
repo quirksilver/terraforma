@@ -24,6 +24,7 @@ public class BuildingHUDControl : MonoSingleton<BuildingHUDControl> {
         BuildingHUD hudComp = newHUD.GetComponent<BuildingHUD>();
         hudComp.followPoint = building.transform;
         building.SetHUD(hudComp);
+        hudComp.Setup(building);
         return hudComp;
     }
 }

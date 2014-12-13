@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,17 +7,22 @@ public class BuildingHUD : MonoBehaviour {
 
     public Transform followPoint;
     public GameObject resTemp;
+    public Image warning;
+    float warningAlpha;
     private List<ResParticle> resIcons;
 
     public Sprite[] resTextures;
 
+    private Building building;
+
     int chain = 0;
 
 	// Use this for initialization
-	void Start () 
+	public void Setup (Building b) 
     {
         resTemp.SetActive(false);
         resIcons = new List<ResParticle>();
+        building = b;
 	}
 	
 	// Update is called once per frame
@@ -48,6 +54,20 @@ public class BuildingHUD : MonoBehaviour {
                 }
             }
         }
+
+        if (!building.buildingActive || !building.resourcesAvailable)
+        {
+            warningAlpha = Mathf.Sin(Time.time);
+            if (warningAlpha < 0)
+            {
+                warningAlpha = 0 - warningAlpha;
+            }
+        }
+        else if (warningAlpha>0)
+        {
+            warningAlpha -= Time.deltaTime;
+        }
+        warning.color = new Color(1.0f, 0.0f, 0.0f, warningAlpha);
 	}
 
     public void AddRes(int ammount, ResourceType type)

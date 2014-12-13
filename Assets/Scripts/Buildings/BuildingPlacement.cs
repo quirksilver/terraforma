@@ -7,6 +7,7 @@ public class BuildingPlacement : MonoBehaviour
     public GameObject BuildingHUD;
     private GameObject newBuilding;
     Vector3 lastPos;
+    Building building;
 
     // Use this for initialization
 	void Start () {
@@ -17,7 +18,7 @@ public class BuildingPlacement : MonoBehaviour
         // Instaniate new building and disable it's scripts
         buildingPrefabPath = "Buildings/" + type.ToString();
         newBuilding = Instantiate(Resources.Load(buildingPrefabPath)) as GameObject;
-        Building building = newBuilding.GetComponent(type) as Building;
+        building = newBuilding.GetComponent(type) as Building;
         building.enabled = false;
 		building.Setup(Map.instance.tileMap);
 
@@ -66,6 +67,21 @@ public class BuildingPlacement : MonoBehaviour
 				//Testing
 				//building.CreateNewHarvester();
             }
+        }
+        else if (Input.GetMouseButton(1))
+        {
+            // Cancel placement
+
+            //refund
+            Map.instance.GetLevel().AddResource(building.buildCostAir, ResourceType.Air);
+            Map.instance.GetLevel().AddResource(building.buildCostFood, ResourceType.Food);
+            Map.instance.GetLevel().AddResource(building.buildCostHeat, ResourceType.Heat);
+            Map.instance.GetLevel().AddResource(building.buildCostMetal, ResourceType.Metal);
+            Map.instance.GetLevel().AddResource(building.buildCostWater, ResourceType.Water);
+
+            //remove object
+            Destroy(gameObject);
+            Destroy(newBuilding);
         }
 
 		lastPos = newPos;
