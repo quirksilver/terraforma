@@ -234,6 +234,7 @@ public class Map : MonoSingleton<Map>
             if (tickTimer > tickPeriod)
             {
                 tickTimer -= tickPeriod;
+                level.Tick();
                 foreach (Building build in level.buildings)
                 {
                     build.Tick();

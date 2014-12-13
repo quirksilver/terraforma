@@ -25,6 +25,8 @@ public class TileMap : MonoBehaviour
 	public List<Tile> tiles;
 	public List<ResourceTile> resourceTiles;
 
+    private Bounds mapBounds;
+
 	void Start()
 	{
 
@@ -185,47 +187,19 @@ public class TileMap : MonoBehaviour
 		return GetTile(x, z);
 	}
 
-	public bool FindPathVia(PathTile start, PathTile via, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable)
-	{
+    public Bounds GetSize()
+    {
+        if (mapBounds.size == Vector3.zero)
+        {
+            int tileCount = transform.childCount;
+            for(int i=0;i<tileCount;i++)
+            {
+                mapBounds.Encapsulate(transform.GetChild(i).localPosition);
+            }
+        }
 
-		List<PathTile> firstPath = new List<PathTile>();
-
-
-		List<PathTile> secondPath = new List<PathTile>();
-
-
-		if (FindPath(start, via, firstPath, isWalkable, end) && FindPath(via, end, secondPath, isWalkable))
-		{
-
-			//firstPath.AddRange(secondPath);
-
-			Debug.Log("found path via");
-			/*Debug.Log(firstPath.Count);
-			Debug.Log(secondPath.Count);
-
-			foreach (PathTile t in firstPath)
-			{
-				Debug.Log(t.transform.position);
-			}
-
-			foreach (PathTile t in secondPath)
-			{
-				Debug.Log(t.transform.position);
-			}*/
-
-			secondPath.RemoveAt(0);
-
-			path.Clear();
-			path.AddRange(firstPath);
-			path.AddRange(secondPath);
-
-
-
-			return true;
-		}
-
-		return false;
-	}
+        return mapBounds;
+    }
 	
 	public bool FindPath(PathTile start, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable, PathTile avoid=null)
 	{
@@ -269,6 +243,49 @@ public class TileMap : MonoBehaviour
 		}
 		return false;
 	}
+
+	public bool FindPathVia(PathTile start, PathTile via, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable)
+	{
+		
+		List<PathTile> firstPath = new List<PathTile>();
+		
+		
+		List<PathTile> secondPath = new List<PathTile>();
+		
+		
+		if (FindPath(start, via, firstPath, isWalkable, end) && FindPath(via, end, secondPath, isWalkable))
+		{
+			
+			//firstPath.AddRange(secondPath);
+			
+			Debug.Log("found path via");
+			/*Debug.Log(firstPath.Count);
+			Debug.Log(secondPath.Count);
+
+			foreach (PathTile t in firstPath)
+			{
+				Debug.Log(t.transform.position);
+			}
+
+			foreach (PathTile t in secondPath)
+			{
+				Debug.Log(t.transform.position);
+			}*/
+			
+			secondPath.RemoveAt(0);
+			
+			path.Clear();
+			path.AddRange(firstPath);
+			path.AddRange(secondPath);
+			
+			
+			
+			return true;
+		}
+		
+		return false;
+	}
+
 	public bool FindPath(PathTile start, PathTile end, List<PathTile> path)
 	{
 		return FindPath(start, end, path, tile => true);

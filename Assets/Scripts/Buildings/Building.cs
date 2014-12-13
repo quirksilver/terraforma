@@ -40,6 +40,7 @@ public class Building : MonoBehaviour {
     private bool built = false;
 
     public bool buildingActive=true;
+    public bool resourcesAvailable = true;
 
     private BuildingHUD hud;
 
@@ -163,23 +164,37 @@ public class Building : MonoBehaviour {
     {
         if (buildingActive && built)
         {
-            Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
-            Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);
-            Map.instance.GetLevel().AddResource(produceAir, ResourceType.Air);
-            Map.instance.GetLevel().AddResource(produceFood, ResourceType.Food);
-            Map.instance.GetLevel().AddResource(produceMetal, ResourceType.Metal);
+            resourcesAvailable = true;
 
-            Map.instance.GetLevel().RemoveResource(runningCostWater, ResourceType.Water);
-            Map.instance.GetLevel().RemoveResource(runningCostHeat, ResourceType.Heat);
-            Map.instance.GetLevel().RemoveResource(runningCostAir, ResourceType.Air);
-            Map.instance.GetLevel().RemoveResource(runningCostFood, ResourceType.Food);
-            Map.instance.GetLevel().RemoveResource(runningCostMetal, ResourceType.Metal);
+            if (runningCostAir > Map.instance.GetLevel().GetResource(ResourceType.Air)
+                || runningCostFood > Map.instance.GetLevel().GetResource(ResourceType.Food)
+                || runningCostHeat > Map.instance.GetLevel().GetResource(ResourceType.Heat)
+                || runningCostMetal > Map.instance.GetLevel().GetResource(ResourceType.Metal)
+                || runningCostWater > Map.instance.GetLevel().GetResource(ResourceType.Water))
+            {
+                resourcesAvailable = false;
+            }
 
-            hud.AddRes(produceWater, ResourceType.Water);
-            hud.AddRes(produceHeat, ResourceType.Heat);
-            hud.AddRes(produceAir, ResourceType.Air);
-            hud.AddRes(produceFood, ResourceType.Food);
-            hud.AddRes(produceMetal, ResourceType.Metal);
+            if (resourcesAvailable)
+            {
+                Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
+                Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);
+                Map.instance.GetLevel().AddResource(produceAir, ResourceType.Air);
+                Map.instance.GetLevel().AddResource(produceFood, ResourceType.Food);
+                Map.instance.GetLevel().AddResource(produceMetal, ResourceType.Metal);
+
+                Map.instance.GetLevel().RemoveResource(runningCostWater, ResourceType.Water);
+                Map.instance.GetLevel().RemoveResource(runningCostHeat, ResourceType.Heat);
+                Map.instance.GetLevel().RemoveResource(runningCostAir, ResourceType.Air);
+                Map.instance.GetLevel().RemoveResource(runningCostFood, ResourceType.Food);
+                Map.instance.GetLevel().RemoveResource(runningCostMetal, ResourceType.Metal);
+
+                hud.AddRes(produceWater, ResourceType.Water);
+                hud.AddRes(produceHeat, ResourceType.Heat);
+                hud.AddRes(produceAir, ResourceType.Air);
+                hud.AddRes(produceFood, ResourceType.Food);
+                hud.AddRes(produceMetal, ResourceType.Metal);
+            }
         }
     }
 

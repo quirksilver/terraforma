@@ -53,7 +53,7 @@ public class BuildMenu : MonoBehaviour
     {
         //Building load
         buildingButtons = new List<BuildingButton>();
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < buildings.Length; i++)
         {
             GameObject newButton = GameObject.Instantiate(buttonTemp) as GameObject;
             newButton.transform.parent = buttonTemp.transform.parent;
@@ -64,14 +64,14 @@ public class BuildMenu : MonoBehaviour
 
 //            Debug.Log(buildings[0].size.ToString());
 
-            newButton.GetComponent<BuildingButton>().Setup(buildings[i%2],this);
+            newButton.GetComponent<BuildingButton>().Setup(buildings[i%buildings.Length],this);
             buildingButtons.Add(newButton.GetComponent<BuildingButton>());
         }
 
 
         Canvas.ForceUpdateCanvases();
 
-        gridRoot.sizeDelta = new Vector2(0, 19 * 77);
+        gridRoot.sizeDelta = new Vector2(0, (buildings.Length) * 77);
         buttonTemp.SetActive(false);
         scrollRect.verticalNormalizedPosition = 1.0f;
 

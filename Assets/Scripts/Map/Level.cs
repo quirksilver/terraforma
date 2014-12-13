@@ -10,6 +10,7 @@ public class Level : MonoBehaviour {
 
 	private PerspectiveSwitcher switcher;
     private int[] resourceAmmount;
+    public int[] resourceChange;
 
     public StoryEventManager storyEventManager { get; private set; }
 
@@ -24,6 +25,7 @@ public class Level : MonoBehaviour {
 		switcher = Camera.main.GetComponent<PerspectiveSwitcher>();
 
         resourceAmmount = new int[(int)ResourceType.Count];
+        resourceChange = new int[(int)ResourceType.Count];
 
         resourceAmmount[(int)ResourceType.Metal] = 200;
 
@@ -58,6 +60,7 @@ public class Level : MonoBehaviour {
     public void AddResource(int ammount, ResourceType type)
     {
         resourceAmmount[(int)type] += ammount;
+        resourceChange[(int)type] += ammount;
     }
 
     public int GetResource(ResourceType type)
@@ -68,6 +71,19 @@ public class Level : MonoBehaviour {
     public void RemoveResource(int ammount, ResourceType type)
     {
         resourceAmmount[(int)type] -= ammount;
+        resourceChange[(int)type] -= ammount;
+        if (resourceAmmount[(int)type] < 0)
+        {
+            resourceAmmount[(int)type] = 0;
+        }
     }
-	
+
+    public void Tick()
+    {
+        ResourceManager.instance.Tick();
+        for (int i = 0; i < (int)ResourceType.Count; i++)
+        {
+            resourceChange[i] = 0;
+        }
+    }
 }

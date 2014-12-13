@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(MatrixBlender))]
 public class PerspectiveSwitcher : MonoBehaviour
@@ -18,7 +19,12 @@ public class PerspectiveSwitcher : MonoBehaviour
 	private Quaternion orthoRot, perspectiveRot;
 
 	public Transform target;
+    Vector3 lastMousePos;
+    Coroutine blendCoroutine = null;
+    public Vector3 cameraOffset;
+    private Vector3 cameraCenter;
 
+    private bool dragging = false;
 	
 	void Start()
 	{
@@ -37,13 +43,52 @@ public class PerspectiveSwitcher : MonoBehaviour
 	
 	void Update()
 	{
+        if (orthoOn&&!Map.instance.Pause)
+        {
+            if (!blender.IsRunning)
+            {
+                if (cameraCenter == Vector3.zero)
+                {
+                    cameraCenter = transform.localPosition;
+                }
 
+                //mouse drag
+                if (Input.GetMouseButton(0)&&dragging)
+                {
+                    if (lastMousePos != Vector3.zero)
+                    {
+                        Vector3 delta = lastMousePos - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        cameraOffset += delta;
+                        //Vector3 newCameraPos = transform.localPosition + delta;
+                        // pos clamp
+                        Bounds mapBounds = Map.instance.tileMap.GetSize();
+
+                        cameraOffset = Vector3.ClampMagnitude(cameraOffset, mapBounds.size.magnitude / 2.0f);
+
+                        transform.localPosition = cameraCenter + cameraOffset;
+                    }
+                    lastMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                }
+                else
+                {
+                    dragging = false;
+                    lastMousePos = Vector3.zero;
+                }
+            }
+        }
 	}
+
+    public void StartDrag()
+    {
+        dragging = true;
+    }
 
 	public void switchToOrtho(Transform focusPoint)
 	{
 		if (orthoOn) return;
 
+        cameraCenter = Vector3.zero;
+        cameraOffset = Vector3.zero;
 		GetComponent<DragMouseOrbit>().enabled = false;
 
 		orthoRot = focusPoint.parent.rotation * Quaternion.Euler(30, 45, 0);
@@ -54,8 +99,8 @@ public class PerspectiveSwitcher : MonoBehaviour
 		{
 			perspectivePos = transform.position;
 			perspectiveRot = transform.rotation;
-			
-			blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
+
+            blendCoroutine = blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
 		}
 
 	}

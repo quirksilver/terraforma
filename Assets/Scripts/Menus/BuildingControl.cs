@@ -19,6 +19,10 @@ public class BuildingControl : MonoBehaviour
 
 	public BuildHarvesterButton buildHarvesterButton;
 
+    public ResourceInfo runningCost;
+
+    public ResourceInfo producesInfo;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -71,6 +75,24 @@ public class BuildingControl : MonoBehaviour
                     targetAlpha = 1.0f;
                     activeToggle.isOn = building.buildingActive;
 					buildHarvesterButton.gameObject.SetActive(building.harvesterPrefab != null);
+
+                    runningCost.ClearResources();
+                    producesInfo.ClearResources();
+
+                    // Add reource info
+                    runningCost.AddResource(building.runningCostAir, ResourceType.Air);
+                    runningCost.AddResource(building.runningCostFood, ResourceType.Food);
+                    runningCost.AddResource(building.runningCostHeat, ResourceType.Heat);
+                    runningCost.AddResource(building.runningCostMetal, ResourceType.Metal);
+                    runningCost.AddResource(building.runningCostWater, ResourceType.Water);
+
+                    runningCost.Tick();
+
+                    producesInfo.AddResource(building.produceAir, ResourceType.Air);
+                    producesInfo.AddResource(building.produceFood, ResourceType.Food);
+                    producesInfo.AddResource(building.produceHeat, ResourceType.Heat);
+                    producesInfo.AddResource(building.produceMetal, ResourceType.Metal);
+                    producesInfo.AddResource(building.produceWater, ResourceType.Water);
 
 					if (buildHarvesterButton.gameObject.activeSelf)
 						buildHarvesterButton.Setup(building.harvesterPrefab.GetComponent<ResourceHarvester>(), this);
