@@ -10,6 +10,8 @@ public class ResourceTile : Tile
 
 	public List<Tile> surroundingTiles = new List<Tile>();
 
+	public bool empty = false;
+
 	// Use this for initialization
 	public override void Start ()
 	{

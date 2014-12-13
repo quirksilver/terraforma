@@ -10,11 +10,15 @@ public class Tile : MonoBehaviour
 
 	public Building[] buildingRestrictions;
 
+	public PathTile pathTile;
+
 	// Use this for initialization
 	public virtual void Start () {
         building = null;
 
 		coords = transform.localPosition;
+
+		pathTile = GetComponent<PathTile>();
 	}
 	
 	// Update is called once per frame
@@ -26,10 +30,9 @@ public class Tile : MonoBehaviour
     {
         building = b;
 
+		//(GetComponentInChildren<Renderer>() as Renderer).material.color = Color.blue;
 	
-		PathTile pTile = GetComponent<PathTile>();
-		Destroy(pTile);
-		tileMap.UpdateConnections();
+		pathTile.flagForDestruction = true;
     }
 
     public virtual void OnMouseOver()
@@ -44,13 +47,12 @@ public class Tile : MonoBehaviour
 		
 		List<Tile> leastTargetedTiles = new List<Tile>();
 
-		PathTile pathTile = (PathTile)GetComponent<PathTile>();
-
 		List<Tile> borderTiles = new List<Tile>();
 
 		for (int i = 0; i < pathTile.connections.Count; i++)
 		{
-			borderTiles.Add(pathTile.connections[i].GetComponent<Tile>());
+			if (pathTile.connections[i] != null)
+			borderTiles.Add(pathTile.connections[i].tile);
 		}
 
 		borderTiles.Sort(TileTargetComparison);

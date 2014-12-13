@@ -1325,7 +1325,7 @@ MonoBehaviour:
   produceFood: 5
   produceMetal: 0
   requiredResourceTileType: 4
-  numberResourceTilesRequired: 1
+  numberResourceTilesRequired: 0
   buildingTime: 3
   buildingActive: 1
   harvesterPrefab: {fileID: 100000, guid: f9c258ddcbacf4c618aea2df3391c87c, type: 2}

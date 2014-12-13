@@ -228,10 +228,10 @@ public class TileMapEditor : Editor
 				var tile = instance.GetComponent<PathTile>();
 				if (tile != null)
 				{
-					Handles.DotCap(0, tile.transform.localPosition, Quaternion.identity, tileMap.tileSize / 17);
+					Handles.DotCap(0, tile.transform.position, Quaternion.identity, tileMap.tileSize / 17);
 					foreach (var other in tile.connections)
 						if (other != null && tile.GetInstanceID() > other.GetInstanceID())
-							Handles.DrawLine(tile.transform.localPosition, other.transform.localPosition);
+							Handles.DrawLine(tile.transform.position, other.transform.position);
 				}
 			}
 		}

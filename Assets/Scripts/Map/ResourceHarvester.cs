@@ -12,7 +12,7 @@ public class ResourceHarvester : MonoBehaviour
 	private Tile targetTile;
 	private Tile viaTile;
 
-	private HarvesterState currentState;
+	public HarvesterState currentState;
 	private HarvesterState lastState;
 
 	List<PathTile> path = new List<PathTile>();
@@ -42,6 +42,8 @@ public class ResourceHarvester : MonoBehaviour
 	private const int ANIM_HARVEST = 1;
 	private const int ANIM_DUMP = 2;
 
+	public PathTile [] debugPath;
+
 	public enum HarvesterState
 	{
 		Idle,
@@ -56,7 +58,6 @@ public class ResourceHarvester : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		tileMap = Map.instance.tileMap;
 
 		stateMethods = new Dictionary<HarvesterState, StateAction>();
 		stateMethods.Add (HarvesterState.Paused, Pause);
@@ -70,13 +71,69 @@ public class ResourceHarvester : MonoBehaviour
 
 		animator = GetComponentInChildren<Animator>();
 
-		SetState(HarvesterState.SearchForResource);
 
+		SetState(HarvesterState.SearchForResource);
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+
+		//if the path is pulled out from under the harvester in the middle of the movement phase, i.e. a building is put on top of the harvester
+		if (tileMap.GetPathTile(transform.localPosition) == null)
+		{
+
+			Debug.Log("PATH TILE IS NULL FOR HARVESTER");
+
+			Tile currentTile = tileMap.GetTile(transform.localPosition);
+
+			//if we're under a building
+			if (currentTile.building)
+			{
+				//Debug.Log(currentTile.building);
+				//Debug.Log(currentTile.building.GetNearestAdjacentTile(transform.position));
+				transform.position = currentTile.building.GetNearestAdjacentTile(transform.position).transform.position;
+
+
+				/*if (currentState == HarvesterState.Moving)
+				{*/
+
+				Debug.Log("update path");
+				path.Clear();
+				pathIndex = 0;
+				targetTile.harvestersTargeting --;
+
+				if (targetTile is ResourceTile)
+				{
+					viaTile.harvestersTargeting --;
+					SetState(HarvesterState.SearchForResource);
+				}
+				else
+				{
+					SetState(HarvesterState.SearchForBuilding);
+				}
+
+					
+					
+				//}
+
+			}
+			else
+			{
+				Debug.Log ("shit be fucked");
+			}
+
+			//StopAllCoroutines();
+
+
+			//jump to the nearest available border tile of the building on the current tile
+			//hahah this is a terrible line of code, I'm not even going to apologise for it
+			/*transform.position = tileMap.GetTile(transform.position).building.GetNearestAdjacentTile(transform.position).transform.position;
+			path.Clear();
+			pathIndex = 0;
+			SetState(HarvesterState.Moving);*/
+		}
+
 		if (Map.instance.Pause && currentState != HarvesterState.Paused) //|| Map.instance.tileMap != tileMap) 
 		{
 			SetState(HarvesterState.Paused);
@@ -98,14 +155,15 @@ public class ResourceHarvester : MonoBehaviour
 		SetState(lastState);
 	}
 
-	public void Setup(Building building)
+	public void Setup(Building building, TileMap theTileMap)
 	{
 		resourceBase = building;
+		tileMap = theTileMap;
 	}
 
 	public void SetState(HarvesterState newState)
 	{
-		Debug.Log("SET STATE " + newState);
+		//Debug.Log("SET STATE " + newState);
 
 		lastState = currentState;
 		currentState = newState;
@@ -149,7 +207,7 @@ public class ResourceHarvester : MonoBehaviour
 					closestTile = tileMap.resourceTiles[i];
 					shortestDist = dist;
 
-					Debug.Log ("Dist is less than shortest dist, tile is " + closestTile);
+					//Debug.Log ("Dist is less than shortest dist, tile is " + closestTile);
 				}
 			}
 		}
@@ -178,6 +236,7 @@ public class ResourceHarvester : MonoBehaviour
 		{
 
 			if (tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
+			//if (tileMap.FindPath(transform.localPosition, viaTile.coords, path))
 		    {
 				lineRenderer.SetVertexCount(path.Count);
 				for (int i = 0; i < path.Count; i++)
@@ -215,7 +274,7 @@ public class ResourceHarvester : MonoBehaviour
 
 	public void ArrivedAtTargetTile()
 	{
-		Debug.Log("ARRIVED AT TARGET");
+		//Debug.Log("ARRIVED AT TARGET");
 
 		if (targetTile is ResourceTile)
 		{
@@ -257,20 +316,24 @@ public class ResourceHarvester : MonoBehaviour
 	{
 		while (pathIndex < path.Count)
 		{
+
 			if (path[pathIndex] != null)
 			{
+				transform.LookAt(path[pathIndex].transform.position, transform.parent.up);
 				yield return StartCoroutine(WalkTo(path[pathIndex].transform.position));
 				pathIndex++;
 			}
 			else
 			{
-				yield return 0;
 				path.Clear();
 				pathIndex = 0;
 				SetState(HarvesterState.Moving);
+				yield break;
 			}
 
 		}
+
+		Debug.Log("end of path");
 
 		path.Clear();
 		pathIndex = 0;
@@ -280,12 +343,11 @@ public class ResourceHarvester : MonoBehaviour
 	
 	IEnumerator WalkTo(Vector3 position)
 	{
+
 		while (Vector3.Distance(transform.position, position) > 0.01f)
 		{
 			transform.position = Vector3.MoveTowards(transform.position, position, moveSpeed * Time.deltaTime);
 
-
-			transform.LookAt(position, transform.parent.up);
 
 			yield return 0;
 		}

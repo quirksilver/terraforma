@@ -158,14 +158,7 @@ public class BuildingFootprint : MonoBehaviour {
 
 	public void hide()
 	{
-		enabled = false;
-
-		Renderer[] r = GetComponentsInChildren<Renderer>();
-
-		for (int i = 0; i < r.Length; i++)
-		{
-			r[i].enabled = false;
-		}
+		gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame

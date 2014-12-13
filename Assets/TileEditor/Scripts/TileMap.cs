@@ -43,6 +43,8 @@ public class TileMap : MonoBehaviour
 
 		for (int i = 0; i < instances.Count; i++)
 		{
+			(instances[i].GetComponent<PathTile>() as PathTile).tileMap = this;
+
 			tempTile = instances[i].GetComponent<Tile>();
 
 				tiles.Add(tempTile);
@@ -58,7 +60,7 @@ public class TileMap : MonoBehaviour
 	public void RemoveResourceTile(ResourceTile removeTile)
 	{
 		resourceTiles.RemoveAll(item => item == removeTile);
-		Destroy(removeTile);
+		removeTile.empty = true;
 	}
 
 	public int GetHash(int x, int z)
@@ -94,33 +96,43 @@ public class TileMap : MonoBehaviour
 			var tile = instances[i].GetComponent<PathTile>();
 			if (tile != null)
 			{
-				int x, z;
-				GetPosition(i, out x, out z);
-				tile.connections.Clear();
-				r = Connect(tile, x, z, x + 1, z);
-				l = Connect(tile, x, z, x - 1, z);
-				f = Connect(tile, x, z, x, z + 1);
-				b = Connect(tile, x, z, x, z - 1);
-				if (connectDiagonals)
+				if (tile.flagForDestruction)
 				{
-					if (cutCorners)
+					tile.connections.Clear();
+					Destroy(tile);
+				}
+				else
+				{
+
+					int x, z;
+					GetPosition(i, out x, out z);
+					tile.connections.Clear();
+					r = Connect(tile, x, z, x + 1, z);
+					l = Connect(tile, x, z, x - 1, z);
+					f = Connect(tile, x, z, x, z + 1);
+					b = Connect(tile, x, z, x, z - 1);
+					if (connectDiagonals)
 					{
-						Connect(tile, x, z, x + 1, z + 1);
-						Connect(tile, x, z, x - 1, z - 1);
-						Connect(tile, x, z, x - 1, z + 1);
-						Connect(tile, x, z, x + 1, z - 1);
-					}
-					else
-					{
-						if (r != null && f != null)
+						if (cutCorners)
+						{
 							Connect(tile, x, z, x + 1, z + 1);
-						if (l != null && b != null)
 							Connect(tile, x, z, x - 1, z - 1);
-						if (l != null && f != null)
 							Connect(tile, x, z, x - 1, z + 1);
-						if (r != null && b != null)
 							Connect(tile, x, z, x + 1, z - 1);
+						}
+						else
+						{
+							if (r != null && f != null)
+								Connect(tile, x, z, x + 1, z + 1);
+							if (l != null && b != null)
+								Connect(tile, x, z, x - 1, z - 1);
+							if (l != null && f != null)
+								Connect(tile, x, z, x - 1, z + 1);
+							if (r != null && b != null)
+								Connect(tile, x, z, x + 1, z - 1);
+						}
 					}
+
 				}
 			}
 		}
@@ -187,11 +199,27 @@ public class TileMap : MonoBehaviour
 
 			//firstPath.AddRange(secondPath);
 
+			Debug.Log("found path via");
+			/*Debug.Log(firstPath.Count);
+			Debug.Log(secondPath.Count);
+
+			foreach (PathTile t in firstPath)
+			{
+				Debug.Log(t.transform.position);
+			}
+
+			foreach (PathTile t in secondPath)
+			{
+				Debug.Log(t.transform.position);
+			}*/
+
+			secondPath.RemoveAt(0);
+
 			path.Clear();
 			path.AddRange(firstPath);
 			path.AddRange(secondPath);
 
-			Debug.Log("found path via");
+
 
 			return true;
 		}
@@ -228,7 +256,9 @@ public class TileMap : MonoBehaviour
 			{
 				foreach (var connection in tile.connections)
 				{
-					if (!closed.Contains(connection) && isWalkable(connection) && connection!=avoid)
+					//Debug.Log(connection + " " + (connection == avoid));
+
+					if (!closed.Contains(connection) && isWalkable(connection) && connection!=avoid && connection != null)
 					{
 						closed.Add(connection);
 						source.Add(connection, tile);

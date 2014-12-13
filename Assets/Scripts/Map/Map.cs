@@ -203,6 +203,8 @@ public class Map : MonoSingleton<Map>
 				checkTile.AssignBuilding(building);
 			}
 
+			tileMap.UpdateConnections();
+
 			building.GetBorderTilePositions();
 
 			building.footprint.hide();

@@ -54,6 +54,8 @@ public class Building : MonoBehaviour {
 	protected GameObject spriteHolder;
 	protected GameObject fullSprite;
 
+	protected int DebugSpawnTile = 0;
+
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
@@ -139,7 +141,7 @@ public class Building : MonoBehaviour {
 			newHarvester.transform.position = GetRandomAdjacentTilePosition();
 			newHarvester.transform.localRotation = Quaternion.identity;
 			harvesters.Add(newHarvester);
-			newHarvester.Setup(this);
+			newHarvester.Setup(this, tileMap);
 		}
 	}
 
@@ -189,7 +191,12 @@ public class Building : MonoBehaviour {
 
 	public Vector3 GetRandomAdjacentTilePosition()
 	{
-		return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))].transform.position; 
+		//debugging
+
+		DebugSpawnTile ++;
+
+		return borderTiles[DebugSpawnTile % borderTiles.Count].transform.position;
+		//return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))].transform.position; 
 	}
 
 	public Tile GetLeastTargetedAdjacentTile(Vector3 pos)
@@ -280,7 +287,7 @@ public class Building : MonoBehaviour {
 			if (dist < shortestDist || float.IsNaN(shortestDist))
 			{
 				shortestDist = dist;
-					closestPos = borderTiles[i].transform.position;
+				closestPos = borderTiles[i].transform.localPosition;
 			}
 		}
 		
