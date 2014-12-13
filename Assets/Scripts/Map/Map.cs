@@ -212,10 +212,12 @@ public class Map : MonoSingleton<Map>
             level.buildings.Add(building);
             buildMenu.Refresh();
 
-            for (i = 0; i < level.buildings.Count; i++)
+			for (i = 0; i < level.buildings.Count; i++)
 			{
-                level.buildings[i].UpdateBorderTilePositions();
+				level.buildings[i].UpdateBorderTilePositions();
 			}
+
+           
         }
 
         return valid;

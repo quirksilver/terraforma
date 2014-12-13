@@ -32,7 +32,7 @@ public class Tile : MonoBehaviour
 
 		//(GetComponentInChildren<Renderer>() as Renderer).material.color = Color.blue;
 	
-		pathTile.flagForDestruction = true;
+		pathTile.flaggedForDestruction = true;
     }
 
     public virtual void OnMouseOver()

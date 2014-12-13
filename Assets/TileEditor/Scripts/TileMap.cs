@@ -96,7 +96,7 @@ public class TileMap : MonoBehaviour
 			var tile = instances[i].GetComponent<PathTile>();
 			if (tile != null)
 			{
-				if (tile.flagForDestruction)
+				if (tile.flaggedForDestruction)
 				{
 					tile.connections.Clear();
 					Destroy(tile);

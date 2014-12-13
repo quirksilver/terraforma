@@ -104,7 +104,7 @@ public class Building : MonoBehaviour {
             }
         }
 
-		Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
+		/*Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
 		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
 		Vector3 RTCorner = new Vector3(0.5f, 0, 0.5f);
 		Vector3 RBCorner = new Vector3(0.5f, 0, -0.5f);
@@ -113,11 +113,11 @@ public class Building : MonoBehaviour {
 		for (int i = 0; i < borderTiles.Count; i++)
 		{
 			//Debug.Log("DRAW SOME LINES");
-			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.green);
-			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.green);
-		}
+			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.yellow);
+			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.yellow);
+			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.yellow);
+			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.yellow);
+		}*/
 	}
 
 	protected void HideFootprint()
@@ -270,6 +270,18 @@ public class Building : MonoBehaviour {
 				closestTile = tileList[i];
 			}
 		}
+
+
+		/*Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
+		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
+		Vector3 RTCorner = new Vector3(0.5f, 0, 0.5f);
+		Vector3 RBCorner = new Vector3(0.5f, 0, -0.5f);
+		Debug.Log(closestTile);
+
+		Debug.DrawLine(closestTile.transform.position + LBCorner, closestTile.transform.position + LTCorner, Color.yellow, 20.0f);
+		Debug.DrawLine(closestTile.transform.position + LTCorner, closestTile.transform.position + RTCorner, Color.yellow, 20.0f);
+		Debug.DrawLine(closestTile.transform.position + RTCorner, closestTile.transform.position + RBCorner, Color.yellow, 20.0f);
+		Debug.DrawLine(closestTile.transform.position + RBCorner, closestTile.transform.position + LBCorner, Color.yellow, 20.0f);*/
 		
 		return closestTile;
 	}
@@ -301,8 +313,9 @@ public class Building : MonoBehaviour {
 		for (int i  = borderTiles.Count - 1; i >= 0; i--)
 		{
 			Debug.Log("path tile " + tileMap.GetPathTile(borderTiles[i].transform.localPosition));
-			if (tileMap.GetPathTile(borderTiles[i].transform.localPosition) == null)
+			if (borderTiles[i].pathTile == null || borderTiles[i].pathTile.flaggedForDestruction == true)
 			{
+				Debug.Log("remove tile " + i);
 				borderTiles.RemoveAt(i);
 			}
 		}

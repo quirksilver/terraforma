@@ -95,43 +95,26 @@ public class ResourceHarvester : MonoBehaviour
 				transform.position = currentTile.building.GetNearestAdjacentTile(transform.position).transform.position;
 
 
-				/*if (currentState == HarvesterState.Moving)
-				{*/
-
-				Debug.Log("update path");
-				path.Clear();
-				pathIndex = 0;
-				targetTile.harvestersTargeting --;
-
-				if (targetTile is ResourceTile)
+				if (currentState == HarvesterState.Moving)
 				{
-					viaTile.harvestersTargeting --;
-					SetState(HarvesterState.SearchForResource);
+					StopAllCoroutines();
+
+					Debug.Log("update path");
+					path.Clear();
+					pathIndex = 0;
+					targetTile.harvestersTargeting --;
+
+					if (targetTile is ResourceTile)
+					{
+						viaTile.harvestersTargeting --;
+						SetState(HarvesterState.SearchForResource);
+					}
+					else
+					{
+						SetState(HarvesterState.SearchForBuilding);
+					}
 				}
-				else
-				{
-					SetState(HarvesterState.SearchForBuilding);
-				}
-
-					
-					
-				//}
-
 			}
-			else
-			{
-				Debug.Log ("shit be fucked");
-			}
-
-			//StopAllCoroutines();
-
-
-			//jump to the nearest available border tile of the building on the current tile
-			//hahah this is a terrible line of code, I'm not even going to apologise for it
-			/*transform.position = tileMap.GetTile(transform.position).building.GetNearestAdjacentTile(transform.position).transform.position;
-			path.Clear();
-			pathIndex = 0;
-			SetState(HarvesterState.Moving);*/
 		}
 
 		if (Map.instance.Pause && currentState != HarvesterState.Paused) //|| Map.instance.tileMap != tileMap) 
@@ -163,7 +146,7 @@ public class ResourceHarvester : MonoBehaviour
 
 	public void SetState(HarvesterState newState)
 	{
-		//Debug.Log("SET STATE " + newState);
+		Debug.Log("SET STATE " + newState);
 
 		lastState = currentState;
 		currentState = newState;
@@ -268,13 +251,14 @@ public class ResourceHarvester : MonoBehaviour
 		currentResourceAmount = (targetTile as ResourceTile).HarvestResources(harvestBonus);
 
 		targetTile.harvestersTargeting --;
+		viaTile.harvestersTargeting --;
 
 		StartCoroutine(WaitForAnimation(ANIM_HARVEST, HarvesterState.SearchForBuilding));
 	}
 
 	public void ArrivedAtTargetTile()
 	{
-		//Debug.Log("ARRIVED AT TARGET");
+		Debug.Log("ARRIVED AT TARGET");
 
 		if (targetTile is ResourceTile)
 		{
@@ -294,7 +278,6 @@ public class ResourceHarvester : MonoBehaviour
 		currentResourceAmount = 0;
 
 		targetTile.harvestersTargeting --;
-		viaTile.harvestersTargeting --;
 
 		StartCoroutine(WaitForAnimation(ANIM_DUMP, HarvesterState.SearchForResource));
 
@@ -325,10 +308,10 @@ public class ResourceHarvester : MonoBehaviour
 			}
 			else
 			{
+				yield return 0;
 				path.Clear();
 				pathIndex = 0;
 				SetState(HarvesterState.Moving);
-				yield break;
 			}
 
 		}

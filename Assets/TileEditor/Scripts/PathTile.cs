@@ -9,7 +9,7 @@ public class PathTile : MonoBehaviour
 	public Tile tile;
 	public TileMap tileMap {get; set;}
 
-	public bool flagForDestruction = false;
+	public bool flaggedForDestruction = false;
 
 	public void Start()
 	{
