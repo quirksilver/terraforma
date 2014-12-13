@@ -25,6 +25,8 @@ public class TileMap : MonoBehaviour
 	public List<Tile> tiles;
 	public List<ResourceTile> resourceTiles;
 
+    private Bounds mapBounds;
+
 	void Start()
 	{
 
@@ -172,6 +174,20 @@ public class TileMap : MonoBehaviour
 		var z = Mathf.RoundToInt(position.z / tileSize);
 		return GetTile(x, z);
 	}
+
+    public Bounds GetSize()
+    {
+        if (mapBounds.size == Vector3.zero)
+        {
+            int tileCount = transform.childCount;
+            for(int i=0;i<tileCount;i++)
+            {
+                mapBounds.Encapsulate(transform.GetChild(i).localPosition);
+            }
+        }
+
+        return mapBounds;
+    }
 	
 	public bool FindPath(PathTile start, PathTile end, List<PathTile> path, Predicate<PathTile> isWalkable)
 	{

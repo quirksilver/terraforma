@@ -16,6 +16,7 @@ public class ResourceManager : MonoSingleton<ResourceManager>
 {
 
     public Text[] resourceLabels;
+    public Image[] changeRoot;
     float alpha = 0;
     float targetAlpha = 0;
 
@@ -44,6 +45,25 @@ public class ResourceManager : MonoSingleton<ResourceManager>
         for (int i = 0; i < (int)ResourceType.Count; i++)
         {
             resourceLabels[i].text = Map.instance.GetLevel().GetResource((ResourceType)i).ToString();
+        }
+    }
+
+    public void Tick()
+    {
+        for (int i = 0; i < (int)ResourceType.Count; i++)
+        {
+            changeRoot[i].color = (Map.instance.GetLevel().resourceChange[i] == 0) ? Color.clear : (Map.instance.GetLevel().resourceChange[i] < 0) ? Color.red : Color.green;
+
+            string label = "";
+            if (Map.instance.GetLevel().resourceChange[i] != 0)
+            {
+                label = Map.instance.GetLevel().resourceChange[i].ToString();
+                if (Map.instance.GetLevel().resourceChange[i] > 0)
+                {
+                    label = "+" + label;
+                }
+            }
+            changeRoot[i].GetComponentInChildren<Text>().text = label;
         }
     }
 }
