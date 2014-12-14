@@ -63,6 +63,8 @@ public class Map : MonoSingleton<Map>
         timeInLevel = 0;
 
         level.storyEventManager.Check();
+
+        ResourceManager.instance.Tick();
 	}
 
     public Level GetLevel()
