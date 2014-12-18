@@ -218,8 +218,6 @@ public class Map : MonoSingleton<Map>
 			{
 				level.buildings[i].UpdateBorderTilePositions();
 			}
-
-           
         }
 
         return valid;
@@ -233,6 +231,12 @@ public class Map : MonoSingleton<Map>
             nextLevelArrow.color = Color.clear;
             timeInLevel += Time.deltaTime;
             tickTimer += Time.deltaTime;
+
+			if (tickTimer > tickPeriod - 1)
+			{
+				if (!MusicPlayer.instance.playing && MusicPlayer.instance.ready) MusicPlayer.instance.Setup();
+			}
+
             if (tickTimer > tickPeriod)
             {
                 tickTimer -= tickPeriod;
@@ -244,6 +248,7 @@ public class Map : MonoSingleton<Map>
                 if (buildMenu && buildMenu.enabled) buildMenu.Tick();
 
                 level.storyEventManager.Check();
+
             }
         }
 

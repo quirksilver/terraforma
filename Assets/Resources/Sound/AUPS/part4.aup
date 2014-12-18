@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<audacityproject projname="part4_data" version="1.1.0" audacityversion="1.2.5" sel0="16.0000000000" sel1="16.0000000000" vpos="0" h="0.0000000000" zoom="32.8100379118" rate="44100.000000" >
+	<tags title="" artist="" album="" track="-1" year="" genre="-1" comments="" id3v2="1" />
+	<wavetrack name="part4" channel="0" linked="1" offset="0.00000000" rate="44100.000000" gain="1.000000" pan="0.000000" >
+		<sequence maxsamples="262144" sampleformat="262159" numsamples="705600" >
+			<waveblock start="0" >
+				<pcmaliasblockfile summaryfile='b00016.auf' aliasfile='/Users/Delia/2014_projects/Terraforma/Assets/Resources/Sound/part4.aif' aliasstart='0' aliaslen='262144' aliaschannel='0' min='-0.525696' max='0.893066' rms='0.057056'/>
+			</waveblock>
+			<waveblock start="262144" >
+				<pcmaliasblockfile summaryfile='b00018.auf' aliasfile='/Users/Delia/2014_projects/Terraforma/Assets/Resources/Sound/part4.aif' aliasstart='262144' aliaslen='262144' aliaschannel='0' min='-0.523285' max='0.988281' rms='0.073977'/>
+			</waveblock>
+			<waveblock start="524288" >
+				<simpleblockfile filename='b00038.au' len='181312' min='-0.513245' max='0.942566' rms='0.060836'/>
+			</waveblock>
+		</sequence>
+		<envelope numpoints='0'>
+		</envelope>
+	</wavetrack>
+	<wavetrack name="part4" channel="1" linked="0" offset="0.00000000" rate="44100.000000" gain="1.000000" pan="0.000000" >
+		<sequence maxsamples="262144" sampleformat="262159" numsamples="705600" >
+			<waveblock start="0" >
+				<pcmaliasblockfile summaryfile='b00017.auf' aliasfile='/Users/Delia/2014_projects/Terraforma/Assets/Resources/Sound/part4.aif' aliasstart='0' aliaslen='262144' aliaschannel='1' min='-0.529297' max='0.871796' rms='0.039096'/>
+			</waveblock>
+			<waveblock start="262144" >
+				<pcmaliasblockfile summaryfile='b00019.auf' aliasfile='/Users/Delia/2014_projects/Terraforma/Assets/Resources/Sound/part4.aif' aliasstart='262144' aliaslen='262144' aliaschannel='1' min='-0.522919' max='0.975372' rms='0.053125'/>
+			</waveblock>
+			<waveblock start="524288" >
+				<simpleblockfile filename='b00039.au' len='181312' min='-0.504120' max='0.955536' rms='0.049479'/>
+			</waveblock>
+		</sequence>
+		<envelope numpoints='0'>
+		</envelope>
+	</wavetrack>
+</audacityproject>
