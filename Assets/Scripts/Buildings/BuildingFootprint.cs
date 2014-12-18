@@ -29,6 +29,8 @@ public class BuildingFootprint : MonoBehaviour {
 
 	public void CalculatePivot(bool setPivot=true, bool saveXML = false){
 
+        Vector3 startPos = transform.parent.localPosition;
+
 		int i;
 
 		transform.parent.position = Vector3.zero;
@@ -87,6 +89,8 @@ public class BuildingFootprint : MonoBehaviour {
 		if (setPivot) SetPivot();
 
 		if (saveXML) SaveXml();
+
+        transform.parent.localPosition = startPos;
 	}
 
 	 

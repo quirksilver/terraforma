@@ -189,40 +189,13 @@ public class Map : MonoSingleton<Map>
 
         valid = ValidateBuilding(building, pos);
 
-        if (valid)
+        if (!valid)
         {
-
-			List<Vector3> footprintTiles = building.footprint.tilePositions;
-			
-			Debug.Log(footprintTiles);
-
-			int i;
-
-			for (i = 0; i < footprintTiles.Count; i++)
-			{
-				Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
-				
-				checkTile.AssignBuilding(building);
-			}
-
-			tileMap.UpdateConnections();
-
-			building.GetBorderTilePositions();
-
-			building.footprint.hide();
-
-            level.buildings.Add(building);
-            buildMenu.Refresh();
-
-			for (i = 0; i < level.buildings.Count; i++)
-			{
-				level.buildings[i].UpdateBorderTilePositions();
-			}
-
-           
+            return false;
         }
-
-        return valid;
+        buildMenu.Refresh();
+        level.PlaceBuiding(building, pos);
+        return true;
     }
 
     // Update is called once per frame

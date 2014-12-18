@@ -32,7 +32,10 @@ public class TileMap : MonoBehaviour
 
 		UpdateConnections();
 
-		setTiles();
+        if (tiles.Count == 0)
+        {
+            setTiles();
+        }
 	}
 
 	public void setTiles()
@@ -48,6 +51,7 @@ public class TileMap : MonoBehaviour
 			(instances[i].GetComponent<PathTile>() as PathTile).tileMap = this;
 
 			tempTile = instances[i].GetComponent<Tile>();
+            tempTile.Setup();
 
 				tiles.Add(tempTile);
 
@@ -173,6 +177,8 @@ public class TileMap : MonoBehaviour
 
 	Tile GetTile(int x, int z)
 	{
+        Debug.Log("GET TILE X:" + x + " Y:" + z);
+
 		var index = GetIndex(x, z);
 		if (index >= 0)
 			return tiles[index];

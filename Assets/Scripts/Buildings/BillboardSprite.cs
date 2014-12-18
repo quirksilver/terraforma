@@ -13,15 +13,15 @@ public class BillboardSprite : MonoBehaviour {
 		{
 			billboardCam = Camera.main.gameObject;
 		}
-		
 
-
-		Debug.Log("camera up " + billboardCam.transform.up);
-
-		Vector3 lookDirection = billboardCam.transform.forward;
-		transform.rotation = Quaternion.LookRotation(lookDirection, billboardCam.transform.up);
-	
+        Billboard();
 	}
+
+    public void Billboard()
+    {
+        Vector3 lookDirection = billboardCam.transform.forward;
+        transform.rotation = Quaternion.LookRotation(lookDirection, billboardCam.transform.up);
+    }
 	
 	// Update is called once per frame
 	void Update () {

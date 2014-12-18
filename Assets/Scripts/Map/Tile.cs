@@ -13,7 +13,7 @@ public class Tile : MonoBehaviour
 	public PathTile pathTile;
 
 	// Use this for initialization
-	public virtual void Start () {
+	public virtual void Setup () {
         building = null;
 
 		coords = transform.localPosition;

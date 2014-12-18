@@ -20,7 +20,15 @@ public class Level : MonoBehaviour {
 	void Awake () {
 	
 		buildings = new List<Building>();
-		tileMap = GetComponent<TileMap>() as TileMap;
+		tileMap = GetComponentInChildren<TileMap>() as TileMap;
+        tileMap.setTiles();
+
+        foreach (Building build in GetComponentsInChildren<Building>())
+        {
+            build.Setup(tileMap);
+            BuildingHUDControl.instance.NewHud(build);
+            PlaceBuiding(build,build.transform.localPosition);
+        }
 
 		switcher = Camera.main.GetComponent<PerspectiveSwitcher>();
 
@@ -33,6 +41,81 @@ public class Level : MonoBehaviour {
 
         centerPos = collider.bounds.center;
 	}
+
+    public bool ValidateBuilding(Building building, Vector3 pos)
+    {
+        bool valid = true;
+        bool canBuildOnResource = true;
+        int requiredResources = 0;
+        List<Vector3> footprintTiles = building.footprint.tilePositions;
+
+
+        for (int i = 0; i < footprintTiles.Count; i++)
+        {
+            Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
+
+            if (checkTile == null)
+            {
+                valid = false;
+            }
+            else if (checkTile.building != null || !checkTile.Buildable(building))
+            {
+                valid = false;
+            }
+
+            if (checkTile is ResourceTile)
+            {
+                if (building.numberResourceTilesRequired > 0)
+                {
+                    if ((checkTile as ResourceTile).resourceType == building.requiredResourceTileType)
+                        requiredResources++;
+                }
+                else
+                {
+                    canBuildOnResource = false;
+                }
+
+            }
+        }
+
+        if (requiredResources < building.numberResourceTilesRequired)
+            canBuildOnResource = false;
+
+        return valid && canBuildOnResource;
+    }
+
+    public void PlaceBuiding(Building building, Vector3 pos)
+    {
+        Debug.Log("PLACE AT " + pos);
+
+
+            List<Vector3> footprintTiles = building.footprint.tilePositions;
+
+            Debug.Log(footprintTiles);
+
+            int i;
+
+            for (i = 0; i < footprintTiles.Count; i++)
+            {
+                Debug.Log("TILECOUNT"+tileMap.tiles.Count);
+                Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
+
+                checkTile.AssignBuilding(building);
+            }
+
+            tileMap.UpdateConnections();
+
+            building.GetBorderTilePositions();
+
+            building.footprint.hide();
+
+            buildings.Add(building);
+
+            for (i = 0; i < buildings.Count; i++)
+            {
+                buildings[i].UpdateBorderTilePositions();
+            }
+    }
 	
 	// Update is called once per frame
 	void Update () {
