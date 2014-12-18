@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connections: []
+  tile: {fileID: 0}
+  flaggedForDestruction: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,11 +141,13 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions:
-  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
+  - {fileID: 11400024, guid: 975783cc471e1ef468d4ae2fe4706441, type: 2}
+  pathTile: {fileID: 0}
   resourceType: 4
   resourceYieldPerTurn: 5
   totalResourceYield: -1
   surroundingTiles: []
+  empty: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,0 +1,15 @@
+<SOUNDSCAPE>
+
+			<SOUNDPAIR name="name">
+         		<CLIP name="jetpack1" clip="JetpackInit"/>
+         		<CLIP name="jetpack2" clip="jetpackLoop"/>
+         	</SOUNDPAIR>  
+         	
+         	<SOUNDSET name="name" numClips="2">
+				<CLIP name="clipname1" clip="clipfilename1"/>
+				<CLIP name="clipname2" clip="clipfilename2"/>
+			</SOUNDSET>
+         
+			<SOUNDEFFECT name="name" clip="clipfilename"/>
+ 
+</SOUNDSCAPE>

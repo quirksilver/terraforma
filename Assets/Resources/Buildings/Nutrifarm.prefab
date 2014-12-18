@@ -1133,6 +1133,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1146,6 +1148,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1159,6 +1163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1172,6 +1178,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1185,6 +1193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1198,6 +1208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1211,6 +1223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1224,6 +1238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1237,6 +1253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1250,6 +1268,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1263,6 +1283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1276,6 +1298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1289,6 +1313,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1302,6 +1328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1315,6 +1343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1328,6 +1358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1341,6 +1373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1354,6 +1388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1367,6 +1403,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1380,6 +1418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1395,7 +1435,7 @@ MonoBehaviour:
   footprint: {fileID: 0}
   prerequisites:
   - {fileID: 11400024, guid: 975783cc471e1ef468d4ae2fe4706441, type: 2}
-  DisplayName: 
+  DisplayName: Nutrifarm
   buildCostWater: 0
   buildCostHeat: 0
   buildCostAir: 0
@@ -1411,8 +1451,11 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 0
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   buildingTime: 0
   buildingActive: 1
+  resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
