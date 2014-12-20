@@ -22,7 +22,7 @@ public class BuildingPlacement : MonoBehaviour
         building.enabled = false;
 		building.Setup(Map.instance.tileMap);
 
-        newBuilding.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.8f);
+        //newBuilding.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.8f);
 
 		Map.instance.AddObjectToLevel(newBuilding);
 		Map.instance.AddObjectToLevel(gameObject);
@@ -44,13 +44,13 @@ public class BuildingPlacement : MonoBehaviour
         Vector3 newPos = Vector3.zero;
 		newPos.x = Map.instance.GetMouseOver().x;
 		newPos.z = Map.instance.GetMouseOver().z;
-		newPos.y = 0.0f;
+		newPos.y = 0.01f;
 
         transform.localPosition = newBuilding.transform.localPosition = newPos;
 
         if (lastPos != newPos)
         {
-            newBuilding.GetComponentInChildren<SpriteRenderer>().color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f) ;
+            //newBuilding.GetComponentInChildren<SpriteRenderer>().color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f) ;
         }
 
         // When clicked enable stop movement and enable scripts

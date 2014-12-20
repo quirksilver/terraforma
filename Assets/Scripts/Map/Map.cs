@@ -65,6 +65,8 @@ public class Map : MonoSingleton<Map>
         level.storyEventManager.Check();
 
         ResourceManager.instance.Tick();
+
+		buildMenu.Refresh ();
 	}
 
     public Level GetLevel()

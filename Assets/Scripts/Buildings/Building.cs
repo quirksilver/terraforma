@@ -65,7 +65,7 @@ public class Building : MonoBehaviour {
 		Transform holderTransform = transform.Find("SpriteHolder");
 
 		if (holderTransform) spriteHolder = holderTransform.gameObject;
-		fullSprite = transform.Find("Sprite").gameObject;
+		//fullSprite = transform.Find("Sprite").gameObject;
 	
 	}
 
@@ -90,16 +90,16 @@ public class Building : MonoBehaviour {
 
             Color color = Color.white;
             color.a = i + (0.2f * Mathf.Sin(Time.time*Mathf.PI*2));
-            GetComponentInChildren<SpriteRenderer>().color = color;
+            //GetComponentInChildren<SpriteRenderer>().color = color;
 
             if (buildingTimer > buildingTime)
             {
-                GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                //GetComponentInChildren<SpriteRenderer>().color = Color.white;
                 built=true;
 				if (spriteHolder)
 				{
 					spriteHolder.SetActive(true);
-					fullSprite.SetActive(false);
+					//fullSprite.SetActive(false);
 				}
                 StoryEventManager.SendEvent("BUILT" + DisplayName.ToUpper());
             }
