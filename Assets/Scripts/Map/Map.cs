@@ -33,6 +33,14 @@ public class Map : MonoSingleton<Map>
     public MapLinks mapLinks;
     public Globe globe;
 
+	private float CurrentDustAlpha=0;
+	private float TargetDustAlpha=1.0f;
+	private float CurrentCloudAlpha=0;
+	private float TargetCloudAlpha=0.0f;
+
+	public Material DustMat;
+	public Material CloudMat;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
@@ -46,8 +54,21 @@ public class Map : MonoSingleton<Map>
 		GoToWorldMap();
 	}
 
+	public void UpdateAtmos(float i)
+	{
+		Color dustColor;
+	    dustColor =	DustMat.color;
+		dustColor.a = i;
+		DustMat.color = dustColor;
+
+		CloudMat.color = new Color(1.0f,1.0f,1.0f,(1.0f - i));
+	}
+
 	public void LoadLevel(Level levelToLoad)
 	{
+		TargetCloudAlpha = 0.0f;
+		TargetDustAlpha = 0.0f;
+
         nextLevelArrow.color = Color.clear;
 		Debug.Log ("LoadLevel " + levelToLoad); 
 
@@ -84,6 +105,9 @@ public class Map : MonoSingleton<Map>
         }
         else
         {
+			TargetCloudAlpha = ((float)levelIndex / (float)levels.Length) * 0.5f;
+			TargetDustAlpha = 0.5f - TargetCloudAlpha;
+
             Vector3 diff = 
                 levels[levelIndex - 1].GetComponent<Level>().centerPos - 
                 levels[levelIndex].GetComponent<Level>().centerPos;
@@ -203,6 +227,18 @@ public class Map : MonoSingleton<Map>
     // Update is called once per frame
     void Update()
     {
+		float cloudSpeed = 0.2f; 
+		CurrentDustAlpha = Mathf.MoveTowards (CurrentDustAlpha, TargetDustAlpha, cloudSpeed * Time.deltaTime);
+		CurrentCloudAlpha = Mathf.MoveTowards (CurrentCloudAlpha, TargetCloudAlpha, cloudSpeed * Time.deltaTime);
+
+		Color tempColor = DustMat.color;
+		tempColor.a = CurrentDustAlpha;
+		DustMat.color = tempColor;
+
+		tempColor = CloudMat.color;
+		tempColor.a = CurrentCloudAlpha;
+		CloudMat.color = tempColor;
+
         if (level != null && Pause == false)
         {
             nextLevelArrow.color = Color.clear;
@@ -242,7 +278,7 @@ public class Map : MonoSingleton<Map>
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			GoToWorldMap();
+			CompleteLevel();
 		}
 	}
 
