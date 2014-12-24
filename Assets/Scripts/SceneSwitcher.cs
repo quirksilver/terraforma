@@ -19,6 +19,8 @@ public class SceneSwitcher : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+		GetComponent<UnityEngine.UI.GraphicRaycaster> ().enabled = alpha != 0;
+
         if (Application.isLoadingLevel)
         {
             return;
