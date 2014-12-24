@@ -34,7 +34,7 @@ public class Map : MonoSingleton<Map>
     public Globe globe;
 
 	private float CurrentDustAlpha=0;
-	private float TargetDustAlpha=1.0f;
+	private float TargetDustAlpha=0.5f;
 	private float CurrentCloudAlpha=0;
 	private float TargetCloudAlpha=0.0f;
 
@@ -227,7 +227,7 @@ public class Map : MonoSingleton<Map>
     // Update is called once per frame
     void Update()
     {
-		float cloudSpeed = 0.2f; 
+		float cloudSpeed = 0.1f; 
 		CurrentDustAlpha = Mathf.MoveTowards (CurrentDustAlpha, TargetDustAlpha, cloudSpeed * Time.deltaTime);
 		CurrentCloudAlpha = Mathf.MoveTowards (CurrentCloudAlpha, TargetCloudAlpha, cloudSpeed * Time.deltaTime);
 
