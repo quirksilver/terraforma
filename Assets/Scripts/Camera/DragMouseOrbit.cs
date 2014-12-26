@@ -9,9 +9,12 @@ public class DragMouseOrbit : MonoBehaviour
 	public float ySpeed = 120.0f;
 	public float yMinLimit = -20.0f;
 	public float yMaxLimit = 80.0f;
-	
+
+	public bool endingOrbit = false;
+
 	private float x;
 	private float y;
+	private MatrixBlender blender;
 	
 	void Awake()
 	{
@@ -24,7 +27,7 @@ public class DragMouseOrbit : MonoBehaviour
 		
 		transform.rotation = rotation;
 		transform.position = position;
-		
+
 		if(GetComponent<Rigidbody>() != null)
 		{
 			rigidbody.freezeRotation = true;
@@ -33,6 +36,29 @@ public class DragMouseOrbit : MonoBehaviour
 	
 	void LateUpdate()
 	{
+		if (endingOrbit) 
+		{
+			if(blender == null)
+			{
+				blender = (MatrixBlender) GetComponent(typeof(MatrixBlender));
+			}
+
+			if(blender.IsRunning)
+			{
+				return;
+			}
+
+			Distance=Mathf.MoveTowards(Distance,150.0f,Time.deltaTime*5.0f);
+			x += Time.deltaTime*-3.0f;
+			y= Mathf.MoveTowards(y,0,Time.deltaTime*5.0f);
+			Quaternion rotation = Quaternion.Euler (y, x, 0);
+			Vector3 position = rotation * (new Vector3 (0.0f, 0.0f, -Distance)) + Target.position;
+		
+			transform.rotation = rotation;
+			transform.position = position;
+			return;
+		}
+
 		if(Target != null && Input.GetMouseButton(0))
 		{
 			x += (float)(Input.GetAxis("Mouse X") * xSpeed * 0.02f);

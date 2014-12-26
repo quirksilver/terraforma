@@ -23,6 +23,7 @@ public class PerspectiveSwitcher : MonoBehaviour
     Coroutine blendCoroutine = null;
     public Vector3 cameraOffset;
     private Vector3 cameraCenter;
+	public Vector3 endingPos;
 
     private bool dragging = false;
 	
@@ -103,6 +104,17 @@ public class PerspectiveSwitcher : MonoBehaviour
             blendCoroutine = blender.BlendToMatrix(ortho, 1f, false, perspectivePos, orthoPos, perspectiveRot, orthoRot);
 		}
 
+	}
+
+	public void switchToEnding()
+	{
+		if (!orthoOn) return;
+		
+		orthoOn = false;
+		blender.BlendToMatrix(perspective, 1f, true, transform.position, perspectivePos, transform.rotation, perspectiveRot);
+		
+		GetComponent<DragMouseOrbit>().enabled = true;
+		GetComponent<DragMouseOrbit> ().endingOrbit = true;
 	}
 
 	public void switchToPerspective()

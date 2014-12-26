@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BuildingHUDControl : MonoSingleton<BuildingHUDControl> {
     public GameObject tempHUD;
+	List<GameObject> hudList = new List<GameObject>();
+
 
 	// Use this for initialization
 	void Start ()
@@ -25,6 +28,16 @@ public class BuildingHUDControl : MonoSingleton<BuildingHUDControl> {
         hudComp.followPoint = building.transform;
         building.SetHUD(hudComp);
         hudComp.Setup(building);
+		hudList.Add (newHUD);
         return hudComp;
     }
+
+	public void ClearHuds()
+	{
+		foreach (GameObject gameObject in hudList) 
+		{
+			Destroy(gameObject);
+		}
+		hudList.Clear ();
+	}
 }

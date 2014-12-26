@@ -40,6 +40,7 @@ public class Map : MonoSingleton<Map>
 
 	public Material DustMat;
 	public Material CloudMat;
+	public EndingScreen endingScreen;
 
 	// Use this for initialization
 	void Awake () {
@@ -101,7 +102,8 @@ public class Map : MonoSingleton<Map>
         levelIndex++;
         if (levelIndex >= levels.Length)
         {
-            SceneSwitcher.ChangeScene(2);
+			EndGame();
+            //SceneSwitcher.ChangeScene(2);
         }
         else
         {
@@ -120,6 +122,7 @@ public class Map : MonoSingleton<Map>
                 pos2);
 
             GoToWorldMap();
+			BuildingHUDControl.instance.ClearHuds();
         }
     }
 
@@ -279,7 +282,17 @@ public class Map : MonoSingleton<Map>
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			CompleteLevel();
+			//EndGame();
 		}
+	}
+
+	public void EndGame()
+	{
+		level = null;
+		Camera.main.GetComponent<PerspectiveSwitcher>().switchToEnding();
+		endingScreen.enabled = true;
+		TargetCloudAlpha = 0.5f;
+		TargetDustAlpha = 0.0f;
 	}
 
     public void MouseOver(Vector3 pos)
