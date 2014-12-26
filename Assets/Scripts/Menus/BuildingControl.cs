@@ -66,7 +66,7 @@ public class BuildingControl : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (Map.instance.GetTileOver() == touchStart)
+            if (Map.instance.GetTileOver() == touchStart && Map.instance.GetTileOver() != null)
             {
                 if (Map.instance.GetTileOver().building != null)
                 {

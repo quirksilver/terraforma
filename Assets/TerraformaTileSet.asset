@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: TerraformaTileSet
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 400000, guid: 497334f397f524d74b39c88afda44b85, type: 2}
+  - {fileID: 400000, guid: 54496781f6d994cc596e41925c9eb8bf, type: 2}
   - {fileID: 400000, guid: 7ebe35cc70839436ea264a9407f2bce9, type: 2}
-  - {fileID: 400002, guid: e27d39705f5b8fe4c857be1f80f6aa2e, type: 2}
+  - {fileID: 400000, guid: 7bbcb0910a74a4a59934e3382a4dccea, type: 2}
+  - {fileID: 400000, guid: 046adcf2a305d4a5f9eb3be9fb0a2061, type: 2}

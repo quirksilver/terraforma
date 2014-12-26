@@ -40,6 +40,7 @@ public class Map : MonoSingleton<Map>
 
 	public Material DustMat;
 	public Material CloudMat;
+
 	public EndingScreen endingScreen;
 
 	// Use this for initialization
@@ -122,9 +123,17 @@ public class Map : MonoSingleton<Map>
                 pos2);
 
             GoToWorldMap();
-			BuildingHUDControl.instance.ClearHuds();
         }
     }
+
+	public void EndGame()
+	{
+		level = null;
+		Camera.main.GetComponent<PerspectiveSwitcher>().switchToEnding();
+		endingScreen.enabled = true;
+		TargetCloudAlpha = 0.5f;
+		TargetDustAlpha = 0.0f;
+	}
 
 	public void GoToWorldMap()
 	{
@@ -132,6 +141,8 @@ public class Map : MonoSingleton<Map>
 		//Pause = true;
 
 		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();
+
+		MusicPlayer.instance.ReceiveEvent(MusicPlayer.GO_TO_MAP);
 
 		//buildMenu.enabled = false;
 		//buildingControl.enabled = false;
@@ -282,17 +293,7 @@ public class Map : MonoSingleton<Map>
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			CompleteLevel();
-			//EndGame();
 		}
-	}
-
-	public void EndGame()
-	{
-		level = null;
-		Camera.main.GetComponent<PerspectiveSwitcher>().switchToEnding();
-		endingScreen.enabled = true;
-		TargetCloudAlpha = 0.5f;
-		TargetDustAlpha = 0.0f;
 	}
 
     public void MouseOver(Vector3 pos)
@@ -307,6 +308,10 @@ public class Map : MonoSingleton<Map>
 
     public Tile GetTileOver()
     {
-		return tileMap.GetTile(mouseOverTile);
+		if (tileMap)
+		{
+			return tileMap.GetTile(mouseOverTile);
+		}
+		else return null;
     }
 }

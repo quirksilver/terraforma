@@ -15,12 +15,15 @@ public class MusicTrack : MonoBehaviour
 	private List<AudioSource> sourcesA  = new List<AudioSource>();
 	private List<AudioSource> sourcesB = new List<AudioSource>();
 
-	Dictionary<string, MusicPart> parts = new Dictionary<string, MusicPart>();
+	Dictionary<string, MusicPart> partsByTrigger = new Dictionary<string, MusicPart>();
+	//Dictionary<AudioClip, MusicPart> partsByClip = new Dictionary<AudioClip, MusicPart>();
 
 	private int sourceIndex = 0;
 	private int partIndex = 0;
 
 	private double lastCheckedTime = 0.0;
+
+	private bool flaggedForStop = false;
 
 	//private bool init = false;
 
@@ -28,7 +31,8 @@ public class MusicTrack : MonoBehaviour
 	{
 		for (int i = 0 ; i < _parts.Count; i++)
 		{
-			parts.Add(_parts[i].trigger, _parts[i]);
+			partsByTrigger.Add(_parts[i].trigger, _parts[i]);
+			//partsByClip.Add(_parts[i].clip, _parts[i]);
 		}
 
 		name = _name;
@@ -115,6 +119,7 @@ public class MusicTrack : MonoBehaviour
 
 			Debug.Log("Scheduling part " + newPart.name + "on track " + newSource.gameObject.name);
 
+			Debug.Log("source is playing " + newSource.isPlaying);
 
 			if (oldSource)
 			{
@@ -134,15 +139,89 @@ public class MusicTrack : MonoBehaviour
 		//if (currentTime + MusicPlayer.instance.bpm/60.0f * MusicPlayer.instance.barLength > sources[nextAvailableSourceIndex]
 	}
 
+	public IEnumerator FadeDown()
+	{
+		float volume =  1.0f;
+		while  (volume > 0.0f)
+		{
+			volume -= 1.0f/(float)MusicPlayer.instance.fourBars * Time.deltaTime;
+
+			SetVolume(volume);
+
+			yield return 1;
+
+		}
+
+		SetVolume(0.0f);
+		StopAll();
+		SetVolume(1.0f);
+	}
+
+	public void SetVolume(float volume)
+	{
+		if (!flaggedForStop) return;
+
+		for (int i = 0; i < sourcesA.Count; i++)
+		{
+			sourcesA[i].volume = volume;
+			sourcesB[i].volume = volume;
+				
+		}
+	}
+
+	public void StopAll()
+	{
+		if (!flaggedForStop) return;
+
+		for (int i = 0; i < sourcesA.Count; i++)
+		{
+				sourcesA[i].Stop();
+				sourcesB[i].Stop();
+		}
+	}
+
+	public void Clear()
+	{
+		StartCoroutine("FadeDown");
+
+		partQueue.Clear();
+		currentParts.Clear();
+
+		for (int i = 0; i < sourcesA.Count; i++)
+		{
+			if (sourcesA[i].isPlaying || sourcesB[i].isPlaying)
+			{
+				sourcesA[i].loop = false;
+				sourcesB[i].loop = false;
+
+				flaggedForStop = true;
+			}
+				/*
+			if (sourcesA[i].isPlaying)
+			{
+				partsByClip[sourcesA[i].clip].flaggedForClear = true;
+			}
+
+			if (sourcesB[i].isPlaying)
+			{
+				partsByClip[sourcesB[i].clip].flaggedForClear = true;
+			}*/
+		}
+	}
+
+	public void FadeUp()
+	{
+
+	}
 
 	public void HandleEventString(string e)
 	{
 
-		if (parts.ContainsKey(e))
+		if (partsByTrigger.ContainsKey(e))
 		{
 			if (!MusicPlayer.instance.ready) MusicPlayer.instance.ready = true;
 
-			AddPart(parts[e]);
+			AddPart(partsByTrigger[e]);
 		}
 	}
 
