@@ -22,7 +22,7 @@ public class BuildingPlacement : MonoBehaviour
         building.enabled = false;
 		building.Setup(Map.instance.tileMap);
 
-        //newBuilding.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.8f);
+        newBuilding.GetComponentInChildren<MeshRenderer>().material.color = new Color(1.0f, 0.0f, 0.0f, 0.8f);
 
 		Map.instance.AddObjectToLevel(newBuilding);
 		Map.instance.AddObjectToLevel(gameObject);
@@ -62,7 +62,7 @@ public class BuildingPlacement : MonoBehaviour
                 Building building = newBuilding.GetComponent<Building>();
                 BuildingHUDControl.instance.NewHud(building);
                 building.enabled = true;
-                newBuilding.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                newBuilding.GetComponentInChildren<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
 				//Testing
 				//building.CreateNewHarvester();

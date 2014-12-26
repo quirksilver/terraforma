@@ -18,7 +18,8 @@ public class StoryEventManager : MonoBehaviour
 
     public static void SendEvent(string eve)
     {
-        Map.instance.GetLevel().storyEventManager.ReciveEvent(eve);
+		if (Map.instance.GetLevel()) Map.instance.GetLevel().storyEventManager.ReciveEvent(eve);
+
 		MusicPlayer.instance.ReceiveEvent(eve);
     }
 

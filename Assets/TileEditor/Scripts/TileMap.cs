@@ -177,7 +177,7 @@ public class TileMap : MonoBehaviour
 
 	Tile GetTile(int x, int z)
 	{
-        Debug.Log("GET TILE X:" + x + " Y:" + z);
+//        Debug.Log("GET TILE X:" + x + " Y:" + z);
 
 		var index = GetIndex(x, z);
 		if (index >= 0)

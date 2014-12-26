@@ -130,6 +130,8 @@ public class Map : MonoSingleton<Map>
 
 		Camera.main.GetComponent<PerspectiveSwitcher>().switchToPerspective();
 
+		MusicPlayer.instance.ReceiveEvent(MusicPlayer.GO_TO_MAP);
+
 		//buildMenu.enabled = false;
 		//buildingControl.enabled = false;
 
@@ -294,6 +296,10 @@ public class Map : MonoSingleton<Map>
 
     public Tile GetTileOver()
     {
-		return tileMap.GetTile(mouseOverTile);
+		if (tileMap)
+		{
+			return tileMap.GetTile(mouseOverTile);
+		}
+		else return null;
     }
 }

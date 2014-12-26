@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<audacityproject projname="worldpart_data" version="1.1.0" audacityversion="1.2.5" sel0="32.0000000000" sel1="32.0000000000" vpos="0" h="0.0000000000" zoom="17.1424755440" rate="44100.000000" >
+	<tags title="" artist="" album="" track="-1" year="" genre="-1" comments="" id3v2="1" />
+	<wavetrack name="worldpart" channel="0" linked="1" offset="0.00000000" rate="44100.000000" gain="1.000000" pan="0.000000" >
+		<sequence maxsamples="262144" sampleformat="262159" numsamples="1411200" >
+			<waveblock start="0" >
+				<pcmaliasblockfile summaryfile='b00000.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='0' aliaslen='262144' aliaschannel='0' min='-0.248535' max='0.452637' rms='0.020577'/>
+			</waveblock>
+			<waveblock start="262144" >
+				<pcmaliasblockfile summaryfile='b00002.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='262144' aliaslen='262144' aliaschannel='0' min='-0.255524' max='0.459106' rms='0.022851'/>
+			</waveblock>
+			<waveblock start="524288" >
+				<pcmaliasblockfile summaryfile='b00004.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='524288' aliaslen='262144' aliaschannel='0' min='-0.290375' max='0.418152' rms='0.020796'/>
+			</waveblock>
+			<waveblock start="786432" >
+				<pcmaliasblockfile summaryfile='b00006.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='786432' aliaslen='262144' aliaschannel='0' min='-0.288025' max='0.435486' rms='0.018881'/>
+			</waveblock>
+			<waveblock start="1048576" >
+				<simpleblockfile filename='b00012.au' len='181312' min='-0.255127' max='0.420166' rms='0.019774'/>
+			</waveblock>
+			<waveblock start="1229888" >
+				<simpleblockfile filename='b00013.au' len='181312' min='-0.255493' max='0.452728' rms='0.022885'/>
+			</waveblock>
+		</sequence>
+		<envelope numpoints='0'>
+		</envelope>
+	</wavetrack>
+	<wavetrack name="worldpart" channel="1" linked="0" offset="0.00000000" rate="44100.000000" gain="1.000000" pan="0.000000" >
+		<sequence maxsamples="262144" sampleformat="262159" numsamples="1411200" >
+			<waveblock start="0" >
+				<pcmaliasblockfile summaryfile='b00001.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='0' aliaslen='262144' aliaschannel='1' min='-0.285706' max='0.424255' rms='0.025438'/>
+			</waveblock>
+			<waveblock start="262144" >
+				<pcmaliasblockfile summaryfile='b00003.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='262144' aliaslen='262144' aliaschannel='1' min='-0.253204' max='0.434235' rms='0.020950'/>
+			</waveblock>
+			<waveblock start="524288" >
+				<pcmaliasblockfile summaryfile='b00005.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='524288' aliaslen='262144' aliaschannel='1' min='-0.243652' max='0.435883' rms='0.016102'/>
+			</waveblock>
+			<waveblock start="786432" >
+				<pcmaliasblockfile summaryfile='b00007.auf' aliasfile='/Users/Delia/Dropbox/garageband/worldpart.aif' aliasstart='786432' aliaslen='262144' aliaschannel='1' min='-0.259949' max='0.450562' rms='0.020209'/>
+			</waveblock>
+			<waveblock start="1048576" >
+				<simpleblockfile filename='b00014.au' len='181312' min='-0.256989' max='0.418274' rms='0.021488'/>
+			</waveblock>
+			<waveblock start="1229888" >
+				<simpleblockfile filename='b00015.au' len='181312' min='-0.286285' max='0.413544' rms='0.026573'/>
+			</waveblock>
+		</sequence>
+		<envelope numpoints='0'>
+		</envelope>
+	</wavetrack>
+</audacityproject>

@@ -57,6 +57,8 @@ public class Building : MonoBehaviour {
 
 	protected int DebugSpawnTile = 0;
 
+	public string eventName;
+
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
@@ -66,6 +68,8 @@ public class Building : MonoBehaviour {
 
 		if (holderTransform) spriteHolder = holderTransform.gameObject;
 		//fullSprite = transform.Find("Sprite").gameObject;
+
+		eventName = "BUILT" + DisplayName.ToUpper();
 	
 	}
 
@@ -101,7 +105,7 @@ public class Building : MonoBehaviour {
 					spriteHolder.SetActive(true);
 					//fullSprite.SetActive(false);
 				}
-                StoryEventManager.SendEvent("BUILT" + DisplayName.ToUpper());
+                StoryEventManager.SendEvent(eventName);
             }
         }
 

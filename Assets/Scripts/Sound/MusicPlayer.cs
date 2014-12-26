@@ -17,7 +17,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 	[HideInInspector]
 	public double nextTwelveBarEntry { private set; get; }
 
-	private double fourBars;
+	public double fourBars;
 	private double eightBars;
 	private double twelveBars;
 
@@ -27,6 +27,9 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 	public bool ready = false;
 		
 	Dictionary<string, MusicTrack> tracks = new Dictionary<string, MusicTrack>();
+
+	public const string GO_TO_MAP = "gotoMap";
+	public const string  GO_TO_LEVEL = "gotoLevel";
 
 
 	// Use this for initialization
@@ -79,18 +82,42 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 	public void ReceiveEvent(string e)
 	{
-		foreach (KeyValuePair<string, MusicTrack> track in tracks)
+		switch (e)
 		{
-			track.Value.HandleEventString(e);
+		case GO_TO_MAP:
+			ChangeToMapMusic();
+			break;
+
+		case GO_TO_LEVEL:
+			LoadMusicForLevel(Map.instance.GetLevel());
+			break;
+	
+		default:
+			foreach (KeyValuePair<string, MusicTrack> track in tracks)
+			{
+				track.Value.HandleEventString(e);
+			}
+			break;
 		}
 	}
 
 	public void LoadMusicForLevel(Level level)
 	{
+		for (int i = 0; i < level.buildings.Count; i++)
+		{
+			ReceiveEvent(level.buildings[i].eventName);
+		}
 	}
 
 	public void ChangeToMapMusic()
 	{
+		Debug.Log("MUSIC PLAYER SWITCH TO MAP");
+
+		foreach (KeyValuePair<string, MusicTrack> track in tracks)
+		{
+			track.Value.Clear();
+			track.Value.HandleEventString(GO_TO_MAP);
+		}
 	}
 
 	public double GetNextEntry(int barLength)
@@ -122,7 +149,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		double entry = nextFourBarEntry;
 		double timeToAdd = fourBars;
 
-		switch (newPartLength)
+		/*switch (newPartLength)
 		{
 		case 8:
 			//Debug.Log("returning 8 bar entry");
@@ -135,7 +162,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 			entry = nextTwelveBarEntry;
 			timeToAdd = twelveBars;
 			break;
-		}
+		}*/
 
 		if (lastPartLength > newPartLength)
 		{

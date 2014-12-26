@@ -812,12 +812,13 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 0
-  requiredResourceTileType: 4
+  requiredResourceTileType: 1
   numberResourceTilesRequired: 1
   buildingTime: 0
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
