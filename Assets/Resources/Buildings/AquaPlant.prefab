@@ -838,23 +838,23 @@ MonoBehaviour:
   - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
   DisplayName: Aqua Plant
   buildCostWater: 0
-  buildCostHeat: 6
-  buildCostAir: 3
+  buildCostHeat: 65
+  buildCostAir: 65
   buildCostFood: 0
-  buildCostMetal: 0
+  buildCostMetal: 5
   runningCostWater: 0
   runningCostHeat: 6
   runningCostAir: 3
   runningCostFood: 0
   runningCostMetal: 0
-  produceWater: 30
+  produceWater: 52
   produceHeat: 0
   produceAir: 0
-  produceFood: 0
+  produceFood: 2
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
-  buildingTime: 0
+  requiredResourceTileType: 0
+  numberResourceTilesRequired: 1
+  buildingTime: 2
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

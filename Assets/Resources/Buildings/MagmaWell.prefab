@@ -797,24 +797,24 @@ MonoBehaviour:
   prerequisites:
   - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
   DisplayName: Magma Well
-  buildCostWater: 0
+  buildCostWater: 30
   buildCostHeat: 0
-  buildCostAir: 0
+  buildCostAir: 30
   buildCostFood: 0
   buildCostMetal: 10
   runningCostWater: 5
   runningCostHeat: 0
-  runningCostAir: 0
+  runningCostAir: 5
   runningCostFood: 0
   runningCostMetal: 2
   produceWater: 0
-  produceHeat: 20
+  produceHeat: 40
   produceAir: 0
   produceFood: 0
   produceMetal: 0
   requiredResourceTileType: 1
   numberResourceTilesRequired: 1
-  buildingTime: 0
+  buildingTime: 2
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

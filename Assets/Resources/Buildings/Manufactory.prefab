@@ -1044,19 +1044,19 @@ MonoBehaviour:
   buildCostAir: 0
   buildCostFood: 0
   buildCostMetal: 0
-  runningCostWater: 0
-  runningCostHeat: 0
-  runningCostAir: 0
+  runningCostWater: 2
+  runningCostHeat: 6
+  runningCostAir: 4
   runningCostFood: 0
-  runningCostMetal: 0
+  runningCostMetal: 5
   produceWater: 5
-  produceHeat: 6
+  produceHeat: 3
   produceAir: 0
   produceFood: 0
-  produceMetal: 1
+  produceMetal: 7
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 0
+  buildingTime: 7
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

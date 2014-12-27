@@ -527,6 +527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -540,6 +542,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -553,6 +557,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -566,6 +572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -579,6 +587,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -592,6 +602,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -605,6 +617,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -618,6 +632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,25 +649,29 @@ MonoBehaviour:
   footprint: {fileID: 0}
   prerequisites:
   - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
-  DisplayName: 
-  buildCostWater: 0
-  buildCostHeat: 0
+  DisplayName: Solar Collector
+  buildCostWater: 5
+  buildCostHeat: 16
   buildCostAir: 0
   buildCostFood: 0
-  buildCostMetal: 0
-  runningCostWater: 0
+  buildCostMetal: 72
+  runningCostWater: 3
   runningCostHeat: 0
   runningCostAir: 0
   runningCostFood: 0
   runningCostMetal: 0
   produceWater: 0
-  produceHeat: 20
+  produceHeat: 35
   produceAir: 0
   produceFood: 0
-  produceMetal: 5
-  buildingTime: 0
+  produceMetal: 0
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
+  buildingTime: 4
   buildingActive: 1
+  resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

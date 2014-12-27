@@ -1196,20 +1196,21 @@ MonoBehaviour:
   buildCostMetal: 0
   runningCostWater: 5
   runningCostHeat: 5
-  runningCostAir: 2
+  runningCostAir: 3
   runningCostFood: 5
   runningCostMetal: 0
   produceWater: 0
-  produceHeat: 6
+  produceHeat: 8
   produceAir: 5
-  produceFood: 0
+  produceFood: 4
   produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 0
+  buildingTime: 4
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

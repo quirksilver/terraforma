@@ -2237,28 +2237,29 @@ MonoBehaviour:
   footprint: {fileID: 0}
   prerequisites:
   - {fileID: 11400000, guid: f4549d07f64c5304fa02f55d9cff5c8d, type: 2}
-  DisplayName: 
-  buildCostWater: 0
-  buildCostHeat: 0
-  buildCostAir: 0
-  buildCostFood: 0
-  buildCostMetal: 0
-  runningCostWater: 0
-  runningCostHeat: 0
-  runningCostAir: 0
-  runningCostFood: 0
+  DisplayName: Arboreum
+  buildCostWater: 80
+  buildCostHeat: 15
+  buildCostAir: 40
+  buildCostFood: 5
+  buildCostMetal: 5
+  runningCostWater: 15
+  runningCostHeat: 8
+  runningCostAir: 2
+  runningCostFood: 1
   runningCostMetal: 0
   produceWater: 0
   produceHeat: 0
-  produceAir: 0
-  produceFood: 0
+  produceAir: 35
+  produceFood: 5
   produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 0
+  buildingTime: 3
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

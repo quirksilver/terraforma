@@ -204,24 +204,28 @@ MonoBehaviour:
   prerequisites:
   - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
   DisplayName: Rocket
-  buildCostWater: 0
-  buildCostHeat: 0
-  buildCostAir: 0
-  buildCostFood: 20
-  buildCostMetal: 0
-  runningCostWater: 0
-  runningCostHeat: 0
-  runningCostAir: 0
+  buildCostWater: 50
+  buildCostHeat: 60
+  buildCostAir: 40
+  buildCostFood: 0
+  buildCostMetal: 90
+  runningCostWater: 15
+  runningCostHeat: 18
+  runningCostAir: 5
   runningCostFood: 0
-  runningCostMetal: 0
+  runningCostMetal: 4
   produceWater: 0
-  produceHeat: 0
+  produceHeat: 2
   produceAir: 0
   produceFood: 0
   produceMetal: 0
-  buildingTime: 5
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
+  buildingTime: 8
   buildingActive: 1
+  resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,6 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
+  harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coords: {x: 0, y: 0, z: 0}
+  harvestersTargeting: 0
+  buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
