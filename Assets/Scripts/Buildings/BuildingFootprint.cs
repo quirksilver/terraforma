@@ -69,8 +69,6 @@ public class BuildingFootprint : MonoBehaviour {
 		for (i = 0; i < gridArray.Length; i++)
 		{
 			transformedGrid[i] = m.MultiplyPoint(gridArray[i]);
-			
-			Debug.Log(transformedGrid[i]);
 		}
 		
 		Bounds bounds = new Bounds();
