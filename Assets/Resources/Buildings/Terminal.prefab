@@ -571,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 179842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 0, z: 1.5}
-  m_LocalScale: {x: .0250000004, y: .0250000004, z: .0250000004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400036}
   m_RootOrder: 1
@@ -817,7 +817,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179842}
-  m_Mesh: {fileID: 4300014, guid: a23ed83b98ff74f6b9795ecbaffdfb1a, type: 3}
+  m_Mesh: {fileID: 4300036, guid: 2160c09daca154f998eccbbbc037dfa9, type: 3}
 --- !u!64 &6400000
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1196,13 +1196,13 @@ MonoBehaviour:
   buildCostMetal: 0
   runningCostWater: 5
   runningCostHeat: 5
-  runningCostAir: 2
+  runningCostAir: 3
   runningCostFood: 5
   runningCostMetal: 0
   produceWater: 0
-  produceHeat: 6
+  produceHeat: 8
   produceAir: 5
-  produceFood: 0
+  produceFood: 4
   produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
@@ -1210,6 +1210,7 @@ MonoBehaviour:
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

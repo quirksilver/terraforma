@@ -35,8 +35,9 @@ public class Tile : MonoBehaviour
 		pathTile.flaggedForDestruction = true;
     }
 
-    public virtual void OnMouseOver()
+	public virtual void OnMouseEnter()
     {
+		Debug.Log("MOUSE OVER TILE  " + coords);
         Map.instance.MouseOver(coords);
     }
 

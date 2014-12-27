@@ -51,9 +51,9 @@ public class ResourceTile : Tile
 
 	}
 
-	public override void OnMouseOver()
+	public override void OnMouseEnter()
 	{
-		base.OnMouseOver();
+		base.OnMouseEnter();
 	}
 
 	/*public void GetSurroundingTiles()
