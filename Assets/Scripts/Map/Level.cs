@@ -22,6 +22,8 @@ public class Level : MonoBehaviour {
 	public int startingFood;
 	public int startingMetal;
 
+	public Building[] victoryRequirements;
+
 	// Use this for initialization
 	void Awake () {
 	
@@ -204,10 +206,29 @@ public class Level : MonoBehaviour {
 
     public void Tick()
     {
-        ResourceManager.instance.Tick();
-        for (int i = 0; i < (int)ResourceType.Count; i++)
-        {
-            resourceChange[i] = 0;
-        }
-    }
+				ResourceManager.instance.Tick ();
+				for (int i = 0; i < (int)ResourceType.Count; i++) {
+						resourceChange [i] = 0;
+				}
+
+				if (victoryRequirements.Length != 0) {
+						bool victory = true;
+						foreach (Building building in victoryRequirements) {
+								bool present = false;
+								foreach (Building b2 in buildings) {
+										if (b2.DisplayName == building.DisplayName) {
+												present = true;
+										}
+								}
+
+								if (!present) {
+										victory = false;
+								}
+						}
+
+						if (victory) {
+								StoryEventManager.SendEvent ("LEVELVICTORY");
+						}
+				}
+		}
 }
