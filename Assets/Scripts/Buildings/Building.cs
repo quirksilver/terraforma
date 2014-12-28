@@ -163,6 +163,11 @@ public class Building : MonoBehaviour {
         hud = h;
     }
 
+	public void RemoveHud()
+	{
+		BuildingHUDControl.instance.removeHud (hud.gameObject);
+	}
+
 	public void CreateNewHarvester()
 	{
 		if (harvesterPrefab != null)

@@ -814,7 +814,7 @@ MonoBehaviour:
   produceMetal: 0
   requiredResourceTileType: 1
   numberResourceTilesRequired: 1
-  buildingTime: 0
+  buildingTime: 2
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

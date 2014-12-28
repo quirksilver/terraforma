@@ -1310,27 +1310,29 @@ MonoBehaviour:
   prerequisites:
   - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
   - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
-  DisplayName: Dome
-  buildCostWater: 0
-  buildCostHeat: 0
-  buildCostAir: 0
-  buildCostFood: 0
-  buildCostMetal: 10
-  runningCostWater: 0
-  runningCostHeat: 0
-  runningCostAir: 0
-  runningCostFood: 0
+  DisplayName: Central Dome
+  buildCostWater: 20
+  buildCostHeat: 30
+  buildCostAir: 30
+  buildCostFood: 120
+  buildCostMetal: 15
+  runningCostWater: 4
+  runningCostHeat: 11
+  runningCostAir: 8
+  runningCostFood: 24
   runningCostMetal: 0
-  produceWater: 0
-  produceHeat: 5
+  produceWater: 2
+  produceHeat: 6
   produceAir: 0
-  produceFood: 5
-  produceMetal: 0
-  requiredResourceTileType: 4
+  produceFood: 0
+  produceMetal: 2
+  requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 3
+  buildingTime: 8
   buildingActive: 1
-  harvesterPrefab: {fileID: 100000, guid: f9c258ddcbacf4c618aea2df3391c87c, type: 2}
+  resourcesAvailable: 1
+  harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1357,6 +1359,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1371,6 +1374,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1385,6 +1389,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1399,6 +1404,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1413,6 +1419,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1427,6 +1434,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1441,6 +1449,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1455,6 +1464,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1469,6 +1479,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1483,6 +1494,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1497,6 +1509,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1511,6 +1524,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1525,6 +1539,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1539,6 +1554,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1553,6 +1569,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1567,6 +1584,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1581,6 +1599,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1595,6 +1614,7 @@ MonoBehaviour:
   coords: {x: 0, y: 0, z: 0}
   harvestersTargeting: 0
   buildingRestrictions: []
+  pathTile: {fileID: 0}
 --- !u!114 &11400040
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -49,6 +49,12 @@ public class BuildingControl : MonoBehaviour
         over = false;
     }
 
+	public void RemoveBuilding()
+	{
+		Map.instance.GetLevel ().RemoveBuilding (building);
+		targetAlpha = 0.0f;
+	}
+
 	// Update is called once per frame
 	void Update () {
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);

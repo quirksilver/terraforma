@@ -16,6 +16,12 @@ public class Level : MonoBehaviour {
 
     public Vector3 centerPos { private set; get; }
 
+	public int startingWater;
+	public int startingHeat;
+	public int startingAir;
+	public int startingFood;
+	public int startingMetal;
+
 	// Use this for initialization
 	void Awake () {
 	
@@ -35,7 +41,11 @@ public class Level : MonoBehaviour {
         resourceAmmount = new int[(int)ResourceType.Count];
         resourceChange = new int[(int)ResourceType.Count];
 
-        resourceAmmount[(int)ResourceType.Metal] = 200;
+		resourceAmmount[(int)ResourceType.Water] = startingWater;
+		resourceAmmount[(int)ResourceType.Heat] = startingHeat;
+		resourceAmmount[(int)ResourceType.Air] = startingAir;
+		resourceAmmount[(int)ResourceType.Food] = startingFood;
+		resourceAmmount[(int)ResourceType.Metal] = startingMetal;
 
         storyEventManager = GetComponent<StoryEventManager>();
 
@@ -84,21 +94,47 @@ public class Level : MonoBehaviour {
         return valid && canBuildOnResource;
     }
 
-    public void PlaceBuiding(Building building, Vector3 pos)
-    {
-        Debug.Log("PLACE AT " + pos);
+	public void RemoveBuilding(Building building)
+	{
+		building.RemoveHud ();
+		building.footprint.gameObject.SetActive (true);
+		List<Vector3> footprintTiles = building.footprint.tilePositions;
+		
+		int i;
 
+		for (i = 0; i < footprintTiles.Count; i++)
+		{
+			Tile checkTile = tileMap.GetTile(building.transform.localPosition + footprintTiles[i]);
+			
+			checkTile.AssignBuilding(null);
+		}
+		
+		buildings.Remove (building);
+
+		for (i = 0; i < buildings.Count; i++)
+		{
+			buildings[i].UpdateBorderTilePositions();
+		}
+
+		Destroy (building.gameObject);
+	}
+	
+	public void PlaceBuiding(Building building, Vector3 pos)
+    {
+		if (building.footprint.tilePositions == null) {
+				building.footprint.CalculatePivot(false);
+		}
 
             List<Vector3> footprintTiles = building.footprint.tilePositions;
-
-            Debug.Log(footprintTiles);
 
             int i;
 
             for (i = 0; i < footprintTiles.Count; i++)
             {
-                Debug.Log("TILECOUNT"+tileMap.tiles.Count);
                 Tile checkTile = tileMap.GetTile(pos + footprintTiles[i]);
+
+			Debug.Log("FP : " + footprintTiles[i]);
+			Debug.Log(pos + footprintTiles[i]);
 
                 checkTile.AssignBuilding(building);
             }

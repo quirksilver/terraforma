@@ -1452,24 +1452,24 @@ MonoBehaviour:
   prerequisites:
   - {fileID: 11400024, guid: 975783cc471e1ef468d4ae2fe4706441, type: 2}
   DisplayName: Nutrifarm
-  buildCostWater: 0
-  buildCostHeat: 0
-  buildCostAir: 0
+  buildCostWater: 60
+  buildCostHeat: 40
+  buildCostAir: 80
   buildCostFood: 0
-  buildCostMetal: 0
-  runningCostWater: 0
-  runningCostHeat: 0
-  runningCostAir: 0
+  buildCostMetal: 5
+  runningCostWater: 12
+  runningCostHeat: 6
+  runningCostAir: 6
   runningCostFood: 0
   runningCostMetal: 0
   produceWater: 0
   produceHeat: 0
-  produceAir: 0
-  produceFood: 0
+  produceAir: 8
+  produceFood: 24
   produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 0
+  buildingTime: 3
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

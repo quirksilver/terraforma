@@ -2370,28 +2370,29 @@ MonoBehaviour:
   - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
   - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
   - {fileID: 11400000, guid: 5ea7dc2fb2dbdad4b94a05e71aefa4d4, type: 2}
-  DisplayName: 
-  buildCostWater: 0
-  buildCostHeat: 0
-  buildCostAir: 0
+  DisplayName: Refinery
+  buildCostWater: 65
+  buildCostHeat: 55
+  buildCostAir: 70
   buildCostFood: 0
   buildCostMetal: 0
-  runningCostWater: 0
-  runningCostHeat: 0
-  runningCostAir: 0
+  runningCostWater: 4
+  runningCostHeat: 15
+  runningCostAir: 2
   runningCostFood: 0
   runningCostMetal: 0
   produceWater: 0
-  produceHeat: 0
+  produceHeat: 6
   produceAir: 0
   produceFood: 0
   produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 0
+  buildingTime: 4
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
+  eventName: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

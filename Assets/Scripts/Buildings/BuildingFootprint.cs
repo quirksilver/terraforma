@@ -48,7 +48,7 @@ public class BuildingFootprint : MonoBehaviour {
 		{
 			Debug.Log(child);
 
-			tilePositions.Add(child.position);
+			tilePositions.Add(child.localPosition);
 
 			MeshFilter mf = child.GetComponentsInChildren<MeshFilter>(true)[0];
 
@@ -69,8 +69,6 @@ public class BuildingFootprint : MonoBehaviour {
 		for (i = 0; i < gridArray.Length; i++)
 		{
 			transformedGrid[i] = m.MultiplyPoint(gridArray[i]);
-			
-			Debug.Log(transformedGrid[i]);
 		}
 		
 		Bounds bounds = new Bounds();
@@ -111,7 +109,7 @@ public class BuildingFootprint : MonoBehaviour {
 
 		//TextAsset asset = xmlString;
 
-		File.WriteAllText("Assets/Resources/Buildings/" + transform.parent.gameObject.name + "/" + transform.parent.gameObject.name + ".xml", xmlString);
+		//File.WriteAllText("Assets/Resources/Buildings/" + transform.parent.gameObject.name + "/" + transform.parent.gameObject.name + ".xml", xmlString);
 		AssetDatabase.Refresh();
 
 		//Load
