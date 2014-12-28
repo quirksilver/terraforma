@@ -32,6 +32,12 @@ public class BuildingHUDControl : MonoSingleton<BuildingHUDControl> {
         return hudComp;
     }
 
+	public void removeHud(GameObject hud)
+	{
+		hudList.Remove (hud);
+		Destroy (hud);
+	}
+
 	public void ClearHuds()
 	{
 		foreach (GameObject gameObject in hudList) 

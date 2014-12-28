@@ -94,18 +94,38 @@ public class Level : MonoBehaviour {
         return valid && canBuildOnResource;
     }
 
-    public void PlaceBuiding(Building building, Vector3 pos)
-    {
-        Debug.Log("PLACE AT " + pos);
-		Debug.Log ("Building " + building.name);
+	public void RemoveBuilding(Building building)
+	{
+		building.RemoveHud ();
+		building.footprint.gameObject.SetActive (true);
+		List<Vector3> footprintTiles = building.footprint.tilePositions;
+		
+		int i;
 
+		for (i = 0; i < footprintTiles.Count; i++)
+		{
+			Tile checkTile = tileMap.GetTile(building.transform.localPosition + footprintTiles[i]);
+			
+			checkTile.AssignBuilding(null);
+		}
+		
+		buildings.Remove (building);
+
+		for (i = 0; i < buildings.Count; i++)
+		{
+			buildings[i].UpdateBorderTilePositions();
+		}
+
+		Destroy (building.gameObject);
+	}
+	
+	public void PlaceBuiding(Building building, Vector3 pos)
+    {
 		if (building.footprint.tilePositions == null) {
 				building.footprint.CalculatePivot(false);
 		}
 
             List<Vector3> footprintTiles = building.footprint.tilePositions;
-
-            Debug.Log(footprintTiles);
 
             int i;
 

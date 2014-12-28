@@ -99,6 +99,7 @@ public class Map : MonoSingleton<Map>
 
     public void CompleteLevel()
     {
+		BuildingHUDControl.instance.ClearHuds ();
         level = null;
         levelIndex++;
         if (levelIndex >= levels.Length)
