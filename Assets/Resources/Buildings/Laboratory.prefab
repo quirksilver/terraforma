@@ -1106,8 +1106,8 @@ MonoBehaviour:
   runningCostWater: 16
   runningCostHeat: 22
   runningCostAir: 17
-  runningCostFood: 13
-  runningCostMetal: 14
+  runningCostFood: 14
+  runningCostMetal: 13
   produceWater: 0
   produceHeat: 0
   produceAir: 2
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   produceMetal: 6
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 4
+  buildingTime: 28
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

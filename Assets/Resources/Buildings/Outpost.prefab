@@ -545,7 +545,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150.521347, y: -33.574646, z: -269.416718}
+  m_LocalPosition: {x: -141.450912, y: -30.2298088, z: -270.597382}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400032}
@@ -1318,26 +1318,26 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   footprint: {fileID: 0}
   prerequisites:
-  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
+  - {fileID: 11400030, guid: 64296cc26324f46f484f8d87031fb6dc, type: 2}
   DisplayName: Outpost
-  buildCostWater: 20
-  buildCostHeat: 30
-  buildCostAir: 30
-  buildCostFood: 120
-  buildCostMetal: 15
-  runningCostWater: 4
-  runningCostHeat: 11
-  runningCostAir: 8
-  runningCostFood: 24
-  runningCostMetal: 0
-  produceWater: 2
-  produceHeat: 6
+  buildCostWater: 36
+  buildCostHeat: 18
+  buildCostAir: 18
+  buildCostFood: 74
+  buildCostMetal: 21
+  runningCostWater: 5
+  runningCostHeat: 9
+  runningCostAir: 14
+  runningCostFood: 16
+  runningCostMetal: 2
+  produceWater: 0
+  produceHeat: 0
   produceAir: 0
   produceFood: 0
-  produceMetal: 2
+  produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 4
+  buildingTime: 28
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
@@ -1408,7 +1408,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808a45ae61f5b0f4e93a4dc0e357f620, type: 3}
   m_Name: 

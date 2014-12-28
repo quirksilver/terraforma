@@ -253,6 +253,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400028}
   - 114: {fileID: 11400026}
+  - 114: {fileID: 11400032}
   m_Layer: 0
   m_Name: TileMap
   m_TagString: Untagged
@@ -327,7 +328,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150.521347, y: -33.574646, z: -269.416718}
+  m_LocalPosition: {x: -151.071152, y: -31.4669685, z: -269.162262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400018}
@@ -881,24 +882,24 @@ MonoBehaviour:
   prerequisites:
   - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
   DisplayName: Monument
-  buildCostWater: 20
-  buildCostHeat: 30
-  buildCostAir: 30
-  buildCostFood: 120
-  buildCostMetal: 15
-  runningCostWater: 4
-  runningCostHeat: 11
-  runningCostAir: 8
-  runningCostFood: 24
+  buildCostWater: 60
+  buildCostHeat: 40
+  buildCostAir: 20
+  buildCostFood: 0
+  buildCostMetal: 50
+  runningCostWater: 0
+  runningCostHeat: 0
+  runningCostAir: 0
+  runningCostFood: 0
   runningCostMetal: 0
-  produceWater: 2
-  produceHeat: 6
+  produceWater: 0
+  produceHeat: 0
   produceAir: 0
   produceFood: 0
-  produceMetal: 2
+  produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 4
+  buildingTime: 24
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
@@ -1059,7 +1060,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 808a45ae61f5b0f4e93a4dc0e357f620, type: 3}
   m_Name: 
@@ -1119,6 +1120,18 @@ MonoBehaviour:
   harvestersTargeting: 0
   buildingRestrictions: []
   pathTile: {fileID: 0}
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c906eb19bcd341c5bff452b4c5b7556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

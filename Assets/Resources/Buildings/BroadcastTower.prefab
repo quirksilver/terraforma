@@ -677,7 +677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 0, y: 0}
   footprint: {fileID: 0}
-  prerequisites: []
+  prerequisites:
+  - {fileID: 11400086, guid: 3608c4f0d6c9d43b8890ce42e80e44a2, type: 2}
   DisplayName: Broadcast Tower
   buildCostWater: 29
   buildCostHeat: 49
@@ -696,7 +697,7 @@ MonoBehaviour:
   produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 0
+  buildingTime: 24
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

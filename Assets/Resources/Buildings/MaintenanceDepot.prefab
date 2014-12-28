@@ -1636,7 +1636,7 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   footprint: {fileID: 0}
   prerequisites:
-  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
+  - {fileID: 11400022, guid: 1287fd7ac908d4407aa723423064c9a2, type: 2}
   DisplayName: MaintenanceDepot
   buildCostWater: 39
   buildCostHeat: 8
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   produceMetal: 4
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 4
+  buildingTime: 28
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

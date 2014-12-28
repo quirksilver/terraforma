@@ -824,26 +824,26 @@ MonoBehaviour:
   size: {x: 0, y: 0}
   footprint: {fileID: 0}
   prerequisites:
-  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
+  - {fileID: 11400030, guid: 64296cc26324f46f484f8d87031fb6dc, type: 2}
   DisplayName: Receiver Dish
-  buildCostWater: 20
-  buildCostHeat: 30
-  buildCostAir: 30
-  buildCostFood: 120
-  buildCostMetal: 15
-  runningCostWater: 4
-  runningCostHeat: 11
-  runningCostAir: 8
-  runningCostFood: 24
-  runningCostMetal: 0
-  produceWater: 2
-  produceHeat: 6
+  buildCostWater: 36
+  buildCostHeat: 29
+  buildCostAir: 7
+  buildCostFood: 0
+  buildCostMetal: 44
+  runningCostWater: 0
+  runningCostHeat: 4
+  runningCostAir: 0
+  runningCostFood: 0
+  runningCostMetal: 1
+  produceWater: 0
+  produceHeat: 0
   produceAir: 0
   produceFood: 0
-  produceMetal: 2
+  produceMetal: 0
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
-  buildingTime: 4
+  buildingTime: 24
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}
