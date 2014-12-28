@@ -18,7 +18,7 @@ public class BuildingHUDControl : MonoSingleton<BuildingHUDControl> {
 	
 	}
 
-    public BuildingHUD NewHud(Building building)
+    public BuildingHUD NewHud(Unit building)
     {
         GameObject newHUD = GameObject.Instantiate(tempHUD) as GameObject;
         newHUD.SetActive(true);

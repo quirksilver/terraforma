@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -31,7 +31,7 @@ public class BuildingControl : MonoBehaviour
     public void BuildingToggle()
     {
 
-        building.buildingActive = activeToggle.isOn;
+        building.unitActive = activeToggle.isOn;
     }
 
 	public void BuildHarvesterButton()
@@ -85,7 +85,7 @@ public class BuildingControl : MonoBehaviour
                     building = Map.instance.GetTileOver().building;
                     nameLabel.text = building.GetComponent<Building>().DisplayName;
                     targetAlpha = 1.0f;
-                    activeToggle.isOn = building.buildingActive;
+                    activeToggle.isOn = building.unitActive;
 					buildHarvesterButton.gameObject.SetActive(building.harvesterPrefab != null);
 
                     runningCost.ClearResources();

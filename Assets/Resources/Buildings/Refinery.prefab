@@ -2092,12 +2092,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f027655427d06d54385e0545ceb44e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
-  - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
-  - {fileID: 11400000, guid: 5ea7dc2fb2dbdad4b94a05e71aefa4d4, type: 2}
   DisplayName: Refinery
   buildCostWater: 65
   buildCostHeat: 55
@@ -2114,14 +2108,20 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 16
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
-  harvesterPrefab: {fileID: 0}
-  eventName: 
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
+  - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
+  - {fileID: 11400000, guid: 5ea7dc2fb2dbdad4b94a05e71aefa4d4, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
+  harvesterPrefab: {fileID: 100000, guid: f9c258ddcbacf4c618aea2df3391c87c, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

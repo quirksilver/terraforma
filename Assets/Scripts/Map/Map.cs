@@ -303,6 +303,8 @@ public class Map : MonoSingleton<Map>
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
+			MusicPlayer.instance.ReceiveEvent("testSFXTrigger");
+
 			CompleteLevel();
 		}
 	}

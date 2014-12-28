@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
-public class Building : MonoBehaviour {
+public class Building : Unit {
 
     public Vector2 size;
 
@@ -11,38 +11,8 @@ public class Building : MonoBehaviour {
 
     public Building[] prerequisites;
 
-    public string DisplayName;
-
-    //Res
-    public int buildCostWater;
-    public int buildCostHeat;
-    public int buildCostAir;
-    public int buildCostFood;
-    public int buildCostMetal;
-
-    public int runningCostWater;
-    public int runningCostHeat;
-    public int runningCostAir;
-    public int runningCostFood;
-    public int runningCostMetal;
-
-    public int produceWater;
-    public int produceHeat;
-    public int produceAir;
-    public int produceFood;
-    public int produceMetal;
-
 	public ResourceType requiredResourceTileType = ResourceType.Count;
 	public int numberResourceTilesRequired = 0;
-
-    public float buildingTime;
-    private float buildingTimer;
-    public bool built = false;
-
-    public bool buildingActive=true;
-    public bool resourcesAvailable = true;
-
-    private BuildingHUD hud;
 
 	public GameObject harvesterPrefab;
 
@@ -50,122 +20,19 @@ public class Building : MonoBehaviour {
 
 	protected List<Tile> borderTiles;
 
-	protected TileMap tileMap;
-
-	protected GameObject spriteHolder;
-	protected GameObject fullSprite;
-
 	protected int DebugSpawnTile = 0;
-
-	public string eventName;
-
-	private Shader diffuse;
-	private Shader transparentDiffuse;
-
-	private Material buildingMat;
 
 	protected virtual void Awake () {
 	
+		base.Awake();
+
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
-
-		diffuse = Shader.Find("Diffuse");
-		transparentDiffuse = Shader.Find("Transparent/Diffuse");
-
-		buildingMat = GetComponentInChildren<MeshRenderer>().material;
-		//Debug.Log(footprint);
-
-		//Transform holderTransform = transform.Find("SpriteHolder");
-
-		//if (holderTransform) spriteHolder = holderTransform.gameObject;
-		//fullSprite = transform.Find("Sprite").gameObject;
-
-		eventName = "BUILT" + DisplayName.ToUpper();
 	
-	}
-
-	public void SetTransparency(bool isTransparent)
-	{
-		if (isTransparent)
-		{
-			buildingMat.shader = transparentDiffuse;
-		}
-		else
-		{
-			buildingMat.shader = diffuse;
-		}
-	}
-
-	public void SetColour(Color col)
-	{
-		buildingMat.color = col;
-	}
-
-	public virtual void Setup(TileMap t)
-	{
-		tileMap = t;
-	}
-
-	// Use this for initialization
-	public virtual void Start() {
-
-	}
-	
-	// Update is called once per frame
-	public virtual void Update () {
-
-        if (!built)
-        {
-            buildingTimer += Time.deltaTime;
-
-            float i = buildingTimer/buildingTime;
-
-            Color color = Color.white;
-            color.a = i + (0.2f * Mathf.Sin(Time.time*Mathf.PI*2));
-			SetColour(color);
-
-            if (buildingTimer > buildingTime)
-            {
-				SetTransparency(false);
-				SetColour(Color.white);
-                built=true;
-				/*if (spriteHolder)
-				{
-					spriteHolder.SetActive(true);
-					//fullSprite.SetActive(false);
-				}*/
-                StoryEventManager.SendEvent(eventName);
-            }
-        }
-
-		/*Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
-		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
-		Vector3 RTCorner = new Vector3(0.5f, 0, 0.5f);
-		Vector3 RBCorner = new Vector3(0.5f, 0, -0.5f);
-		
-		
-		for (int i = 0; i < borderTiles.Count; i++)
-		{
-			//Debug.Log("DRAW SOME LINES");
-			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.yellow);
-			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.yellow);
-			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.yellow);
-			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.yellow);
-		}*/
 	}
 
 	protected void HideFootprint()
 	{
 		footprint.hide();
-	}
-
-    public void SetHUD(BuildingHUD h)
-    {
-        hud = h;
-    }
-
-	public void RemoveHud()
-	{
-		BuildingHUDControl.instance.removeHud (hud.gameObject);
 	}
 
 	public void CreateNewHarvester()
@@ -182,58 +49,6 @@ public class Building : MonoBehaviour {
 			newHarvester.Setup(this, tileMap);
 		}
 	}
-
-    public bool CanBuild()
-    {
-        if (Map.instance.GetLevel().GetResource(ResourceType.Water) < buildCostWater ||
-            Map.instance.GetLevel().GetResource(ResourceType.Metal) < buildCostMetal ||
-            Map.instance.GetLevel().GetResource(ResourceType.Heat) < buildCostHeat||
-            Map.instance.GetLevel().GetResource(ResourceType.Food) < buildCostFood ||
-            Map.instance.GetLevel().GetResource(ResourceType.Air) < buildCostAir)
-        {
-            return false;
-        }
-
-        return true;
-    }
-
-    public virtual void Tick()
-    {
-        if (buildingActive && built)
-        {
-            resourcesAvailable = true;
-
-            if (runningCostAir > Map.instance.GetLevel().GetResource(ResourceType.Air)
-                || runningCostFood > Map.instance.GetLevel().GetResource(ResourceType.Food)
-                || runningCostHeat > Map.instance.GetLevel().GetResource(ResourceType.Heat)
-                || runningCostMetal > Map.instance.GetLevel().GetResource(ResourceType.Metal)
-                || runningCostWater > Map.instance.GetLevel().GetResource(ResourceType.Water))
-            {
-                resourcesAvailable = false;
-            }
-
-            if (resourcesAvailable)
-            {
-                Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
-                Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);
-                Map.instance.GetLevel().AddResource(produceAir, ResourceType.Air);
-                Map.instance.GetLevel().AddResource(produceFood, ResourceType.Food);
-                Map.instance.GetLevel().AddResource(produceMetal, ResourceType.Metal);
-
-                Map.instance.GetLevel().RemoveResource(runningCostWater, ResourceType.Water);
-                Map.instance.GetLevel().RemoveResource(runningCostHeat, ResourceType.Heat);
-                Map.instance.GetLevel().RemoveResource(runningCostAir, ResourceType.Air);
-                Map.instance.GetLevel().RemoveResource(runningCostFood, ResourceType.Food);
-                Map.instance.GetLevel().RemoveResource(runningCostMetal, ResourceType.Metal);
-
-                hud.AddRes(produceWater, ResourceType.Water);
-                hud.AddRes(produceHeat, ResourceType.Heat);
-                hud.AddRes(produceAir, ResourceType.Air);
-                hud.AddRes(produceFood, ResourceType.Food);
-                hud.AddRes(produceMetal, ResourceType.Metal);
-            }
-        }
-    }
 
 	public void AddResourceFromHarvester(ResourceType type, int amount)
 	{
@@ -435,6 +250,22 @@ public class Building : MonoBehaviour {
 		}*/
 
 	}
+
+	
+	/*Vector3 LBCorner = new Vector3(-0.5f, 0, -0.5f);
+		Vector3 LTCorner = new Vector3(-0.5f, 0, 0.5f);
+		Vector3 RTCorner = new Vector3(0.5f, 0, 0.5f);
+		Vector3 RBCorner = new Vector3(0.5f, 0, -0.5f);
+		
+		
+		for (int i = 0; i < borderTiles.Count; i++)
+		{
+			//Debug.Log("DRAW SOME LINES");
+			Debug.DrawLine(borderTiles[i].transform.position + LBCorner, borderTiles[i].transform.position + LTCorner, Color.yellow);
+			Debug.DrawLine(borderTiles[i].transform.position + LTCorner, borderTiles[i].transform.position + RTCorner, Color.yellow);
+			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.yellow);
+			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.yellow);
+		}*/
 
 	public void CreateSplitSprite()
 	{

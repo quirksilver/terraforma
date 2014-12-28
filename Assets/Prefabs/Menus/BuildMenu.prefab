@@ -325,7 +325,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 22400004}
   m_Direction: 2
   m_Value: 0
-  m_Size: .870175421
+  m_Size: .628070176
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -449,6 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 4
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -491,18 +492,23 @@ MonoBehaviour:
   buttonTemp: {fileID: 100016}
   gridRoot: {fileID: 22400014}
   buildings:
-  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
-  - {fileID: 11400000, guid: f4549d07f64c5304fa02f55d9cff5c8d, type: 2}
-  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
-  - {fileID: 11400000, guid: 4c0d1a2c7c3322a448909b5d59562f28, type: 2}
-  - {fileID: 11400026, guid: 22024a43ebb7637419580615ab3b8ee8, type: 2}
-  - {fileID: 11400024, guid: 975783cc471e1ef468d4ae2fe4706441, type: 2}
   - {fileID: 11400000, guid: 5ea7dc2fb2dbdad4b94a05e71aefa4d4, type: 2}
+  - {fileID: 11400000, guid: f4549d07f64c5304fa02f55d9cff5c8d, type: 2}
+  - {fileID: 11400024, guid: 975783cc471e1ef468d4ae2fe4706441, type: 2}
+  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
   - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
+  - {fileID: 11400086, guid: 3608c4f0d6c9d43b8890ce42e80e44a2, type: 2}
   - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
-  - {fileID: 11400020, guid: aaa7a4fb81e15674093006d79210e54d, type: 2}
-  - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
   - {fileID: 11400002, guid: e217ba6f63927344990354d147cf8f7f, type: 2}
+  - {fileID: 11400020, guid: aaa7a4fb81e15674093006d79210e54d, type: 2}
+  - {fileID: 11400026, guid: 22024a43ebb7637419580615ab3b8ee8, type: 2}
+  - {fileID: 11400030, guid: 64296cc26324f46f484f8d87031fb6dc, type: 2}
+  - {fileID: 11400010, guid: db59895803ac24197babafe147f3e4e2, type: 2}
+  - {fileID: 11400018, guid: 173e581eabbe242e6aefcbe329811483, type: 2}
+  - {fileID: 11400026, guid: 10545c9bfe9144c028bb3ae9f1c0ed7f, type: 2}
+  - {fileID: 11400022, guid: 1287fd7ac908d4407aa723423064c9a2, type: 2}
+  - {fileID: 11400024, guid: b9b2fa3d72d8446bfb75498d2272daf9, type: 2}
+  - {fileID: 11400012, guid: dd2408972eafc47a98148faed70fcb14, type: 2}
   scrollRect: {fileID: 11400008}
 --- !u!114 &11400022
 MonoBehaviour:
@@ -1006,7 +1012,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -496}
+  m_AnchoredPosition: {x: 0, y: -358}
   m_SizeDelta: {x: 0, y: 570}
   m_Pivot: {x: 0, y: 0}
 --- !u!224 &22400016
@@ -1122,7 +1128,6 @@ CanvasGroup:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
-  m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1

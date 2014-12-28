@@ -31,6 +31,8 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 	public const string GO_TO_MAP = "gotoMap";
 	public const string  GO_TO_LEVEL = "gotoLevel";
 
+	private SFXTrack sfxTrack;
+
 
 	// Use this for initialization
 	void Start ()
@@ -93,6 +95,9 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 			break;
 	
 		default:
+
+			sfxTrack.HandleEventString(e);
+
 			foreach (KeyValuePair<string, MusicTrack> track in tracks)
 			{
 				track.Value.HandleEventString(e);
@@ -260,6 +265,11 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 				readTrack ( reader );
 			}
 
+			else if (reader.IsStartElement ( "SFX" ) )
+			{
+				readSFX ( reader ) ;
+			}
+
 			
 			/*<SOUNDPAIR name = "name">
 				<INITCLIP name = "name" clip = "clipname.mp3">
@@ -363,6 +373,75 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		return part;
 
 
+		///I cannot be arsed with error handling today
+		/*if (name == "")
+		{
+			throw new Exception("SOUNDSYSTEM ERROR at readPart(): soundEffect has not been assigned a name");
+		}*/
+	}
+
+	private static void readSFX(XmlReader reader)
+	{		
+		if ( !reader.IsStartElement ( "SFX" ) ) throw new Exception ( "<SFX> element expected.");
+
+		GameObject trackObject = new GameObject("SFXTRACK");
+		
+		trackObject.transform.parent = instance.transform;
+		
+		trackObject.transform.localPosition = Vector3.zero;
+		
+		SFXTrack track = trackObject.AddComponent<SFXTrack>();
+
+		bool isEmpty = reader.IsEmptyElement;
+		
+		List<SFX> effects = new List<SFX>();
+		
+		reader.ReadStartElement();
+		
+		if (!isEmpty)
+		{
+			readAllSFX(reader, effects);
+			reader.ReadEndElement(); //</SOUNDSET>
+		}
+		
+		track.Setup(effects);
+
+		instance.sfxTrack = track;
+
+		//instance.tracks.Add(name, track);
+	}
+	
+	/// <summary>
+	/// Reads multiple clips in a SoundSet or SoundPair XML element
+	/// </summary>
+	private static void readAllSFX( XmlReader reader, List<SFX> effects)
+	{
+		while ( reader.IsStartElement ( "EFFECT" ) ) 
+		{
+			effects.Add(readEffect(reader));	
+			reader.Read ();  // next element...
+		}
+	}
+
+	private static SFX readEffect( XmlReader reader )
+	{
+		
+		if ( !reader.IsStartElement ( "EFFECT" ) ) throw new Exception ( "<EFFECT> element expected.");
+		
+		string name = ReadStringAttribute(reader, "name", "no name");
+		string clip = ReadStringAttribute(reader, "clip", "no clip name");
+		string trigger = ReadStringAttribute(reader, "trigger", "no trigger");
+		bool fadeInOut = ReadBoolAttribute(reader, "fadeInOut", true);
+		int minLoops = ReadIntAttribute(reader, "minLoops", 0);
+		int maxLoops = ReadIntAttribute(reader, "maxLoops", 0);
+		
+		SFX effect = new SFX(clip, name, trigger, fadeInOut, minLoops, maxLoops);
+
+		//MusicPart part = new MusicPart(clip, name, trigger, barsLength, isPersistent);
+		
+		return effect;
+		
+		
 		///I cannot be arsed with error handling today
 		/*if (name == "")
 		{

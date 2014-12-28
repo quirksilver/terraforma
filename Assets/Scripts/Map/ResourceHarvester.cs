@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class ResourceHarvester : MonoBehaviour
+public class ResourceHarvester : Unit
 {
 	public Building resourceBase;
 	public int harvestBonus = 0;
@@ -26,15 +26,7 @@ public class ResourceHarvester : MonoBehaviour
 
 	private Dictionary<HarvesterState, StateAction> stateMethods;
 
-	private TileMap tileMap;
-
 	private int pathIndex;
-
-	public int buildCostWater;
-	public int buildCostHeat;
-	public int buildCostAir;
-	public int buildCostFood;
-	public int buildCostMetal;
 
 	protected Animator animator;
 
@@ -61,6 +53,7 @@ public class ResourceHarvester : MonoBehaviour
 
 		stateMethods = new Dictionary<HarvesterState, StateAction>();
 		stateMethods.Add (HarvesterState.Paused, Pause);
+		stateMethods.Add (HarvesterState.Idle, Idle);
 		stateMethods.Add (HarvesterState.SearchForResource, GetTargetResourceTile);
 		stateMethods.Add (HarvesterState.SearchForBuilding, GetTargetBuildingTile);
 		stateMethods.Add (HarvesterState.Moving, GoToTargetTile);
@@ -72,12 +65,20 @@ public class ResourceHarvester : MonoBehaviour
 		animator = GetComponentInChildren<Animator>();
 
 
-		SetState(HarvesterState.SearchForResource);
+		SetState(HarvesterState.Idle);
 	}
 
 	// Update is called once per frame
-	void Update ()
+	public override void Update ()
 	{
+		base.Update();
+
+		if (built && currentState == HarvesterState.Idle) 
+		{
+			//play sound effect
+
+			SetState(HarvesterState.SearchForResource);
+		}
 
 		//if the path is pulled out from under the harvester in the middle of the movement phase, i.e. a building is put on top of the harvester
 		if (tileMap.GetPathTile(transform.localPosition) == null)
@@ -154,6 +155,11 @@ public class ResourceHarvester : MonoBehaviour
 
 		stateMethods[newState]();
 
+	}
+
+	public void Idle()
+	{
+		//at the moment, do nothing. ideally, an animation?
 	}
 
 	public void GetTargetResourceTile()
@@ -338,7 +344,7 @@ public class ResourceHarvester : MonoBehaviour
 	}
 
 	
-	public bool CanBuild()
+	/*public bool CanBuild()
 	{
 		if (Map.instance.GetLevel().GetResource(ResourceType.Water) < buildCostWater ||
 		    Map.instance.GetLevel().GetResource(ResourceType.Metal) < buildCostMetal ||
@@ -350,6 +356,6 @@ public class ResourceHarvester : MonoBehaviour
 		}
 		
 		return true;
-	}
+	}*/
 }
 

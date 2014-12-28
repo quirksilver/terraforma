@@ -25,6 +25,9 @@ public class BuildingButton : MonoBehaviour
     public void Refresh()
     {
         bool valid = true;
+
+		Debug.Log(building);
+
         foreach (Building b in building.prerequisites)
         {
             if (Map.instance.GetBuildingsCount(b.GetType())==0)

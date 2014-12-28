@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,12 +13,12 @@ public class BuildingHUD : MonoBehaviour {
 
     public Sprite[] resTextures;
 
-    private Building building;
+    private Unit building;
 
     int chain = 0;
 
 	// Use this for initialization
-	public void Setup (Building b) 
+	public void Setup (Unit b) 
     {
         resTemp.SetActive(false);
         resIcons = new List<ResParticle>();
@@ -55,7 +55,7 @@ public class BuildingHUD : MonoBehaviour {
             }
         }
 
-        if (!building.buildingActive || !building.resourcesAvailable)
+        if (!building.unitActive || !building.resourcesAvailable)
         {
             warningAlpha = Mathf.Sin(Time.time);
             if (warningAlpha < 0)

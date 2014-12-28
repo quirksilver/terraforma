@@ -17,7 +17,7 @@ public class BuildMenu : MonoBehaviour
     float alpha = 0;
     float targetAlpha = 0;
 
-    public void BuildDome()
+    /*public void BuildDome()
     {
         BuildBuilding(typeof(Dome));
     }
@@ -25,7 +25,7 @@ public class BuildMenu : MonoBehaviour
     public void BuildRocket()
     {
         BuildBuilding(typeof(Rocket));
-    }
+    }*/
 
     public void BuildBuilding(System.Type type)
     {

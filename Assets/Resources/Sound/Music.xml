@@ -22,5 +22,9 @@
 	<TRACK name="World" simultaneousParts="1">
 		<PART name = "WorldPart" trigger="gotoMap" clip="worldpart" isPersistent="true" barsLength="8"/>
 	</TRACK>
+	
+	<SFX>
+		<EFFECT name = "testEffect" trigger="testSFXTrigger" clip="testeffect" loopsMin="0" loopsMax="0" fadeInOut="false"/>
+	</SFX>
  
 </MUSIC>
