@@ -37,7 +37,7 @@ public class Tile : MonoBehaviour
 
 	public virtual void OnMouseEnter()
     {
-		Debug.Log("MOUSE OVER TILE  " + coords);
+		//Debug.Log("MOUSE OVER TILE  " + coords);
         Map.instance.MouseOver(coords);
     }
 
@@ -126,7 +126,7 @@ public class Tile : MonoBehaviour
 
 	public bool Buildable()
 	{
-		Debug.Log("TILE IS BUILDABLE " + pathTile !=null);
+		//Debug.Log("TILE IS BUILDABLE " + pathTile !=null);
 		return (pathTile != null);
 	}
 
