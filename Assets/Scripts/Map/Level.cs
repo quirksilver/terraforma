@@ -52,7 +52,7 @@ public class Level : MonoBehaviour {
         centerPos = collider.bounds.center;
 	}
 
-    public bool ValidateBuilding(Building building, Vector3 pos)
+    /*public bool ValidateBuilding(Building building, Vector3 pos)
     {
         bool valid = true;
         bool canBuildOnResource = true;
@@ -68,10 +68,15 @@ public class Level : MonoBehaviour {
             {
                 valid = false;
             }
-            else if (checkTile.building != null || !checkTile.Buildable(building))
+            else if (checkTile.building != null || !checkTile.Buildable())
             {
                 valid = false;
             }
+
+			if (!checkTile.Buildable(building))
+			{
+				valid = false;
+			}
 
             if (checkTile is ResourceTile)
             {
@@ -92,7 +97,7 @@ public class Level : MonoBehaviour {
             canBuildOnResource = false;
 
         return valid && canBuildOnResource;
-    }
+    }*/
 
 	public void RemoveBuilding(Building building)
 	{

@@ -240,7 +240,7 @@ Transform:
   - {fileID: 400010}
   - {fileID: 400006}
   m_Father: {fileID: 400024}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &400004
 Transform:
   m_ObjectHideFlags: 1
@@ -373,11 +373,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -151.673691, y: -31.5479336, z: -269.255829}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400002}
   - {fileID: 472464}
+  - {fileID: 400002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &472464
@@ -391,7 +391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400024}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -814,7 +814,7 @@ MonoBehaviour:
   produceMetal: 0
   requiredResourceTileType: 1
   numberResourceTilesRequired: 1
-  buildingTime: 2
+  buildingTime: 8
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

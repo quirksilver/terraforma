@@ -198,7 +198,7 @@ public class Map : MonoSingleton<Map>
 			{
 				valid = false;
 			}
-			else if (checkTile.building != null || !checkTile.Buildable(building))
+			else if (checkTile.building != null || !checkTile.Buildable(building) || !checkTile.Buildable())
 			{
 				valid = false;
 			}
