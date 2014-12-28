@@ -48,13 +48,14 @@ public class BuildingPlacement : MonoBehaviour
 		newPos.z = Map.instance.GetMouseOver().z;
 		newPos.y = 0.01f;
 
-		Debug.Log(newPos);
-		Debug.Log(Map.instance.GetMouseOver());
+
 
         transform.localPosition = newBuilding.transform.localPosition = newPos;
 
         if (lastPos != newPos)
         {
+			Debug.Log(newPos);
+			Debug.Log(Map.instance.GetMouseOver());
 
 			building.SetColour(Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f));
 			//newBuilding.GetComponentInChildren<MeshRenderer>().material.color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f) ;

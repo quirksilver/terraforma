@@ -11,7 +11,6 @@ GameObject:
   - 33: {fileID: 3300000}
   - 64: {fileID: 6400000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -46,7 +45,6 @@ GameObject:
   - 33: {fileID: 3300002}
   - 64: {fileID: 6400002}
   - 23: {fileID: 2300002}
-  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -81,7 +79,6 @@ GameObject:
   - 33: {fileID: 3300004}
   - 64: {fileID: 6400004}
   - 23: {fileID: 2300004}
-  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -116,7 +113,6 @@ GameObject:
   - 33: {fileID: 3300006}
   - 64: {fileID: 6400006}
   - 23: {fileID: 2300006}
-  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -151,7 +147,6 @@ GameObject:
   - 33: {fileID: 3300008}
   - 64: {fileID: 6400008}
   - 23: {fileID: 2300008}
-  - 114: {fileID: 11400020}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -373,7 +368,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -151.673691, y: -31.5479336, z: -269.255829}
+  m_LocalPosition: {x: -101.949516, y: 671.157166, z: -724.761658}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 472464}
@@ -398,7 +393,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -418,7 +413,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -438,7 +433,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -458,7 +453,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -478,7 +473,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_LightmapIndex: 255
@@ -562,7 +557,7 @@ MeshCollider:
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -575,7 +570,7 @@ MeshCollider:
   m_GameObject: {fileID: 100006}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -588,7 +583,7 @@ MeshCollider:
   m_GameObject: {fileID: 100010}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -601,7 +596,7 @@ MeshCollider:
   m_GameObject: {fileID: 100014}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -614,7 +609,7 @@ MeshCollider:
   m_GameObject: {fileID: 100018}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -631,21 +626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coords: {x: 0, y: 0, z: 0}
-  harvestersTargeting: 0
-  buildingRestrictions: []
-  pathTile: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -653,21 +633,6 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coords: {x: 0, y: 0, z: 0}
-  harvestersTargeting: 0
-  buildingRestrictions: []
-  pathTile: {fileID: 0}
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
   m_Name: 
@@ -691,21 +656,6 @@ MonoBehaviour:
   harvestersTargeting: 0
   buildingRestrictions: []
   pathTile: {fileID: 0}
---- !u!114 &11400012
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100010}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coords: {x: 0, y: 0, z: 0}
-  harvestersTargeting: 0
-  buildingRestrictions: []
-  pathTile: {fileID: 0}
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -721,21 +671,6 @@ MonoBehaviour:
   harvestersTargeting: 0
   buildingRestrictions: []
   pathTile: {fileID: 0}
---- !u!114 &11400016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coords: {x: 0, y: 0, z: 0}
-  harvestersTargeting: 0
-  buildingRestrictions: []
-  pathTile: {fileID: 0}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -743,21 +678,6 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coords: {x: 0, y: 0, z: 0}
-  harvestersTargeting: 0
-  buildingRestrictions: []
-  pathTile: {fileID: 0}
---- !u!114 &11400020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100018}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 364dc5aa3a29e934185d0a4071295baf, type: 3}
   m_Name: 
@@ -815,6 +735,7 @@ MonoBehaviour:
   requiredResourceTileType: 1
   numberResourceTilesRequired: 1
   buildingTime: 8
+  built: 0
   buildingActive: 1
   resourcesAvailable: 1
   harvesterPrefab: {fileID: 0}

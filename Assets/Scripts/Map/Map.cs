@@ -243,8 +243,9 @@ public class Map : MonoSingleton<Map>
         {
             return false;
         }
-        buildMenu.Refresh();
+        
         level.PlaceBuiding(building, pos);
+		buildMenu.Refresh();
         return true;
     }
 

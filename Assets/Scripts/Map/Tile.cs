@@ -37,7 +37,7 @@ public class Tile : MonoBehaviour
 
 	public virtual void OnMouseEnter()
     {
-		//Debug.Log("MOUSE OVER TILE  " + coords);
+		//Debug.Log("MOUSE OVER TILE  " + coords, this);
         Map.instance.MouseOver(coords);
     }
 
