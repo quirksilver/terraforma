@@ -60,6 +60,12 @@ public class BuildingControl : MonoBehaviour
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
         canvasGroup.alpha = alpha;
 
+		if (Map.instance.Pause) 
+		{
+			targetAlpha = 0.0f;
+			return;
+		}
+
         if (Input.GetMouseButtonDown(0))
         {
             touchStart = Map.instance.GetTileOver();
