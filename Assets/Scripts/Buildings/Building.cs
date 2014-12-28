@@ -37,7 +37,7 @@ public class Building : MonoBehaviour {
 
     public float buildingTime;
     private float buildingTimer;
-    private bool built = false;
+    public bool built = false;
 
     public bool buildingActive=true;
     public bool resourcesAvailable = true;

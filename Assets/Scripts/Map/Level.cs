@@ -216,7 +216,7 @@ public class Level : MonoBehaviour {
 						foreach (Building building in victoryRequirements) {
 								bool present = false;
 								foreach (Building b2 in buildings) {
-										if (b2.DisplayName == building.DisplayName) {
+										if (b2.DisplayName == building.DisplayName && b2.built) {
 												present = true;
 										}
 								}
