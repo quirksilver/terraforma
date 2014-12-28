@@ -68,6 +68,15 @@ public class Map : MonoSingleton<Map>
 
 	public void LoadLevel(Level levelToLoad)
 	{
+		//setup Buidings
+
+		foreach (Building build in levelToLoad.GetComponentsInChildren<Building>())
+		{
+			build.Setup(levelToLoad.tileMap);
+			BuildingHUDControl.instance.NewHud(build);
+			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
+		}
+
 		TargetCloudAlpha = 0.0f;
 		TargetDustAlpha = 0.0f;
 

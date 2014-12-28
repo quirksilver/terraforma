@@ -31,13 +31,6 @@ public class Level : MonoBehaviour {
 		tileMap = GetComponentInChildren<TileMap>() as TileMap;
         tileMap.setTiles();
 
-        foreach (Building build in GetComponentsInChildren<Building>())
-        {
-            build.Setup(tileMap);
-            BuildingHUDControl.instance.NewHud(build);
-            PlaceBuiding(build,build.transform.localPosition);
-        }
-
 		switcher = Camera.main.GetComponent<PerspectiveSwitcher>();
 
         resourceAmmount = new int[(int)ResourceType.Count];
