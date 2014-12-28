@@ -32,7 +32,7 @@ public class Tile : MonoBehaviour
 
 		//(GetComponentInChildren<Renderer>() as Renderer).material.color = Color.blue;
 	
-		pathTile.flaggedForDestruction = true;
+		if (pathTile) pathTile.flaggedForDestruction = true;
     }
 
     public virtual void OnMouseOver()
@@ -121,6 +121,12 @@ public class Tile : MonoBehaviour
 		{
 			return 1;
 		}
+	}
+
+	public bool Buildable()
+	{
+		Debug.Log("TILE IS BUILDABLE " + pathTile !=null);
+		return (pathTile != null);
 	}
 
 	public bool Buildable(Building b)

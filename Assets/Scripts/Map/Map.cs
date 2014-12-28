@@ -99,6 +99,7 @@ public class Map : MonoSingleton<Map>
 
     public void CompleteLevel()
     {
+		BuildingHUDControl.instance.ClearHuds ();
         level = null;
         levelIndex++;
         if (levelIndex >= levels.Length)
@@ -197,7 +198,7 @@ public class Map : MonoSingleton<Map>
 			{
 				valid = false;
 			}
-			else if (checkTile.building != null || !checkTile.Buildable(building))
+			else if (checkTile.building != null || !checkTile.Buildable(building) || !checkTile.Buildable())
 			{
 				valid = false;
 			}

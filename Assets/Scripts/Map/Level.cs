@@ -52,7 +52,7 @@ public class Level : MonoBehaviour {
         centerPos = collider.bounds.center;
 	}
 
-    public bool ValidateBuilding(Building building, Vector3 pos)
+    /*public bool ValidateBuilding(Building building, Vector3 pos)
     {
         bool valid = true;
         bool canBuildOnResource = true;
@@ -68,10 +68,15 @@ public class Level : MonoBehaviour {
             {
                 valid = false;
             }
-            else if (checkTile.building != null || !checkTile.Buildable(building))
+            else if (checkTile.building != null || !checkTile.Buildable())
             {
                 valid = false;
             }
+
+			if (!checkTile.Buildable(building))
+			{
+				valid = false;
+			}
 
             if (checkTile is ResourceTile)
             {
@@ -92,20 +97,40 @@ public class Level : MonoBehaviour {
             canBuildOnResource = false;
 
         return valid && canBuildOnResource;
-    }
+    }*/
 
-    public void PlaceBuiding(Building building, Vector3 pos)
+	public void RemoveBuilding(Building building)
+	{
+		building.RemoveHud ();
+		building.footprint.gameObject.SetActive (true);
+		List<Vector3> footprintTiles = building.footprint.tilePositions;
+		
+		int i;
+
+		for (i = 0; i < footprintTiles.Count; i++)
+		{
+			Tile checkTile = tileMap.GetTile(building.transform.localPosition + footprintTiles[i]);
+			
+			checkTile.AssignBuilding(null);
+		}
+		
+		buildings.Remove (building);
+
+		for (i = 0; i < buildings.Count; i++)
+		{
+			buildings[i].UpdateBorderTilePositions();
+		}
+
+		Destroy (building.gameObject);
+	}
+	
+	public void PlaceBuiding(Building building, Vector3 pos)
     {
-        Debug.Log("PLACE AT " + pos);
-		Debug.Log ("Building " + building.name);
-
 		if (building.footprint.tilePositions == null) {
 				building.footprint.CalculatePivot(false);
 		}
 
             List<Vector3> footprintTiles = building.footprint.tilePositions;
-
-            Debug.Log(footprintTiles);
 
             int i;
 
