@@ -86,8 +86,10 @@ public class SFXTrack : MonoBehaviour
 			
 			source.clip = effect.clip;
 			source.loop = true;
-			
-			float clipTime = Random.Range(effect.minLoops, effect.maxLoops) * effect.clip.length;
+
+			float clipTime = Random.Range(effect.minLoops + 1, effect.maxLoops + 1) * effect.clip.length;
+
+			source.Play();
 			
 			source.SetScheduledEndTime(AudioSettings.dspTime + clipTime);
 			

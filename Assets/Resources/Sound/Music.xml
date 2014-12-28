@@ -24,7 +24,7 @@
 	</TRACK>
 	
 	<SFX>
-		<EFFECT name = "testEffect" trigger="testSFXTrigger" clip="testeffect" loopsMin="0" loopsMax="0" fadeInOut="false"/>
+		<EFFECT name = "testEffect" trigger="testSFXTrigger" clip="testeffect" minLoops="1" maxLoops="4" fadeInOut="false"/>
 	</SFX>
  
 </MUSIC>
