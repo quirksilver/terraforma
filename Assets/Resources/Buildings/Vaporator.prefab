@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300008}
   - 23: {fileID: 2300008}
-  - 64: {fileID: 6400008}
   m_Layer: 0
   m_Name: vaporator
   m_TagString: Untagged
@@ -515,19 +514,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6400008
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300038, guid: 2160c09daca154f998eccbbbc037dfa9, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -539,10 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbfee7afe5c68248babe803326018ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
   DisplayName: Vaporator
   buildCostWater: 0
   buildCostHeat: 12
@@ -559,14 +541,18 @@ MonoBehaviour:
   produceAir: 16
   produceFood: 0
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 16
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

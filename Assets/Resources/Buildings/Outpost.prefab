@@ -282,7 +282,6 @@ GameObject:
   - 4: {fileID: 400032}
   - 33: {fileID: 3300016}
   - 23: {fileID: 2300016}
-  - 64: {fileID: 6400016}
   m_Layer: 0
   m_Name: outpost
   m_TagString: Untagged
@@ -1090,19 +1089,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6400016
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300022, guid: 2160c09daca154f998eccbbbc037dfa9, type: 3}
 --- !u!64 &6400018
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1215,10 +1201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28374ea9742524d0cb6599a215036376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400030, guid: 64296cc26324f46f484f8d87031fb6dc, type: 2}
   DisplayName: Outpost
   buildCostWater: 36
   buildCostHeat: 18
@@ -1235,14 +1217,18 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 28
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400030, guid: 64296cc26324f46f484f8d87031fb6dc, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1

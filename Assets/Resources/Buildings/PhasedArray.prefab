@@ -433,7 +433,6 @@ GameObject:
   - 4: {fileID: 400050}
   - 33: {fileID: 3300022}
   - 23: {fileID: 2300022}
-  - 64: {fileID: 6400022}
   m_Layer: 0
   m_Name: phased_array
   m_TagString: Untagged
@@ -1303,19 +1302,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6400022
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100050}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300004, guid: 2160c09daca154f998eccbbbc037dfa9, type: 3}
 --- !u!64 &6400024
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1445,11 +1431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d69dcc30c814c2689f2ee624e23823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400010, guid: db59895803ac24197babafe147f3e4e2, type: 2}
-  - {fileID: 11400018, guid: 173e581eabbe242e6aefcbe329811483, type: 2}
   DisplayName: Phased Array
   buildCostWater: 51
   buildCostHeat: 61
@@ -1466,14 +1447,19 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 32
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400010, guid: db59895803ac24197babafe147f3e4e2, type: 2}
+  - {fileID: 11400018, guid: 173e581eabbe242e6aefcbe329811483, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1

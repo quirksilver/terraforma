@@ -740,7 +740,6 @@ GameObject:
   - 4: {fileID: 400086}
   - 33: {fileID: 3300042}
   - 23: {fileID: 2300042}
-  - 64: {fileID: 6400042}
   m_Layer: 0
   m_Name: central_dome
   m_TagString: Untagged
@@ -1321,7 +1320,7 @@ Transform:
   - {fileID: 400006}
   - {fileID: 400002}
   m_Father: {fileID: 400088}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &400086
 Transform:
   m_ObjectHideFlags: 1
@@ -1333,7 +1332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400088}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &400088
 Transform:
   m_ObjectHideFlags: 1
@@ -1341,11 +1340,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -114.50045, y: 667.485962, z: -728.993896}
+  m_LocalPosition: {x: 485.542053, y: 246.931961, z: -1092.57812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400084}
   - {fileID: 400086}
+  - {fileID: 400084}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &2300000
@@ -2215,19 +2214,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6400042
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100086}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300008, guid: 2160c09daca154f998eccbbbc037dfa9, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2566,11 +2552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9853c9eb9504fb6badeeed25fb68a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
-  - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
   DisplayName: Central Dome
   buildCostWater: 20
   buildCostHeat: 30
@@ -2587,14 +2568,19 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 2
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 32
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400068, guid: a4f7015b758c6354da1523cc17f9f3d5, type: 2}
+  - {fileID: 11400044, guid: 212a484fe3f41bb4db11a0174b59b6bc, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
