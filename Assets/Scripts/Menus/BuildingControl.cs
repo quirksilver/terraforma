@@ -25,9 +25,11 @@ public class BuildingControl : MonoBehaviour
 
 	public GameObject removeButton;
 
+	private GraphicRaycaster raycaster;
+
 	// Use this for initialization
 	void Start () {
-	
+		raycaster = GetComponentInChildren<GraphicRaycaster> ();
 	}
 
     public void BuildingToggle()
@@ -61,6 +63,7 @@ public class BuildingControl : MonoBehaviour
 	void Update () {
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
         canvasGroup.alpha = alpha;
+		raycaster.enabled = alpha != 0;
 
 		if (Map.instance.Pause) 
 		{
