@@ -8,6 +8,9 @@ public class BuildingButton : MonoBehaviour
     public Text label;
     private BuildMenu menu;
     public ResourceInfo cost;
+	public ResourceInfo produces;
+	public ResourceInfo requires;
+	public Text prerequisitesLabel;
 
     public void Setup(Building b, BuildMenu m)
     {
@@ -20,21 +23,48 @@ public class BuildingButton : MonoBehaviour
         cost.AddResource(b.buildCostHeat, ResourceType.Heat);
         cost.AddResource(b.buildCostMetal, ResourceType.Metal);
         cost.AddResource(b.buildCostWater, ResourceType.Water);
+
+		requires.AddResource (b.runningCostAir, ResourceType.Air);
+		requires.AddResource (b.runningCostFood, ResourceType.Food);
+		requires.AddResource (b.runningCostHeat, ResourceType.Heat);
+		requires.AddResource (b.runningCostMetal, ResourceType.Metal);
+		requires.AddResource (b.runningCostWater, ResourceType.Water);
+
+		produces.AddResource(b.produceAir, ResourceType.Air);
+		produces.AddResource(b.produceFood, ResourceType.Food);
+		produces.AddResource(b.produceHeat, ResourceType.Heat);
+		produces.AddResource(b.produceMetal, ResourceType.Metal);
+		produces.AddResource(b.produceWater, ResourceType.Water);
     }
 
     public void Refresh()
     {
         bool valid = true;
-
-		Debug.Log(building);
+		prerequisitesLabel.transform.parent.gameObject.SetActive (true);
+		int lines = 0;
+		prerequisitesLabel.text = "";
 
         foreach (Building b in building.prerequisites)
         {
             if (Map.instance.GetBuildingsCount(b.GetType())==0)
             {
                 valid = false;
+				lines++;
+				if(lines<=2)
+				{
+					prerequisitesLabel.text += b.DisplayName + "\n";
+				}
+				else if(lines==3)
+				{
+					prerequisitesLabel.text += "etc.";
+				}
             }
         }
+
+		if (lines == 0) 
+		{
+			prerequisitesLabel.transform.parent.gameObject.SetActive (false);
+		}
         GetComponent<Button>().interactable = valid;
     }
 

@@ -56,7 +56,12 @@ public class ResourceInfo : MonoBehaviour
         newCell.transform.parent = tempCell.transform.parent;
         newCell.transform.localScale = Vector3.one;
         newCell.transform.GetChild(0).GetComponent<Image>().sprite = resImages[(int)type];
-        newCell.GetComponentInChildren<Text>().text = ammount.ToString();
+
+		Text text = newCell.GetComponentInChildren<Text> ();
+		if (text != null) 
+		{
+			newCell.GetComponentInChildren<Text> ().text = ammount.ToString ();
+		}
 
 		cells.Add (newCell);
 

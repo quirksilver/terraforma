@@ -57,24 +57,23 @@ public class BuildMenu : MonoBehaviour
         {
             GameObject newButton = GameObject.Instantiate(buttonTemp) as GameObject;
             newButton.transform.parent = buttonTemp.transform.parent;
-            RectTransform rect = newButton.transform as RectTransform;
+            /*RectTransform rect = newButton.transform as RectTransform;
             rect.anchoredPosition = new Vector2(
-                (i%2==0) ? 0 : rect.sizeDelta.x, 
-                (i/2) * -rect.sizeDelta.y);
+                0, 
+                (i) * -rect.sizeDelta.y);*/
 
 //            Debug.Log(buildings[0].size.ToString());
 
             newButton.GetComponent<BuildingButton>().Setup(buildings[i%buildings.Length],this);
             buildingButtons.Add(newButton.GetComponent<BuildingButton>());
         }
+		
 
-
-        Canvas.ForceUpdateCanvases();
-
-        gridRoot.sizeDelta = new Vector2(0, (buildings.Length) * 77);
+        gridRoot.sizeDelta = new Vector2(0, (buildings.Length) * 105);
         buttonTemp.SetActive(false);
         scrollRect.verticalNormalizedPosition = 1.0f;
 
+		Canvas.ForceUpdateCanvases();
         Refresh();
     }
 
