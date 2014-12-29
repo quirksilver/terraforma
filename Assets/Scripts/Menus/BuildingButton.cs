@@ -12,6 +12,8 @@ public class BuildingButton : MonoBehaviour
 	public ResourceInfo requires;
 	public Text prerequisitesLabel;
 
+	private bool prereqsMet=false;
+
     public void Setup(Building b, BuildMenu m)
     {
         building = b;
@@ -39,7 +41,7 @@ public class BuildingButton : MonoBehaviour
 
     public void Refresh()
     {
-        bool valid = true;
+		prereqsMet = true;
 		prerequisitesLabel.transform.parent.gameObject.SetActive (true);
 		int lines = 0;
 		prerequisitesLabel.text = "";
@@ -48,7 +50,7 @@ public class BuildingButton : MonoBehaviour
         {
             if (Map.instance.GetBuildingsCount(b.GetType())==0)
             {
-                valid = false;
+				prereqsMet = false;
 				lines++;
 				if(lines<=2)
 				{
@@ -65,7 +67,8 @@ public class BuildingButton : MonoBehaviour
 		{
 			prerequisitesLabel.transform.parent.gameObject.SetActive (false);
 		}
-        GetComponent<Button>().interactable = valid;
+		GetComponent<Image> ().color = prereqsMet ? Color.white : new Color (255, 255, 255, 0.5f);
+        //GetComponent<Button>().interactable = valid;
     }
 
     public void Build()
@@ -85,6 +88,10 @@ public class BuildingButton : MonoBehaviour
 
             menu.BuildBuilding(building.GetType());
         }
+		else if(!prereqsMet)
+		{
+			menu.BuildBuilding(building.GetType(),true);
+		}
         cost.Tick();
     }
 }

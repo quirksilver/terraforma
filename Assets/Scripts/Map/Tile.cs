@@ -35,6 +35,12 @@ public class Tile : MonoBehaviour
 		if (pathTile) pathTile.flaggedForDestruction = true;
     }
 
+	public void ClearBuilding()
+	{
+		building = null;
+		pathTile = gameObject.AddComponent<PathTile> ();
+	}
+
 	public virtual void OnMouseEnter()
     {
 		//Debug.Log("MOUSE OVER TILE  " + coords, this);

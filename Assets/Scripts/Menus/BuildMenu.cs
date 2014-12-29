@@ -27,10 +27,10 @@ public class BuildMenu : MonoBehaviour
         BuildBuilding(typeof(Rocket));
     }*/
 
-    public void BuildBuilding(System.Type type)
+	public void BuildBuilding(System.Type type, bool bluePrint=false)
     {
         GameObject newObj = GameObject.Instantiate(buidingPlacementObject) as GameObject;
-        newObj.GetComponent<BuildingPlacement>().Setup(type);
+        newObj.GetComponent<BuildingPlacement>().Setup(type,bluePrint);
     }
 
     public void Refresh()

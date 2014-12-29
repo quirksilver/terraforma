@@ -105,8 +105,10 @@ public class Level : MonoBehaviour {
 		for (i = 0; i < footprintTiles.Count; i++)
 		{
 			Tile checkTile = tileMap.GetTile(building.transform.localPosition + footprintTiles[i]);
-			
-			checkTile.AssignBuilding(null);
+
+			Debug.Log(checkTile.transform.localPosition);
+			checkTile.ClearBuilding();
+			Debug.Log(checkTile.building);
 		}
 		
 		buildings.Remove (building);

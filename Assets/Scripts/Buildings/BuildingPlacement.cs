@@ -9,12 +9,15 @@ public class BuildingPlacement : MonoBehaviour
     Vector3 lastPos;
     Building building;
 
+	private bool bluePrint;
+
     // Use this for initialization
 	void Start () {
 	}
 
-    public void Setup(System.Type type)
+    public void Setup(System.Type type, bool bp)
 	{
+		bluePrint = bp;
 
         // Instaniate new building and disable it's scripts
         buildingPrefabPath = "Buildings/" + type.ToString();
@@ -24,6 +27,9 @@ public class BuildingPlacement : MonoBehaviour
 		building.Setup(Map.instance.tileMap);
 
 		building.SetTransparency(true);
+		if (bluePrint) {
+						building.SetColour (new Color (0, 0, 255, 0.3f));
+				}
 		//newBuilding.GetComponentInChildren<MeshRenderer>().material.shader = transparentDiffuse;//.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
 
 		Map.instance.AddObjectToLevel(newBuilding);
@@ -57,14 +63,27 @@ public class BuildingPlacement : MonoBehaviour
 			Debug.Log(newPos);
 			Debug.Log(Map.instance.GetMouseOver());
 
-			building.SetColour(Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f));
+			if(!bluePrint)
+			{
+				building.SetColour(Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f));
+			}
+			else
+			{
+				building.SetColour(new Color(0,0,255,Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? 0.8f:0.3f));
+			}
 			//newBuilding.GetComponentInChildren<MeshRenderer>().material.color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f) ;
         }
 
         // When clicked enable stop movement and enable scripts
         if (Input.GetMouseButtonDown(0))
         {
-            if (Map.instance.PlaceBuiding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()))
+			if(bluePrint)
+			{
+				//remove object
+				Destroy(gameObject);
+				Destroy(newBuilding);
+			}
+            else if (Map.instance.PlaceBuiding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()))
             {
                 Destroy(gameObject);
                 Building building = newBuilding.GetComponent<Building>();
