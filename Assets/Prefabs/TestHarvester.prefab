@@ -426,16 +426,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d89d2052b774169ba522d576184032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayName: 
+  buildCostWater: 22
+  buildCostHeat: 11
+  buildCostAir: 28
+  buildCostFood: 0
+  buildCostMetal: 5
+  runningCostWater: 6
+  runningCostHeat: 0
+  runningCostAir: 9
+  runningCostFood: 0
+  runningCostMetal: 6
+  produceWater: 0
+  produceHeat: 0
+  produceAir: 0
+  produceFood: 0
+  produceMetal: 0
+  eventName: 
+  buildingTime: 8
+  built: 0
+  unitActive: 1
+  resourcesAvailable: 1
   resourceBase: {fileID: 0}
   harvestBonus: 0
   resourceType: 4
+  currentState: 0
   moveSpeed: 1
   currentResourceAmount: 0
-  buildCostWater: 0
-  buildCostHeat: 0
-  buildCostAir: 0
-  buildCostFood: 0
-  buildCostMetal: 20
+  debugPath: []
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1

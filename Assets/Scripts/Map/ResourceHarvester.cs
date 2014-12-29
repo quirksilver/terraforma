@@ -16,7 +16,7 @@ public class ResourceHarvester : Unit
 	private HarvesterState lastState;
 
 	List<PathTile> path = new List<PathTile>();
-	LineRenderer lineRenderer;
+	//LineRenderer lineRenderer;
 
 	public float moveSpeed;
 
@@ -60,7 +60,7 @@ public class ResourceHarvester : Unit
 		stateMethods.Add (HarvesterState.Harvesting, Harvest);
 		stateMethods.Add (HarvesterState.Dumping, AddResourceToBuilding);
 
-		lineRenderer = GetComponent<LineRenderer>();
+		//lineRenderer = GetComponent<LineRenderer>();
 
 		animator = GetComponentInChildren<Animator>();
 
@@ -227,9 +227,9 @@ public class ResourceHarvester : Unit
 			if (tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
 			//if (tileMap.FindPath(transform.localPosition, viaTile.coords, path))
 		    {
-				lineRenderer.SetVertexCount(path.Count);
+				/*lineRenderer.SetVertexCount(path.Count);
 				for (int i = 0; i < path.Count; i++)
-				lineRenderer.SetPosition(i, path[i].transform.position);
+				lineRenderer.SetPosition(i, path[i].transform.position);*/
 					
 				StopAllCoroutines();
 				StartCoroutine(WalkPath());
@@ -239,9 +239,9 @@ public class ResourceHarvester : Unit
 		{
 			if (tileMap.FindPath(transform.localPosition, targetTile.coords, path))
 			{
-				lineRenderer.SetVertexCount(path.Count);
+				/*lineRenderer.SetVertexCount(path.Count);
 			for (int i = 0; i < path.Count; i++)
-				lineRenderer.SetPosition(i, path[i].transform.position);
+				lineRenderer.SetPosition(i, path[i].transform.position);*/
 				
 				StopAllCoroutines();
 				StartCoroutine(WalkPath());
