@@ -49,7 +49,7 @@ public abstract class Unit : MonoBehaviour
 	protected Material unitMat;
 
 
-	protected virtual void Awake()
+	public virtual void Awake()
 	{
 		diffuse = Shader.Find("Diffuse");
 		transparentDiffuse = Shader.Find("Transparent/Diffuse");
@@ -124,8 +124,8 @@ public abstract class Unit : MonoBehaviour
 		
 		return true;
 	}
-	
-	public virtual void Tick()
+
+	public virtual void CostTick()
 	{
 		if (unitActive && built)
 		{
@@ -139,28 +139,52 @@ public abstract class Unit : MonoBehaviour
 			{
 				resourcesAvailable = false;
 			}
-			
+
 			if (resourcesAvailable)
 			{
-				Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
-				Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);
-				Map.instance.GetLevel().AddResource(produceAir, ResourceType.Air);
-				Map.instance.GetLevel().AddResource(produceFood, ResourceType.Food);
-				Map.instance.GetLevel().AddResource(produceMetal, ResourceType.Metal);
-				
 				Map.instance.GetLevel().RemoveResource(runningCostWater, ResourceType.Water);
 				Map.instance.GetLevel().RemoveResource(runningCostHeat, ResourceType.Heat);
 				Map.instance.GetLevel().RemoveResource(runningCostAir, ResourceType.Air);
 				Map.instance.GetLevel().RemoveResource(runningCostFood, ResourceType.Food);
 				Map.instance.GetLevel().RemoveResource(runningCostMetal, ResourceType.Metal);
-				
-				hud.AddRes(produceWater, ResourceType.Water);
-				hud.AddRes(produceHeat, ResourceType.Heat);
-				hud.AddRes(produceAir, ResourceType.Air);
-				hud.AddRes(produceFood, ResourceType.Food);
-				hud.AddRes(produceMetal, ResourceType.Metal);
+
+				hud.SubtractRes(produceWater, ResourceType.Water);
+				hud.SubtractRes(produceHeat, ResourceType.Heat);
+				hud.SubtractRes(produceAir, ResourceType.Air);
+				hud.SubtractRes(produceFood, ResourceType.Food);
+				hud.SubtractRes(produceMetal, ResourceType.Metal);
+
 			}
 		}
+	}
+
+	public virtual void ProductionTick()
+	{
+		if (resourcesAvailable)
+		{
+			Map.instance.GetLevel().AddResource(produceWater, ResourceType.Water);
+			Map.instance.GetLevel().AddResource(produceHeat, ResourceType.Heat);
+			Map.instance.GetLevel().AddResource(produceAir, ResourceType.Air);
+			Map.instance.GetLevel().AddResource(produceFood, ResourceType.Food);
+			Map.instance.GetLevel().AddResource(produceMetal, ResourceType.Metal);
+			
+			hud.AddRes(produceWater, ResourceType.Water);
+			hud.AddRes(produceHeat, ResourceType.Heat);
+			hud.AddRes(produceAir, ResourceType.Air);
+			hud.AddRes(produceFood, ResourceType.Food);
+			hud.AddRes(produceMetal, ResourceType.Metal);
+			
+		}
+	}
+
+	public virtual void Tick()
+	{
+
+			
+				
+				
+				
+			
 	}
 
 	public void SetHUD(BuildingHUD h)

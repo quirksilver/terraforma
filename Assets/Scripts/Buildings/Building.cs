@@ -47,6 +47,9 @@ public class Building : Unit {
 			newHarvester.transform.parent = transform.parent;
 			newHarvester.transform.position = GetRandomAdjacentTilePosition();
 			newHarvester.transform.localRotation = Quaternion.identity;
+
+			BuildingHUDControl.instance.NewHud(newHarvester);
+
 			harvesters.Add(newHarvester);
 			newHarvester.Setup(this, tileMap);
 		}
@@ -56,6 +59,19 @@ public class Building : Unit {
 	{
         Map.instance.GetLevel().AddResource(amount, type);
 		hud.AddRes(amount, type);
+	}
+
+	public override void Tick()
+	{
+		base.Tick();
+
+		if (harvesters.Count > 0)
+		{
+			for (int i = 0; i < harvesters.Count; i++)
+			{
+				harvesters[i].Tick();
+			}
+		}
 	}
 
 	public Vector3 GetRandomAdjacentTilePosition()

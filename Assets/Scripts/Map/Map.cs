@@ -15,8 +15,10 @@ public class Map : MonoSingleton<Map>
 	private BuildingControl buildingControl;
 
 	public TileMap tileMap { private set; get; }
-    private float tickTimer = 0;
-    public float tickPeriod = 0;
+    private float productionTickTimer = 0;
+	private float costTickTimer = 2;
+    public float productionTickPeriod = 0;
+    public float costTickPeriod = 0;
 
 	private Level level;
 
@@ -269,32 +271,49 @@ public class Map : MonoSingleton<Map>
         {
             nextLevelArrow.color = Color.clear;
             timeInLevel += Time.deltaTime;
-            tickTimer += Time.deltaTime;
+            productionTickTimer += Time.deltaTime;
+			costTickTimer += Time.deltaTime;
 
-			if (tickTimer > tickPeriod - 1)
+			if (productionTickTimer > productionTickPeriod - 1)
 			{
 				if (!MusicPlayer.instance.playing && MusicPlayer.instance.ready) MusicPlayer.instance.Setup();
 			}
 
-            if (tickTimer > tickPeriod)
+			if (costTickTimer > costTickPeriod)
+			{
+				costTickTimer -= costTickPeriod;
+				//level.Tick();
+				foreach (Building build in level.buildings)
+				{
+					build.CostTick();
+				}
+				//if (buildMenu && buildMenu.enabled) buildMenu.Tick();
+				
+				//level.storyEventManager.Check();
+				
+			}
+
+            if (productionTickTimer > productionTickPeriod)
             {
-                tickTimer -= tickPeriod;
+                productionTickTimer -= productionTickPeriod;
                 level.Tick();
                 foreach (Building build in level.buildings)
                 {
-                    build.Tick();
+					build.ProductionTick();
                 }
                 if (buildMenu && buildMenu.enabled) buildMenu.Tick();
 
                 level.storyEventManager.Check();
 
             }
-        }
 
-        //Update next level arrow
-        if (level == null)
-        {
-            Vector3 lookDirection = Camera.main.transform.forward;
+
+		}
+		
+		//Update next level arrow
+		if (level == null)
+		{
+			Vector3 lookDirection = Camera.main.transform.forward;
             nextLevelArrow.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
             nextLevelArrow.transform.position = levels[levelIndex].collider.bounds.center + (levels[levelIndex].transform.rotation * new Vector3(0, 2, 0));
             Color color = Color.red;
