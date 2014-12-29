@@ -22,6 +22,8 @@ public class Building : Unit {
 
 	protected int DebugSpawnTile = 0;
 
+	public bool Removeable = true;
+
 	protected virtual void Awake () {
 	
 		base.Awake();

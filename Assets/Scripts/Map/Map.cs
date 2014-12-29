@@ -75,6 +75,7 @@ public class Map : MonoSingleton<Map>
 			build.Setup(levelToLoad.tileMap);
 			BuildingHUDControl.instance.NewHud(build);
 			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
+			build.Removeable = false;
 		}
 
 		TargetCloudAlpha = 0.0f;

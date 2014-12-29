@@ -493,6 +493,7 @@ MonoBehaviour:
   buildHarvesterButton: {fileID: 11400052}
   runningCost: {fileID: 11400040}
   producesInfo: {fileID: 11400032}
+  removeButton: {fileID: 191892}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

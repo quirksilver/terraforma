@@ -23,6 +23,8 @@ public class BuildingControl : MonoBehaviour
 
     public ResourceInfo producesInfo;
 
+	public GameObject removeButton;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -90,6 +92,8 @@ public class BuildingControl : MonoBehaviour
 
                     runningCost.ClearResources();
                     producesInfo.ClearResources();
+
+					removeButton.SetActive(building.Removeable);
 
                     // Add reource info
                     runningCost.AddResource(building.runningCostAir, ResourceType.Air);
