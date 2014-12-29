@@ -14,6 +14,8 @@ public class MessageWindow : MonoSingleton<MessageWindow>
     private float targetAlpha=0;
     public Text nameLabel;
     public Text messageLabel;
+	public Image profilePic;
+	
 
     void Start()
     {
@@ -63,7 +65,18 @@ public class MessageWindow : MonoSingleton<MessageWindow>
 
     public void ShowMessage()
     {
-        nameLabel.text = messages[index].character;
+		if (messages [index].character.Contains ("_")) 
+		{
+			profilePic.gameObject.SetActive(true);
+			string profilePath = "Profiles/" + messages [index].character;
+			profilePic.sprite = Resources.Load<Sprite> (profilePath);
+			nameLabel.text = char.ToUpper(messages[index].character[0]) + messages [index].character.Substring (1, messages [index].character.IndexOf ('_'));
+		} 
+		else 
+		{
+			profilePic.gameObject.SetActive(false);
+			nameLabel.text = messages [index].character;
+		}
         messageLabel.text = messages[index].message;
     }
 }
