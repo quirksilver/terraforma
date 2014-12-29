@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public abstract class Unit : MonoBehaviour
 {
@@ -153,12 +154,28 @@ public abstract class Unit : MonoBehaviour
 				Map.instance.GetLevel().RemoveResource(runningCostAir, ResourceType.Air);
 				Map.instance.GetLevel().RemoveResource(runningCostFood, ResourceType.Food);
 				Map.instance.GetLevel().RemoveResource(runningCostMetal, ResourceType.Metal);
+
+				//Dictionary<ResourceType, int> dict = new Dictionary<ResourceType, int>();
+
+				List<KeyValuePair<ResourceType, int>> myList = new List<KeyValuePair<ResourceType, int>>();
+
+				myList.Add(new KeyValuePair<ResourceType, int>(ResourceType.Water, produceWater - runningCostWater));
+				myList.Add(new KeyValuePair<ResourceType, int>(ResourceType.Heat, produceHeat - runningCostHeat));
+				myList.Add(new KeyValuePair<ResourceType, int>(ResourceType.Air, produceAir - runningCostAir));
+				myList.Add(new KeyValuePair<ResourceType, int>(ResourceType.Food, produceFood - runningCostFood));
+				myList.Add(new KeyValuePair<ResourceType, int>(ResourceType.Metal, produceMetal - runningCostMetal));
+
 				
-				hud.AddRes(produceWater, ResourceType.Water);
-				hud.AddRes(produceHeat, ResourceType.Heat);
-				hud.AddRes(produceAir, ResourceType.Air);
-				hud.AddRes(produceFood, ResourceType.Food);
-				hud.AddRes(produceMetal, ResourceType.Metal);
+				myList.Sort((firstPair,nextPair) =>
+				{
+					return firstPair.Value.CompareTo(nextPair.Value);
+				}
+				);
+
+				foreach (KeyValuePair<ResourceType, int> pair in myList)
+				{
+					hud.AddRes(pair.Value, pair.Key);
+				}
 			}
 		}
 	}

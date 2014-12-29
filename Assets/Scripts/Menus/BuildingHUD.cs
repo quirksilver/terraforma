@@ -130,14 +130,24 @@ public class BuildingHUD : MonoBehaviour {
         newIcon.SetActive(true);
         ResParticle resPart = newIcon.GetComponent<ResParticle>();
         resPart.time = chain * -0.5f ;
-        resPart.icon.sprite = resTextures[(int)type];
-        resPart.label.text = amount.ToString();
-        addResIcons.Add(newIcon.GetComponent<ResParticle>());
+		resPart.icon.sprite = resTextures[(int)type];
+		resPart.label.text = amount.ToString();
+
+		if (amount > 0)
+		{
+			addResIcons.Add(newIcon.GetComponent<ResParticle>());
+		}
+		else
+		{
+			resPart.icon.color = Color.red;
+			resPart.label.color = Color.red;
+			subResIcons.Add(newIcon.GetComponent<ResParticle>());
+		}
 
         chain++;
     }
 
-	public void SubtractRes(int amount, ResourceType type)
+	/*public void SubtractRes(int amount, ResourceType type)
 	{
 		if (amount == 0)
 		{
@@ -157,5 +167,5 @@ public class BuildingHUD : MonoBehaviour {
 		subResIcons.Add(newIcon.GetComponent<ResParticle>());
 		
 		chain++;
-	}
+	}*/
 }
