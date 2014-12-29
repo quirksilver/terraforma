@@ -14,7 +14,8 @@ public class BuildingPlacement : MonoBehaviour
 	}
 
     public void Setup(System.Type type)
-    {
+	{
+
         // Instaniate new building and disable it's scripts
         buildingPrefabPath = "Buildings/" + type.ToString();
         newBuilding = Instantiate(Resources.Load(buildingPrefabPath)) as GameObject;
@@ -22,7 +23,8 @@ public class BuildingPlacement : MonoBehaviour
         building.enabled = false;
 		building.Setup(Map.instance.tileMap);
 
-        newBuilding.GetComponentInChildren<MeshRenderer>().material.color = new Color(1.0f, 0.0f, 0.0f, 0.8f);
+		building.SetTransparency(true);
+		//newBuilding.GetComponentInChildren<MeshRenderer>().material.shader = transparentDiffuse;//.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
 
 		Map.instance.AddObjectToLevel(newBuilding);
 		Map.instance.AddObjectToLevel(gameObject);
@@ -40,17 +42,23 @@ public class BuildingPlacement : MonoBehaviour
             return;
         }
 
-
         Vector3 newPos = Vector3.zero;
+
 		newPos.x = Map.instance.GetMouseOver().x;
 		newPos.z = Map.instance.GetMouseOver().z;
 		newPos.y = 0.01f;
+
+
 
         transform.localPosition = newBuilding.transform.localPosition = newPos;
 
         if (lastPos != newPos)
         {
-            //newBuilding.GetComponentInChildren<SpriteRenderer>().color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f) ;
+			Debug.Log(newPos);
+			Debug.Log(Map.instance.GetMouseOver());
+
+			building.SetColour(Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f));
+			//newBuilding.GetComponentInChildren<MeshRenderer>().material.color = Map.instance.ValidateBuilding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()) ? new Color(0.0f,1.0f,0.0f,0.8f) : new Color(1.0f,0.0f,0.0f,0.8f) ;
         }
 
         // When clicked enable stop movement and enable scripts
@@ -62,7 +70,8 @@ public class BuildingPlacement : MonoBehaviour
                 Building building = newBuilding.GetComponent<Building>();
                 BuildingHUDControl.instance.NewHud(building);
                 building.enabled = true;
-                newBuilding.GetComponentInChildren<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
+               // newBuilding.GetComponentInChildren<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
 				//Testing
 				//building.CreateNewHarvester();

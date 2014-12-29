@@ -68,6 +68,15 @@ public class Map : MonoSingleton<Map>
 
 	public void LoadLevel(Level levelToLoad)
 	{
+		//setup Buidings
+
+		foreach (Building build in levelToLoad.GetComponentsInChildren<Building>())
+		{
+			build.Setup(levelToLoad.tileMap);
+			BuildingHUDControl.instance.NewHud(build);
+			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
+		}
+
 		TargetCloudAlpha = 0.0f;
 		TargetDustAlpha = 0.0f;
 
@@ -198,7 +207,7 @@ public class Map : MonoSingleton<Map>
 			{
 				valid = false;
 			}
-			else if (checkTile.building != null || !checkTile.Buildable(building))
+			else if (checkTile.building != null || !checkTile.Buildable(building) || !checkTile.Buildable())
 			{
 				valid = false;
 			}
@@ -234,8 +243,9 @@ public class Map : MonoSingleton<Map>
         {
             return false;
         }
-        buildMenu.Refresh();
+        
         level.PlaceBuiding(building, pos);
+		buildMenu.Refresh();
         return true;
     }
 

@@ -48,7 +48,8 @@ public class TileMap : MonoBehaviour
 
 		for (int i = 0; i < instances.Count; i++)
 		{
-			(instances[i].GetComponent<PathTile>() as PathTile).tileMap = this;
+			PathTile tempPathTile = (instances[i].GetComponent<PathTile>() as PathTile);
+			if (tempPathTile) tempPathTile.tileMap = this;
 
 			tempTile = instances[i].GetComponent<Tile>();
             tempTile.Setup();

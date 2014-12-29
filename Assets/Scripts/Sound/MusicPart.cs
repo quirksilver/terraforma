@@ -14,7 +14,7 @@ public class MusicPart
 
 	public bool isPlaying = false;
 
-	public bool flaggedForClear = false;
+	public bool flaggedForStop = false;
 
 	public MusicPart(string _clip, string _name, string _trigger, int _barsLength, bool _isPersistent)
 	{

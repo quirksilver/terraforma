@@ -22,19 +22,14 @@ public class Level : MonoBehaviour {
 	public int startingFood;
 	public int startingMetal;
 
+	public Building[] victoryRequirements;
+
 	// Use this for initialization
 	void Awake () {
 	
 		buildings = new List<Building>();
 		tileMap = GetComponentInChildren<TileMap>() as TileMap;
         tileMap.setTiles();
-
-        foreach (Building build in GetComponentsInChildren<Building>())
-        {
-            build.Setup(tileMap);
-            BuildingHUDControl.instance.NewHud(build);
-            PlaceBuiding(build,build.transform.localPosition);
-        }
 
 		switcher = Camera.main.GetComponent<PerspectiveSwitcher>();
 
@@ -52,7 +47,7 @@ public class Level : MonoBehaviour {
         centerPos = collider.bounds.center;
 	}
 
-    public bool ValidateBuilding(Building building, Vector3 pos)
+    /*public bool ValidateBuilding(Building building, Vector3 pos)
     {
         bool valid = true;
         bool canBuildOnResource = true;
@@ -68,10 +63,15 @@ public class Level : MonoBehaviour {
             {
                 valid = false;
             }
-            else if (checkTile.building != null || !checkTile.Buildable(building))
+            else if (checkTile.building != null || !checkTile.Buildable())
             {
                 valid = false;
             }
+
+			if (!checkTile.Buildable(building))
+			{
+				valid = false;
+			}
 
             if (checkTile is ResourceTile)
             {
@@ -92,7 +92,7 @@ public class Level : MonoBehaviour {
             canBuildOnResource = false;
 
         return valid && canBuildOnResource;
-    }
+    }*/
 
 	public void RemoveBuilding(Building building)
 	{
@@ -199,10 +199,29 @@ public class Level : MonoBehaviour {
 
     public void Tick()
     {
-        ResourceManager.instance.Tick();
-        for (int i = 0; i < (int)ResourceType.Count; i++)
-        {
-            resourceChange[i] = 0;
-        }
-    }
+				ResourceManager.instance.Tick ();
+				for (int i = 0; i < (int)ResourceType.Count; i++) {
+						resourceChange [i] = 0;
+				}
+
+				if (victoryRequirements.Length != 0) {
+						bool victory = true;
+						foreach (Building building in victoryRequirements) {
+								bool present = false;
+								foreach (Building b2 in buildings) {
+										if (b2.DisplayName == building.DisplayName && b2.built) {
+												present = true;
+										}
+								}
+
+								if (!present) {
+										victory = false;
+								}
+						}
+
+						if (victory) {
+								StoryEventManager.SendEvent ("LEVELVICTORY");
+						}
+				}
+		}
 }

@@ -37,7 +37,7 @@ public class Building : MonoBehaviour {
 
     public float buildingTime;
     private float buildingTimer;
-    private bool built = false;
+    public bool built = false;
 
     public bool buildingActive=true;
     public bool resourcesAvailable = true;
@@ -59,18 +59,45 @@ public class Building : MonoBehaviour {
 
 	public string eventName;
 
+	private Shader diffuse;
+	private Shader transparentDiffuse;
+
+	private Material buildingMat;
+
 	protected virtual void Awake () {
 	
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
+
+		diffuse = Shader.Find("Diffuse");
+		transparentDiffuse = Shader.Find("Transparent/Diffuse");
+
+		buildingMat = GetComponentInChildren<MeshRenderer>().material;
 		//Debug.Log(footprint);
 
-		Transform holderTransform = transform.Find("SpriteHolder");
+		//Transform holderTransform = transform.Find("SpriteHolder");
 
-		if (holderTransform) spriteHolder = holderTransform.gameObject;
+		//if (holderTransform) spriteHolder = holderTransform.gameObject;
 		//fullSprite = transform.Find("Sprite").gameObject;
 
 		eventName = "BUILT" + DisplayName.ToUpper();
 	
+	}
+
+	public void SetTransparency(bool isTransparent)
+	{
+		if (isTransparent)
+		{
+			buildingMat.shader = transparentDiffuse;
+		}
+		else
+		{
+			buildingMat.shader = diffuse;
+		}
+	}
+
+	public void SetColour(Color col)
+	{
+		buildingMat.color = col;
 	}
 
 	public virtual void Setup(TileMap t)
@@ -94,17 +121,18 @@ public class Building : MonoBehaviour {
 
             Color color = Color.white;
             color.a = i + (0.2f * Mathf.Sin(Time.time*Mathf.PI*2));
-            //GetComponentInChildren<SpriteRenderer>().color = color;
+			SetColour(color);
 
             if (buildingTimer > buildingTime)
             {
-                //GetComponentInChildren<SpriteRenderer>().color = Color.white;
+				SetTransparency(false);
+				SetColour(Color.white);
                 built=true;
-				if (spriteHolder)
+				/*if (spriteHolder)
 				{
 					spriteHolder.SetActive(true);
 					//fullSprite.SetActive(false);
-				}
+				}*/
                 StoryEventManager.SendEvent(eventName);
             }
         }
