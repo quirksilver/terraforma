@@ -70,7 +70,7 @@ public class MessageWindow : MonoSingleton<MessageWindow>
 			profilePic.gameObject.SetActive(true);
 			string profilePath = "Profiles/" + messages [index].character;
 			profilePic.sprite = Resources.Load<Sprite> (profilePath);
-			nameLabel.text = char.ToUpper(messages[index].character[0]) + messages [index].character.Substring (1, messages [index].character.IndexOf ('_'));
+			nameLabel.text = char.ToUpper(messages[index].character[0]) + messages [index].character.Substring (1, messages [index].character.IndexOf ('_')-1);
 		} 
 		else 
 		{
