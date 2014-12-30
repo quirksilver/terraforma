@@ -320,4 +320,42 @@ public class TileMap : MonoBehaviour
 		var viaTile = GetPathTile(via);
 		return startTile != null && endTile != null && viaTile != null && FindPathVia(startTile, viaTile, endTile, path, isWalkable);
 	}
+
+	///EDITOR FUNCTION, SPECIFIC HACK FOR A PLANET WAKES
+	/// 
+
+	public void RandomiseNonResourceTileTextures()
+	{
+		setTiles();
+
+		for (int i = 0; i < tiles.Count; i++)
+		{
+			if (tiles[i].gameObject.name != "CraterTile") continue;
+
+			MeshRenderer ren = tiles[i].GetComponentInChildren<MeshRenderer>();
+
+			int pickMat = UnityEngine.Random.Range(1, 5);
+
+			ren.sharedMaterial = Resources.LoadAssetAtPath<Material>("Assets/Materials/GroundTile_" + pickMat.ToString() + ".mat");
+
+			//mat.mainTexture = Resources.LoadAssetAtPath<Texture2D>("Assets/Texture/ground_" + pickTexture.ToString() + ".tga");
+
+			/*switch (Random.Range(1, 5))
+			{
+			case 1:
+				mat.mainTexture = Resources.LoadAssetAtPath<Texture2D>("Assets/Texture/ground_1.tga");
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			}*/
+		}
+
+		//for (int i = 0; i < tiles
+	}
 }

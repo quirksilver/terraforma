@@ -177,6 +177,11 @@ public class TileMapEditor : Editor
 		drawPathMap = EditorGUILayout.Toggle("Draw Path Map", drawPathMap);
 		if (EditorGUI.EndChangeCheck())
 			SceneView.RepaintAll();
+
+		if (GUILayout.Button("Randomise non-resource tile textures"))
+		{
+			tileMap.RandomiseNonResourceTileTextures();
+		}
 	}
 
 	#endregion
