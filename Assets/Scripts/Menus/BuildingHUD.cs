@@ -14,6 +14,8 @@ public class BuildingHUD : MonoBehaviour {
 
     public Sprite[] resTextures;
 
+	public Sprite downBacking;
+
     private Unit building;
 
     int chain = 0;
@@ -139,7 +141,7 @@ public class BuildingHUD : MonoBehaviour {
 		}
 		else
 		{
-			resPart.icon.color = Color.red;
+			resPart.backing.sprite = downBacking;
 			resPart.label.color = Color.red;
 			subResIcons.Add(newIcon.GetComponent<ResParticle>());
 		}

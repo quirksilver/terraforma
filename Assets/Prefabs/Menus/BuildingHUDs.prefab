@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: bf901c78c42f547868a51542200b83fd, type: 3}
     m_FontSize: 24
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e431a5ffc7de59740a51dabb8852c620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backing: {fileID: 11400016}
   time: 0
   icon: {fileID: 11400000}
   label: {fileID: 11400002}
@@ -225,6 +226,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9780f4617fb6baf45b2af2db36ea26c6, type: 3}
   - {fileID: 21300000, guid: 72427039f0cbed948b557bf1af9eb431, type: 3}
   - {fileID: 21300000, guid: 7fbc5d863e91b964eb24501e2e98034f, type: 3}
+  downBacking: {fileID: 21300000, guid: 7f7c64b9027004e33b098cd9f9c0605e, type: 3}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,8 +288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .184313729, g: .184313729, b: .20784314, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 86fd41064ca9e49d39a2f1d59145149b, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -307,8 +309,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 4
-    m_Right: 4
+    m_Left: 0
+    m_Right: 7
     m_Top: 4
     m_Bottom: 4
   m_ChildAlignment: 0
