@@ -31,7 +31,7 @@ public abstract class Unit : MonoBehaviour
 	[HideInInspector]
 	public string eventName;
 	
-	protected Shader diffuse;
+	protected Shader mainShader;
 	protected Shader transparentDiffuse;
 
 	public float buildingTime;
@@ -49,16 +49,20 @@ public abstract class Unit : MonoBehaviour
 	
 	protected Material unitMat;
 
+	protected Color mainCol;
 
 	protected virtual void Awake()
 	{
-		diffuse = Shader.Find("Diffuse");
 		transparentDiffuse = Shader.Find("Transparent/Diffuse");
 
 		eventName = "BUILT" + DisplayName.ToUpper();
 
 		
 		unitMat = GetComponentInChildren<MeshRenderer>().material;
+
+		mainCol = unitMat.color;
+
+		mainShader = Shader.Find("Diffuse");
 
 
 	}
@@ -97,12 +101,19 @@ public abstract class Unit : MonoBehaviour
 		}
 		else
 		{
-			unitMat.shader = diffuse;
+			unitMat.shader = mainShader;
 		}
+	}
+
+	public void SetToMainColour()
+	{
+		unitMat.color = mainCol;
 	}
 	
 	public void SetColour(Color col)
 	{
+		if (!unitMat) unitMat = GetComponentInChildren<MeshRenderer>().material;
+
 		unitMat.color = col;
 	}
 	

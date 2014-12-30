@@ -784,6 +784,7 @@ MonoBehaviour:
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
+  Removeable: 1
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1

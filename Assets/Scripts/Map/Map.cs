@@ -43,6 +43,8 @@ public class Map : MonoSingleton<Map>
 
 	public EndingScreen endingScreen;
 
+	private Building highlightBuilding;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
@@ -75,6 +77,8 @@ public class Map : MonoSingleton<Map>
 			build.Setup(levelToLoad.tileMap);
 			BuildingHUDControl.instance.NewHud(build);
 			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
+			build.built = true;
+			build.SetColour(Color.white);
 			build.Removeable = false;
 		}
 
@@ -313,6 +317,17 @@ public class Map : MonoSingleton<Map>
     public void MouseOver(Vector3 pos)
     {
         mouseOverTile = pos;
+
+		Building newHighlightBuilding = (GetTileOver() != null) ? GetTileOver().building : null;
+
+		if (newHighlightBuilding != highlightBuilding)
+		{
+			if (highlightBuilding != null) highlightBuilding.OnMouseExit();
+			if (newHighlightBuilding != null) newHighlightBuilding.OnMouseEnter();
+		}
+
+		highlightBuilding = newHighlightBuilding;
+	
     }
 
     public Vector3 GetMouseOver()

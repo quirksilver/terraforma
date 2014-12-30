@@ -712,10 +712,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193410945b6528f4db9fd6c9abfa39f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
   DisplayName: Magma Well
   buildCostWater: 30
   buildCostHeat: 0
@@ -732,14 +728,19 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 0
-  requiredResourceTileType: 1
-  numberResourceTilesRequired: 1
+  eventName: 
   buildingTime: 8
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
+  requiredResourceTileType: 1
+  numberResourceTilesRequired: 1
   harvesterPrefab: {fileID: 0}
-  eventName: 
+  Removeable: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

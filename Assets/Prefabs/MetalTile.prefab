@@ -129,7 +129,7 @@ MonoBehaviour:
   buildingRestrictions: []
   pathTile: {fileID: 0}
   resourceType: 4
-  resourceYieldPerTurn: 5
+  resourceYieldPerTurn: 18
   totalResourceYield: -1
   surroundingTiles: []
   empty: 0

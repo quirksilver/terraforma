@@ -827,10 +827,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2c8c42e32781944acbaeb512f5612c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
   DisplayName: Greenhouse
   buildCostWater: 5
   buildCostHeat: 8
@@ -847,14 +843,19 @@ MonoBehaviour:
   produceAir: 10
   produceFood: 19
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 16
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400070, guid: 42cc8f164b454b644a61f48b95b53974, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
+  Removeable: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

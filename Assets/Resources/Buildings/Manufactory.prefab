@@ -1025,10 +1025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4652ccb97c04c874f9ac8f9641b7a180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
   DisplayName: Manufactory
   buildCostWater: 0
   buildCostHeat: 0
@@ -1045,14 +1041,19 @@ MonoBehaviour:
   produceAir: 0
   produceFood: 0
   produceMetal: 7
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 28
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400034, guid: c6a688efe3f60ed4ead479721de6278f, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
+  Removeable: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

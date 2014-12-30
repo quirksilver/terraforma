@@ -1057,9 +1057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a196a6651f3224896fa1416563fe1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 11400000}
-  prerequisites: []
   DisplayName: Terminal
   buildCostWater: 0
   buildCostHeat: 0
@@ -1076,14 +1073,18 @@ MonoBehaviour:
   produceAir: 5
   produceFood: 4
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 20
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 11400000}
+  prerequisites: []
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
+  Removeable: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

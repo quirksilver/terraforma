@@ -1977,10 +1977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbc5bc9a56ca294d913bbe4e992655e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 0, y: 0}
-  footprint: {fileID: 0}
-  prerequisites:
-  - {fileID: 11400000, guid: f4549d07f64c5304fa02f55d9cff5c8d, type: 2}
   DisplayName: Arboreum
   buildCostWater: 80
   buildCostHeat: 15
@@ -1997,14 +1993,19 @@ MonoBehaviour:
   produceAir: 35
   produceFood: 5
   produceMetal: 0
-  requiredResourceTileType: 5
-  numberResourceTilesRequired: 0
+  eventName: 
   buildingTime: 12
   built: 0
-  buildingActive: 1
+  unitActive: 1
   resourcesAvailable: 1
+  size: {x: 0, y: 0}
+  footprint: {fileID: 0}
+  prerequisites:
+  - {fileID: 11400000, guid: f4549d07f64c5304fa02f55d9cff5c8d, type: 2}
+  requiredResourceTileType: 5
+  numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 0}
-  eventName: 
+  Removeable: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

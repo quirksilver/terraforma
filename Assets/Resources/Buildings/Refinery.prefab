@@ -2122,6 +2122,7 @@ MonoBehaviour:
   requiredResourceTileType: 5
   numberResourceTilesRequired: 0
   harvesterPrefab: {fileID: 100000, guid: f9c258ddcbacf4c618aea2df3391c87c, type: 2}
+  Removeable: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

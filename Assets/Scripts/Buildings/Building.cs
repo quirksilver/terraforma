@@ -24,9 +24,13 @@ public class Building : Unit {
 
 	public bool Removeable = true;
 
+	private Shader outlineShader;
+
 	protected virtual void Awake () {
 	
 		base.Awake();
+
+		outlineShader = Shader.Find("Outlined/Silhouetted Diffuse");
 
 		footprint = GetComponentInChildren<BuildingFootprint>() as BuildingFootprint;
 	
@@ -50,6 +54,16 @@ public class Building : Unit {
 			harvesters.Add(newHarvester);
 			newHarvester.Setup(this, tileMap);
 		}
+	}
+
+	public void OnMouseEnter()
+	{
+		if (built) unitMat.shader = outlineShader;
+	}
+
+	public void OnMouseExit()
+	{
+		if (built) unitMat.shader = mainShader;
 	}
 
 	public void AddResourceFromHarvester(ResourceType type, int amount)
@@ -268,6 +282,26 @@ public class Building : Unit {
 			Debug.DrawLine(borderTiles[i].transform.position + RTCorner, borderTiles[i].transform.position + RBCorner, Color.yellow);
 			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.yellow);
 		}*/
+
+	public void SetPrefabMaterialColor(Color col)
+	{
+		GameObject clone = PrefabUtility.InstantiatePrefab(this.gameObject) as GameObject;
+
+		Material mat = clone.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+
+		Debug.Log(mat);
+
+		mat.color = col;
+
+		//mat.SetColor("_MainColor", col);
+
+		PrefabUtility.ReplacePrefab(clone, PrefabUtility.GetPrefabParent(clone), ReplacePrefabOptions.ConnectToPrefab);	
+
+		DestroyImmediate(clone);
+
+		EditorUtility.SetDirty(mat);
+
+	}
 
 	public void CreateSplitSprite()
 	{
