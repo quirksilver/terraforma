@@ -41,6 +41,11 @@ public class BuildMenu : MonoBehaviour
         }
     }
 
+	public void ResetButton()
+	{
+		Map.instance.ResetLevel ();
+	}
+
     public void Tick()
     {
         foreach (BuildingButton button in buildingButtons)

@@ -68,6 +68,7 @@ public class BuildingButton : MonoBehaviour
 			prerequisitesLabel.transform.parent.gameObject.SetActive (false);
 		}
 		GetComponent<Image> ().color = prereqsMet ? Color.white : new Color (255, 255, 255, 0.5f);
+		cost.Tick ();
         //GetComponent<Button>().interactable = valid;
     }
 

@@ -1978,10 +1978,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Arboreum
-  buildCostWater: 80
-  buildCostHeat: 15
-  buildCostAir: 40
-  buildCostFood: 5
+  buildCostWater: 60
+  buildCostHeat: 40
+  buildCostAir: 0
+  buildCostFood: 15
   buildCostMetal: 5
   runningCostWater: 15
   runningCostHeat: 8

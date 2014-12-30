@@ -53,6 +53,8 @@ public class Level : MonoBehaviour {
 
 	public void LevelReset()
 	{
+		Debug.Log (gameObject.name + " RESET");
+
 		resourceAmmount[(int)ResourceType.Water] = startingWater;
 		resourceAmmount[(int)ResourceType.Heat] = startingHeat;
 		resourceAmmount[(int)ResourceType.Air] = startingAir;
