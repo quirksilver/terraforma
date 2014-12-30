@@ -715,12 +715,12 @@ MonoBehaviour:
   DisplayName: Magma Well
   buildCostWater: 30
   buildCostHeat: 0
-  buildCostAir: 30
+  buildCostAir: 20
   buildCostFood: 0
   buildCostMetal: 10
   runningCostWater: 5
   runningCostHeat: 0
-  runningCostAir: 5
+  runningCostAir: 2
   runningCostFood: 0
   runningCostMetal: 1
   produceWater: 0

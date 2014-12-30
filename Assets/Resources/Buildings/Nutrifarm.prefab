@@ -1290,7 +1290,7 @@ MonoBehaviour:
   DisplayName: Nutrifarm
   buildCostWater: 60
   buildCostHeat: 40
-  buildCostAir: 80
+  buildCostAir: 60
   buildCostFood: 0
   buildCostMetal: 5
   runningCostWater: 12

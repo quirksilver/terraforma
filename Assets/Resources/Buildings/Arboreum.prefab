@@ -1985,12 +1985,12 @@ MonoBehaviour:
   buildCostMetal: 5
   runningCostWater: 15
   runningCostHeat: 8
-  runningCostAir: 2
+  runningCostAir: 0
   runningCostFood: 1
   runningCostMetal: 0
   produceWater: 0
   produceHeat: 0
-  produceAir: 35
+  produceAir: 39
   produceFood: 5
   produceMetal: 0
   eventName: 

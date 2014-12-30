@@ -828,7 +828,7 @@ MonoBehaviour:
   DisplayName: Aqua Plant
   buildCostWater: 0
   buildCostHeat: 65
-  buildCostAir: 65
+  buildCostAir: 30
   buildCostFood: 0
   buildCostMetal: 5
   runningCostWater: 0
