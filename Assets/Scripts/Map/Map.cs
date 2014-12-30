@@ -250,6 +250,11 @@ public class Map : MonoSingleton<Map>
         return true;
     }
 
+	public void ResetLevel()
+	{
+		level.LevelReset ();
+	}
+
     // Update is called once per frame
     void Update()
     {
