@@ -78,7 +78,7 @@ public class Map : MonoSingleton<Map>
 			BuildingHUDControl.instance.NewHud(build);
 			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
 			build.built = true;
-			build.SetColour(Color.white);
+			build.SetToMainColour();
 			build.Removeable = false;
 		}
 
@@ -253,6 +253,11 @@ public class Map : MonoSingleton<Map>
 		buildMenu.Refresh();
         return true;
     }
+
+	public void ResetLevel()
+	{
+		level.LevelReset ();
+	}
 
     // Update is called once per frame
     void Update()

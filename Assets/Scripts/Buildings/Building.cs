@@ -66,6 +66,14 @@ public class Building : Unit {
 		if (built) unitMat.shader = mainShader;
 	}
 
+	public void ClearHarvesters()
+	{
+		foreach(ResourceHarvester harvester in harvesters)
+		{
+			Destroy(harvester.gameObject);
+		}
+	}
+
 	public void AddResourceFromHarvester(ResourceType type, int amount)
 	{
         Map.instance.GetLevel().AddResource(amount, type);

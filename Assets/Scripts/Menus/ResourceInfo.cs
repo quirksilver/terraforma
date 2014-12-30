@@ -24,7 +24,7 @@ public class ResourceInfo : MonoBehaviour
         foreach(KeyValuePair<ResourceType,Text> pair in labelDict)
         {
             int value = int.Parse(pair.Value.text);
-            pair.Value.color = (value > Map.instance.GetLevel().GetResource(pair.Key)) ? Color.red : Color.white;
+            pair.Value.color = (value > Map.instance.GetLevel().GetResource(pair.Key)) ? Color.red : Color.black;
         }
     }
 

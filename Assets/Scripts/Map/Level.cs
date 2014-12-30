@@ -23,10 +23,14 @@ public class Level : MonoBehaviour {
 	public int startingMetal;
 
 	public Building[] victoryRequirements;
+	
+	private List<Building> startingBuildings;
 
 	// Use this for initialization
 	void Awake () {
-	
+		startingBuildings = new List<Building> ();
+		startingBuildings.AddRange (GetComponentsInChildren<Building> ());
+
 		buildings = new List<Building>();
 		tileMap = GetComponentInChildren<TileMap>() as TileMap;
         tileMap.setTiles();
@@ -45,6 +49,30 @@ public class Level : MonoBehaviour {
         storyEventManager = GetComponent<StoryEventManager>();
 
         centerPos = collider.bounds.center;
+	}
+
+	public void LevelReset()
+	{
+		resourceAmmount[(int)ResourceType.Water] = startingWater;
+		resourceAmmount[(int)ResourceType.Heat] = startingHeat;
+		resourceAmmount[(int)ResourceType.Air] = startingAir;
+		resourceAmmount[(int)ResourceType.Food] = startingFood;
+		resourceAmmount[(int)ResourceType.Metal] = startingMetal;
+
+		StoryEventManager.SendEvent ("RESET");
+
+		for(int i=buildings.Count-1;i>=0;i--)
+		{
+			if(!startingBuildings.Contains(buildings[i]))
+			{
+				RemoveBuilding(buildings[i]);
+			}
+		}
+
+		foreach (Tile tile in tileMap.tiles) 
+		{
+			tile.harvestersTargeting = 0;
+		}
 	}
 
     /*public bool ValidateBuilding(Building building, Vector3 pos)
@@ -96,6 +124,7 @@ public class Level : MonoBehaviour {
 
 	public void RemoveBuilding(Building building)
 	{
+		building.ClearHarvesters ();
 		building.RemoveHud ();
 		building.footprint.gameObject.SetActive (true);
 		List<Vector3> footprintTiles = building.footprint.tilePositions;

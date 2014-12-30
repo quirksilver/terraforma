@@ -77,14 +77,15 @@ public abstract class Unit : MonoBehaviour
 			
 			float i = buildingTimer/buildingTime;
 			
-			Color color = Color.white;
+			Color color = mainCol;
 			color.a = i + (0.2f * Mathf.Sin(Time.time*Mathf.PI*2));
 			SetColour(color);
 			
 			if (buildingTimer > buildingTime)
 			{
 				SetTransparency(false);
-				SetColour(Color.white);
+				//SetColour(Color.white);
+				SetToMainColour();
 				built=true;
 				
 				StoryEventManager.SendEvent(eventName);

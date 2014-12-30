@@ -722,7 +722,7 @@ MonoBehaviour:
   runningCostHeat: 0
   runningCostAir: 5
   runningCostFood: 0
-  runningCostMetal: 2
+  runningCostMetal: 1
   produceWater: 0
   produceHeat: 40
   produceAir: 0
