@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public abstract class Unit : MonoBehaviour
 {
 	public string DisplayName;
@@ -202,5 +206,27 @@ public abstract class Unit : MonoBehaviour
 		BuildingHUDControl.instance.removeHud (hud.gameObject);
 	}
 
+#if UNITY_EDITOR
+
+	public void SetPrefabMaterialColor(Color col)
+	{
+		GameObject clone = PrefabUtility.InstantiatePrefab(this.gameObject) as GameObject;
+		
+		Material mat = clone.GetComponentInChildren<MeshRenderer>().sharedMaterial;
+		
+		Debug.Log(mat);
+		
+		mat.color = col;
+		
+		//mat.SetColor("_MainColor", col);
+		
+		PrefabUtility.ReplacePrefab(clone, PrefabUtility.GetPrefabParent(clone), ReplacePrefabOptions.ConnectToPrefab);	
+		
+		DestroyImmediate(clone);
+		
+		EditorUtility.SetDirty(mat);
+		
+	}
+#endif
 }
 

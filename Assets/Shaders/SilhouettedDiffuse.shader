@@ -67,12 +67,12 @@ half4 frag(v2f i) :COLOR {
 ENDCG
 		}
 		
-		Pass {
-			Name "CUT"
-			ZTest GEqual
-			Blend SrcAlpha OneMinusSrcAlpha
+		//Pass {
+		//	Name "CUT"
+		//	ZTest GEqual
+		//	Blend SrcAlpha OneMinusSrcAlpha
 			
-		}
+		//}
  
 		Pass {
 			Name "BASE"

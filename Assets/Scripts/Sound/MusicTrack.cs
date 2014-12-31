@@ -68,7 +68,7 @@ public class MusicTrack : MonoBehaviour
 	void Update ()
 	{
 
-		if (partQueue.Count == 0) return;
+		if (partQueue.Count == 0 || currentParts.Count == 0) return;
 
 		double currentTime = AudioSettings.dspTime;
 

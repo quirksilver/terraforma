@@ -47,6 +47,12 @@ public class Tile : MonoBehaviour
         Map.instance.MouseOver(coords);
     }
 
+	
+	public void OnMouseExit()
+	{
+		Map.instance.MouseOut(coords);
+	}
+
 	public Tile GetLeastTargetedAdjacentTile(Vector3 pos)
 	{
 		int lowestTarget = -1;

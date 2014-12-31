@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor(typeof(Building), true)]
+[CustomEditor(typeof(Unit), true)]
 public class BuildingEditor : Editor
 {
 
@@ -12,10 +12,10 @@ public class BuildingEditor : Editor
 	{
 		DrawDefaultInspector();
 		
-		Building script = (Building)target;
-		if(GUILayout.Button("Create Split Sprite"))
+		Unit script = (Unit)target;
+		if(GUILayout.Button("Create Split Sprite") && script is Building)
 		{
-			script.CreateSplitSprite();
+			(script as Building).CreateSplitSprite();
 		}
 
 

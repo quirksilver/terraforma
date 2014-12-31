@@ -36,6 +36,8 @@ public class ResourceHarvester : Unit
 
 	public PathTile [] debugPath;
 
+	public bool visible = true;
+
 	public enum HarvesterState
 	{
 		Idle,
@@ -62,7 +64,7 @@ public class ResourceHarvester : Unit
 
 		//lineRenderer = GetComponent<LineRenderer>();
 
-		animator = GetComponentInChildren<Animator>();
+		//animator = GetComponentInChildren<Animator>();
 
 
 		SetState(HarvesterState.Idle);
@@ -164,6 +166,9 @@ public class ResourceHarvester : Unit
 
 	public void GetTargetResourceTile()
 	{
+
+		if (!visible) SetVisible(true);
+
 		targetTile = GetClosestResourceTileOfType(resourceType, transform.position);
 		viaTile = targetTile.GetLeastTargetedAdjacentTile(transform.position);
 		targetTile.harvestersTargeting ++;
@@ -215,7 +220,7 @@ public class ResourceHarvester : Unit
 
 	public void GoToTargetTile()
 	{
-		animator.SetInteger("Action", ANIM_MOVE);
+		//animator.SetInteger("Action", ANIM_MOVE);
 
 		if (path.Count > 0)
 		{
@@ -279,6 +284,8 @@ public class ResourceHarvester : Unit
 	public void AddResourceToBuilding()
 	{
 
+		if (visible) SetVisible(false);
+
 		resourceBase.AddResourceFromHarvester(resourceType, currentResourceAmount);
 		
 		currentResourceAmount = 0;
@@ -291,9 +298,22 @@ public class ResourceHarvester : Unit
 
 	}
 
+	public void SetVisible(bool visibility)
+	{
+
+		Renderer[] rens = GetComponentsInChildren<MeshRenderer>();
+		
+		for (int i = 0; i < rens.Length; i++)
+		{
+			rens[i].enabled = visibility;
+		}
+
+		visible = visibility;
+	}
+
 	IEnumerator WaitForAnimation(int animState, HarvesterState nextState)
 	{
-		animator.SetInteger("Action", animState);
+		//animator.SetInteger("Action", animState);
 
 		yield return new WaitForSeconds(2);
 

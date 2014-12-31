@@ -45,6 +45,8 @@ public class Map : MonoSingleton<Map>
 
 	private Building highlightBuilding;
 
+	private bool checkForMouseOut = false;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
@@ -322,6 +324,7 @@ public class Map : MonoSingleton<Map>
     public void MouseOver(Vector3 pos)
     {
         mouseOverTile = pos;
+		checkForMouseOut = false;
 
 		Building newHighlightBuilding = (GetTileOver() != null) ? GetTileOver().building : null;
 
@@ -334,6 +337,25 @@ public class Map : MonoSingleton<Map>
 		highlightBuilding = newHighlightBuilding;
 	
     }
+
+	public void MouseOut(Vector3 pos)
+	{
+		if (pos == mouseOverTile && highlightBuilding != null)
+		{
+			checkForMouseOut = true;
+		}
+	}
+
+	public void LateUpdate()
+	{
+		if (checkForMouseOut)
+		{
+			highlightBuilding.OnMouseExit();
+			highlightBuilding = null;
+
+			checkForMouseOut = false;
+		}
+	}
 
     public Vector3 GetMouseOver()
     {
