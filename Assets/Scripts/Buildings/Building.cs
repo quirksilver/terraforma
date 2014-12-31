@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class Building : Unit {
 
@@ -291,6 +294,7 @@ public class Building : Unit {
 			Debug.DrawLine(borderTiles[i].transform.position + RBCorner, borderTiles[i].transform.position + LBCorner, Color.yellow);
 		}*/
 
+#if UNITY_EDITOR
 	public void SetPrefabMaterialColor(Color col)
 	{
 		GameObject clone = PrefabUtility.InstantiatePrefab(this.gameObject) as GameObject;
@@ -390,4 +394,5 @@ public class Building : Unit {
 
 		DestroyImmediate(clone);
 	}
+#endif
 }

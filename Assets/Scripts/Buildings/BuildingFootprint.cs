@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using System.IO; 
 using System.Text;
 using System.Xml;
@@ -84,15 +86,15 @@ public class BuildingFootprint : MonoBehaviour {
 
 		Debug.Log(pivotPoint);
 
+		#if UNITY_EDITOR
 		if (setPivot) SetPivot();
-
 		if (saveXML) SaveXml();
+		#endif
 
         transform.parent.localPosition = startPos;
 	}
 
-	 
-
+#if UNITY_EDITOR
 	public void SaveXml()
 	{
 		Debug.Log(tilePositions.Count);
@@ -157,6 +159,7 @@ public class BuildingFootprint : MonoBehaviour {
 		
 		AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
 	}
+#endif
 
 	public void hide()
 	{

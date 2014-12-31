@@ -21,6 +21,11 @@ public class ResourceInfo : MonoBehaviour
 
     public void Tick()
     {
+		if (Map.instance.GetLevel () == null) 
+		{
+			return;
+		}
+
         foreach(KeyValuePair<ResourceType,Text> pair in labelDict)
         {
             int value = int.Parse(pair.Value.text);
