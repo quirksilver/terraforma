@@ -87,10 +87,10 @@ public class Building : Unit {
 	{
 		//debugging
 
-		DebugSpawnTile ++;
+		//DebugSpawnTile ++;
 
-		return borderTiles[DebugSpawnTile % borderTiles.Count].transform.position;
-		//return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))].transform.position; 
+		//return borderTiles[DebugSpawnTile % borderTiles.Count].transform.position;
+		return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))].transform.position; 
 	}
 
 	public Tile GetLeastTargetedAdjacentTile(Vector3 pos)
@@ -295,26 +295,6 @@ public class Building : Unit {
 		}*/
 
 #if UNITY_EDITOR
-	public void SetPrefabMaterialColor(Color col)
-	{
-		GameObject clone = PrefabUtility.InstantiatePrefab(this.gameObject) as GameObject;
-
-		Material mat = clone.GetComponentInChildren<MeshRenderer>().sharedMaterial;
-
-		Debug.Log(mat);
-
-		mat.color = col;
-
-		//mat.SetColor("_MainColor", col);
-
-		PrefabUtility.ReplacePrefab(clone, PrefabUtility.GetPrefabParent(clone), ReplacePrefabOptions.ConnectToPrefab);	
-
-		DestroyImmediate(clone);
-
-		EditorUtility.SetDirty(mat);
-
-	}
-
 	public void CreateSplitSprite()
 	{
 		GameObject clone = PrefabUtility.InstantiatePrefab(this.gameObject) as GameObject;

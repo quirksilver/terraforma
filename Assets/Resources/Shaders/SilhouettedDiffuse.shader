@@ -67,12 +67,12 @@ half4 frag(v2f i) :COLOR {
 ENDCG
 		}
 		
-		//Pass {
-		//	Name "CUT"
-		//	ZTest GEqual
-		//	Blend SrcAlpha OneMinusSrcAlpha
+		Pass {
+			Name "CUT"
+			ZTest GEqual
+			Blend SrcAlpha OneMinusSrcAlpha
 			
-		//}
+		}
  
 		Pass {
 			Name "BASE"
@@ -86,16 +86,17 @@ ENDCG
 			Lighting On
 			SetTexture [_MainTex] {
 				ConstantColor [_Color]
-				Combine texture * constant
+				//Combine primary + constant  //+ constant
+				
 			}
 			SetTexture [_MainTex] {
-				Combine previous * primary DOUBLE
+				Combine previous * primary QUAD
 			}
 		}
 	}
  
 	SubShader {
-		Tags { "Queue" = "Transparent" }
+		//Tags { "Queue" = "Transparent" }
  
 		Pass {
 			Name "OUTLINE"
