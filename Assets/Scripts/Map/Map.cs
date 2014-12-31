@@ -189,7 +189,8 @@ public class Map : MonoSingleton<Map>
         {
             foreach (Building b in level.buildings)
             {
-                if (b.GetType() == type)
+                if (b.GetType() == type
+				    && b.built == true)
                 {
                     count++;
                 }
@@ -256,9 +257,15 @@ public class Map : MonoSingleton<Map>
         return true;
     }
 
+	public void RefreshBuildMenu()
+	{
+		buildMenu.Refresh ();
+	}
+
 	public void ResetLevel()
 	{
 		level.LevelReset ();
+		RefreshBuildMenu ();
 	}
 
     // Update is called once per frame

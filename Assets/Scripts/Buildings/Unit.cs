@@ -93,6 +93,7 @@ public abstract class Unit : MonoBehaviour
 				built=true;
 				
 				StoryEventManager.SendEvent(eventName);
+				Map.instance.RefreshBuildMenu();
 			}
 		}
 		
