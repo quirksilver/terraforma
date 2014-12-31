@@ -108,6 +108,9 @@ public class Map : MonoSingleton<Map>
 
         ResourceManager.instance.Tick();
 
+		//Setup build menu
+		buildMenu.SetStars (level.victoryRequirements);
+
 		buildMenu.Refresh ();
 	}
 

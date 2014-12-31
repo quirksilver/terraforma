@@ -4,13 +4,14 @@ using UnityEngine.UI;
 
 public class BuildingButton : MonoBehaviour 
 {
-    private Building building;
+    public Building building;
     public Text label;
     private BuildMenu menu;
     public ResourceInfo cost;
 	public ResourceInfo produces;
 	public ResourceInfo requires;
 	public Text prerequisitesLabel;
+	public Image requiredStar;
 
 	private bool prereqsMet=false;
 
