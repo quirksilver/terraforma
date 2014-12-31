@@ -97,7 +97,7 @@ public class BuildingHUD : MonoBehaviour {
         {
             warningAlpha -= Time.deltaTime;
         }
-        warning.color = new Color(1.0f, 0.0f, 0.0f, warningAlpha);
+        warning.color = new Color(1.0f, 1.0f, 1.0f, warningAlpha);
 	}
 
 	private void AnimateIcon(ResParticle icon, Vector3 dir, List<ResParticle> containingList)

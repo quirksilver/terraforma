@@ -328,8 +328,8 @@ public class Map : MonoSingleton<Map>
         {
             Vector3 lookDirection = Camera.main.transform.forward;
             nextLevelArrow.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-            nextLevelArrow.transform.position = levels[levelIndex].collider.bounds.center + (levels[levelIndex].transform.rotation * new Vector3(0, 2, 0));
-            Color color = Color.red;
+            nextLevelArrow.transform.position = levels[levelIndex].collider.bounds.center + (levels[levelIndex].transform.rotation * new Vector3(0, 4, 0));
+            Color color = Color.white;
             color.a = Mathf.Sin(Time.time*2.0f)+1.0f;
             nextLevelArrow.color = color;
         }
