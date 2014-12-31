@@ -25,6 +25,8 @@ public class MusicTrack : MonoBehaviour
 
 	private bool flaggedForStop = false;
 
+	private bool muted = false;
+
 	//private bool init = false;
 
 	public void Setup(List<MusicPart> _parts, string _name, int _simultaneousParts)
@@ -43,6 +45,8 @@ public class MusicTrack : MonoBehaviour
 			GameObject sourceObj = new GameObject("Track" + name + "Source" + i);
 
 			AudioSource source = sourceObj.AddComponent<AudioSource>();
+
+			source.playOnAwake = false;
 
 			if (i%2 == 0)
 			{
@@ -68,11 +72,11 @@ public class MusicTrack : MonoBehaviour
 	void Update ()
 	{
 
-		if (partQueue.Count == 0 || currentParts.Count == 0) return;
+		if (partQueue.Count == 0) return;
 
 		double currentTime = AudioSettings.dspTime;
 
-		double checkTime = (currentParts.Count > 0) ? MusicPlayer.instance.GetNextEntry(partQueue.Peek().barsLength, currentParts[partIndex].barsLength) : MusicPlayer.instance.nextFourBarEntry;
+		double checkTime = (currentParts.Count > 0) ? MusicPlayer.instance.GetNextEntry(currentParts[partIndex]) : MusicPlayer.instance.nextFourBarEntry;
 
 		AudioSource oldSource;
 		AudioSource newSource;
@@ -88,26 +92,27 @@ public class MusicTrack : MonoBehaviour
 			/*Debug.Log(lastCheckedTime);
 			Debug.Log(checkTime);*/
 
-
-			if (sourcesA[sourceIndex].clip == currentParts[partIndex].clip)
-			{
-				oldSource = sourcesA[sourceIndex];
-				newSource = sourcesB[sourceIndex];
-			}
-			else if (sourcesB[sourceIndex].clip == currentParts[partIndex].clip)
-			{
-				oldSource = sourcesB[sourceIndex];
-				newSource = sourcesA[sourceIndex];
-			}
-			else //if (currentParts.Count == 1)
+			if (currentParts.Count == 0)
 			{
 				newSource = sourcesA[sourceIndex];
 				oldSource = null;
+
+
 			}
-			/*else 
-			{
-				return;
-			}*/
+			else{
+
+				if (sourcesA[sourceIndex].clip == currentParts[partIndex].clip)
+				{
+					oldSource = sourcesA[sourceIndex];
+					newSource = sourcesB[sourceIndex];
+				}
+				else //if (sourcesB[sourceIndex].clip == currentParts[partIndex].clip)
+				{
+					oldSource = sourcesB[sourceIndex];
+					newSource = sourcesA[sourceIndex];
+				}
+			}
+
 
 			MusicPart newPart = partQueue.Dequeue();
 
@@ -115,9 +120,16 @@ public class MusicTrack : MonoBehaviour
 			newSource.loop = newPart.isPersistent;
 			newSource.PlayScheduled(checkTime);
 
+			newPart.lastEntry = checkTime;
+
 			newPart.isPlaying = true;
 
-			Debug.Log("Scheduling part " + newPart.name + "on track " + newSource.gameObject.name);
+			currentParts.Add(newPart);
+
+			Debug.Log("Scheduling part " + newPart.name + "on track " + newSource.gameObject.name + "at time " + checkTime);
+
+
+			Debug.Log("Current audio time is " + AudioSettings.dspTime);
 
 			Debug.Log("source is playing " + newSource.isPlaying);
 
@@ -180,12 +192,22 @@ public class MusicTrack : MonoBehaviour
 		}
 	}
 
-	public void Clear()
+	public void Clear(string nameCheck)
 	{
-		StartCoroutine("FadeDown");
+		Debug.Log(name.IndexOf(nameCheck), this);
+		muted = (name.IndexOf(nameCheck) == -1);
+
+		Debug.Log(muted, this);
+		//if (name.IndexOf(nameCheck) == -1) muted = true;
 
 		partQueue.Clear();
 		currentParts.Clear();
+		partIndex = 0;
+		sourceIndex = 0;
+
+		if (!muted) return;
+
+		StartCoroutine("FadeDown");
 
 		for (int i = 0; i < sourcesA.Count; i++)
 		{
@@ -216,10 +238,15 @@ public class MusicTrack : MonoBehaviour
 
 	public void HandleEventString(string e)
 	{
+		Debug.Log("Handle event " + e + " part is muted " + muted , this);
+
+		if (muted) return;
 
 		if (partsByTrigger.ContainsKey(e))
 		{
 			if (!MusicPlayer.instance.ready) MusicPlayer.instance.ready = true;
+
+
 
 			AddPart(partsByTrigger[e]);
 		}
@@ -228,8 +255,10 @@ public class MusicTrack : MonoBehaviour
 	private void AddPart(MusicPart part)
 	{
 
+		Debug.Log("Add part " + part, this);
+		//currentParts.Add(part);
 
-		currentParts.Add(part);
+		if (currentParts.IndexOf(part) != -1) return;
 		partQueue.Enqueue(part);
 	}
 }

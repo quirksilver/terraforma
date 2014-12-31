@@ -20,6 +20,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 	public double fourBars;
 	private double eightBars;
 	private double twelveBars;
+	private double oneBar;
 
 	private int beatsInBar = 4;
 
@@ -35,16 +36,16 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 
 		loadMusic(XMLFilePath);
 
+
+		oneBar = beatsInBar * bpm/60.0f;
 		fourBars = beatsInBar * bpm/60.0f * 4.0f;
 		eightBars = beatsInBar * bpm/60.0f * 8.0f;
 		twelveBars = beatsInBar * bpm/60.0f * 12.0f;
-
-
 	}
 
 	public void Setup()
@@ -53,7 +54,10 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		nextEightBarEntry = AudioSettings.dspTime + 1.0f;
 		nextTwelveBarEntry = AudioSettings.dspTime + 1.0f;
 
+		ready = true;
 		playing = true;
+
+		Debug.Log("SETUP MUSIC PLAYER");
 	}
 
 	// Update is called once per frame
@@ -108,6 +112,12 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 	public void LoadMusicForLevel(Level level)
 	{
+		foreach (KeyValuePair<string, MusicTrack> track in tracks)
+		{
+			track.Value.Clear("Level");
+			track.Value.HandleEventString(GO_TO_LEVEL);
+		}
+
 		for (int i = 0; i < level.buildings.Count; i++)
 		{
 			ReceiveEvent(level.buildings[i].eventName);
@@ -120,7 +130,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 		foreach (KeyValuePair<string, MusicTrack> track in tracks)
 		{
-			track.Value.Clear();
+			track.Value.Clear("World");
 			track.Value.HandleEventString(GO_TO_MAP);
 		}
 	}
@@ -149,10 +159,19 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		}
 	}
 
-	public double GetNextEntry(int newPartLength, int lastPartLength)
+	public double GetNextEntry(MusicPart lastPart)
 	{
-		double entry = nextFourBarEntry;
-		double timeToAdd = fourBars;
+		double nextEntry = lastPart.lastEntry + lastPart.barsLength * oneBar;
+
+		while (nextEntry <= AudioSettings.dspTime)
+		{
+			nextEntry += (lastPart.barsLength*oneBar);
+		}
+
+		return nextEntry;
+
+		//double entry = nextFourBarEntry;
+		//double timeToAdd = fourBars;
 
 		/*switch (newPartLength)
 		{
@@ -169,12 +188,12 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 			break;
 		}*/
 
-		if (lastPartLength > newPartLength)
+	/*	if (lastPartLength > newPartLength)
 		{
 			entry += timeToAdd * (lastPartLength - newPartLength)/beatsInBar;
 		}
 
-		return entry;
+		return entry;*/
 	}
 		
 	#region XML PARSING/SOUND SETUP METHODS

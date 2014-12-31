@@ -5,21 +5,24 @@
 	<BPM>60.0</BPM>
 	<BAR>4</BAR>
 
-	<TRACK name="High" simultaneousParts="1">
+	<TRACK name="LevelHigh" simultaneousParts="1">
 		<PART name = "Part1" trigger="BUILTTERMINAL" clip="part1" isPersistent="true" barsLength="4"/>
 	</TRACK>
 	
-	<TRACK name="Mid" simultaneousParts="1">
+	<TRACK name="LevelMid" simultaneousParts="1">
 		<PART name = "Part2" trigger="BUILTMANUFACTORY" clip="part2" isPersistent="true" barsLength="4"/>
 		<PART name = "Part4" trigger="BUILTNUTRIFARM" clip="part4" isPersistent="true" barsLength="4"/>
 	</TRACK>
 	
-	<TRACK name="Low" simultaneousParts="1">
+	<TRACK name="LevelLow" simultaneousParts="1">
 		<PART name = "Part3" trigger="BUILTMAGMA WELL" clip="part3" isPersistent="true" barsLength="4"/>
 		<PART name = "Part5" trigger="BUILTAQUA PLANT" clip="part5" isPersistent="true" barsLength="8"/>
 	</TRACK>
 	
-	<TRACK name="World" simultaneousParts="1">
+	<TRACK name="LevelPerc" simultaneousParts="1">
+	</TRACK>
+	
+	<TRACK name="World" simultaneousParts="2">
 		<PART name = "WorldPart" trigger="gotoMap" clip="worldpart" isPersistent="true" barsLength="8"/>
 	</TRACK>
 	

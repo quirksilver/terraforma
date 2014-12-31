@@ -86,13 +86,17 @@ public class Tile : MonoBehaviour
 		
 		Debug.Log(leastTargetedTiles);
 		
-		if (leastTargetedTiles.Count > 0)
+		if (leastTargetedTiles.Count > 1)
 		{
 			return GetNearestAdjacentTile(pos, leastTargetedTiles);
 		}
-		else
+		else if (leastTargetedTiles.Count > 0)
 		{
 			return leastTargetedTiles[0];
+		}
+		else
+		{
+			return GetNearestAdjacentTile(pos, borderTiles);
 		}
 		
 	}

@@ -56,7 +56,7 @@ public class Map : MonoSingleton<Map>
 
 	void Start() {
 
-
+		MusicPlayer.instance.Setup();
 		GoToWorldMap();
 	}
 
@@ -106,6 +106,8 @@ public class Map : MonoSingleton<Map>
         ResourceManager.instance.Tick();
 
 		buildMenu.Refresh ();
+
+		MusicPlayer.instance.ReceiveEvent(MusicPlayer.GO_TO_LEVEL);
 	}
 
     public Level GetLevel()
@@ -295,10 +297,10 @@ public class Map : MonoSingleton<Map>
             timeInLevel += Time.deltaTime;
             tickTimer += Time.deltaTime;
 
-			if (tickTimer > tickPeriod - 1)
+			/*if (tickTimer > tickPeriod - 1)
 			{
 				if (!MusicPlayer.instance.playing && MusicPlayer.instance.ready) MusicPlayer.instance.Setup();
-			}
+			}*/
 
             if (tickTimer > tickPeriod)
             {

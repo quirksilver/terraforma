@@ -9,6 +9,7 @@ public class MusicPart
 	public string track;
 	public string trigger;
 	public int barsLength;
+	public double lastEntry;
 
 	public bool isPersistent = true;
 
