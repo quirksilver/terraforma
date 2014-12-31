@@ -230,6 +230,16 @@ public class Level : MonoBehaviour {
         }
     }
 
+	public void OnMouseEnter()
+	{
+		Cursor.SetCursor (Map.instance.levelCursor, new Vector2(13,30), CursorMode.Auto);
+	}
+	
+	public void OnMouseExit()
+	{
+		Cursor.SetCursor (null, Vector2.zero, CursorMode.Auto);
+	}
+
     public void Tick()
     {
 				ResourceManager.instance.Tick ();

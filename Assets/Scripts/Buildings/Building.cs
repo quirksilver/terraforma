@@ -62,11 +62,13 @@ public class Building : Unit {
 	public void OnMouseEnter()
 	{
 		if (built) unitMat.shader = outlineShader;
+		Cursor.SetCursor (Map.instance.overCursor, Vector2.zero, CursorMode.Auto);
 	}
 
 	public void OnMouseExit()
 	{
 		if (built) unitMat.shader = mainShader;
+		Cursor.SetCursor (null, Vector2.zero, CursorMode.Auto);
 	}
 
 	public void ClearHarvesters()

@@ -47,6 +47,9 @@ public class Map : MonoSingleton<Map>
 
 	private bool checkForMouseOut = false;
 
+	public Texture2D overCursor;
+	public Texture2D levelCursor;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
