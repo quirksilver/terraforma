@@ -88,4 +88,21 @@ public class BuildMenu : MonoBehaviour
         alpha = Mathf.MoveTowards(alpha, targetAlpha, 0.1f);
         GetComponent<CanvasGroup>().alpha = alpha;
     }
+
+	public void SetStars(Building[] buildings)
+	{
+		foreach (BuildingButton button in buildingButtons) 
+		{
+			bool isNeeded = false;
+			foreach(Building building in buildings)
+			{
+				if(button.building.DisplayName == building.DisplayName)
+				{
+					isNeeded = true;
+				}
+			}
+
+			button.requiredStar.gameObject.SetActive(isNeeded);
+		}
+	}
 }
