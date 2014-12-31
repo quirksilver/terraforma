@@ -215,7 +215,7 @@ public class Map : MonoSingleton<Map>
 			{
 				valid = false;
 			}
-			else if (checkTile.building != null || !checkTile.Buildable(building) || !checkTile.Buildable())
+			else if (checkTile.building != null || !checkTile.Buildable())
 			{
 				valid = false;
 			}
@@ -237,6 +237,12 @@ public class Map : MonoSingleton<Map>
 
 		if (requiredResources < building.numberResourceTilesRequired) 
 			canBuildOnResource = false;
+
+		if (building.requiredResourceTileType == ResourceType.Count
+		    || building.numberResourceTilesRequired == 0) 
+		{
+			canBuildOnResource = true;
+		}
 
 		return valid && canBuildOnResource;
 	}
