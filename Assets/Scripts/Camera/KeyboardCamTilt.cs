@@ -24,14 +24,18 @@ public class KeyboardCamTilt : MonoBehaviour {
 	private Quaternion startRot;
 
 	private float snapTime = 0.0f;
+	PerspectiveSwitcher perspSwitch;
+
+
 
 	// Use this for initialization
 	void Start () {
-
+		perspSwitch = GetComponent<PerspectiveSwitcher>();
 	}
-	
 	// Update is called once per frame
 	void Update () {
+
+		if (perspSwitch.dragging) return;
 
 		if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
 		{
@@ -143,6 +147,11 @@ private void GetTargetPoint()
 	public bool cameraIsTilting()
 	{
 		return (tilting || snapBack);
+	}
+
+	public void Reset()
+	{
+		snapBack = tilting = false;
 	}
 
 	private float ClampAngle(float angle, float min, float max)

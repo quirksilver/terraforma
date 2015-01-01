@@ -25,7 +25,9 @@ public class PerspectiveSwitcher : MonoBehaviour
     private Vector3 cameraCenter;
 	public Vector3 endingPos;
 
-    private bool dragging = false;
+    public bool dragging = false;
+
+	KeyboardCamTilt camTilt;
 
 	void Start()
 	{
@@ -38,7 +40,7 @@ public class PerspectiveSwitcher : MonoBehaviour
 		orthoOn = false;
 		blender = (MatrixBlender) GetComponent(typeof(MatrixBlender));
 
-
+		camTilt= GetComponent<KeyboardCamTilt>();
 		//transform.position = perspectivePos;
 		//transform.rotation = perspectiveRot;
 	}
@@ -49,7 +51,6 @@ public class PerspectiveSwitcher : MonoBehaviour
         {
             if (!blender.IsRunning)
             {
-				KeyboardCamTilt camTilt = GetComponent<KeyboardCamTilt>();
 
 				if (!camTilt.enabled) camTilt.enabled = true;
 
@@ -59,7 +60,7 @@ public class PerspectiveSwitcher : MonoBehaviour
                 }
 
                 //mouse drag
-                if (Input.GetMouseButton(0)&&dragging && !camTilt.cameraIsTilting())
+                if (Input.GetMouseButton(0)&&dragging)
                 {
                     if (lastMousePos != Vector3.zero)
                     {
@@ -86,6 +87,8 @@ public class PerspectiveSwitcher : MonoBehaviour
 
     public void StartDrag()
     {
+		if (camTilt.cameraIsTilting()) return;
+
         dragging = true;
     }
 
@@ -118,7 +121,8 @@ public class PerspectiveSwitcher : MonoBehaviour
 		orthoOn = false;
 		blender.BlendToMatrix(perspective, 1f, true, transform.position, perspectivePos, transform.rotation, perspectiveRot);
 
-		GetComponent<KeyboardCamTilt>().enabled = false;
+		camTilt.Reset();
+		camTilt.enabled = false;
 		GetComponent<DragMouseOrbit>().enabled = true;
 		GetComponent<DragMouseOrbit> ().endingOrbit = true;
 	}
@@ -131,6 +135,7 @@ public class PerspectiveSwitcher : MonoBehaviour
 		blender.BlendToMatrix(perspective, 1f, true, transform.position, perspectivePos, transform.rotation, perspectiveRot);
 
 		GetComponent<DragMouseOrbit>().enabled = true;
-		GetComponent<KeyboardCamTilt>().enabled = false;
+		camTilt.Reset();
+		camTilt.enabled = false;
 	}
 }
