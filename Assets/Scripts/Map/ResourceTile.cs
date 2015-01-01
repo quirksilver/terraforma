@@ -19,7 +19,7 @@ public class ResourceTile : Tile
 		{
 			Map.instance.tileMap.RemoveResourceTile(this);
 
-			GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.LoadAssetAtPath<Texture2D>("Assets/Texture/ground_1.tga");
+			GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture2D>("ground_1");
 
 			//GetComponentInChildren<Renderer>().material.color = Color.black;
 		}
