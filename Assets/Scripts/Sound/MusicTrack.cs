@@ -242,6 +242,9 @@ public class MusicTrack : MonoBehaviour
 		Debug.Log(muted, this);
 		//if (name.IndexOf(nameCheck) == -1) muted = true;
 
+		
+		if (!muted) return;
+
 		foreach (KeyValuePair<string, MusicPart> pair in partsByTrigger)
 		{
 			pair.Value.isPlaying = false;
@@ -253,8 +256,6 @@ public class MusicTrack : MonoBehaviour
 		currentParts.Clear();
 		partIndex = 0;
 		sourceIndex = 0;
-
-		if (!muted) return;
 
 		StartCoroutine("FadeDown");
 
@@ -308,6 +309,7 @@ public class MusicTrack : MonoBehaviour
 		//currentParts.Add(part);
 
 		if (currentParts.IndexOf(part) != -1) return;
+
 		partQueue.Enqueue(part);
 	}
 }
