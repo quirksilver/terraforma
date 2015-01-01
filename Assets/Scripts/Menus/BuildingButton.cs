@@ -18,7 +18,7 @@ public class BuildingButton : MonoBehaviour
     public void Setup(Building b, BuildMenu m)
     {
         building = b;
-        label.text = b.name;
+        label.text = b.DisplayName;
         menu = m;
 
         cost.AddResource(b.buildCostAir, ResourceType.Air);
