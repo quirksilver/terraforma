@@ -2098,9 +2098,9 @@ MonoBehaviour:
   buildCostAir: 70
   buildCostFood: 0
   buildCostMetal: 0
-  runningCostWater: 4
-  runningCostHeat: 15
-  runningCostAir: 2
+  runningCostWater: 6
+  runningCostHeat: 16
+  runningCostAir: 4
   runningCostFood: 0
   runningCostMetal: 0
   produceWater: 0

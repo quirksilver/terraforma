@@ -336,12 +336,14 @@ public class Map : MonoSingleton<Map>
             nextLevelArrow.color = color;
         }
 
+#if UNITY_EDITOR
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			//MusicPlayer.instance.ReceiveEvent("testSFXTrigger");
 
 			CompleteLevel();
 		}
+#endif
 	}
 
     public void MouseOver(Vector3 pos)
