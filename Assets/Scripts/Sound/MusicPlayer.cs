@@ -7,7 +7,7 @@ using System.IO;
 
 public class MusicPlayer : MonoSingleton<MusicPlayer>
 {
-	public String XMLFilePath = "Assets/Resources/Sound/Music.xml";
+	//public String XMLFilePath = "Sound/Music";
 
 	private float bpm = 60.0f;
 	[HideInInspector]
@@ -36,12 +36,15 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 	public double nextBeat;
 
+	public TextAsset xmlFile;
+
 
 	// Use this for initialization
 	void Awake ()
 	{
+		xmlFile = Resources.Load<TextAsset>("Music");
 
-		loadMusic(XMLFilePath);
+		loadMusic(xmlFile);
 
 
 		oneBar = beatsInBar * bpm/60.0f;
@@ -57,7 +60,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		nextTwelveBarEntry = AudioSettings.dspTime + 2.0f;
 		nextBeat = AudioSettings.dspTime + 2.0f;
 
-
+		//Debug.Log(xmlFile);
 
 		ready = true;
 		playing = true;
@@ -252,9 +255,11 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 	/// <summary>
 	/// Opens the SoundSystem_names file and attempts to read the Soundscape definition
 	/// </summary>
-	private static void loadMusic( string fileName )
+	private static void loadMusic( TextAsset xmlFile )
 	{
-		XmlTextReader reader = new XmlTextReader ( fileName );
+		Debug.Log(xmlFile);
+
+		XmlTextReader reader = new XmlTextReader ( new StringReader(xmlFile.text) );
 		reader.WhitespaceHandling = WhitespaceHandling.None; // ignore whitespace
 		
 		try
