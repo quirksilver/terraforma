@@ -977,7 +977,7 @@ MonoBehaviour:
   runningCostHeat: 22
   runningCostAir: 17
   runningCostFood: 14
-  runningCostMetal: 13
+  runningCostMetal: 4
   produceWater: 0
   produceHeat: 0
   produceAir: 2

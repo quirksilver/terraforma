@@ -271,14 +271,14 @@ MonoBehaviour:
   DisplayName: Harvester
   buildCostWater: 22
   buildCostHeat: 11
-  buildCostAir: 28
+  buildCostAir: 34
   buildCostFood: 0
   buildCostMetal: 5
-  runningCostWater: 6
+  runningCostWater: 0
   runningCostHeat: 0
-  runningCostAir: 9
+  runningCostAir: 0
   runningCostFood: 0
-  runningCostMetal: 6
+  runningCostMetal: 0
   produceWater: 0
   produceHeat: 0
   produceAir: 0
