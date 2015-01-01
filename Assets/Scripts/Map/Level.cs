@@ -61,8 +61,6 @@ public class Level : MonoBehaviour {
 		resourceAmmount[(int)ResourceType.Food] = startingFood;
 		resourceAmmount[(int)ResourceType.Metal] = startingMetal;
 
-		StoryEventManager.SendEvent ("RESET");
-
 		for(int i=buildings.Count-1;i>=0;i--)
 		{
 			if(!startingBuildings.Contains(buildings[i]))
@@ -77,6 +75,8 @@ public class Level : MonoBehaviour {
 		}
 
 		tileMap.ResetResourceTiles();
+
+		StoryEventManager.SendEvent ("RESET");
 
 	}
 

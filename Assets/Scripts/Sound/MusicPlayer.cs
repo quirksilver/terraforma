@@ -108,6 +108,10 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		case GO_TO_LEVEL:
 			LoadMusicForLevel(Map.instance.GetLevel());
 			break;
+
+		/*case "RESET":
+			Reset(Map.instance.GetLevel());
+			break;*/
 	
 		default:
 
@@ -118,6 +122,19 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 				track.Value.HandleEventString(e);
 			}
 			break;
+		}
+	}
+
+	public void Reset(Level level)
+	{
+		foreach (KeyValuePair<string, MusicTrack> track in tracks)
+		{
+			track.Value.Reset();
+		}
+		
+		for (int i = 0; i < level.buildings.Count; i++)
+		{
+			ReceiveEvent(level.buildings[i].eventName);
 		}
 	}
 

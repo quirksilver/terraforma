@@ -81,8 +81,8 @@ public class Map : MonoSingleton<Map>
 		{
 			build.Setup(levelToLoad.tileMap);
 			BuildingHUDControl.instance.NewHud(build);
-			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
 			build.built = true;
+			levelToLoad.PlaceBuiding(build,build.transform.localPosition);
 			build.SetToMainColour();
 			build.Removeable = false;
 		}
