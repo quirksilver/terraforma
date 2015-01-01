@@ -32,10 +32,11 @@ public class TileMap : MonoBehaviour
 
 		UpdateConnections();
 
-        if (tiles.Count == 0)
-        {
+		tiles.Clear();
+       // if (tiles.Count == 0)
+        //{
             setTiles();
-        }
+        //}
 	}
 
 	public void setTiles()
@@ -60,6 +61,23 @@ public class TileMap : MonoBehaviour
 			{
 				Debug.Log("FOUND RESOURCE TILE " + tempTile);
 				resourceTiles.Add(tempTile as ResourceTile);
+			}
+		}
+	}
+
+	public void ResetResourceTiles()
+	{
+
+		resourceTiles.Clear();
+
+		for (int i = 0; i < tiles.Count; i++)
+		{
+			
+			if (tiles[i] is ResourceTile)
+			{
+				Debug.Log("FOUND RESOURCE TILE ON RESET " + tiles[i]);
+				(tiles[i] as ResourceTile).Reset();
+				resourceTiles.Add(tiles[i] as ResourceTile);
 			}
 		}
 	}

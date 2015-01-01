@@ -8,9 +8,19 @@ public class ResourceTile : Tile
 	public int resourceYieldPerTurn = 5;
 	public int totalResourceYield = -1;
 
+	private int totalYieldCopy;
+	private Texture startTexture;
+
 	public List<Tile> surroundingTiles = new List<Tile>();
 
 	public bool empty = false;
+
+	public void Start()
+	{
+		totalYieldCopy = totalResourceYield;
+		startTexture = GetComponentInChildren<MeshRenderer>().material.mainTexture;
+
+	}
 
 	// Update is called once per frame
 	public override void Update ()
@@ -19,11 +29,18 @@ public class ResourceTile : Tile
 		{
 			Map.instance.tileMap.RemoveResourceTile(this);
 
-			GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture2D>("ground_1");
+			GetComponentInChildren<MeshRenderer>().material.mainTexture = Resources.Load<Texture2D>("Texture/ground_1");
 
 			//GetComponentInChildren<Renderer>().material.color = Color.black;
 		}
 
+	}
+
+	public void Reset()
+	{
+		totalResourceYield = totalYieldCopy;
+
+		GetComponentInChildren<MeshRenderer>().material.mainTexture = startTexture;
 	}
 
 	public int HarvestResources(int bonus)

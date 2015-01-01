@@ -75,6 +75,9 @@ public class Level : MonoBehaviour {
 		{
 			tile.harvestersTargeting = 0;
 		}
+
+		tileMap.ResetResourceTiles();
+
 	}
 
     /*public bool ValidateBuilding(Building building, Vector3 pos)
@@ -148,6 +151,8 @@ public class Level : MonoBehaviour {
 		{
 			buildings[i].UpdateBorderTilePositions();
 		}
+
+		tileMap.UpdateConnections();
 
 		Destroy (building.gameObject);
 	}

@@ -47,7 +47,8 @@ public class ResourceHarvester : Unit
 		Moving,
 		Harvesting,
 		Dumping,
-		Finished
+		Finished,
+		Stuck
 	}
 
 	// Use this for initialization
@@ -63,6 +64,7 @@ public class ResourceHarvester : Unit
 		stateMethods.Add (HarvesterState.Harvesting, Harvest);
 		stateMethods.Add (HarvesterState.Dumping, AddResourceToBuilding);
 		stateMethods.Add (HarvesterState.Finished, Idle);
+		stateMethods.Add (HarvesterState.Stuck, Stuck);
 
 		//lineRenderer = GetComponent<LineRenderer>();
 
@@ -166,23 +168,57 @@ public class ResourceHarvester : Unit
 		//at the moment, do nothing. ideally, an animation?
 	}
 
+	public void Stuck()
+	{
+		StartCoroutine(WaitAndRecheck());
+	}
+
+	IEnumerator WaitAndRecheck()
+	{
+		yield return new WaitForSeconds(2);
+
+		SetState(lastState);
+	}
+
 	public void GetTargetResourceTile()
 	{
 
 		if (!visible) SetVisible(true);
 
 		targetTile = GetClosestResourceTileOfType(resourceType, transform.position);
-		viaTile = targetTile.GetLeastTargetedAdjacentTile(transform.position);
-		targetTile.harvestersTargeting ++;
-		viaTile.harvestersTargeting ++;
-		SetState(HarvesterState.Moving);
+
+		if (targetTile != null) 
+		{
+			viaTile = targetTile.GetLeastTargetedAdjacentTile(transform.position);
+
+			if (viaTile != null)
+			{
+				targetTile.harvestersTargeting ++;
+				viaTile.harvestersTargeting ++;
+				SetState(HarvesterState.Moving);
+			}
+			else
+			{
+				SetState(HarvesterState.Stuck);
+
+			}
+
+		}
+		else
+		{
+			SetState(HarvesterState.Stuck);
+		}
 	}
 
 	public void GetTargetBuildingTile()
 	{
 		targetTile = resourceBase.GetLeastTargetedAdjacentTile(transform.position);
-		targetTile.harvestersTargeting ++;
-		SetState(HarvesterState.Moving);
+
+		if (targetTile != null)
+		{
+			targetTile.harvestersTargeting ++;
+			SetState(HarvesterState.Moving);
+		}
 	}
 
 	public ResourceTile GetClosestResourceTileOfType(ResourceType typeToFind, Vector3 pos)
@@ -191,26 +227,50 @@ public class ResourceHarvester : Unit
 		
 		float dist;
 		float shortestDist = float.NaN;
+
+		bool availableTilesBuiltOn = false;
 		
 		for (int i = 0; i < tileMap.resourceTiles.Count; i++)
 		{
+			/*Debug.Log("TILEMAP " + tileMap);
+			Debug.Log("resourceTiles " + tileMap.resourceTiles);*/
+
+			if (tileMap.resourceTiles[i] == null) continue;
+
+			/*Debug.Log("resourceTiles i " + tileMap.resourceTiles[i], tileMap.resourceTiles[i]);
+			Debug.Log("resourceTiles i type" + tileMap.resourceTiles[i].resourceType);
+			Debug.Log("type " + typeToFind);*/
+			//Debug.Log("TILEMAP");
+
 			if (tileMap.resourceTiles[i].resourceType == typeToFind)
 			{
+
 				dist = Vector3.Distance(tileMap.resourceTiles[i].transform.position, pos);
 				
 				if (dist < shortestDist || float.IsNaN(shortestDist))
 				{
-					closestTile = tileMap.resourceTiles[i];
-					shortestDist = dist;
+					if (tileMap.resourceTiles[i].pathTile == null)
+					{
+						availableTilesBuiltOn = true;
+					}
+					else
+					{
+						closestTile = tileMap.resourceTiles[i];
+						shortestDist = dist;
+					}
 
 					//Debug.Log ("Dist is less than shortest dist, tile is " + closestTile);
 				}
 			}
 		}
-		
+
 		if (closestTile != null)
 		{
 			return closestTile;
+		}
+		else if (availableTilesBuiltOn)
+		{
+			return null;
 		}
 		else
 		{
@@ -233,21 +293,26 @@ public class ResourceHarvester : Unit
 		}
 		else if (TileIsHarvestable(targetTile))
 		{
-
-			if (tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
-			//if (tileMap.FindPath(transform.localPosition, viaTile.coords, path))
-		    {
+			if (targetTile != null && viaTile != null && tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
+				//if (tileMap.FindPath(transform.localPosition, viaTile.coords, path))
+			{
 				/*lineRenderer.SetVertexCount(path.Count);
-				for (int i = 0; i < path.Count; i++)
-				lineRenderer.SetPosition(i, path[i].transform.position);*/
-					
+		for (int i = 0; i < path.Count; i++)
+		lineRenderer.SetPosition(i, path[i].transform.position);*/
+				
 				StopAllCoroutines();
 				StartCoroutine(WalkPath());
 			}
+			else
+			{
+				SetState(HarvesterState.Stuck);
+			}
+
+
 		}
 		else
 		{
-			if (tileMap.FindPath(transform.localPosition, targetTile.coords, path))
+			if (targetTile != null && tileMap.FindPath(transform.localPosition, targetTile.coords, path))
 			{
 				/*lineRenderer.SetVertexCount(path.Count);
 			for (int i = 0; i < path.Count; i++)
@@ -255,6 +320,10 @@ public class ResourceHarvester : Unit
 				
 				StopAllCoroutines();
 				StartCoroutine(WalkPath());
+			}
+			else
+			{
+				SetState(HarvesterState.Stuck);
 			}
 		}
 
@@ -264,10 +333,11 @@ public class ResourceHarvester : Unit
 	
 	public void Harvest()
 	{
+
 		currentResourceAmount = (targetTile as ResourceTile).HarvestResources(harvestBonus);
 
-		targetTile.harvestersTargeting --;
-		viaTile.harvestersTargeting --;
+		if (targetTile != null) targetTile.harvestersTargeting --;
+		if (viaTile != null) viaTile.harvestersTargeting --;
 
 		StartCoroutine(WaitForAnimation(ANIM_HARVEST, HarvesterState.SearchForBuilding));
 	}
