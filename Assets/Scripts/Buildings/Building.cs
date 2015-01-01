@@ -92,7 +92,65 @@ public class Building : Unit {
 		//DebugSpawnTile ++;
 
 		//return borderTiles[DebugSpawnTile % borderTiles.Count].transform.position;
-		return borderTiles[Mathf.RoundToInt(Random.Range(0, borderTiles.Count - 1))].transform.position; 
+
+
+		///THE HACKIEST HACK FOR THE REFINERY
+
+		borderTiles.Sort(BorderTileComparison);
+
+		//int availableFrontTiles = 0;
+
+		float xPos = 0;
+
+		List<Tile> frontTiles = new List<Tile>();
+
+		for (int i = 0; i < borderTiles.Count; i++)
+		{
+			if (i ==0)
+			{
+				xPos = borderTiles[i].transform.localPosition.x + 1;
+			}
+
+			if (borderTiles[i].transform.localPosition.x < xPos)
+			{
+				frontTiles.Add(borderTiles[i]);
+			}
+			else if (borderTiles[i].transform.localPosition.x == xPos)
+			{
+				if (borderTiles[i].transform.localPosition.z >= transform.localPosition.z - 1
+					    && borderTiles[i].transform.localPosition.z <= transform.localPosition.z + 1)
+					{
+						frontTiles.Add(borderTiles[i]);
+					}
+			}
+
+		}
+		
+		//DEBUG
+		/*for (int i = 0; i < frontTiles.Count; i ++)
+				{
+					frontTiles[i].GetComponentInChildren<MeshRenderer>().material.color = Color.green;
+				}*/
+
+		return frontTiles[Mathf.RoundToInt(Random.Range(0, frontTiles.Count - 1))].transform.position; 
+	}
+	
+
+	public int BorderTileComparison(Tile tileA, Tile tileB)
+	{
+		
+		if (tileA.transform.localPosition.x == tileB.transform.localPosition.x)
+		{
+			return 0;
+		}
+		else if (tileA.transform.localPosition.x < tileB.transform.localPosition.x)
+		{
+			return -1;
+		}
+		else //must be greater
+		{
+			return 1;
+		}
 	}
 
 	public Tile GetLeastTargetedAdjacentTile(Vector3 pos)
@@ -230,10 +288,10 @@ public class Building : Unit {
 		directions[1] = Vector3.forward;
 		directions[2] = Vector3.right;
 		directions[3] = Vector3.back;
-		/*directions[4] = Vector3.left + Vector3.forward;
+		directions[4] = Vector3.left + Vector3.forward;
 		directions[5] = Vector3.left + Vector3.back;
 		directions[6] = Vector3.right + Vector3.forward;
-		directions[7] = Vector3.right + Vector3.back;*/
+		directions[7] = Vector3.right + Vector3.back;
 
 		Vector3 checkPos;
 

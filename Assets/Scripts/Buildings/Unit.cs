@@ -66,7 +66,7 @@ public abstract class Unit : MonoBehaviour
 
 		mainCol = unitMat.color;
 
-		mainShader = Shader.Find("Diffuse");
+		mainShader = unitMat.shader;
 
 
 	}

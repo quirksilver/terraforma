@@ -107,7 +107,7 @@ public class ResourceHarvester : Unit
 					pathIndex = 0;
 					targetTile.harvestersTargeting --;
 
-					if (targetTile is ResourceTile)
+					if (TileIsHarvestable(targetTile))
 					{
 						viaTile.harvestersTargeting --;
 						SetState(HarvesterState.SearchForResource);
@@ -226,7 +226,7 @@ public class ResourceHarvester : Unit
 		{
 			StartCoroutine(WalkPath());
 		}
-		else if (targetTile is ResourceTile)
+		else if (TileIsHarvestable(targetTile))
 		{
 
 			if (tileMap.FindPathVia(transform.localPosition, viaTile.coords, targetTile.coords, path))
@@ -271,7 +271,7 @@ public class ResourceHarvester : Unit
 	{
 		Debug.Log("ARRIVED AT TARGET");
 
-		if (targetTile is ResourceTile)
+		if (TileIsHarvestable(targetTile))
 		{
 			SetState(HarvesterState.Harvesting);
 		}
@@ -361,6 +361,19 @@ public class ResourceHarvester : Unit
 			yield return 0;
 		}
 		transform.position = position;
+	}
+
+	public bool TileIsHarvestable(Tile t)
+	{
+		if (t is ResourceTile)
+		{
+			if ((t as ResourceTile).resourceType == resourceType)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	
