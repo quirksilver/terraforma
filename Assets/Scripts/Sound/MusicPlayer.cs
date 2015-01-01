@@ -34,6 +34,8 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 	private SFXTrack sfxTrack;
 
+	public double nextBeat;
+
 
 	// Use this for initialization
 	void Awake ()
@@ -50,9 +52,12 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 	public void Setup()
 	{
-		nextFourBarEntry = AudioSettings.dspTime + 1.0f;
-		nextEightBarEntry = AudioSettings.dspTime + 1.0f;
-		nextTwelveBarEntry = AudioSettings.dspTime + 1.0f;
+		nextFourBarEntry = AudioSettings.dspTime + 2.0f;
+		nextEightBarEntry = AudioSettings.dspTime + 2.0f;
+		nextTwelveBarEntry = AudioSettings.dspTime + 2.0f;
+		nextBeat = AudioSettings.dspTime + 2.0f;
+
+
 
 		ready = true;
 		playing = true;
@@ -67,6 +72,12 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		if (!playing) return;
 
 		double currentTime = AudioSettings.dspTime;
+
+		if (currentTime > nextBeat)
+		{
+			nextBeat += 2.0f;
+			//Debug.Log("BEAT");
+		}
 
 		if (currentTime > nextFourBarEntry)
 		{
@@ -453,8 +464,10 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		bool fadeInOut = ReadBoolAttribute(reader, "fadeInOut", true);
 		int minLoops = ReadIntAttribute(reader, "minLoops", 0);
 		int maxLoops = ReadIntAttribute(reader, "maxLoops", 0);
+		bool onBeat = ReadBoolAttribute(reader, "onBeat", false);
 		
-		SFX effect = new SFX(clip, name, trigger, fadeInOut, minLoops, maxLoops);
+
+		SFX effect = new SFX(clip, name, trigger, fadeInOut, minLoops, maxLoops, onBeat);
 
 		//MusicPart part = new MusicPart(clip, name, trigger, barsLength, isPersistent);
 		

@@ -93,6 +93,10 @@ public abstract class Unit : MonoBehaviour
 				built=true;
 				
 				StoryEventManager.SendEvent(eventName);
+
+				if (Map.instance.GetLevel() && Map.instance.GetLevel().id == 1 && eventName == "BUILTNUTRIFARM")
+					MusicPlayer.instance.ReceiveEvent("SPOOKYWIND");
+
 				Map.instance.RefreshBuildMenu();
 			}
 		}

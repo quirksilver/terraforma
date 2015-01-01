@@ -46,7 +46,8 @@ public class ResourceHarvester : Unit
 		SearchForBuilding,
 		Moving,
 		Harvesting,
-		Dumping
+		Dumping,
+		Finished
 	}
 
 	// Use this for initialization
@@ -61,6 +62,7 @@ public class ResourceHarvester : Unit
 		stateMethods.Add (HarvesterState.Moving, GoToTargetTile);
 		stateMethods.Add (HarvesterState.Harvesting, Harvest);
 		stateMethods.Add (HarvesterState.Dumping, AddResourceToBuilding);
+		stateMethods.Add (HarvesterState.Finished, Idle);
 
 		//lineRenderer = GetComponent<LineRenderer>();
 
@@ -212,7 +214,10 @@ public class ResourceHarvester : Unit
 		}
 		else
 		{
-			Debug.LogError("No tile of type " + typeToFind + " found.");
+
+			SetState(HarvesterState.Finished);
+			//Debug.LogError("No tile of type " + typeToFind + " found.");
+
 			return null;
 		}
 	}

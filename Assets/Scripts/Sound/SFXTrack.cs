@@ -23,6 +23,7 @@ public class SFXTrack : MonoBehaviour
 			GameObject sourceObj = new GameObject("Track" + name + "Source" + i);
 			
 			AudioSource source = sourceObj.AddComponent<AudioSource>();
+			source.playOnAwake = false;
 
 			sources.Add(source);
 
@@ -75,11 +76,25 @@ public class SFXTrack : MonoBehaviour
 
 		}
 
-		if (effect.minLoops == 0 && effect.maxLoops == 0)
+		if (effect.minLoops == 0 && effect.maxLoops == 0 && !effect.onBeat)
 		{
 			source.PlayOneShot(effect.clip);
 			
 			StartCoroutine(StopSourceAndAddToQueue(effect.clip.length + 0.1f, source));
+		}
+		else if (effect.onBeat)
+		{
+			Debug.Log("EFFECT ON BEAT");
+			source.clip = effect.clip;
+			source.loop = false;
+
+			source.PlayScheduled(MusicPlayer.instance.nextBeat);
+
+			//Debug.Log(MusicPlayer.instance.nextBeat + " " + AudioSettings.dspTime);
+
+
+			StartCoroutine(StopSourceAndAddToQueue((float)(MusicPlayer.instance.nextBeat - AudioSettings.dspTime + effect.clip.length + 2.0f), source));
+
 		}
 		else
 		{

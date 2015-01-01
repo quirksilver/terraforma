@@ -266,6 +266,8 @@ public class Map : MonoSingleton<Map>
             return false;
         }
         
+		MusicPlayer.instance.ReceiveEvent("PLACEBUILDING");
+
         level.PlaceBuiding(building, pos);
 		buildMenu.Refresh();
         return true;

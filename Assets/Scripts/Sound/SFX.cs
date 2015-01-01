@@ -9,8 +9,9 @@ public class SFX
 	public string trigger;
 	public bool fadeInOut;
 	public int minLoops, maxLoops;
+	public bool onBeat;
 
-	public SFX( string _clip, string _name, string _trigger, bool _fadeInOut, int _minLoops, int _maxLoops)
+	public SFX( string _clip, string _name, string _trigger, bool _fadeInOut, int _minLoops, int _maxLoops, bool _onBeat)
 	{
 
 		clip = Resources.Load("Sound/"+ _clip) as AudioClip;
@@ -22,6 +23,8 @@ public class SFX
 		fadeInOut = _fadeInOut;
 		minLoops = _minLoops;
 		maxLoops = _maxLoops;
+
+		onBeat = _onBeat;
 
 	}
 

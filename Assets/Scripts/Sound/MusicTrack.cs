@@ -12,11 +12,14 @@ public class MusicTrack : MonoBehaviour
 
 	private List<MusicPart> currentParts = new List<MusicPart>();
 	private Queue<MusicPart> partQueue = new Queue<MusicPart>();
+
+	private Queue<MusicPart> oldestParts = new Queue<MusicPart>();
+
 	private List<AudioSource> sourcesA  = new List<AudioSource>();
 	private List<AudioSource> sourcesB = new List<AudioSource>();
 
 	Dictionary<string, MusicPart> partsByTrigger = new Dictionary<string, MusicPart>();
-	//Dictionary<AudioClip, MusicPart> partsByClip = new Dictionary<AudioClip, MusicPart>();
+	Dictionary<AudioClip, MusicPart> partsByClip = new Dictionary<AudioClip, MusicPart>();
 
 	private int sourceIndex = 0;
 	private int partIndex = 0;
@@ -76,7 +79,25 @@ public class MusicTrack : MonoBehaviour
 
 		double currentTime = AudioSettings.dspTime;
 
-		double checkTime = (currentParts.Count > 0) ? MusicPlayer.instance.GetNextEntry(currentParts[partIndex]) : MusicPlayer.instance.nextFourBarEntry;
+		MusicPart oldPart = null;
+
+		if (oldestParts.Count > 0) 
+		{
+			oldPart = oldestParts.Dequeue();
+			Debug.Log("DEQUEUING OLDEST PART " + oldPart.name);
+		}
+
+		double checkTime;
+
+		if (oldPart != null) 
+
+		{
+			checkTime = MusicPlayer.instance.GetNextEntry(oldPart);
+		}
+		else
+		{
+			checkTime = MusicPlayer.instance.nextFourBarEntry;
+		}
 
 		AudioSource oldSource;
 		AudioSource newSource;
@@ -92,16 +113,29 @@ public class MusicTrack : MonoBehaviour
 			/*Debug.Log(lastCheckedTime);
 			Debug.Log(checkTime);*/
 
-			if (currentParts.Count == 0)
+			if (oldPart == null)
 			{
 				newSource = sourcesA[sourceIndex];
 				oldSource = null;
 
 
 			}
-			else{
+			else if (currentParts.Count >= simultaneousParts)
+			{
 
-				if (sourcesA[sourceIndex].clip == currentParts[partIndex].clip)
+				if (sourcesA[sourceIndex].clip == oldPart.clip)
+				{
+					oldSource = sourcesA[sourceIndex];
+					newSource = sourcesB[sourceIndex];
+				}
+
+				else
+				{
+					oldSource = sourcesB[sourceIndex];
+					newSource = sourcesA[sourceIndex];
+				}
+
+				/*if (sourcesA[sourceIndex].clip == currentParts[partIndex].clip)
 				{
 					oldSource = sourcesA[sourceIndex];
 					newSource = sourcesB[sourceIndex];
@@ -110,21 +144,28 @@ public class MusicTrack : MonoBehaviour
 				{
 					oldSource = sourcesB[sourceIndex];
 					newSource = sourcesA[sourceIndex];
-				}
+				}*/
+			}
+			else
+			{
+				oldSource = sourcesA[sourceIndex];
+				newSource = sourcesB[sourceIndex];
 			}
 
 
 			MusicPart newPart = partQueue.Dequeue();
 
 			newSource.clip = newPart.clip;
-			newSource.loop = newPart.isPersistent;
+			newSource.loop = (newPart.isPersistent && currentParts.Count < simultaneousParts);
 			newSource.PlayScheduled(checkTime);
 
 			newPart.lastEntry = checkTime;
 
 			newPart.isPlaying = true;
 
-			currentParts.Add(newPart);
+			if (currentParts.IndexOf(newPart) == -1) currentParts.Add(newPart);
+
+			oldestParts.Enqueue(newPart);
 
 			Debug.Log("Scheduling part " + newPart.name + "on track " + newSource.gameObject.name + "at time " + checkTime);
 
@@ -133,13 +174,14 @@ public class MusicTrack : MonoBehaviour
 
 			Debug.Log("source is playing " + newSource.isPlaying);
 
-			if (oldSource)
+			if (oldPart != null)
 			{
-				if (currentParts[partIndex] != newPart)
-					partQueue.Enqueue(currentParts[partIndex]);
+				//if (oldPart != newPart)
+				partQueue.Enqueue(oldPart);
 
 				oldSource.SetScheduledEndTime(checkTime);
-				currentParts[partIndex].isPlaying = false;
+				oldPart.isPlaying = false;
+				oldSource.loop = false;
 
 				sourceIndex = (sourceIndex + 1) % sourcesA.Count;
 				partIndex = (partIndex + 1) % currentParts.Count;
@@ -200,7 +242,14 @@ public class MusicTrack : MonoBehaviour
 		Debug.Log(muted, this);
 		//if (name.IndexOf(nameCheck) == -1) muted = true;
 
+		foreach (KeyValuePair<string, MusicPart> pair in partsByTrigger)
+		{
+			pair.Value.isPlaying = false;
+			pair.Value.flaggedForStop = false;
+		}
+
 		partQueue.Clear();
+		oldestParts.Clear();
 		currentParts.Clear();
 		partIndex = 0;
 		sourceIndex = 0;

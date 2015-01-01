@@ -6,28 +6,40 @@
 	<BAR>4</BAR>
 
 	<TRACK name="LevelHigh" simultaneousParts="1">
-		<PART name = "Part1" trigger="BUILTTERMINAL" clip="part1" isPersistent="true" barsLength="4"/>
+		<PART name = "MagmaWell" trigger="BUILTMAGMA WELL" clip="magmawell" isPersistent="true" barsLength="4"/>
+		<PART name = "Arboreum" trigger="BUILTARBOREUM" clip="arboreum" isPersistent="true" barsLength="8"/>
+		<PART name = "Vaporator" trigger="BUILTVAPORATOR" clip="vaporator" isPersistent="true" barsLength="4"/>
 	</TRACK>
 	
 	<TRACK name="LevelMid" simultaneousParts="1">
-		<PART name = "Part2" trigger="BUILTMANUFACTORY" clip="part2" isPersistent="true" barsLength="4"/>
-		<PART name = "Part4" trigger="BUILTNUTRIFARM" clip="part4" isPersistent="true" barsLength="4"/>
+		<PART name = "AquaPlant" trigger="BUILTAQUA PLANT" clip="aquaplant" isPersistent="true" barsLength="4"/>
+		<PART name = "Nutrifarm" trigger="BUILTNUTRIFARM" clip="nutrifarm" isPersistent="true" barsLength="8"/>
+		<PART name = "SolarCollector" trigger="BUILTSOLAR COLLECTOR" clip="solarcollector" isPersistent="true" barsLength="4"/>
 	</TRACK>
 	
 	<TRACK name="LevelLow" simultaneousParts="1">
-		<PART name = "Part3" trigger="BUILTMAGMA WELL" clip="part3" isPersistent="true" barsLength="4"/>
-		<PART name = "Part5" trigger="BUILTAQUA PLANT" clip="part5" isPersistent="true" barsLength="8"/>
+		<PART name = "Manufactory" trigger="BUILTMANUFACTORY" clip="manufactory" isPersistent="true" barsLength="4"/>
+		<PART name = "CentralDome" trigger="BUILTCENTRAL DOME" clip="centraldome" isPersistent="true" barsLength="4"/>
+		<PART name = "Greenhouse" trigger="BUILTGREENHOUSE" clip="greenhouse" isPersistent="true" barsLength="8"/>
 	</TRACK>
 	
-	<TRACK name="LevelPerc" simultaneousParts="1">
+	<TRACK name="LevelPerc" simultaneousParts="2">
+	<PART name = "Terminal" trigger="BUILTTERMINAL" clip="terminal" isPersistent="true" barsLength="4"/>
+	<PART name = "Refinery" trigger="BUILTREFINERY" clip="refinery" isPersistent="true" barsLength="4"/>
+	<PART name = "Laboratory" trigger="BUILTLABORATORY" clip="laboratory" isPersistent="true" barsLength="4"/>
 	</TRACK>
 	
-	<TRACK name="World" simultaneousParts="2">
-		<PART name = "WorldPart" trigger="gotoMap" clip="worldpart" isPersistent="true" barsLength="8"/>
+	<TRACK name="World" simultaneousParts="1">
+		<PART name = "World" trigger="gotoMap" clip="world" isPersistent="true" barsLength="8"/>
+	</TRACK>
+	
+	<TRACK name="Victory" simultaneousParts="1">
+		<PART name = "Victory" trigger="VICTORY" clip="victory" isPersistent="false" barsLength="2"/>
 	</TRACK>
 	
 	<SFX>
-		<EFFECT name = "testEffect" trigger="testSFXTrigger" clip="testeffect" minLoops="1" maxLoops="4" fadeInOut="false"/>
+		<!--EFFECT name = "BuildingEffect" trigger="PLACEBUILDING" clip="buildingeffect" minLoops="0" maxLoops="0" fadeInOut="false" onBeat="true"/-->
+		<EFFECT name = "SpookyWind" trigger="SPOOKYWIND" clip="spooky" minLoops="0" maxLoops="0" fadeInOut="false" onBeat="false"/>
 	</SFX>
  
 </MUSIC>
