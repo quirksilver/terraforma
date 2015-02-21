@@ -154,6 +154,18 @@ public class Level : MonoBehaviour {
 
 		tileMap.UpdateConnections();
 
+		bool uniqueBuildingRemoved = true;
+
+		for (i = 0; i < buildings.Count; i++)
+		{
+			if (buildings[i].GetType() == building.GetType())
+			{
+				uniqueBuildingRemoved = false;
+			}
+		}
+
+		if (uniqueBuildingRemoved) MusicPlayer.instance.ReceiveEvent("REMOVE" + building.eventName);
+
 		Destroy (building.gameObject);
 	}
 	

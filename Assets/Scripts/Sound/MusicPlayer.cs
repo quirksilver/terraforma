@@ -128,7 +128,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		}
 	}
 
-	public void Reset(Level level)
+	/*public void Reset(Level level)
 	{
 		foreach (KeyValuePair<string, MusicTrack> track in tracks)
 		{
@@ -139,7 +139,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		{
 			ReceiveEvent(level.buildings[i].eventName);
 		}
-	}
+	}*/
 
 	public void LoadMusicForLevel(Level level)
 	{
@@ -192,6 +192,9 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 
 	public double GetNextEntry(MusicPart lastPart)
 	{
+
+		if (lastPart.lastEntry == -1.0D) return nextFourBarEntry;
+
 		double nextEntry = lastPart.lastEntry + lastPart.barsLength * oneBar;
 
 		while (nextEntry <= AudioSettings.dspTime)
