@@ -77,11 +77,19 @@ public class BuildingPlacement : MonoBehaviour
         // When clicked enable stop movement and enable scripts
         if (Input.GetMouseButtonDown(0))
         {
+
+
+			Debug.Log("over tile " + Map.instance.GetTileOver());
+
 			if(bluePrint)
 			{
 				//remove object
 				Destroy(gameObject);
 				Destroy(newBuilding);
+			}
+			else if (Map.instance.IsMouseOutOfBounds())
+			{
+				CancelBuildingPlacement();
 			}
             else if (Map.instance.PlaceBuiding(newBuilding.GetComponent<Building>(), Map.instance.GetMouseOver()))
             {
@@ -96,22 +104,28 @@ public class BuildingPlacement : MonoBehaviour
 				//building.CreateNewHarvester();
             }
         }
-        else if (Input.GetMouseButton(1))
+        else if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.C))
         {
             // Cancel placement
+			CancelBuildingPlacement();
 
-            //refund
-            Map.instance.GetLevel().AddResource(building.buildCostAir, ResourceType.Air);
-            Map.instance.GetLevel().AddResource(building.buildCostFood, ResourceType.Food);
-            Map.instance.GetLevel().AddResource(building.buildCostHeat, ResourceType.Heat);
-            Map.instance.GetLevel().AddResource(building.buildCostMetal, ResourceType.Metal);
-            Map.instance.GetLevel().AddResource(building.buildCostWater, ResourceType.Water);
-
-            //remove object
-            Destroy(gameObject);
-            Destroy(newBuilding);
         }
 
 		lastPos = newPos;
+	}
+
+	public void CancelBuildingPlacement()
+	{
+		
+		//refund
+		Map.instance.GetLevel().AddResource(building.buildCostAir, ResourceType.Air);
+		Map.instance.GetLevel().AddResource(building.buildCostFood, ResourceType.Food);
+		Map.instance.GetLevel().AddResource(building.buildCostHeat, ResourceType.Heat);
+		Map.instance.GetLevel().AddResource(building.buildCostMetal, ResourceType.Metal);
+		Map.instance.GetLevel().AddResource(building.buildCostWater, ResourceType.Water);
+		
+		//remove object
+		Destroy(gameObject);
+		Destroy(newBuilding);
 	}
 }

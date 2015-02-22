@@ -15,7 +15,9 @@ public class BuildMenu : MonoBehaviour
     public UnityEngine.UI.ScrollRect scrollRect;
 
     float alpha = 0;
-    float targetAlpha = 0;
+	float targetAlpha = 0;
+
+	private GameObject currentBuildingPlacement = null;
 
     /*public void BuildDome()
     {
@@ -29,8 +31,15 @@ public class BuildMenu : MonoBehaviour
 
 	public void BuildBuilding(System.Type type, bool bluePrint=false)
     {
+		if (currentBuildingPlacement != null)
+		{
+			currentBuildingPlacement.GetComponent<BuildingPlacement>().CancelBuildingPlacement();
+		}
+
         GameObject newObj = GameObject.Instantiate(buidingPlacementObject) as GameObject;
         newObj.GetComponent<BuildingPlacement>().Setup(type,bluePrint);
+
+		currentBuildingPlacement = newObj;
     }
 
     public void Refresh()

@@ -50,6 +50,8 @@ public class Map : MonoSingleton<Map>
 	public Texture2D overCursor;
 	public Texture2D levelCursor;
 
+	private bool mouseOutOfBounds = false;
+
 	// Use this for initialization
 	void Awake () {
         buildMenu = FindObjectOfType(typeof(BuildMenu)) as BuildMenu;
@@ -350,6 +352,7 @@ public class Map : MonoSingleton<Map>
     {
         mouseOverTile = pos;
 		checkForMouseOut = false;
+		mouseOutOfBounds = false;
 
 		Building newHighlightBuilding = (GetTileOver() != null) ? GetTileOver().building : null;
 
@@ -365,6 +368,8 @@ public class Map : MonoSingleton<Map>
 
 	public void MouseOut(Vector3 pos)
 	{
+		mouseOutOfBounds = true;
+
 		if (pos == mouseOverTile && highlightBuilding != null)
 		{
 			checkForMouseOut = true;
@@ -395,4 +400,9 @@ public class Map : MonoSingleton<Map>
 		}
 		else return null;
     }
+
+	public bool IsMouseOutOfBounds()
+	{
+		return mouseOutOfBounds;
+	}
 }

@@ -91,7 +91,7 @@ public class BuildingControl : MonoBehaviour
                     nameLabel.text = building.GetComponent<Building>().DisplayName;
                     targetAlpha = 1.0f;
                     activeToggle.isOn = building.unitActive;
-					buildHarvesterButton.gameObject.SetActive(building.harvesterPrefab != null);
+					buildHarvesterButton.gameObject.SetActive(building.harvesterPrefab != null && building.built);
 
                     runningCost.ClearResources();
                     producesInfo.ClearResources();
