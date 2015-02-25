@@ -46,6 +46,8 @@ public class BuildingControl : MonoBehaviour
     public void OnOver()
     {
         over = true;
+
+		Map.instance.MouseOut();
     }
 
     public void OnExit()
@@ -83,7 +85,7 @@ public class BuildingControl : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            if (Map.instance.GetTileOver() == touchStart && Map.instance.GetTileOver() != null)
+            if (Map.instance.GetTileOver() == touchStart && Map.instance.GetTileOver() != null && !Map.instance.IsMouseOutOfBounds())
             {
                 if (Map.instance.GetTileOver().building != null)
                 {
@@ -124,6 +126,14 @@ public class BuildingControl : MonoBehaviour
                     }
                 }
             }
+			else
+			{
+				if (!over)
+				{
+					targetAlpha = 0.0f;
+				}
+
+			}
         }
 	}
 }

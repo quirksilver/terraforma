@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class Map : MonoSingleton<Map> 
 {
@@ -289,6 +290,12 @@ public class Map : MonoSingleton<Map>
     // Update is called once per frame
     void Update()
     {
+
+		if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+		{
+			Camera.main.GetComponent<PerspectiveSwitcher>().StartDrag();
+		}
+
 		float cloudSpeed = 0.1f; 
 		CurrentDustAlpha = Mathf.MoveTowards (CurrentDustAlpha, TargetDustAlpha, cloudSpeed * Time.deltaTime);
 		CurrentCloudAlpha = Mathf.MoveTowards (CurrentCloudAlpha, TargetCloudAlpha, cloudSpeed * Time.deltaTime);
@@ -350,6 +357,8 @@ public class Map : MonoSingleton<Map>
 
     public void MouseOver(Vector3 pos)
     {
+		//if (!EventSystem.current.IsPointerOverGameObject()) return;
+
         mouseOverTile = pos;
 		checkForMouseOut = false;
 		mouseOutOfBounds = false;
@@ -368,9 +377,21 @@ public class Map : MonoSingleton<Map>
 
 	public void MouseOut(Vector3 pos)
 	{
+		Debug.Log("MOUSE OUT OF TILE");
+
 		mouseOutOfBounds = true;
 
 		if (pos == mouseOverTile && highlightBuilding != null)
+		{
+			checkForMouseOut = true;
+		}
+	}
+
+	public void MouseOut()
+	{
+		mouseOutOfBounds = true;
+
+		if (highlightBuilding != null)
 		{
 			checkForMouseOut = true;
 		}

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour
 {
@@ -43,14 +44,17 @@ public class Tile : MonoBehaviour
 
 	public virtual void OnMouseEnter()
     {
-		//Debug.Log("MOUSE OVER TILE  " + coords, this);
-        Map.instance.MouseOver(coords);
+		//Debug.Log("MOUSE OVER TILE  " + coords + " " + EventSystem.current.IsPointerOverGameObject(),  this);
+		
+		//if () 
+
+		if (!EventSystem.current.IsPointerOverGameObject()) Map.instance.MouseOver(coords);
     }
 
 	
 	public void OnMouseExit()
 	{
-		Map.instance.MouseOut(coords);
+		if (!EventSystem.current.IsPointerOverGameObject()) Map.instance.MouseOut(coords);
 	}
 
 	public Tile GetLeastTargetedAdjacentTile(Vector3 pos)
