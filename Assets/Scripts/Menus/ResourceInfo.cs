@@ -58,7 +58,7 @@ public class ResourceInfo : MonoBehaviour
 
         GameObject newCell = GameObject.Instantiate(tempCell) as GameObject;
         newCell.SetActive(true);
-        newCell.transform.parent = tempCell.transform.parent;
+		newCell.transform.SetParent(tempCell.transform.parent, false);
         newCell.transform.localScale = Vector3.one;
         newCell.transform.GetChild(0).GetComponent<Image>().sprite = resImages[(int)type];
 

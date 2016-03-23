@@ -70,7 +70,7 @@ public class BuildMenu : MonoBehaviour
         for (int i = 0; i < buildings.Length; i++)
         {
             GameObject newButton = GameObject.Instantiate(buttonTemp) as GameObject;
-            newButton.transform.parent = buttonTemp.transform.parent;
+						newButton.transform.SetParent(buttonTemp.transform.parent, false);
             /*RectTransform rect = newButton.transform as RectTransform;
             rect.anchoredPosition = new Vector2(
                 0, 

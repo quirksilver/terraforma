@@ -48,7 +48,7 @@ public class Level : MonoBehaviour {
 
         storyEventManager = GetComponent<StoryEventManager>();
 
-        centerPos = collider.bounds.center;
+        centerPos = GetComponent<Collider>().bounds.center;
 	}
 
 	public void LevelReset()

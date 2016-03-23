@@ -140,7 +140,7 @@ public class MapLinks : MonoBehaviour
     {
         texture = new Texture2D(1024, 1024);
         //texture.filterMode = FilterMode.Point;
-        renderer.material.mainTexture = texture;
+        GetComponent<Renderer>().material.mainTexture = texture;
 
         Link.texture = texture;
         Link.track = texture.GetPixels();

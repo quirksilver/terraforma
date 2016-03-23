@@ -37,7 +37,7 @@ public class MapCamera : MonoBehaviour
         }
 
         // Zoom in/out
-        if (Input.mouseScrollDelta != Vector3.zero)
+        if (Input.mouseScrollDelta != Vector2.zero)
         {
             float newSize = GetComponent<Camera>().orthographicSize - Input.mouseScrollDelta.y;
             newSize = Mathf.Clamp(newSize, 2.0f, 12.0f);

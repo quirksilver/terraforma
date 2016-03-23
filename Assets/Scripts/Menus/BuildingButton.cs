@@ -80,7 +80,12 @@ public class BuildingButton : MonoBehaviour
             return;
         }
 
-        if (building.CanBuild())
+
+		if (!prereqsMet)
+		{
+				menu.BuildBuilding(building.GetType(),true);
+		}							
+		else if (building.CanBuild() && prereqsMet)
         {
             Map.instance.GetLevel().RemoveResource(building.buildCostAir, ResourceType.Air);
             Map.instance.GetLevel().RemoveResource(building.buildCostFood, ResourceType.Food);
@@ -90,10 +95,7 @@ public class BuildingButton : MonoBehaviour
 
             menu.BuildBuilding(building.GetType());
         }
-		else if(!prereqsMet)
-		{
-			menu.BuildBuilding(building.GetType(),true);
-		}
+		
         cost.Tick();
     }
 }
