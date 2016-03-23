@@ -505,21 +505,13 @@ public class TileMapEditor : Editor
 	void RecordUndo()
 	{
 		updateConnections = true;
-#if UNITY_4_6
-		Undo.RecordObject(target, "TileMap Changed");
-#else
 		Undo.RegisterUndo(target, "TileMap Changed");
-#endif
 	}
 
 	void RecordDeepUndo()
 	{
 		updateConnections = true;
-#if UNITY_4_6
-		Undo.RegisterFullObjectHierarchyUndo(target, "TileMap Changed");
-#else
 		Undo.RegisterSceneUndo("TileMap Changed");
-#endif
 	}
 	
 	#endregion

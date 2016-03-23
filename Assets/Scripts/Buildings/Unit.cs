@@ -51,7 +51,9 @@ public abstract class Unit : MonoBehaviour
 
 	protected TileMap tileMap;
 	
-	protected Material unitMat;
+	public Material unitMat;
+
+		protected List<Material> unitChildMats;
 
 	protected Color mainCol;
 
@@ -62,12 +64,30 @@ public abstract class Unit : MonoBehaviour
 		eventName = "BUILT" + DisplayName.ToUpper();
 
 		
-		unitMat = GetComponentInChildren<MeshRenderer>().material;
+				if (!unitMat)
+				{
+						unitMat = GetComponentInChildren<MeshRenderer>().material;
+				}
+				else
+				{
+						MeshRenderer[] childRenderers = GetComponentsInChildren<MeshRenderer>();
+						unitChildMats = new List<Material>();
+
+						foreach(MeshRenderer ren in childRenderers)
+						{
+								if (ren.sharedMaterial == unitMat)
+								{
+										unitChildMats.Add(ren.material);
+								}
+						}
+						
+				}
+
+						
 
 		mainCol = unitMat.color;
 
 		mainShader = unitMat.shader;
-
 
 	}
 
@@ -107,24 +127,70 @@ public abstract class Unit : MonoBehaviour
 	{
 		if (isTransparent)
 		{
-			unitMat.shader = transparentDiffuse;
+						if (unitChildMats != null)
+						{
+								foreach (Material mat in unitChildMats)
+								{
+										mat.shader = transparentDiffuse;
+								}
+						}
+						else
+						{
+								unitMat.shader = transparentDiffuse;
+						}
+			
+
 		}
 		else
 		{
-			unitMat.shader = mainShader;
+						if (unitChildMats!= null)
+						{
+								foreach (Material mat in unitChildMats)
+								{
+										mat.shader = mainShader;
+								}
+						}
+						else
+						{
+								unitMat.shader = mainShader;
+						}
+			
 		}
 	}
 
 	public void SetToMainColour()
 	{
-		unitMat.color = mainCol;
+				if (unitChildMats!= null)
+				{
+						foreach (Material mat in unitChildMats)
+						{
+								mat.color = mainCol;
+						}
+				}
+				else
+				{
+						unitMat.color = mainCol;
+				}
+		
 	}
 	
 	public void SetColour(Color col)
 	{
-		if (!unitMat) unitMat = GetComponentInChildren<MeshRenderer>().material;
 
-		unitMat.color = col;
+
+				if (unitChildMats!= null)
+				{
+						foreach (Material mat in unitChildMats)
+						{
+								mat.color = col;
+						}
+				}
+				else
+				{
+						if (!unitMat) unitMat = GetComponentInChildren<MeshRenderer>().material;
+						unitMat.color = col;
+				}
+		
 	}
 	
 	public virtual void Setup(TileMap t)

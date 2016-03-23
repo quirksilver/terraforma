@@ -30,7 +30,7 @@ public class DragMouseOrbit : MonoBehaviour
 
 		if(GetComponent<Rigidbody>() != null)
 		{
-			rigidbody.freezeRotation = true;
+			GetComponent<Rigidbody>().freezeRotation = true;
 		}
 	}
 	

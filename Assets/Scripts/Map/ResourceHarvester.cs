@@ -70,7 +70,7 @@ public class ResourceHarvester : Unit
 
 		//animator = GetComponentInChildren<Animator>();
 
-
+		SetTransparency(true);
 		SetState(HarvesterState.Idle);
 	}
 

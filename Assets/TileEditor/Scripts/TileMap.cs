@@ -354,7 +354,7 @@ public class TileMap : MonoBehaviour
 
 			int pickMat = UnityEngine.Random.Range(1, 5);
 
-			ren.sharedMaterial = Resources.LoadAssetAtPath<Material>("Assets/Materials/GroundTile_" + pickMat.ToString() + ".mat");
+			ren.sharedMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>("Assets/Materials/GroundTile_" + pickMat.ToString() + ".mat");
 
 			//mat.mainTexture = Resources.LoadAssetAtPath<Texture2D>("Assets/Texture/ground_" + pickTexture.ToString() + ".tga");
 

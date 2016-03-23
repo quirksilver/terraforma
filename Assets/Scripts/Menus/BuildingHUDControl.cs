@@ -22,7 +22,7 @@ public class BuildingHUDControl : MonoSingleton<BuildingHUDControl> {
     {
         GameObject newHUD = GameObject.Instantiate(tempHUD) as GameObject;
         newHUD.SetActive(true);
-        newHUD.transform.parent = transform;
+		newHUD.transform.SetParent(transform, false);
         newHUD.transform.localScale = Vector3.one;
         BuildingHUD hudComp = newHUD.GetComponent<BuildingHUD>();
         hudComp.followPoint = building.transform;

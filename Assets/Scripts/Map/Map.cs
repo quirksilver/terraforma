@@ -182,7 +182,7 @@ public class Map : MonoSingleton<Map>
 	{
 		for (int i = 0; i < levels.Length; i++)
 		{
-			levels[i].collider.enabled = value ? (levelIndex==i) : false;
+			levels[i].GetComponent<Collider>().enabled = value ? (levelIndex==i) : false;
 		}
 	}
 
@@ -339,7 +339,7 @@ public class Map : MonoSingleton<Map>
         {
             Vector3 lookDirection = Camera.main.transform.forward;
             nextLevelArrow.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-            nextLevelArrow.transform.position = levels[levelIndex].collider.bounds.center + (levels[levelIndex].transform.rotation * new Vector3(0, 4, 0));
+            nextLevelArrow.transform.position = levels[levelIndex].GetComponent<Collider>().bounds.center + (levels[levelIndex].transform.rotation * new Vector3(0, 4, 0));
             Color color = Color.white;
             color.a = Mathf.Sin(Time.time*2.0f)+1.0f;
             nextLevelArrow.color = color;

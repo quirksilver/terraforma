@@ -127,7 +127,7 @@ public class BuildingHUD : MonoBehaviour {
         }
 
         GameObject newIcon = GameObject.Instantiate(resTemp) as GameObject;
-        newIcon.transform.parent = transform;
+		newIcon.transform.SetParent(transform, false);
 		newIcon.transform.localScale = Vector3.one;
         newIcon.SetActive(true);
         ResParticle resPart = newIcon.GetComponent<ResParticle>();

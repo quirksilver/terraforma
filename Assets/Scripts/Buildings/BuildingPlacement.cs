@@ -79,7 +79,7 @@ public class BuildingPlacement : MonoBehaviour
         {
 
 
-			Debug.Log("over tile " + Map.instance.GetTileOver());
+			//Debug.Log("over tile " + Map.instance.GetTileOver());
 
 			if(bluePrint)
 			{

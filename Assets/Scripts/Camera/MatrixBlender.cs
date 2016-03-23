@@ -30,15 +30,15 @@ public class MatrixBlender : MonoBehaviour
 		float startTime = Time.time;
 		while (Time.time - startTime < duration)
 		{
-			camera.projectionMatrix = MatrixLerp(src, dest, (Time.time - startTime) / duration, duration, easeIn);
-			camera.transform.position = Vector3.Slerp(startPos, endPos, (Time.time - startTime) / duration);
-			camera.transform.rotation = Quaternion.Slerp(startRot, endRot, (Time.time - startTime) / duration);
+			GetComponent<Camera>().projectionMatrix = MatrixLerp(src, dest, (Time.time - startTime) / duration, duration, easeIn);
+			GetComponent<Camera>().transform.position = Vector3.Slerp(startPos, endPos, (Time.time - startTime) / duration);
+			GetComponent<Camera>().transform.rotation = Quaternion.Slerp(startRot, endRot, (Time.time - startTime) / duration);
 
 			yield return 1;
 		}
-		camera.projectionMatrix = dest;
-		camera.transform.position = endPos;
-		camera.transform.rotation = endRot;
+		GetComponent<Camera>().projectionMatrix = dest;
+		GetComponent<Camera>().transform.position = endPos;
+		GetComponent<Camera>().transform.rotation = endRot;
         IsRunning = false;
 	}
 
@@ -64,6 +64,6 @@ public class MatrixBlender : MonoBehaviour
 	public Coroutine BlendToMatrix(Matrix4x4 targetMatrix, float duration, bool easeIn, Vector3 startPos, Vector3 endPos, Quaternion startRot, Quaternion endRot)
 	{
 		StopAllCoroutines();
-		return StartCoroutine(LerpFromTo(camera.projectionMatrix, targetMatrix, duration, easeIn, startPos, endPos, startRot, endRot));
+		return StartCoroutine(LerpFromTo(GetComponent<Camera>().projectionMatrix, targetMatrix, duration, easeIn, startPos, endPos, startRot, endRot));
 	}
 }

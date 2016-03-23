@@ -166,7 +166,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 		}
 	}
 
-	public double GetNextEntry(int barLength)
+	/*public double GetNextEntry(int barLength)
 	{
 
 
@@ -188,7 +188,7 @@ public class MusicPlayer : MonoSingleton<MusicPlayer>
 			return nextFourBarEntry;
 			break;
 		}
-	}
+	}*/
 
 	public double GetNextEntry(MusicPart lastPart)
 	{
