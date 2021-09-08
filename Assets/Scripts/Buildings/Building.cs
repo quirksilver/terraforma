@@ -364,7 +364,7 @@ public class Building : Unit {
 
 		//if (clone.
 
-		GameObject spriteHolder = clone.transform.FindChild("SpriteHolder").gameObject;
+		GameObject spriteHolder = clone.transform.Find("SpriteHolder").gameObject;
 
 		if (spriteHolder == null) 
 		{

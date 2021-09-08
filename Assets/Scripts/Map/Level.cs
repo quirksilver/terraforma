@@ -213,7 +213,7 @@ public class Level : MonoBehaviour {
 
 		Map.instance.LoadLevel(this);
 
-		switcher.switchToOrtho(this.transform.FindChild("FocusPoint"));
+		switcher.switchToOrtho(this.transform.Find("FocusPoint"));
 
 	}
 
